@@ -44,6 +44,7 @@ public class InvestorUser implements java.io.Serializable {
 	private Date whenLastUpdate;
 	private String whoLastUpdate;
 	private String removeFlag;
+	private String attachName;
 	private Set<InvestorFollower> investorFollowers = new HashSet<InvestorFollower>(
 			0);
 
@@ -65,7 +66,8 @@ public class InvestorUser implements java.io.Serializable {
 			String attachUrl, String recommendFlag, String seqNum,
 			String status, String communicateStatus, Date whenCreate,
 			String whoCreate, Date whenLastUpdate, String whoLastUpdate,
-			String removeFlag, Set<InvestorFollower> investorFollowers) {
+			String removeFlag, String attachName,
+			Set<InvestorFollower> investorFollowers) {
 		this.id = id;
 		this.user = user;
 		this.type = type;
@@ -99,6 +101,7 @@ public class InvestorUser implements java.io.Serializable {
 		this.whenLastUpdate = whenLastUpdate;
 		this.whoLastUpdate = whoLastUpdate;
 		this.removeFlag = removeFlag;
+		this.attachName = attachName;
 		this.investorFollowers = investorFollowers;
 	}
 
@@ -366,6 +369,12 @@ public class InvestorUser implements java.io.Serializable {
 		this.removeFlag = removeFlag;
 	}
 
+	public String getAttachName() {
+		return this.attachName;
+	}
+	public void setAttachName(String attachName) {
+		this.attachName = attachName;
+	}
 	public Set<InvestorFollower> getInvestorFollowers() {
 		return this.investorFollowers;
 	}

@@ -133,7 +133,7 @@ function initAchievementListManager() {
 	queryParam = getData();
 	query(queryParam);
 	$('#queryAchievement').click(function() {
-		queryParam = getData();
+		$('#currentPage').val('1');
 	    query(queryParam);
     });
 };

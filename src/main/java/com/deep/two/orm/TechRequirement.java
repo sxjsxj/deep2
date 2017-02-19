@@ -39,6 +39,7 @@ public class TechRequirement implements java.io.Serializable {
 	private Date whenLastUpdate;
 	private String whoLastUpdate;
 	private String removeFlag;
+	private String attachName;
 	private Set<TechRequirementFollower> techRequirementFollowers = new HashSet<TechRequirementFollower>(
 			0);
 
@@ -59,6 +60,7 @@ public class TechRequirement implements java.io.Serializable {
 			Integer scanNumber, String seqNum, String recommendFlag,
 			String logoUrl, Date whenCreate, String whoCreate,
 			Date whenLastUpdate, String whoLastUpdate, String removeFlag,
+			String attachName,
 			Set<TechRequirementFollower> techRequirementFollowers) {
 		this.id = id;
 		this.companyUser = companyUser;
@@ -88,6 +90,7 @@ public class TechRequirement implements java.io.Serializable {
 		this.whenLastUpdate = whenLastUpdate;
 		this.whoLastUpdate = whoLastUpdate;
 		this.removeFlag = removeFlag;
+		this.attachName = attachName;
 		this.techRequirementFollowers = techRequirementFollowers;
 	}
 
@@ -315,6 +318,12 @@ public class TechRequirement implements java.io.Serializable {
 		this.removeFlag = removeFlag;
 	}
 
+	public String getAttachName() {
+		return this.attachName;
+	}
+	public void setAttachName(String attachName) {
+		this.attachName = attachName;
+	}
 	public Set<TechRequirementFollower> getTechRequirementFollowers() {
 		return this.techRequirementFollowers;
 	}

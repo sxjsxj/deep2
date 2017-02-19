@@ -100,7 +100,7 @@ function initAmountDemandListManager() {
 	queryParam = getData();
 	query(queryParam);
 	$('#queryTechRequirement').click(function() {
-		queryParam = getData();
+		$('#currentPage').val('1');
 	    query(queryParam);
     });
 };

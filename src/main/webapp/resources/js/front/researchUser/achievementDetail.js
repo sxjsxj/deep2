@@ -134,6 +134,14 @@ function initAchievementManager() {
 		if(phase===""){
 			$("#checkResult5").html('<font color="red">必填</font>');
 		}
+		//成果形式
+		if($('#typeId').val() === '') {
+			$("#checkResult6").html('<font color="red">必填</font>');
+		}
+		//合作方式
+		if($('#cooperationTypeId').val() === '') {
+			$("#checkResult7").html('<font color="red">必填</font>');
+		}
 		if(fromValidate() && imgCheckFlag ==="" && fileCheckFlag==="" && researchGroupName!==""
 			&& domain!==""&& patent!==""&& amount!==""&& phase!==""){
 			if($("#agree").is(":checked")){

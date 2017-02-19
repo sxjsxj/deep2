@@ -46,6 +46,35 @@
 	<input id="opeationIdIndex" type="hidden" value=""></input>
 	<input type="hidden" id="researchGroupId" value="">
 	<input type="hidden" id="hasResearchGroup" value="">
+		<!-- version2 点击发布需求弹框start -->
+			<div id="altsone" style="display:none">
+				<div class='xuqiualert' style="margin-top:0px;margin-left:-400px;width:740px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
+					<div class='tits'>
+						请您先维护科研团队信息
+						<div class='imgs'>
+							<img
+								src='${pageContext.request.contextPath}/resources/images/front/img/close.png'
+								class='img1' /> <img
+								src='${pageContext.request.contextPath}/resources/images/front/img/close2.png'
+								class='img2' />
+						</div>
+					</div>
+					<div>
+					     <div>
+								<font size="5" color="#434343;">请您先维护科研团队信息</font>
+						  </div>
+						  <div>
+								<font align="center" color="blue">
+								 <a href="${pageContext.request.contextPath}/researchGroup/getDetailPageForAdd">
+								  <font size="5"  color="#349fc4">现在完善科研团队信息>></font>
+								  </a>
+								  </font>
+						  </div>
+					</div>
+					
+				</div>
+			</div>
+			<!-- version2 点击发布需求弹框end -->
 
             <!-- 没有维护科研团队跳转url -->
             <div id="notReserarchGroup" url="${pageContext.request.contextPath}/researchGroup/getDetailPageForAdd"></div>

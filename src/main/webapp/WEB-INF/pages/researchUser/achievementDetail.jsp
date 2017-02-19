@@ -163,7 +163,7 @@
 				</div>
 				
 				<div class='xuqiu xuqiu6'>
-					<div class='name fl'>成果形式</div>
+					<div class='name fl'><span>*</span>成果形式</div>
 					<div id="checkBoxType">
 					<div class='fl'>
 						<div class='fl txts'>
@@ -187,6 +187,7 @@
 							<div class='clear'></div>
 						</div>
 						<input type="hidden" id="typeId"/>
+						<div id="checkResult6" style="margin-top:10px;"></div>
 						<div class='clear'></div>
 					</div>
 					</div>
@@ -298,7 +299,7 @@
 				</div>
 				
 				<div class='xuqiu xuqiu6'>
-					<div class='name fl'>寻求合作方式</div>
+					<div class='name fl'><span>*</span>寻求合作方式</div>
 					<div id="checkBoxCooperationType">
 					<div class='fl'>
 						<div class='fl txts'>
@@ -332,6 +333,7 @@
 							<div class='clear'></div>
 						</div>
 						<input type="hidden" id="cooperationTypeId"/>
+						<div id="checkResult7" style="margin-top:10px;"></div>
 						<div class='clear'></div>
 					</div>
 					</div>

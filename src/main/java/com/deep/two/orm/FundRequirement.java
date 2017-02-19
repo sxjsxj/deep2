@@ -1,6 +1,6 @@
 package com.deep.two.orm;
 
-// Generated 2016-12-27 21:27:57 by Hibernate Tools 3.4.0.CR1
+// Generated 2017-2-19 20:24:24 by Hibernate Tools 3.4.0.CR1
 
 import java.util.Date;
 import java.util.HashSet;
@@ -26,19 +26,20 @@ public class FundRequirement implements java.io.Serializable {
 	private String amountNeeded;
 	private String attachUrl;
 	private String sequenceNumber;
-	private String status;
-	private String communicateStatus;
 	private String remark;
 	private Integer concernNumber;
 	private Integer scanNumber;
 	private String seqNum;
 	private String recommendFlag;
+	private String status;
+	private String communicateStatus;
 	private String logoUrl;
 	private Date whenCreate;
 	private String whoCreate;
 	private Date whenLastUpdate;
 	private String whoLastUpdate;
 	private String removeFlag;
+	private String attachName;
 	private Set<FundRequirementFollower> fundRequirementFollowers = new HashSet<FundRequirementFollower>(
 			0);
 
@@ -55,11 +56,11 @@ public class FundRequirement implements java.io.Serializable {
 			String contactEmail, String projectName, String projectTeam,
 			String projectIntro, String projectPhase, String projectProspect,
 			String amountNeeded, String attachUrl, String sequenceNumber,
-			String status, String communicateStatus, String remark,
-			Integer concernNumber, Integer scanNumber, String seqNum,
-			String recommendFlag, String logoUrl, Date whenCreate,
+			String remark, Integer concernNumber, Integer scanNumber,
+			String seqNum, String recommendFlag, String status,
+			String communicateStatus, String logoUrl, Date whenCreate,
 			String whoCreate, Date whenLastUpdate, String whoLastUpdate,
-			String removeFlag,
+			String removeFlag, String attachName,
 			Set<FundRequirementFollower> fundRequirementFollowers) {
 		this.id = id;
 		this.companyUser = companyUser;
@@ -76,19 +77,20 @@ public class FundRequirement implements java.io.Serializable {
 		this.amountNeeded = amountNeeded;
 		this.attachUrl = attachUrl;
 		this.sequenceNumber = sequenceNumber;
-		this.status = status;
-		this.communicateStatus = communicateStatus;
 		this.remark = remark;
 		this.concernNumber = concernNumber;
 		this.scanNumber = scanNumber;
 		this.seqNum = seqNum;
 		this.recommendFlag = recommendFlag;
+		this.status = status;
+		this.communicateStatus = communicateStatus;
 		this.logoUrl = logoUrl;
 		this.whenCreate = whenCreate;
 		this.whoCreate = whoCreate;
 		this.whenLastUpdate = whenLastUpdate;
 		this.whoLastUpdate = whoLastUpdate;
 		this.removeFlag = removeFlag;
+		this.attachName = attachName;
 		this.fundRequirementFollowers = fundRequirementFollowers;
 	}
 
@@ -212,22 +214,6 @@ public class FundRequirement implements java.io.Serializable {
 		this.sequenceNumber = sequenceNumber;
 	}
 
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getCommunicateStatus() {
-		return this.communicateStatus;
-	}
-
-	public void setCommunicateStatus(String communicateStatus) {
-		this.communicateStatus = communicateStatus;
-	}
-
 	public String getRemark() {
 		return this.remark;
 	}
@@ -266,6 +252,22 @@ public class FundRequirement implements java.io.Serializable {
 
 	public void setRecommendFlag(String recommendFlag) {
 		this.recommendFlag = recommendFlag;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getCommunicateStatus() {
+		return this.communicateStatus;
+	}
+
+	public void setCommunicateStatus(String communicateStatus) {
+		this.communicateStatus = communicateStatus;
 	}
 
 	public String getLogoUrl() {
@@ -314,6 +316,14 @@ public class FundRequirement implements java.io.Serializable {
 
 	public void setRemoveFlag(String removeFlag) {
 		this.removeFlag = removeFlag;
+	}
+
+	public String getAttachName() {
+		return this.attachName;
+	}
+
+	public void setAttachName(String attachName) {
+		this.attachName = attachName;
 	}
 
 	public Set<FundRequirementFollower> getFundRequirementFollowers() {

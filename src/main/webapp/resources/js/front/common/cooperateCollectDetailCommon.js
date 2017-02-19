@@ -35,14 +35,14 @@ function setCooperateCollectFlagD(datas) {
 		 $('[id=cancelCollect]').hide();
 	 }
 	 //科研机构
-	 if(userType == '1' && (listType == 'researchGroup' || listType == 'achievement')) {
+	 if(userType == '1' && (listType == 'researchGroup' || listType == 'achievement' || listType == 'fundRequirement')) {
 		 $('[id=cooperate]').hide();
 		 $('[id=cancelCooperate]').hide();
 		 $('[id=collect]').hide();
 		 $('[id=cancelCollect]').hide();
 	 }
 	 //投资方
-	 if(userType == '2' && listType == 'investor') {
+	 if(userType == '2' && (listType == 'investor' || listType == 'techRequirement')) {
 		 $('[id=cooperate]').hide();
 		 $('[id=cancelCooperate]').hide();
 		 $('[id=collect]').hide();

@@ -52,7 +52,7 @@ function initMyAchievementManager() {
 		$('#child3').removeClass("active");
 		$('#child4').removeClass("active");
 		$('#child5').removeClass("active");
-		queryParam = getData();
+		$('#currentPage').val('1');
 	    query(queryParam);
     });
 	$('#child1').click(function() {
@@ -63,7 +63,7 @@ function initMyAchievementManager() {
 		$('#child3').removeClass("active");
 		$('#child4').removeClass("active");
 		$('#child5').removeClass("active");
-		queryParam = getData();
+		$('#currentPage').val('1');
 	    query(queryParam);
     });
 	$('#child2').click(function() {
@@ -74,7 +74,7 @@ function initMyAchievementManager() {
 		$('#child3').removeClass("active");
 		$('#child4').removeClass("active");
 		$('#child5').removeClass("active");
-		queryParam = getData();
+		$('#currentPage').val('1');
 	    query(queryParam);
     });
 	$('#child3').click(function() {
@@ -85,7 +85,7 @@ function initMyAchievementManager() {
 		$('#child0').removeClass("active");
 		$('#child4').removeClass("active");
 		$('#child5').removeClass("active");
-		queryParam = getData();
+		$('#currentPage').val('1');
 	    query(queryParam);
     });
 	$('#child4').click(function() {
@@ -96,7 +96,7 @@ function initMyAchievementManager() {
 		$('#child3').removeClass("active");
 		$('#child0').removeClass("active");
 		$('#child5').removeClass("active");
-		queryParam = getData();
+		$('#currentPage').val('1');
 	    query(queryParam);
     });
 	$('#child5').click(function() {
@@ -107,11 +107,9 @@ function initMyAchievementManager() {
 		$('#child3').removeClass("active");
 		$('#child4').removeClass("active");
 		$('#child0').removeClass("active");
-		queryParam = getData();
+		$('#currentPage').val('1');
 	    query(queryParam);
     });
-	
-	queryParam = getData();
 	//页面加载查询
 	query(queryParam);
 };

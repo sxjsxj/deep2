@@ -31,7 +31,8 @@ function getDeatil() {
 			path="../resources/images/front/img/keyanchengguo.png";
 		}
 		$("#detailImg").attr('src',path); 
-		$("#name").html(FrontCommonFunction.replaceNull(datas.name)); 
+		$("#name").html(FrontCommonFunction.replaceNull(datas.name));
+		$('head title').html(datas.name);
 		$("#sequenceNumber").html("编号："+FrontCommonFunction.replaceNull(datas.sequenceNumber)); 
 		$("#phase").html("阶段："+FrontCommonFunction.setInvestorPhase(datas.phase)); 
 		$("#domain").html(FrontCommonFunction.setInvestorDomain(datas.domain));

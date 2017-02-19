@@ -28,11 +28,9 @@ $(document).ready(function() {
 	
 	//点击发布科研成果
 	$('#publishMyAchievement').click(function() {
-		//科研团队id 为空则没有维护,否则维护
-		//根据科研用户id查出researchgroup查到代表维护，没查到代表为维护
+		alert(myDomains.length);
 		if(myDomains.length == 0){
-			var url = $('#notReserarchGroup').attr('url');
-			location.href=url;
+			$('#altsone').show();
 		}else{
 			var url = $('#publishAchievement').attr('url');
 			location.href=url;
@@ -102,7 +100,7 @@ function initAmountDemandListManager() {
 	queryParam = getData();
 	query(queryParam);
 	$('#queryTechRequirement').click(function() {
-		queryParam = getData();
+		$('#currentPage').val('1');
 	    query(queryParam);
     });
 };

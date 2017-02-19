@@ -256,15 +256,15 @@ function getDetail() {
 	FrontCommonFunction.baseOptions['url'] = url;
 	FrontCommonFunction.baseOptions['data'] = detailParam;
 	FrontCommonFunction.baseOptions['success'] = function(datas) {
+		$('#contactTel').val(datas.userModel.telno);
+		if(!datas.contactName) return;
 		$('#contactName').val(datas.contactName);
-		if(datas.province !== '') {
-			$('#province').val(datas.province);
-			$("#showProvince").val(datas.province);
-			$('#city').val(datas.city);
-			$('#showCity').val(datas.city);
-			$('#county').val(datas.county);
-			$('#showCounty').val(datas.county);
-		}
+		$('#province').val(datas.province);
+		$("#showProvince").val(datas.province);
+		$('#city').val(datas.city);
+		$('#showCity').val(datas.city);
+		$('#county').val(datas.county);
+		$('#showCounty').val(datas.county);
 		$('#contactTel').val(datas.contactTel);
 		$('#address').val(datas.address);
 		$('#investExperience').val(datas.investExperience);

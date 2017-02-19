@@ -36,6 +36,7 @@ public class CompanyUser implements java.io.Serializable {
 	private String status;
 	private String communicateStatus;
 	private String removeFlag;
+	private String attachName;
 	private Set<TechRequirement> techRequirements = new HashSet<TechRequirement>(
 			0);
 	private Set<FundRequirement> fundRequirements = new HashSet<FundRequirement>(
@@ -56,7 +57,8 @@ public class CompanyUser implements java.io.Serializable {
 			String contactEmail, String contactTitle, String attachUrl,
 			Date whenCreate, String whoCreate, Date whenLastUpdate,
 			String whoLastUpdate, String status, String communicateStatus,
-			String removeFlag, Set<TechRequirement> techRequirements,
+			String removeFlag, String attachName,
+			Set<TechRequirement> techRequirements,
 			Set<FundRequirement> fundRequirements) {
 		this.id = id;
 		this.user = user;
@@ -83,6 +85,7 @@ public class CompanyUser implements java.io.Serializable {
 		this.status = status;
 		this.communicateStatus = communicateStatus;
 		this.removeFlag = removeFlag;
+		this.attachName = attachName;
 		this.techRequirements = techRequirements;
 		this.fundRequirements = fundRequirements;
 	}
@@ -287,6 +290,12 @@ public class CompanyUser implements java.io.Serializable {
 		this.removeFlag = removeFlag;
 	}
 
+	public String getAttachName() {
+		return this.attachName;
+	}
+	public void setAttachName(String attachName) {
+		this.attachName = attachName;
+	}
 	public Set<TechRequirement> getTechRequirements() {
 		return this.techRequirements;
 	}

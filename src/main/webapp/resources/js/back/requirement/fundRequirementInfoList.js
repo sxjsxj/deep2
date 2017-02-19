@@ -134,7 +134,7 @@ function query(param) {
 	            + '<td>'+ CommonFunction.setStrPhase(queryReturnList[i].projectPhase) +'</td>'
 	            + '<td>'+ CommonFunction.setDetail(queryReturnList[i].projectProspect) +'</td>'
 	            + '<td>'+ CommonFunction.setStrAmount(queryReturnList[i].amountNeeded) +'</td>';
-	            requirementQueryTBodyTr += CommonFunction.getAttach(queryReturnList[i].attachUrl);
+	            requirementQueryTBodyTr += CommonFunction.getAttach(queryReturnList[i]);
 				requirementQueryTBodyTr += '<td>'+ CommonFunction.replaceNull(queryReturnList[i].sequenceNumber) +'</td>'
                 +'<td name="status" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].status) +'</td>'
                 + '<td>'+ CommonFunction.setRequirementStatus(queryReturnList[i].status) +'</td>'

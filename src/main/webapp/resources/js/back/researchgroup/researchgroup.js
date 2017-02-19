@@ -139,7 +139,7 @@ function query(param) {
 				+ '<td>'+ CommonFunction.setDetail(queryReturnList[i].leaderIntro) +'</td>'
 				+ '<td>'+ CommonFunction.replaceNull(queryReturnList[i].leaderAchieve) +'</td>'
 				+ '<td>'+ CommonFunction.replaceNull(queryReturnList[i].teamOthers) +'</td>';
-				researchGroupQueryTBodyTr += CommonFunction.getAttach(queryReturnList[i].attachUrl);
+				researchGroupQueryTBodyTr += CommonFunction.getAttach(queryReturnList[i]);
 			    researchGroupQueryTBodyTr = researchGroupQueryTBodyTr 
 			    + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].concernNumber) +'</td>'
 				+ '<td>'+ CommonFunction.replaceNull(queryReturnList[i].scanNumber) +'</td>'

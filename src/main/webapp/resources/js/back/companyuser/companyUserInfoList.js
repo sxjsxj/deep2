@@ -143,7 +143,7 @@ function query(param) {
                 + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].contactTel) +'</td>'
                 + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].contactEmail) +'</td>'
                 + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].contactTitle) +'</td>'
-				+ '<td>'+ '<a href="'+$('#downFile').attr('url')+'?path='+queryReturnList[i].attachUrl+'">附件下载</a>' +'</td>'
+                + CommonFunction.getAttach(queryReturnList[i])
                 + '</tr>';
 			$('#companyUserQueryTBody').append(companyUserQueryTBodyTr);
 		}

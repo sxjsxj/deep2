@@ -370,10 +370,11 @@ var CommonFunction = {
 		}
 		return result;
 	},
-	getAttach:function(attachUrl) {
+	getAttach:function(param) {
+		var attachUrl = param.attachUrl;
+		var attachName = param.attachName;
 		if(!this.isNull(attachUrl)) {
-			var fileName = attachUrl.substring(attachUrl.lastIndexOf('\\')+1);
-			return '<td>'+ '<a href="'+$('#downFile').attr('url')+'?path='+attachUrl+'">'+fileName+'</a>' +'</td>';
+			return '<td>'+ '<a href="'+$('#downFile').attr('url')+'?path='+attachUrl+'">'+attachName+'</a>' +'</td>';
 		}else {
 			return '<td> </td>';
 		}

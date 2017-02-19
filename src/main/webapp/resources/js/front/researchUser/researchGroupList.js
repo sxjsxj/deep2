@@ -47,7 +47,7 @@ function initResearchGroupListManager() {
 	queryParam = getData();
 	query(queryParam);
 	$('#queryResearchGroup').click(function() {
-		queryParam = getData();
+		$('#currentPage').val('1');
 	    query(queryParam);
     });
 };
@@ -75,6 +75,15 @@ function query(param) {
 			return;
 		} 
 		for(var i = 0; i < queryReturnList.length; i++) {
+			var type=queryReturnList[i].researchUserResultModel.type;
+			var provinceName="";
+			if(type==="0"){
+				provinceName=FrontCommonFunction.replaceNull(queryReturnList[i].researchUserResultModel.uniProvince);
+			}else if(type==="1"){
+				provinceName=FrontCommonFunction.replaceNull(queryReturnList[i].researchUserResultModel.orgProvince);
+			}else if(type==="2"){
+				provinceName=FrontCommonFunction.replaceNull(queryReturnList[i].researchUserResultModel.orgProvince);
+			}
 			var moreInfoUrl = $("#researchGroupMoreInfo").attr('url')+"?id="+queryReturnList[i].id;
 			var li = '<div id="shaDowShow'+i+'"  class="mydiv1" onmouseout="delShaDowClass('+i+')" onmouseover="addShaDowClass('+i+')"><li>'
 				li+='<input type="hidden" id="operateId'+i+'" value="'+queryReturnList[i].id+'"/>'
@@ -90,12 +99,12 @@ function query(param) {
 			    li+='<div class="fl rights">'
 				li+='<a href="'+moreInfoUrl+'"><div class="tits">'	
 				li+="<div class='fl'>"+FrontCommonFunction.replaceNull(queryReturnList[i].name)+"</div>"
-			    li+="<div class='fr'>"+FrontCommonFunction.setResearchGroupStatus(queryReturnList[i].status)+"</div>"
+			    li+="<div class='fr'>"+FrontCommonFunction.setResearchUserType(queryReturnList[i].researchUserResultModel.type)+"</div>"
 			    li+="<div class='clear'></div>"
 				li+="</div></a>"
 				li+='<div class="cs">'	 
 				li+='<div class="mod borderright">'
-				li+='<a href="'+moreInfoUrl+'"><div class="cs_tis">'+"研究方向："+FrontCommonFunction.setInvestorDomain(queryReturnList[i].domain)+"</div></a>"
+				li+='<a href="'+moreInfoUrl+'"><div class="cs_tis">'+"研究方向："+queryReturnList[i].field+"</div></a>"
 				li+="<div class=''><a class='fl rems'></a>"+"<span class='fl'>"+"简介&nbsp;:&nbsp;"+'<a href="'+moreInfoUrl+'">'+FrontCommonFunction.getResultMaitText(queryReturnList[i].introduction,70,"#researchGroupMoreInfo",queryReturnList[i].id)+"</span></a><div class='clear'></div></div>"
 				li+="</div>"
 				li+='<div class="mod marginleft">'
@@ -105,7 +114,7 @@ function query(param) {
 				li+="<div class='clear'></div>"
 				li+="</div>"	 
 				li+="<div class='f'>"
-				li+='<div style=" margin-top:50px" class="fl"><a>'+'<a href="'+moreInfoUrl+'">'+FrontCommonFunction.replaceNull(queryReturnList[i].researchUserResultModel.uniCity)+"</a></a></div>" 
+				li+='<div style="margin-top:50px" class="fl"><a>'+'<a href="'+moreInfoUrl+'">'+FrontCommonFunction.setDomain(queryReturnList[i].domain) + "&nbsp;&nbsp;" +provinceName+"</a></a></div>" 
 				li+='<div class="fr" style=" margin-top:40px">'	
 				li+=cooperateCollectFlagDiv(queryReturnList[i], i)
 				li+="</div>"

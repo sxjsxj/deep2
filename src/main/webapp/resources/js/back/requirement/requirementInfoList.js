@@ -142,7 +142,7 @@ function query(param) {
                 + '<td>'+ CommonFunction.setDetail(queryReturnList[i].remark) +'</td>'
                 + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].concernNumber) +'</td>'
                 + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].scanNumber) +'</td>';
-				requirementQueryTBodyTr += CommonFunction.getAttach(queryReturnList[i].attachUrl);
+				requirementQueryTBodyTr += CommonFunction.getAttach(queryReturnList[i]);
 				requirementQueryTBodyTr += '</tr>';
 			$('#requirementQueryTBody').append(requirementQueryTBodyTr);
 		}

@@ -147,7 +147,7 @@ function query(param) {
                 + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].fundType) +'</td>'
                 + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].investArea) +'</td>'
                 + '<td>'+ CommonFunction.setDetail(queryReturnList[i].investOutline) +'</td>';
-                investorUserQueryTBodyTr += CommonFunction.getAttach(queryReturnList[i].attachUrl);
+                investorUserQueryTBodyTr += CommonFunction.getAttach(queryReturnList[i]);
 				investorUserQueryTBodyTr += '</tr>';
 			$('#investorUserQueryTBody').append(investorUserQueryTBodyTr);
 		}

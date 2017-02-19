@@ -21,6 +21,7 @@ function getDeatil() {
 		}
 		$("#detailImg").attr('src',path); 
 		$("#name").html(datas.name); 
+		$('head title').html(datas.name);
 		$("#domain").html("领域："+FrontCommonFunction.setInvestorDomain(datas.domain));
 		$("#domain2").html(FrontCommonFunction.setInvestorDomain(datas.domain));
         if(type==="0"){

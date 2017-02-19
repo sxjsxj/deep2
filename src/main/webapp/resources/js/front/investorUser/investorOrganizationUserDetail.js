@@ -325,6 +325,8 @@ function getDetail() {
 	FrontCommonFunction.baseOptions['url'] = url;
 	FrontCommonFunction.baseOptions['data'] = detailParam;
 	FrontCommonFunction.baseOptions['success'] = function(datas) {
+		$('#contactTel').val(datas.userModel.telno);
+		if(!datas.name) return;
 		$('#name').val(datas.name);
 		$('#province').val(datas.province);
 		$("#showProvince").val(datas.province);

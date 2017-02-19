@@ -100,7 +100,7 @@ function initInvestorListManager() {
 	queryParam = getData();
 	query(queryParam);
 	$('#queryInvestor').click(function() {
-		queryParam = getData();
+		$('#currentPage').val('1');
 	    query(queryParam);
     });
 };

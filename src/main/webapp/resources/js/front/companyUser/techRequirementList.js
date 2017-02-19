@@ -135,7 +135,7 @@ function initAmountDemandListManager() {
 	queryParam = getData();
 	query(queryParam);
 	$('#queryTechRequirement').click(function() {
-		queryParam = getData();
+		$('#currentPage').val('1');
 	    query(queryParam);
     });
 };
@@ -176,7 +176,7 @@ function query(param) {
 				temli='<a href="'+moreInfoUrl+'"><div class="fl ims">'+'<img style="width:240px;height:182px" src="'+imgUrl+'"/>'+"</div></a>"
 			}
 			li+='<input type="hidden" id="operateId'+i+'" value="'+queryReturnList[i].id+'"/>'
-			li+=temli;
+			//li+=temli;
 			li+='<a href="'+moreInfoUrl+'"><div class="fl ims"><div class="fl rights">'
 			li+="<div class='tits'>"
 			li+="<div class='fl'>"+FrontCommonFunction.replaceNull(queryReturnList[i].name)+"</div>"

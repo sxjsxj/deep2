@@ -21,6 +21,7 @@ function getDeatil() {
 		}
 		$("#detailImg").attr('src',path); 
 		$("#name").html(datas.name); 
+		$('head title').html(datas.name);
 		$("#sequenceNumber").html("编号："+FrontCommonFunction.replaceNull(datas.sequenceNumber));
 		$("#projectPhase").html("实验阶段："+FrontCommonFunction.setPhase(datas.projectPhase));
 		$("#domain").html(FrontCommonFunction.setInvestorDomain(datas.domain));

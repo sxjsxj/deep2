@@ -12,6 +12,7 @@ function getDeatil() {
 	requestParamTemp['id']=id;
 	FrontCommonFunction.baseOptions['data'] = requestParamTemp;
 	FrontCommonFunction.baseOptions['success'] = function(datas) {
+		$('head title').html(datas.name);
 		$("#name").html(FrontCommonFunction.replaceNull(datas.name)); 
 		$("#sequenceNumber").html("编号："+FrontCommonFunction.replaceNull(datas.sequenceNumber)); 
 		$("#domain").html(FrontCommonFunction.setInvestorDomain(datas.domain)); 
@@ -20,7 +21,7 @@ function getDeatil() {
 		$("#address").html("公司所在地："+FrontCommonFunction.replaceNull(datas.companyUserResultModel.province))
 		$("#domain2").html("领域："+FrontCommonFunction.setInvestorDomain(datas.domain));
 		$("#amount").html("研发经费："+FrontCommonFunction.setAmount(datas.amount));
-		$("#type").html("需求类型："+FrontCommonFunction.setInbestorType(datas.type));
+		$("#type").html("需求类型："+FrontCommonFunction.setType(datas.type));
 		$("#duration").html("研发周期："+FrontCommonFunction.setDuration(datas.duration));
 		$("#cooperationType").html("合作方式："+FrontCommonFunction.setInbestorCooperationType(datas.cooperationType));
 		$("#similarProduct").html(FrontCommonFunction.replaceNull(datas.similarProduct));

@@ -61,14 +61,14 @@ function initMyRequirementManager() {
 		$("#fundRequire").removeClass("active");
 		$('#techRequire').addClass("active");
 		$('#tagValue').val("0");
-		queryParam = getData();
+		$('#currentPage').val('1');
 	    query(queryParam);
     });
 	$('#fundRequire').click(function() {
 		$("#fundRequire").addClass("active");
 		$('#techRequire').removeClass("active");
 		$('#tagValue').val("1");
-		queryParam = getData();
+		$('#currentPage').val('1');
 	    query(queryParam);
     });
 	//审核状态页
@@ -80,7 +80,7 @@ function initMyRequirementManager() {
 		$('#child3').removeClass("active");
 		$('#child4').removeClass("active");
 		$('#child5').removeClass("active");
-		queryParam = getData();
+		$('#currentPage').val('1');
 	    query(queryParam);
     });
 	$('#child1').click(function() {
@@ -91,7 +91,7 @@ function initMyRequirementManager() {
 		$('#child3').removeClass("active");
 		$('#child4').removeClass("active");
 		$('#child5').removeClass("active");
-		queryParam = getData();
+		$('#currentPage').val('1');
 	    query(queryParam);
     });
 	$('#child2').click(function() {
@@ -102,7 +102,7 @@ function initMyRequirementManager() {
 		$('#child3').removeClass("active");
 		$('#child4').removeClass("active");
 		$('#child5').removeClass("active");
-		queryParam = getData();
+		$('#currentPage').val('1');
 	    query(queryParam);
     });
 	$('#child3').click(function() {
@@ -113,7 +113,7 @@ function initMyRequirementManager() {
 		$('#child0').removeClass("active");
 		$('#child4').removeClass("active");
 		$('#child5').removeClass("active");
-		queryParam = getData();
+		$('#currentPage').val('1');
 	    query(queryParam);
     });
 	$('#child4').click(function() {
@@ -124,7 +124,7 @@ function initMyRequirementManager() {
 		$('#child3').removeClass("active");
 		$('#child0').removeClass("active");
 		$('#child5').removeClass("active");
-		queryParam = getData();
+		$('#currentPage').val('1');
 	    query(queryParam);
     });
 	$('#child5').click(function() {
@@ -135,7 +135,7 @@ function initMyRequirementManager() {
 		$('#child3').removeClass("active");
 		$('#child4').removeClass("active");
 		$('#child0').removeClass("active");
-		queryParam = getData();
+		$('#currentPage').val('1');
 	    query(queryParam);
     });
 	//页面加载查询

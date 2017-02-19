@@ -466,11 +466,11 @@ var FrontCommonFunction = {
 		if(dataObj === null || dataObj === 'null'||dataObj === undefined){
 			result = '';
 		} else {
-			if(dataObj===0){
+			if(dataObj==="0"){
 				result = "新产品研发";
-			 }else if(dataObj===1){
+			 }else if(dataObj==="1"){
 				 result = "产品技术升级";
-			 }else if(dataObj==2){
+			 }else if(dataObj=="2"){
 				 result = "技术服务";
 			 }else{
 				 result = '其他';
@@ -597,19 +597,19 @@ var FrontCommonFunction = {
 		if(dataObj === null || dataObj === 'null'||dataObj === undefined){
 			result = '';
 		} else {
-			if(dataObj===0){
+			if(dataObj==="0"){
 				result = "50人以下";
-			 }else if(dataObj===1){
+			 }else if(dataObj==="1"){
 				 result = "50-100人";
-			 }else if(dataObj==2){
+			 }else if(dataObj=="2"){
 				 result = "100-500人";
-			 }else if(dataObj==3){
+			 }else if(dataObj=="3"){
 				 result = "500-1000人";
-			 }else if(dataObj==4){
+			 }else if(dataObj=="4"){
 				 result = "1000-2000人";
-			 }else if(dataObj==5){
+			 }else if(dataObj=="5"){
 				 result = "2000-5000人";
-			 }else if(dataObj==6){
+			 }else if(dataObj=="6"){
 				 result = "5000人以上";
 			 }else{
 				 result = '其他';
@@ -647,17 +647,17 @@ var FrontCommonFunction = {
 		if(dataObj === null || dataObj === 'null'||dataObj === undefined){
 			result = '';
 		} else {
-			if(dataObj===0){
+			if(dataObj==="0"){
 				result = "信息技术";
-			 }else if(dataObj===1){
+			 }else if(dataObj==="1"){
 				 result = "机械电子";
-			 }else if(dataObj==2){
+			 }else if(dataObj=="2"){
 				 result = "生物工程";
-			 }else if(dataObj==3){
+			 }else if(dataObj=="3"){
 				 result = "能源环保";
-			 }else if(dataObj==4){
+			 }else if(dataObj=="4"){
 				 result = "化学化工";
-			 }else if(dataObj==5){
+			 }else if(dataObj=="5"){
 				 result = "材料科学";
 			 }else{
 				 result = '其他';
@@ -712,17 +712,17 @@ var FrontCommonFunction = {
 		if(dataObj === null || dataObj === 'null'||dataObj === undefined){
 			result = '';
 		} else {
-			if(dataObj===0){
+			if(dataObj==="0"){
 				result =  "研发阶段";
-			 }else if(dataObj===1){
+			 }else if(dataObj==="1"){
 				 result =  "实验室阶段";
-			 }else if(dataObj===2){
+			 }else if(dataObj==="2"){
 				 result =  "概念阶段";
-			 }else if(dataObj===3){
+			 }else if(dataObj==="3"){
 				 result =  "小批量生产";
-			 }else if(dataObj===4){
+			 }else if(dataObj==="4"){
 				 result =  "规模化生产阶段";
-			 }else if(dataObj===5){
+			 }else if(dataObj==="5"){
 				 result =  "市场推广阶段";
 			 }else{
 				 result =  "其他";

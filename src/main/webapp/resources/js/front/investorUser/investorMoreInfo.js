@@ -12,6 +12,7 @@ function getDeatil() {
 	requestParamTemp['id']=id;
 	FrontCommonFunction.baseOptions['data'] = requestParamTemp;
 	FrontCommonFunction.baseOptions['success'] = function(datas) {
+		$('head title').html(datas.name);
 		$("#name").html(FrontCommonFunction.replaceNull(datas.name)); 
 		$("#investDomain").html("投资领域："+FrontCommonFunction.setInvestorDomain(datas.investDomain)); 
 		$("#investPhase").html("投资阶段："+FrontCommonFunction.setInvestorPhase(datas.investPhase)); 

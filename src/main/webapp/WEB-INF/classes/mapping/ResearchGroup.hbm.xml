@@ -104,6 +104,9 @@
         <property name="removeFlag" type="string">
             <column name="remove_Flag" length="10" />
         </property>
+        <property name="attachName" type="string">
+            <column name="attach_name" length="100" />
+        </property>
         <set name="researchGroupFollowers" table="research_group_follower" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="research_id" length="50" not-null="true" />

@@ -471,7 +471,6 @@ function save() {
 };
 
 function getData() {
-	var paramTemp = {};
 	var researchUser={};
 	var user={};
 	user['id']=$('#commonUserLoginId').val();
@@ -499,6 +498,5 @@ function getData() {
 		researchUser['orgCounty']=$.trim($('#personalCounty').val());
 		researchUser['address']=$.trim($('#personalAddress').val());
 	}
-	paramTemp['researchUser']=researchUser;
-	return paramTemp;
+	return researchUser;
 };

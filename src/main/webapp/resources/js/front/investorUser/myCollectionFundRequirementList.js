@@ -114,7 +114,7 @@ function initAmountDemandListManager() {
 	queryParam = getData();
 	query(queryParam);
 	$('#queryFundRequirement').click(function() {
-		queryParam = getData();
+		$('#currentPage').val('1');
 	    query(queryParam);
     });
 };

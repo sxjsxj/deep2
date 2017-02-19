@@ -88,7 +88,7 @@ function query(param) {
                 + '<td>'+ CommonFunction.setCaseNum(queryReturnList[i].caseNum) +'</td>'
                 + '<td>'+ CommonFunction.setDetail(queryReturnList[i].caseDetail) +'</td>'
                 + '<td>'+ CommonFunction.setStrCooperationType(queryReturnList[i].cooperationType) +'</td>';
-                achievementQueryTBodyTr += CommonFunction.getAttach(queryReturnList[i].attachUrl);
+                achievementQueryTBodyTr += CommonFunction.getAttach(queryReturnList[i]);
                 achievementQueryTBodyTr = achievementQueryTBodyTr
                 + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].sequenceNumber) +'</td>'
                 +'<td name="status" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].status) +'</td>'

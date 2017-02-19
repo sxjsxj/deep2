@@ -44,6 +44,7 @@ public class ResearchGroup implements java.io.Serializable {
 	private Date whenLastUpdate;
 	private String whoLastUpdate;
 	private String removeFlag;
+	private String attachName;
 	private Set<ResearchGroupFollower> researchGroupFollowers = new HashSet<ResearchGroupFollower>(
 			0);
 	private Set<Achievement> achievements = new HashSet<Achievement>(0);
@@ -66,7 +67,7 @@ public class ResearchGroup implements java.io.Serializable {
 			String communicateStatus, String remark, Integer concernNumber,
 			Integer scanNumber, String seqNum, String recommendFlag,
 			Date whenCreate, String whoCreate, Date whenLastUpdate,
-			String whoLastUpdate, String removeFlag,
+			String whoLastUpdate, String removeFlag, String attachName,
 			Set<ResearchGroupFollower> researchGroupFollowers,
 			Set<Achievement> achievements) {
 		this.id = id;
@@ -102,6 +103,7 @@ public class ResearchGroup implements java.io.Serializable {
 		this.whenLastUpdate = whenLastUpdate;
 		this.whoLastUpdate = whoLastUpdate;
 		this.removeFlag = removeFlag;
+		this.attachName = attachName;
 		this.researchGroupFollowers = researchGroupFollowers;
 		this.achievements = achievements;
 	}
@@ -370,6 +372,12 @@ public class ResearchGroup implements java.io.Serializable {
 		this.removeFlag = removeFlag;
 	}
 
+	public String getAttachName() {
+		return this.attachName;
+	}
+	public void setAttachName(String attachName) {
+		this.attachName = attachName;
+	}
 	public Set<ResearchGroupFollower> getResearchGroupFollowers() {
 		return this.researchGroupFollowers;
 	}

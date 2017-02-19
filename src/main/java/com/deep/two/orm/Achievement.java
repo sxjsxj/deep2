@@ -41,6 +41,7 @@ public class Achievement implements java.io.Serializable {
 	private String whoCreate;
 	private Date whenLastUpdate;
 	private String removeFlag;
+	private String attachName;
 	private Set<AchievementFollower> achievementFollowers = new HashSet<AchievementFollower>(
 			0);
 
@@ -61,7 +62,8 @@ public class Achievement implements java.io.Serializable {
 			String remark, Integer concernNumber, Integer scanNumber,
 			String seqNum, String recommendFlag, String whoLastUpdate,
 			Date whenCreate, String whoCreate, Date whenLastUpdate,
-			String removeFlag, Set<AchievementFollower> achievementFollowers) {
+			String removeFlag, String attachName,
+			Set<AchievementFollower> achievementFollowers) {
 		this.id = id;
 		this.researchGroup = researchGroup;
 		this.logoUrl = logoUrl;
@@ -92,6 +94,7 @@ public class Achievement implements java.io.Serializable {
 		this.whoCreate = whoCreate;
 		this.whenLastUpdate = whenLastUpdate;
 		this.removeFlag = removeFlag;
+		this.attachName = attachName;
 		this.achievementFollowers = achievementFollowers;
 	}
 
@@ -335,6 +338,12 @@ public class Achievement implements java.io.Serializable {
 		this.removeFlag = removeFlag;
 	}
 
+	public String getAttachName() {
+		return this.attachName;
+	}
+	public void setAttachName(String attachName) {
+		this.attachName = attachName;
+	}
 	public Set<AchievementFollower> getAchievementFollowers() {
 		return this.achievementFollowers;
 	}

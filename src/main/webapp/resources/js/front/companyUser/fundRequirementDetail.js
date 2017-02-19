@@ -253,5 +253,6 @@ function getData() {
 	paramTemp['projectIntro']=$.trim($('#projectIntro').val());
 	paramTemp['projectPhase']=$.trim($('#projectPhase').val());
 	paramTemp['projectProspect']=$.trim($('#projectProspect').val());
+	paramTemp['amountNeeded']=$.trim($('#amountNeeded').val());
 	return paramTemp;
 };

@@ -70,7 +70,7 @@ function initResearchGroupListManager() {
 	queryParam = getData();
 	query(queryParam);
 	$('#queryResearchGroup').click(function() {
-		queryParam = getData();
+		$('#currentPage').val('1');
 	    query(queryParam);
     });
 };

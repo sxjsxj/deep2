@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/jdbc
+	http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd           
+	http://www.springframework.org/schema/security     
+	http://www.springframework.org/schema/security/spring-security-3.2.xsd">      
+     
+	<!-- 非security界面配置 -->
+	<!-- <http pattern="/index.jsp" security="none" />  -->
+	<http pattern="/security/noRightPage" security="none" />
+	<http pattern="/security/homepage" security="none" />
+	<http pattern="/util/**" security="none" />
+	<http pattern="/resources/**" security="none" />
+	<!-- 两个*号和一个*号是有差别的。一个*号只能匹配 /aaa 或者 /bbb的情况，两个*号才能匹配 /aab/dsd/sd的情况 -->
+	<!-- 使用expression的时候千万别忘记加  use-expressions="true"的配置-->
+	<!-- 如果使用自己的filter替代 "FORM_LOGIN_FILTER"时候，一定注意：1 auto-config='true'一定要去掉  -->
+	<!--2 <form-login login-page=""> 一定要去掉，否则还在用默认的Filter   -->
+	<!--3  使用 entry-point-ref="loginDemoEntryPoint" access-denied-page="/abcdefd" 来确定系统的登陆点URL和登录失败的URL  -->
+	<http use-expressions="true" entry-point-ref="loginDemoEntryPoint" access-denied-page="/security/noRightPage">  <!-- logout后的页面 -->
+		<intercept-url pattern="/security/loginPage**" access="permitAll" requires-channel="http" />
+		<intercept-url pattern="/security/login" access="permitAll" requires-channel="http" />
+		<intercept-url pattern="/security/user/getChangePasswordPage" access="permitAll" requires-channel="http"/>
+		<intercept-url pattern="/security/user/changePassword" access="permitAll" requires-channel="http"/>
+		<intercept-url pattern="/**" access="isAuthenticated()" requires-channel="http"/>
+		
+		<custom-filter after="CHANNEL_FILTER" ref="httpsCookieFilter" />
+		<custom-filter position="CONCURRENT_SESSION_FILTER" ref="concurrencyFilter" />
+		<custom-filter ref="loginFilter" position="FORM_LOGIN_FILTER"/>
+		<!-- <custom-filter ref="anonymousFilter" after="ANONYMOUS_FILTER"/>-->
+		<custom-filter ref="securityInterceptor" before="FILTER_SECURITY_INTERCEPTOR" />
+		<!-- 对logout 重新定向到 /logout中，成功后定向到/中，并且清除session -->
+		<!-- <logout delete-cookies="JSESSIONID" invalidate-session="true" logout-url="/logout" logout-success-url="/security/loginPage" /> -->
+		<custom-filter ref="logoutFilter" position="LOGOUT_FILTER"/>
+		<!-- 会话管理 -->
+		<session-management session-authentication-strategy-ref="sas" invalid-session-url="/security/loginPage">
+		</session-management>
+	</http>
+  
+  	<beans:bean id="anonymousFilter" class="com.deep.two.authority.impl.FareAnonymousAuthenticationFilter">
+  		<beans:constructor-arg name="processUrl" value="/security/loginPage"/>  
+		<beans:property name="failureHandler" ref="fareAuthenticationFailureHandler"></beans:property>                                
+	</beans:bean>  
+  
+	<beans:bean id="httpsCookieFilter" class="com.deep.two.authority.impl.HttpsCookieFilter">  
+		<beans:constructor-arg name="processUrl" value="/security/homepage"/>
+		<beans:property name="sessionRegistry" ref="sessionRegistry" />
+		<beans:property name="loginUrlRequestMatcher" ref="loginUrlRequestMatcher"></beans:property> 
+	</beans:bean>  
+	
+	<beans:bean id="concurrencyFilter" class="org.springframework.security.web.session.ConcurrentSessionFilter">  
+		<beans:property name="sessionRegistry" ref="sessionRegistry" />  
+		<beans:property name="expiredUrl" value="/security/loginPage?flag=3" />  
+	</beans:bean>  
+	<!-- 登录验证器 -->                                                                                                                                  
+	<beans:bean id="loginFilter"                                                                                                                         
+		class="org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter">                                                                                                              
+		<!-- 验证成功后的处理-->                                             
+		<beans:property name="authenticationSuccessHandler" ref="loginAuthenticationSuccessHandler"></beans:property>                                 
+		<!-- 验证失败后的处理-->                                                                                                                         
+		<beans:property name="authenticationFailureHandler" ref="fareAuthenticationFailureHandler"></beans:property>                                
+		<!-- 认证管理器，实现用户认证的入口 -->                                       
+		<beans:property name="authenticationManager" ref="authenticationManager"></beans:property> 
+		<beans:property name="requiresAuthenticationRequestMatcher" ref="loginUrlRequestMatcher"></beans:property> 
+		<beans:property name="sessionAuthenticationStrategy" ref="sas" />  
+		<beans:property name="continueChainBeforeSuccessfulAuthentication" value="false" />
+	</beans:bean> 
+	
+	<beans:bean id="logoutFilter" class="org.springframework.security.web.authentication.logout.LogoutFilter">
+        <beans:property name="filterProcessesUrl" value="/logout" />
+      	<beans:constructor-arg index="0" ref="logoutSucessHandler" />
+        <beans:constructor-arg index="1">
+            <beans:array>
+             	<beans:bean id="securityContextLogoutHandler" class="org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler" />
+          </beans:array>
+        </beans:constructor-arg>
+    </beans:bean>
+    <beans:bean id="logoutSucessHandler" class="com.deep.two.authority.impl.CustomLogoutSuccessHandler">                                                     
+		<beans:property name="sessionRegistry" ref="sessionRegistry" />
+		<beans:property name="defaultTargetUrl" value="/security/loginPage" />  
+	</beans:bean> 
+    
+	<beans:bean id="sas"
+		class="org.springframework.security.web.authentication.session.CompositeSessionAuthenticationStrategy">
+		<beans:constructor-arg>
+			<beans:list>
+				<beans:bean
+					class="org.springframework.security.web.authentication.session.ConcurrentSessionControlAuthenticationStrategy">
+					<beans:constructor-arg ref="sessionRegistry" />
+					<beans:property name="maximumSessions" value="1" />
+					<beans:property name="exceptionIfMaximumExceeded" value="false" />
+				</beans:bean>
+				<beans:bean
+					class="org.springframework.security.web.authentication.session.SessionFixationProtectionStrategy">
+				</beans:bean>
+				<beans:bean
+					class="org.springframework.security.web.authentication.session.RegisterSessionAuthenticationStrategy">
+					<beans:constructor-arg ref="sessionRegistry" />
+				</beans:bean>
+			</beans:list>
+		</beans:constructor-arg>
+	</beans:bean>
+	
+	<beans:bean id="sessionRegistry"  
+		class="org.springframework.security.core.session.SessionRegistryImpl" >
+	</beans:bean>
+	  
+	<beans:bean id="loginUrlRequestMatcher" class="com.deep.two.authority.impl.LoginUrlRequestMatcher">                                                     
+		<!-- 可以配置相应的跳转方式。属性forwardToDestination为true采用forward false为sendRedirect -->                                                   
+		<beans:property name="filterProcessesUrl" value="/security/login"></beans:property>
+	</beans:bean>  
+	  
+	<beans:bean id="loginAuthenticationSuccessHandler"                                                                                               
+		class="com.deep.two.authority.impl.CustomAuthenticationSuccessHandler">                                                     
+		<!-- 可以配置相应的跳转方式。属性forwardToDestination为true采用forward false为sendRedirect -->                                                   
+		<beans:property name="commonTargetUrl" value="/security/homepage"></beans:property>
+		<beans:property name="adminTargetUrl" value="/back/index.html"></beans:property>
+		<beans:property name="researchTargetUrl" value="/researchUser/getMyResearchGroupPage"></beans:property>
+		<beans:property name="companyTargetUrl" value="/companyUser/getMyRequirementBrowsePage"></beans:property>
+		<beans:property name="investorTargetUrl" value="/investorUser/getMyRecommendBrowsePage"></beans:property>
+	</beans:bean>        
+	
+	<beans:bean id="fareAuthenticationFailureHandler"                                                                                               
+		class="com.deep.two.authority.impl.CustomAuthenticationFailureHandler"> 
+		<beans:property name="userNotFoundUrl" value="/security/loginPage?flag=0"></beans:property>                                                    
+		<beans:property name="defaultFailureUrl" value="/security/loginPage?flag=1"></beans:property>
+		<beans:property name="accountStatusUrl" value="/security/loginPage?flag=2"></beans:property>
+		<beans:property name="sessionExceedUrl" value="/security/loginPage?flag=3"></beans:property>
+		<beans:property name="anonymousUrl" value="/security/loginPage?flag=4"></beans:property>
+	</beans:bean>
+	  
+	<!-- 未登录的切入点 -->                                                                                                                              
+	<beans:bean id="loginDemoEntryPoint" class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">  
+		<beans:property name="loginFormUrl" value="/security/loginPage"></beans:property>                                                                         
+	</beans:bean>   
+	  
+	<!-- 认证管理器，实现用户认证的入口，主要实现UserDetailsService接口即可 -->                                                                          
+	<authentication-manager alias="authenticationManager">                                                                                               
+		<authentication-provider                                                                                                                         
+			user-service-ref="userDetailsService">                                                                                                       
+			<!--用户名做为盐值      -->                                                                                                       
+			<password-encoder ref="passwordEncoder">                                                                                                     
+				<salt-source user-property="email" />                                                                                                 
+			</password-encoder>                                                                                                                                                                                                                                                 
+		</authentication-provider>
+	</authentication-manager>   
+	
+	<beans:bean  id="passwordEncoder" class="org.springframework.security.authentication.encoding.Md5PasswordEncoder" />   
+	<beans:bean id="userDetailsService" class="com.deep.two.authority.impl.UserExtendService" />                        
+	
+	
+	<!-- 认证过滤器 -->                                                                                                                                  
+	<beans:bean id="securityInterceptor" class="com.deep.two.authority.impl.CustomFilterSecurityInterceptor" >                                                  
+		<!-- 用户拥有的权限 -->                                                                                                                          
+		<beans:property name="authenticationManager"                                                                                                     
+			ref="authenticationManager" />                                                                                                              
+		<!-- 用户是否拥有所请求资源的权限 -->                                                                                                            
+		<beans:property name="accessDecisionManager"                                                                                                     
+			ref="accessDecisionManager" />                                                                                                              
+		<!-- 资源与权限对应关系 -->                                                                                                                      
+		<beans:property name="securityMetadataSource"                                                                                                    
+			ref="securityMetadataSource" />                                                                                                         
+	</beans:bean>
+	
+	
+	<beans:bean  id="accessDecisionManager" class="com.deep.two.authority.impl.CustomDecisionManager" />
+	<beans:bean  id="securityMetadataSource" class="com.deep.two.authority.impl.CustomFilterInvocationSecurityMetadataSource" />
+
+</beans:beans>

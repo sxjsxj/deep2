@@ -1,0 +1,26 @@
+/* ·­Ò³ */
+.clear { clear:both; padding:0; margin:0; width:100%; font-size:0px; line-height:0px;}
+a { color:#00F; text-decoration:none; cursor:pointer;}
+a:hover { text-decoration:underline;}
+a.rm, a.com { margin-left:8px; padding:9px 12px; background:url(../images/a_bg.gif) repeat-x top; text-decoration:none; color:#fff;}
+.left{ float:left;}
+.right{ float:right;}
+.widthAuto{ width:auto;}
+.width20{ width:20px;}
+.width24{ width:24px;}
+.pageControlLayout{ margin:10px 0; color:#999; text-align:center;}
+.pageControl{ display:inline-block; *zoom:1;}
+.pagesButtonLayout b,.pagesButtonLayout a{ display:block; float:left; padding:5px 13px; background-color:#F1F1F1;; border:1px solid #E3E3E3; border-left:0; font-weight:normal;}
+.pageCur,.pagePrev,.pageNext{ background-color:#F1F1F1;; border:1px solid #E3E3E3; border-left:0; font-weight:normal;}
+.pageControl a.pagePrev{ border-left:1px solid #E3E3E3;}
+.pagesButtonLayout b.pagePrev{ border-left:1px solid #E3E3E3;}
+.pagesButtonLayout a{ text-decoration:none; background-color:#FFF; color:#3f7fb7;}
+.pageControl a:hover{ text-decoration:none; background-color:#F7F7F7;}
+.toPageLayout{ margin-left:10px; margin-top:5px;}
+.toPageLayout b{ font-weight:normal;}
+a.sureButton{ display:block; float:left; text-decoration:none; background-color:#F7F7F7; border:1px solid #C7C7C7; border-radius:3px; padding:0px 12px 1px; margin-left:5px; margin-top:2px; line-height:18px; color:#333;}
+.widthAuto{ width:auto;}
+body,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6,table,tr,th,td,p,input,dl,dt,dd,ul,ol,li,input,textarea { font-family:"Î¢ÈíÑÅºÚ"!important;}
+
+
+

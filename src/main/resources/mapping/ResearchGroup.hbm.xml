@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-12-8 15:41:26 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.deep.two.orm.ResearchGroup" table="research_group" catalog="alibaba">
+        <id name="id" type="string">
+            <column name="id" length="50" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="researchUser" class="com.deep.two.orm.ResearchUser" fetch="join" lazy="false">
+            <column name="user_id" length="50" not-null="true" />
+        </many-to-one>
+        <property name="logoUrl" type="string">
+            <column name="logo_url" length="500" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="200" />
+        </property>
+        <property name="domain" type="string">
+            <column name="domain" length="200" />
+        </property>
+        <property name="introduction" type="string">
+            <column name="introduction" length="4000" />
+        </property>
+        <property name="teamSize" type="java.lang.Integer">
+            <column name="team_size" />
+        </property>
+        <property name="field" type="string">
+            <column name="field" length="200" />
+        </property>
+        <property name="experience" type="string">
+            <column name="experience" length="4000" />
+        </property>
+        <property name="achievement" type="string">
+            <column name="achievement" length="2000" />
+        </property>
+        <property name="leaderUrl" type="string">
+            <column name="leader_url" length="500" />
+        </property>
+        <property name="leaderName" type="string">
+            <column name="leader_name" length="20" />
+        </property>
+        <property name="leaderTel" type="string">
+            <column name="leader_tel" length="20" />
+        </property>
+        <property name="leaderEmail" type="string">
+            <column name="leader_email" length="50" />
+        </property>
+        <property name="leaderDepart" type="string">
+            <column name="leader_depart" length="50" />
+        </property>
+        <property name="leaderTitle" type="string">
+            <column name="leader_title" length="50" />
+        </property>
+        <property name="leaderPosition" type="string">
+            <column name="leader_position" length="45" />
+        </property>
+        <property name="leaderIntro" type="string">
+            <column name="leader_intro" length="2000" />
+        </property>
+        <property name="leaderAchieve" type="string">
+            <column name="leader_achieve" length="2000" />
+        </property>
+        <property name="teamOthers" type="string">
+            <column name="team_others" length="2000" />
+        </property>
+        <property name="attachUrl" type="string">
+            <column name="attach_url" length="500" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="30" />
+        </property>
+        <property name="communicateStatus" type="string">
+            <column name="communicate_status" length="30" />
+        </property>
+        <property name="remark" type="string">
+            <column name="remark" length="4000" />
+        </property>
+        <property name="concernNumber" type="java.lang.Integer">
+            <column name="concern_number" />
+        </property>
+        <property name="scanNumber" type="java.lang.Integer">
+            <column name="scan_number" />
+        </property>
+        <property name="seqNum" type="string">
+            <column name="seqNum" length="10" />
+        </property>
+        <property name="recommendFlag" type="string">
+            <column name="recommendFlag" length="10" />
+        </property>
+        <property name="whenCreate" type="date">
+            <column name="when_create" length="10" />
+        </property>
+        <property name="whoCreate" type="string">
+            <column name="who_create" length="30" />
+        </property>
+        <property name="whenLastUpdate" type="date">
+            <column name="when_last_update" length="10" />
+        </property>
+        <property name="whoLastUpdate" type="string">
+            <column name="who_last_update" length="30" />
+        </property>
+        <property name="removeFlag" type="string">
+            <column name="remove_Flag" length="10" />
+        </property>
+        <set name="researchGroupFollowers" table="research_group_follower" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="research_id" length="50" not-null="true" />
+            </key>
+            <one-to-many class="com.deep.two.orm.ResearchGroupFollower" />
+        </set>
+        <set name="achievements" table="achievement" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="research_id" length="50" />
+            </key>
+            <one-to-many class="com.deep.two.orm.Achievement" />
+        </set>
+    </class>
+</hibernate-mapping>

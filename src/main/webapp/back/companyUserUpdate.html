@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>企业用户信息编辑</title>
+		<meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+        <link rel="stylesheet" href="css/colorpicker.css" />
+        <link rel="stylesheet" href="css/datepicker.css" />
+		<link rel="stylesheet" href="css/uniform.css" />
+		<link rel="stylesheet" href="css/select2.css" />		
+		<link rel="stylesheet" href="css/unicorn.main.css" />
+		<link rel="stylesheet" href="css/unicorn.grey.css" class="skin-color" />	
+			<style>
+body,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6,table,tr,th,td,p,input,dl,dt,dd,ul,ol,li,input,textarea { font-family:"微软雅黑"!important;font-weight:bold;font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;word-break:keep-all;
+				white-space:nowrap;}
+		</style>
+	</head>
+	<body>
+		<div id="getDetailComanyUserDetail" url="../myCompanyUser/getDetail"></div>
+		
+		<div id="header">
+			<h1><a href="./dashboard.html">Unicorn Admin</a></h1>		
+		</div>
+		
+		<div id="search">
+			<input type="text" placeholder="Search here..."/><button type="submit" class="tip-right" title="Search"><i class="icon-search icon-white"></i></button>
+		</div>
+		<div id="user-nav" class="navbar navbar-inverse">
+            <ul class="nav btn-group">
+                <li class="btn btn-inverse" ><a title="" href="#"><i class="icon icon-user"></i> <span class="text">Profile</span></a></li>
+                <li class="btn btn-inverse"><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li>
+                <li class="btn btn-inverse"><a title="" href="../logout"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
+            </ul>
+        </div>
+            
+		<div id="sidebar">
+			<a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
+			<ul>
+				<li class="active"><a href="index.html"><i class="icon icon-home"></i> <span>首页</span></a></li>
+				<li><a href="userInfoList.html"><i class="icon icon-th"></i> <span>用户管理</span></a></li>
+				<li class="submenu">
+					<a href="#"><i class="icon icon-th-list"></i> <span>企业管理</span> <span class="label">4</span></a>
+					<ul>
+						<li><a href="companyUserInfoList.html">企业用户管理</a></li>
+						<li><a href="requirementInfoList.html">技术需求管理</a></li>
+						<li><a href="fundRequirementInfoList.html">资金需求管理</a></li>
+						<li><a href="techRequirementFollowerInfoList.html">寻求合作&收藏-技术需求</a></li>
+						<li><a href="fundRequirementFollowerInfoList.html">寻求合作&收藏-资金需求</a></li>
+					</ul>
+				</li>
+				<li class="submenu">
+					<a href="#"><i class="icon icon-th-list"></i> <span>高校/科研机构</span> <span class="label">5</span></a>
+					<ul>
+						<li><a href="researchUserList.html">科研团队用户管理</a></li>
+						<li><a href="researchGroupList.html">科研团队管理</a></li>
+						<li><a href="achievementList.html">技术成果管理</a></li>
+						<li><a href="researchGroupFollowerList.html">寻求合作&收藏-科研团队</a></li>
+						<li><a href="achievementFollowerList.html">寻求合作&收藏-技术成果</a></li>
+					</ul>
+				</li>
+				<li class="submenu">
+					<a href="#"><i class="icon icon-th-list"></i> <span>投资方管理</span> <span class="label">3</span></a>
+					<ul>
+					    <li><a href="investorUserList.html">投资机构管理</a></li>
+						<li><a href="investorFollowerList.html">寻求合作&收藏-投资机构</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		
+		<div id="style-switcher">
+			<i class="icon-arrow-left icon-white"></i>
+			<span>Style:</span>
+			<a href="#grey" style="background-color: #555555;border-color: #aaaaaa;"></a>
+            <a href="#light-blue" style="background-color: #8399b0;"></a>
+			<a href="#blue" style="background-color: #2D2F57;"></a>
+			<a href="#red" style="background-color: #673232;"></a>
+            <a href="#red-green" style="background-image: url('img/demo/red-green.png');background-repeat: no-repeat;"></a>
+		</div>
+		
+		<div id="content">
+			<div id="content-header">
+				<h1>Common Form Elements</h1>
+				<div class="btn-group">
+					<a class="btn btn-large tip-bottom" title="Manage Files"><i class="icon-file"></i></a>
+					<a class="btn btn-large tip-bottom" title="Manage Users"><i class="icon-user"></i></a>
+					<a class="btn btn-large tip-bottom" title="Manage Comments"><i class="icon-comment"></i><span class="label label-important">5</span></a>
+					<a class="btn btn-large tip-bottom" title="Manage Orders"><i class="icon-shopping-cart"></i></a>
+				</div>
+			</div>
+			<div id="breadcrumb">
+				<a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 企业用户管理</a>
+				<a href="#" class="current">企业用户编辑</a>
+			</div>
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="widget-box">
+							<div class="widget-title">
+								<span class="icon">
+									<i class="icon-align-justify"></i>									
+								</span>
+								<h5>企业用户详细</h5>
+							</div>
+							<div class="widget-content nopadding">
+							<form method="post" id="updateCompanyUserFrom" class="form-horizontal">
+								<div id="orgTranRuleUpdate_tab" data-options="border:false"
+									class="easyui-tabs">
+									<div title="基本信息" style="height: 100%;">
+										<table id="updateOrgTranRuleTable" cellpadding="8">
+											<!--主键-->
+											<input id="id" type="hidden" name="id" />
+											<tr>
+												<td>企业名称：</td>
+												<td><input class="easyui-textbox" id="updateName"
+													name="name" data-options="required:true," /></td>
+											</tr>
+											
+											<tr>
+											  <td>公司性质:</td>
+												<td>
+												 <select id="updateNature" name="nature">
+												        <option value="" selecetd="selected">请选择公司性质</option>
+														<option value="0">国有企业</option>
+														<option value="1">民营独资</option>
+														<option value="2">外企独资</option>
+														<option value="3">中外合资</option>
+														<option value="4">其他</option>
+													</select>
+												  </td>
+												  <td>行业:</td>
+												  <td>
+											        <select name="domain" id="compareUserDetailDomain" url="../myFrontBaseRearchFieldController/queryBasicResearchField">
+											        </select>
+												  </td>
+											</tr>
+											<tr>
+												<td>规模：</td>
+												<td>
+												 <select name="scale" id="updateScale">
+												        <option value="" selecetd="selected">&nbsp;&nbsp;&nbsp;请选择规模&nbsp;&nbsp;&nbsp;</option>
+														<option value="0">50人以下</option>
+														<option value="1">50-100人</option>
+														<option value="2">100-500人</option>
+														<option value="3">500-1000人</option>
+														<option value="4">1000-2000人</option>
+														<option value="5">2000-5000人</option>
+														<option value="6">5000人以上</option>
+													</select>
+												  </td>
+												
+												<td>产值：</td>
+												<td>
+												<select name="productValue" id="updateProductValue">
+												        <option value="" selecetd="selected">请选择产值</option>
+														<option value="0">0-100万</option>
+													    <option value="1">100-500万</option>
+													    <option value="2">500-1000万</option>
+													    <option value="3">1000-5000万</option>
+													    <option value="4">5000万以上</option>
+													</select>
+												</td>
+											</tr>
+											
+											<tr>
+											 <td>所在省市</td>
+											<td>
+											   <select id="updateProvince" name="province">
+														<option value="" selecetd="selected">请选择省份</option>
+														<option value="P">河北省</option>
+														<option value="O">山东省</option>
+												</select> 
+												<select id="updateCity" name="city">
+														<option value="" selecetd="selected">请选择市</option>
+														<option value="A">许昌市</option>
+														<option value="O">登封市</option>
+												</select> 
+												<select id="updateCounty" name="county">
+														<option value="" selecetd="selected">请选择县</option>
+														<option value="A">鄢陵县</option>
+														<option value="P">许昌县</option>
+												</select>
+												</td>
+											</tr>
+
+											<tr>
+											   <td>详细地址</td>
+												<td>
+												   <input class="easyui-textbox" id="updateAddress" name="address" data-options="width:180,required:true," />
+												</td>
+												<td>职务</td>
+												<td>
+												   <input class="easyui-textbox" id="updateContactTitle" name="contactTitle" data-options="width:180,required:true," />
+												</td>
+											</tr>
+											
+											<tr>
+											   <td>联系人</td>
+												<td>
+												   <input class="easyui-textbox" id="updateContactName" name="contactName" data-options="width:180,required:true," />
+												</td>
+												 <td>联系方式</td>
+												<td>
+												   <input class="easyui-textbox" id="updateContactTel" name="contactTel" data-options="width:180,required:true," />
+												</td>
+											</tr>
+											<tr>
+												<td>公司简介：</td>
+												<td><input class="easyui-textbox"
+													data-options="multiline:true" id="updateIntroduction" name="introduction" style="width: 300px; height: 100px"
+													data-options="width:180,required:true"></input></td>
+											</tr>
+										</table>
+									</div>
+								</div>
+								<div>
+									<button url="../myCompanyUser/update" id="updateButn" class="btn btn-primary">保存</button>
+								</div>
+							</form>
+						</div>
+						</div>						
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div id="footer" class="span12">
+						2012 - 2013 &copy; Unicorn Admin. Brought to you by <a href="#">diablo9983</a>
+					</div>
+				</div>
+			</div>
+		</div>
+            <script src="js/jquery.min.js"></script>
+            <script src="js/jquery-ui.custom.js"></script>
+            <script src="js/jquery.validate.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+            <script src="js/bootstrap-colorpicker.js"></script>
+            <script src="js/bootstrap-datepicker.js"></script>
+            <script src="js/jquery.uniform.js"></script>
+            <script src="js/select2.min.js"></script>
+            <script src="js/unicorn.js"></script>
+            <script src="js/jquery.gritter.min.js"></script>
+            <script src="js/jquery.peity.min.js"></script>
+            <script src="js/jquery.dataTables.min.js"></script>
+            <script src="js/unicorn.interface.js"></script>
+            <script src="js/unicorn.form_common.js"></script>
+            <script src="../resources/js/back/common/commonAction.js"></script>
+            <script src="../resources/js/back/companyuser/companyUserUpdate.js"></script>
+             <script src="../resources/js/back/common/common.js"></script>
+	</body>
+</html>

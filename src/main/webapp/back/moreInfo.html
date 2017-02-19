@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>详情</title>
+ <script src="js/jquery.min.js"></script>
+ <script src="js/jquery-ui.custom.js"></script>
+ 	<style>
+body,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6,table,tr,th,td,p,input,dl,dt,dd,ul,ol,li,input,textarea { font-family:"微软雅黑"!important;font-weight:bold;font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;}
+		</style>
+</head>
+<body>
+	<form>
+	     <div>
+	      <span>详细地址:</span> 
+		  <font color="blue" id="commonMoreInfo">
+		   
+		  </font>
+		  </div>
+	</form>
+	<script>
+	$(document).ready(function() {
+		var urlInfo=decodeURI(window.location.search);
+		var infoDetail=urlInfo.substring(urlInfo.indexOf("=")+1);
+		$("#commonMoreInfo").html(infoDetail);
+	});
+	
+　　</script>
+</body>
+</html>

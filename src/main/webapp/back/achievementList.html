@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Unicorn Admin</title>
+		<meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+        <link rel="stylesheet" href="css/jquery-ui.css" />
+        <link rel="stylesheet" href="css/jquery.gritter.css" />
+		<link rel="stylesheet" href="css/uniform.css" />
+		<link rel="stylesheet" href="css/select2.css" />		
+		<link rel="stylesheet" href="css/unicorn.main.css" />
+		<link rel="stylesheet" href="css/unicorn.grey.css" class="skin-color" />
+		<link rel="stylesheet" href="css/pagination.css" />
+		<input id="currentPage" type="hidden" value="1"></input>
+		<style>
+body,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6,table,tr,th,td,p,input,dl,dt,dd,ul,ol,li,input,textarea { font-family:"微软雅黑"!important;font-weight:bold;font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;word-break:keep-all;
+				white-space:nowrap;}
+		</style>
+	</head>
+	<body>	
+	    <div id="searchBasicResearchField" url="../basicResearchField/query"></div>
+	    <div id="downFile" url="../achievement/downFile"></div>
+
+		<div id="header">
+			<h1><a href="./dashboard.html">Unicorn Admin</a></h1>		
+		</div>
+		
+		<div id="search">
+			<input type="text" placeholder="Search here..."/><button type="submit" class="tip-right" title="Search"><i class="icon-search icon-white"></i></button>
+		</div>
+		<div id="user-nav" class="navbar navbar-inverse">
+            <ul class="nav btn-group">
+                <li class="btn btn-inverse" ><a title="" href="#"><i class="icon icon-user"></i> <span class="text">Profile</span></a></li>
+                <li class="btn btn-inverse"><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li>
+                <li class="btn btn-inverse"><a title="" href="../logout"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
+            </ul>
+        </div>
+            
+		<div id="sidebar">
+			<a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
+			<ul>
+				<li class="active"><a href="index.html"><i class="icon icon-home"></i> <span>首页</span></a></li>
+				<li><a href="userInfoList.html"><i class="icon icon-th"></i> <span>用户管理</span></a></li>
+				<li class="submenu">
+					<a href="#"><i class="icon icon-th-list"></i> <span>企业管理</span> <span class="label">4</span></a>
+					<ul>
+						<li><a href="companyUserInfoList.html">企业用户管理</a></li>
+						<li><a href="requirementInfoList.html">技术需求管理</a></li>
+						<li><a href="fundRequirementInfoList.html">资金需求管理</a></li>
+						<li><a href="techRequirementFollowerInfoList.html">寻求合作&收藏-技术需求</a></li>
+						<li><a href="fundRequirementFollowerInfoList.html">寻求合作&收藏-资金需求</a></li>
+					</ul>
+				</li>
+				<li class="submenu">
+					<a href="#"><i class="icon icon-th-list"></i> <span>高校/科研机构</span> <span class="label">5</span></a>
+					<ul>
+						<li><a href="researchUserList.html">科研团队用户管理</a></li>
+						<li><a href="researchGroupList.html">科研团队管理</a></li>
+						<li><a href="achievementList.html">技术成果管理</a></li>
+						<li><a href="researchGroupFollowerList.html">寻求合作&收藏-科研团队</a></li>
+						<li><a href="achievementFollowerList.html">寻求合作&收藏-技术成果</a></li>
+					</ul>
+				</li>
+				<li class="submenu">
+					<a href="#"><i class="icon icon-th-list"></i> <span>投资方管理</span> <span class="label">3</span></a>
+					<ul>
+					    <li><a href="investorUserList.html">投资机构管理</a></li>
+						<li><a href="investorFollowerList.html">寻求合作&收藏-投资机构</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		
+		<div id="style-switcher">
+			<i class="icon-arrow-left icon-white"></i>
+			<span>Style:</span>
+			<a href="#grey" style="background-color: #555555;border-color: #aaaaaa;"></a>
+            <a href="#light-blue" style="background-color: #8399b0;"></a>
+			<a href="#blue" style="background-color: #2D2F57;"></a>
+			<a href="#red" style="background-color: #673232;"></a>
+            <a href="#red-green" style="background-image: url('img/demo/red-green.png');background-repeat: no-repeat;"></a>
+		</div>
+		
+		<div id="content">
+			<div id="content-header">
+				<h1>科研管理-高校发布</h1>
+			</div>
+			<div id="breadcrumb">
+				<a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 后台管理</a>
+				<a href="#" class="current">科研管理-高校发布</a>
+			</div>
+			
+		<form id="companyUserListForm">
+			<div id="noselect-open-modal"></div>
+			<div align="center" id="noselect-modal-dialog" title="选择记录">
+				<font  style="font-size:12px";color="blue">请选择操作的记录！</font>
+			</div>
+
+			<div id="confirm-delete-open-dialog"></div>
+			<div align="center" id="confirmDeleteDialog" title="信息删除">
+				<p>确定要删除吗？</p>
+			</div>
+			
+			<div id="onlyoneselect-open-modal"></div>
+			<div align="center" id="onlyoneselect-modal-dialog" title="只能选一条记录">
+				<font  style="font-size:12px";color="blue">只能选择一条审核数据！</font>
+			</div>
+            <!-- 审核弹框start -->
+            <form id="companyUserReviewForm">
+            <div id="review-open-dialog"></div>
+            <div align="center" id="reviewDialog" title="审核信息">
+				<div>
+					<div title="基本信息" style="height: 100%;">
+						<table>
+							<tr>
+								<td colspan="3" align="center"><h4 align="center">确认审核该条记录</h4></td>
+							</tr>
+							<tr>
+								<td colspan="3">
+								<font size="3px" color="blue">审核状态:</font>
+								<input type="radio" name="reviewstatus" value="0" class="reviewStatus" id="reviewstatus0" style="width: 12px" />待审核 
+								<input type="radio" name="reviewstatus" value="1" class="reviewStatus"  id="reviewstatus1" style="width: 12px" />征集中 
+								<input type="radio" name="reviewstatus" value="2" class="reviewStatus" id="reviewstatus2" style="width: 12px" />洽谈中 
+								<input type="radio" name="reviewstatus" value="3" class="reviewStatus"  id="reviewstatus3" style="width: 12px" />合作中
+								<input type="radio" name="reviewstatus" value="4" class="reviewStatus" id="reviewstatus4" style="width: 12px" />已完成 
+								<input id="reviewStatusId" type="hidden" />
+								</td>
+							</tr>
+						   <tr>
+								<td colspan="3">
+								  <font size="3px" color="blue">沟通状态:</font>
+								 <input type="radio" name="reviewcommunicateStatus" id="reviewCommunicateStatus0"class="reviwCommunicateStatus" value="0" style="width: 12px" />待沟通
+								 <input type="radio" name="reviewcommunicateStatus" id="reviewCommunicateStatus1" class="reviwCommunicateStatus" value="1" style="width: 12px" />已初步沟通
+								 <input type="radio" name="reviewcommunicateStatus" id="reviewCommunicateStatus2" class="reviwCommunicateStatus" value="2" style="width: 12px" />有合作意向
+								 <input type="radio" name="reviewcommunicateStatus" id="reviewCommunicateStatus3" class="reviwCommunicateStatus" value="3" style="width: 12px" />一般
+								 <input type="radio" name="reviewcommunicateStatus" id="reviewCommunicateStatus4" class="reviwCommunicateStatus" value="4" style="width: 12px" />暂无合作意向
+								 <input id="reviewCommunicateStatusId" type="hidden" /></td>
+							</tr>
+							<tr>
+								<td>备注：</td>
+								<td>
+								<textarea id="reviewRemark" data-color="#000000" class="colorpicker" name="remark"style="width: 300px; height: 100px"></textarea>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+           </div>
+           </form>
+			<!-- 审核弹框end -->
+			<!-- 推荐start -->
+            <div id="recommend-open-dialog"></div>
+            <div align="center" id="recommendDialog" title="推荐信息">
+				<div>
+					<div title="基本信息" style="height: 100%;">
+						<table>
+							<tr>
+								<td colspan="3" align="center"><h4 align="center">推荐信息</h4></td>
+							</tr>
+							<tr>
+								<td colspan="3">
+								<font size="3px" color="blue">是否推荐:</font>
+								<input type="radio" name="recommendstatus" value="0" class="recommendStatus" id="recommendstatus0" style="width: 12px" />是 
+								<input type="radio" name="recommendstatus" value="1" class="recommendStatus"  id="recommendstatus1" style="width: 12px" />否 
+								<input id="recommendStatusId" type="hidden" />
+								</td>
+							</tr>
+							<tr>
+								<td>排序：</td>
+								<td>
+								<input id="recommendSeq" data-color="#000000" name="recommendSeq"></input>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+           </div>
+			<!-- 推荐弹框end -->
+			<div id="returnInfo-open-modal"></div>
+			<div align="center" id="returnInfo-modal-dialog" title="INFO">
+				<font  id="returnInfo" style="font-size:12px";color="blue"></font>
+			</div>
+			
+
+			<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span12">
+					<div class="widget-box">
+						<div class="widget-content">
+						
+						<div id="orgTranRuleUpdate_tab" data-options="border:false"
+									class="easyui-tabs">
+									<div title="查询" style="height: 100%;">
+										<table id="updateOrgTranRuleTable" cellpadding="8">
+											<tr>
+											   <td>科研团队名称</td>
+												<td>
+												<input id="groupName" name="groupName" type="text" style="width: 180px" value="" class="input-small"/>
+												联系人
+												 <input id="leaderName" name="leaderName" type="text" style="width: 180px"  value="" class="input-small"/>
+												</td>
+											</tr>
+											
+											<tr>
+											   <td>方案名称</td>
+												<td>
+												<input id="name" name="name" type="text" style="width: 180px" value="" class="input-small"/>
+												方案编号
+												 <input id="sequenceNumber" name="sequenceNumber" type="text" style="width: 180px"  value="" class="input-small"/>
+												备注
+												 <input id="remark" name="remark" type="text" style="width: 180px"  value="" class="input-small"/>
+												</td>
+											</tr>
+											
+											<tr>
+											 <td>科研成果领域</td>
+											 <td id="domainDiv">
+										       <input id="domainId" type="hidden" />
+									         </td>
+											</tr>
+											
+											<!-- <tr>
+											 <td>用户类型</td>
+											 <td>
+											 <input type="checkbox" name="type" value="0" class="type"  style="width: 12px" />高校
+											 <input type="checkbox" name="type" value="1" class="type"  style="width: 12px" />科研机构
+											 <input type="checkbox" name="type" value="2" class="type"  style="width: 12px" />其他
+											 <input id="typeId" type="hidden" />
+											 </td>
+											</tr> -->
+											
+											<tr>
+											 <td>投资额</td>
+											 <td>
+											 <input type="checkbox" name="amount" value="0" class="amount"  style="width: 12px" />100万以下
+											 <input type="checkbox" name="amount" value="1" class="amount"  style="width: 12px" />100-500万
+											 <input type="checkbox" name="amount" value="2" class="amount"  style="width: 12px" />500-1000万
+											 <input type="checkbox" name="amount" value="3" class="amount"  style="width: 12px" />1000万以上
+											 <input type="checkbox" name="amount" value="4" class="amount"  style="width: 12px" />面议
+											 <input id="amountId" type="hidden" />
+											 </td>
+											</tr>
+											<tr>
+											 <td>阶段</td>
+											 <td>
+											 <input type="checkbox" name="phase" value="0" class="phase"  style="width: 12px" />研发阶段
+											 <input type="checkbox" name="phase" value="1" class="phase"  style="width: 12px" />实验室阶段
+											 <input type="checkbox" name="phase" value="2" class="phase"  style="width: 12px" />概念阶段
+											 <input type="checkbox" name="phase" value="3" class="phase"  style="width: 12px" />小批量生产
+											 <input type="checkbox" name="phase" value="4" class="phase"  style="width: 12px" />规模化生产阶段
+											 <input type="checkbox" name="phase" value="5" class="phase"  style="width: 12px" />市场推广阶段
+											 <input id="phaseId" type="hidden" />
+											 </td>
+											</tr>
+											
+											<tr>
+											 <td>状态</td>
+											 <td>
+											 <input type="checkbox" name="status" value="0" class="status"  style="width: 12px" />待审核
+											 <input type="checkbox" name="status" value="1" class="status"  style="width: 12px" />征集中
+											 <input type="checkbox" name="status" value="2" class="status"  style="width: 12px" />洽谈中
+											 <input type="checkbox" name="status" value="3" class="status"  style="width: 12px" />合作中
+											 <input type="checkbox" name="status" value="4" class="status"  style="width: 12px" />已完成
+											 <input id="statusId" type="hidden" />
+											 </td>
+											</tr>
+											<tr>
+											 <td>沟通状态</td>
+											 <td>
+											 <input type="checkbox" name="communicateStatus" class="communicateStatus" value="0" id="cstMobile" style="width: 12px" />待沟通
+											 <input type="checkbox" name="communicateStatus" class="communicateStatus" value="1" id="cstMobile" style="width: 12px" />已初步沟通
+											 <input type="checkbox" name="communicateStatus" class="communicateStatus" value="2" id="cstMobile" style="width: 12px" />有合作意向
+											 <input type="checkbox" name="communicateStatus" class="communicateStatus" value="3" id="cstMobile" style="width: 12px" />一般
+											 <input type="checkbox" name="communicateStatus" class="communicateStatus" value="4" id="cstMobile" style="width: 12px" />暂无合作意向
+											 <input id="communicateStatusId" type="hidden" />
+											 </td>
+											</tr>
+										</table>
+									</div>
+								</div>
+		    <a id="searchBtn" url="../achievement/query" class="btn btn-info btn-mini">查询</a>
+			<a href="javascript:void(0)" url="../achievement/delete" id="removeBtn" class="btn btn-danger btn-mini"><i class="icon-remove icon-white"></i>删除</a>
+			<a href="javascript:void(0)" url="../achievement/approve" id="reviewBtn"   class="btn btn-success btn-mini">审核</a>
+			<a href="javascript:void(0)" id="recommendBtn"  url="../achievement/recommend"  class="btn btn-primary btn-mini"><i class="icon-pencil icon-white"></i>推荐</a>
+			<!-- <a href="javascript:void(0)" id="updateBtn"   class="btn btn-primary btn-mini"><i class="icon-pencil icon-white"></i>编辑</a> -->
+						</div>
+					</div>
+				</div>
+			</div>
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="widget-box">
+							<div class="widget-title">
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+								<h5>科研管理列表</h5>
+							</div>
+							<div class="widget-content nopadding" style="overflow:scroll;">
+								<table class="table table-bordered table-striped table-hover data-table">
+									<thead>
+									<tr>
+									<th class="checkAll"><input type="checkbox" id="selectAll" />全选</th>
+									<th>科研团队名称</th>
+									<th>查看logo</th>
+									<th>名称</th>
+									<th>领域</th>
+									<th>成果形式</th>
+									<th>专利情况</th>
+									<th>专利权人</th>
+									<th>投资额</th>
+									<th>方案简述</th>
+									<th>阶段</th>
+									<th>适用对象</th>
+									<th>预期效果</th>
+									<th>成果转化案例数</th>
+									<th>案例详述</th>
+									<th>合作方式</th>
+									<th>附件下载</th>
+									<th>科研成果编号</th>
+									<th>状态</th>
+									<th>沟通状态</th>
+									<th>备注</th>
+									<th>关注数量</th>
+									<th>浏览数量</th>
+									</tr>
+									</thead>
+									<tbody id="achievementQueryTBody">
+									</tbody>
+								 </table>  
+							</div>
+							<div id="noResult" class="red"></div>
+						</div>
+						<div align="center" id="pagination">
+						</div>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div id="footer" class="span12">
+						2012 - 2013 &copy; Unicorn Admin. Brought to you by <a href="#">diablo9983</a>
+					</div>
+				</div>
+			</div>
+	   </form>
+	 </div>
+            <!-- <script src="js/jquery.min.js"></script>
+            <script src="js/jquery-ui.custom.js"></script>
+            <script src="js/jquery.validate.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+            <script src="js/bootstrap-colorpicker.js"></script>
+            <script src="js/bootstrap-datepicker.js"></script>
+            <script src="js/jquery.uniform.js"></script>
+            <script src="js/select2.min.js"></script>
+            <script src="js/unicorn.js"></script>
+            <script src="js/jquery.gritter.min.js"></script>
+            <script src="js/jquery.peity.min.js"></script>
+            <script src="js/jquery.dataTables.min.js"></script>
+            <script src="js/unicorn.interface.js"></script>
+            <script src="js/unicorn.form_common.js"></script> -->
+            
+            <script src="js/jquery.min.js"></script>
+            <script src="js/jquery-ui.custom.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+            <script src="js/jquery.uniform.js"></script>
+             <script src="js/jquery.gritter.min.js"></script>
+            <script src="js/jquery.peity.min.js"></script>
+            <script src="js/select2.min.js"></script>
+            <script src="js/jquery.dataTables.min.js"></script>
+            <script src="js/unicorn.js"></script>
+            <script src="js/unicorn.interface.js"></script>
+            <script src="../resources/js/back/common/commonAction.js"></script>
+            <script src="../resources/js/back/achievement/achievementList.js"></script>
+            <script src="../resources/js/back/common/common.js"></script>
+	</body>
+</html>
+<script>
+   //查询条件
+	$('.status').change(function(){
+		$('#statusId').val($('.status:checked').map(function(){return this.value}).get().join(','))
+	})
+	$('.communicateStatus').change(function(){
+		$('#communicateStatusId').val($('.communicateStatus:checked').map(function(){return this.value}).get().join(','))
+	})
+	$('.type').change(function(){
+		$('#typeId').val($('.type:checked').map(function(){return this.value}).get().join(','))
+	})
+	$('.amount').change(function(){
+		$('#amountId').val($('.amount:checked').map(function(){return this.value}).get().join(','))
+	})
+	$('.phase').change(function(){
+		$('#phaseId').val($('.phase:checked').map(function(){return this.value}).get().join(','))
+    })
+	//审核
+	$('.reviwCommunicateStatus').change(function(){
+		$('#reviewCommunicateStatusId').val($('.reviwCommunicateStatus:checked').map(function(){return this.value}).get().join(','))
+	})
+		
+	$('.reviewStatus').change(function(){
+		$('#reviewStatusId').val($('.reviewStatus:checked').map(function(){return this.value}).get().join(','))
+	})
+</script>

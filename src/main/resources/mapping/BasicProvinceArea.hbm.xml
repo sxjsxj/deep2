@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-12-8 15:41:26 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.deep.two.orm.BasicProvinceArea" table="basic_province_area" catalog="alibaba">
+        <id name="id" type="string">
+            <column name="id" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="province" type="string">
+            <column name="province" length="45" />
+        </property>
+        <property name="area" type="string">
+            <column name="area" length="45" />
+        </property>
+        <property name="hot" type="string">
+            <column name="hot" length="3" />
+        </property>
+        <property name="order" type="java.lang.Integer">
+            <column name="order" />
+        </property>
+        <property name="whenCreate" type="date">
+            <column name="when_create" length="10" />
+        </property>
+        <property name="whoCreate" type="string">
+            <column name="who_create" length="30" />
+        </property>
+        <property name="whenLastUpdate" type="date">
+            <column name="when_last_update" length="10" />
+        </property>
+        <property name="whoLastUpdate" type="string">
+            <column name="who_last_update" length="30" />
+        </property>
+    </class>
+</hibernate-mapping>

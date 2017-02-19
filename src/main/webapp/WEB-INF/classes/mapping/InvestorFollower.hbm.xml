@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-12-8 15:41:26 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.deep.two.orm.InvestorFollower" table="investor_follower" catalog="alibaba">
+        <composite-id name="id" class="com.deep.two.orm.InvestorFollowerId">
+            <key-property name="userId" type="string">
+                <column name="user_id" length="50" />
+            </key-property>
+            <key-property name="investorId" type="string">
+                <column name="investor_id" length="50" />
+            </key-property>
+            <key-property name="relationType" type="string">
+                <column name="relation_type" length="3" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="user" class="com.deep.two.orm.User" update="false" insert="false" fetch="join">
+            <column name="user_id" length="50" not-null="true" />
+        </many-to-one>
+        <many-to-one name="investorUser" class="com.deep.two.orm.InvestorUser" update="false" insert="false" fetch="join">
+            <column name="investor_id" length="50" not-null="true" />
+        </many-to-one>
+        <property name="followerType" type="string">
+            <column name="follower_type" length="3" />
+        </property>
+        <property name="content" type="string">
+            <column name="content" length="4000" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="30" />
+        </property>
+        <property name="communicateStatus" type="string">
+            <column name="communicate_status" length="3" />
+        </property>
+        <property name="remark" type="string">
+            <column name="remark" length="4000" />
+        </property>
+        <property name="whenCreate" type="date">
+            <column name="when_create" length="10" />
+        </property>
+        <property name="whoCreate" type="string">
+            <column name="who_create" length="30" />
+        </property>
+        <property name="whenLastUpdate" type="date">
+            <column name="when_last_update" length="10" />
+        </property>
+        <property name="whoLastUpdate" type="string">
+            <column name="who_last_update" length="30" />
+        </property>
+        <property name="removeFlag" type="string">
+            <column name="remove_Flag" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

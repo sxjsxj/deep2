@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-12-8 15:41:26 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.deep.two.orm.ResearchUser" table="research_user" catalog="alibaba">
+        <id name="id" type="string">
+            <column name="id" length="50" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="user" class="com.deep.two.orm.User" fetch="join" lazy="false">
+            <column name="user_id" length="50" not-null="true" unique="true" />
+        </many-to-one>
+        <property name="type" type="string">
+            <column name="type" length="3" />
+        </property>
+        <property name="uniName" type="string">
+            <column name="uni_name" length="100" />
+        </property>
+        <property name="uniDepartment" type="string">
+            <column name="uni_department" length="45" />
+        </property>
+        <property name="uniProvince" type="string">
+            <column name="uni_province" length="45" />
+        </property>
+        <property name="uniCity" type="string">
+            <column name="uni_city" length="45" />
+        </property>
+        <property name="uniLevel" type="string">
+            <column name="uni_level" length="50" />
+        </property>
+        <property name="uniNature" type="string">
+            <column name="uni_nature" length="20" />
+        </property>
+        <property name="uniProject211" type="java.lang.Integer">
+            <column name="uni_project211" />
+        </property>
+        <property name="uniProject985" type="java.lang.Integer">
+            <column name="uni_project985" />
+        </property>
+        <property name="uniNationalPriority" type="java.lang.Integer">
+            <column name="uni_national_priority" />
+        </property>
+        <property name="orgName" type="string">
+            <column name="org_name" length="45" />
+        </property>
+        <property name="orgProvince" type="string">
+            <column name="org_province" length="45" />
+        </property>
+        <property name="orgCity" type="string">
+            <column name="org_city" length="45" />
+        </property>
+        <property name="orgCounty" type="string">
+            <column name="org_county" length="45" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="200" />
+        </property>
+        <property name="introduction" type="string">
+            <column name="introduction" length="4000" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="30" />
+        </property>
+        <property name="communicateStatus" type="string">
+            <column name="communicate_status" length="30" />
+        </property>
+        <property name="whenCreate" type="date">
+            <column name="when_create" length="10" />
+        </property>
+        <property name="whoCreate" type="string">
+            <column name="who_create" length="30" />
+        </property>
+        <property name="whenLastUpdate" type="date">
+            <column name="when_last_update" length="10" />
+        </property>
+        <property name="whoLastUpdate" type="string">
+            <column name="who_last_update" length="30" />
+        </property>
+        <property name="removeFlag" type="string">
+            <column name="remove_Flag" length="10" />
+        </property>
+        <set name="researchGroups" table="research_group" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user_id" length="50" not-null="true" />
+            </key>
+            <one-to-many class="com.deep.two.orm.ResearchGroup" />
+        </set>
+    </class>
+</hibernate-mapping>

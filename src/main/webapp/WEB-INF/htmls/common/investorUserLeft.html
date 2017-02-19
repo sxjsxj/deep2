@@ -1,0 +1,76 @@
+<link type="text/css" rel="stylesheet" href="../../../resources/css/front/style.css"/>
+<link type="text/css" rel="stylesheet" href="../../../resources/css/front/alert.css"/>
+<script type="text/javascript" src="../../../resources/js/front/jquery/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../../../resources/js/front/jquery/jquery.validate.js"></script>
+<script type="text/javascript" src="../../../resources/js/front/jquery/jquery.serializeJSON.js"></script>
+<script type="text/javascript" src="../../../resources/js/front/jquery/ajaxfileupload.js"></script>
+<script type="text/javascript" src="../../../resources/js/front/common/common.js"></script>
+<script type="text/javascript" src="../../../resources/js/front/common/header.js"></script>
+<script type="text/javascript" src="../../../resources/js/front/common/commonQuery.js"></script>
+<script type="text/javascript" src="../../../resources/js/front/common/commonInit.js"></script>
+<script type="text/javascript" src="../../../resources/js/front/common/cooperateCollectCommon.js"></script>
+<script type="text/javascript" src="../../../resources/js/front/common/cooperateCollectDetailCommon.js"></script>
+<script type="text/javascript" src="../../../resources/js/front/common/myRecommendCommon.js"></script>
+<script type="text/javascript" src="../../../resources/js/front/common/commonActionControl.js"></script><!--<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<title>公共头部</title>
+<!--<% request.setCharacterEncoding("UTF-8");%>-->
+<!--<% response.setCharacterEncoding("UTF-8");%>-->
+<script type="text/javascript" src="../../../resources/js/front/common/common.js"></script>
+<script type="text/javascript" src="../../../resources/js/front/common/header.js"></script>
+<script type="text/javascript" src="../../../resources/js/front/common/investorUserCommon.js"></script>
+</head>
+<body>
+<div class="cons info" style="margin-top:10px;margin-bottom:0px;">
+	<div class="width1200" >
+		<div class='fl left'>
+				<ul id="leftBtns">
+					<li  id="investorMyRecommend">
+					   <a href="../../../investorUser/getMyRecommendBrowsePage">
+						<img id="myrecommendImg"  src='../../../resources/images/front/img/my_tuijian.png'/>
+						<div class='txt'>我的推荐</div>
+						</a>
+					</li>
+					<li id="investorMyRecommendAchievement">
+					     <a href="../../../investorUser/getMyCollectionAchievementBrowsePage">
+						<img id="myCollectionAchievementImg" style="width:64px;height:56px;" src='../../../resources/images/front/img/my_chengguo.png'/>
+						<div class='txt'>我收藏的科研成果</div>
+						</a>
+					</li>
+					<li id="investorMyRecommendFundRequire">
+					    <a href="../../../investorUser/getMyCollectionFundRequirementBrowsePage">
+						<img id="myCompanyInfoImg" style="width:64px;height:56px;" src='../../../resources/images/front/img/my_project.png'/>
+						<div class='txt'>我收藏的企业项目</div>
+						</a>
+					</li>
+					<li id="investorMyRecommendResearchGroup">
+					   <a href="../../../investorUser/getMyCollectionResearchGroupBrowsePage">
+						<img id="myCollectionResearchGroupImg" style="width:64px;height:56px;" src='../../../resources/images/front/img/my_tuandui.png'/>
+						<div class='txt'>我收藏的科研团队</div>
+						</a>
+					</li>
+					<li id="researchGroupMyCollectionInvestor">
+						<input id="orgUrl" type="hidden" value="../../../investorUser/getOrganizationUserDetailPageForAdd" />
+						<input id="perUrl" type="hidden" value="../../../investorUser/getPersonalUserDetailPageForAdd" />
+					  	<a id="myInvestorInfo_a" href="">
+							<img id="myCollectionInvestorImg" style="width:64px;height:56px;" src='../../../resources/images/front/img/my_shouzhifang.png'/>
+							<div class='txt'>我的投资意向</div>
+						</a>
+					</li>
+					<li id="investorUpdateMyPassword">
+					   <a href="../../../investorUser/getChangePasswordPage">
+						<img  id="updateMyPasswordImg" src='../../../resources/images/front/img/my_change.png'/>
+						<div class='txt'>修改账号信息</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>

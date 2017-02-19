@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-12-8 15:41:26 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.deep.two.orm.BasicUniversity" table="basic_university" catalog="alibaba">
+        <id name="id" type="string">
+            <column name="id" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="100" />
+        </property>
+        <property name="department" type="string">
+            <column name="department" length="45" />
+        </property>
+        <property name="province" type="string">
+            <column name="province" length="45" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="45" />
+        </property>
+        <property name="level" type="string">
+            <column name="level" length="50" />
+        </property>
+        <property name="nature" type="string">
+            <column name="nature" length="20" />
+        </property>
+        <property name="project211" type="java.lang.Integer">
+            <column name="project211" />
+        </property>
+        <property name="project985" type="java.lang.Integer">
+            <column name="project985" />
+        </property>
+        <property name="nationalPriority" type="java.lang.Integer">
+            <column name="national_priority" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="200" />
+        </property>
+        <property name="introduction" type="string">
+            <column name="introduction" length="4000" />
+        </property>
+        <property name="whenCreate" type="date">
+            <column name="when_create" length="10" />
+        </property>
+        <property name="whoCreate" type="string">
+            <column name="who_create" length="30" />
+        </property>
+        <property name="whenLastUpdate" type="date">
+            <column name="when_last_update" length="10" />
+        </property>
+        <property name="whoLastUpdate" type="string">
+            <column name="who_last_update" length="30" />
+        </property>
+    </class>
+</hibernate-mapping>

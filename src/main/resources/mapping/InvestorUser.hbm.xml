@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-12-8 15:41:26 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.deep.two.orm.InvestorUser" table="investor_user" catalog="alibaba">
+        <id name="id" type="string">
+            <column name="id" length="50" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="user" class="com.deep.two.orm.User" fetch="join" lazy="false">
+            <column name="user_id" length="50" not-null="true" />
+        </many-to-one>
+        <property name="type" type="string">
+            <column name="type" length="30" />
+        </property>
+        <property name="logoUrl" type="string">
+            <column name="logo_url" length="500" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="100" />
+        </property>
+        <property name="province" type="string">
+            <column name="province" length="45" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="45" />
+        </property>
+        <property name="county" type="string">
+            <column name="county" length="45" />
+        </property>
+        <property name="scale" type="java.lang.Integer">
+            <column name="scale" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="200" />
+        </property>
+        <property name="introduction" type="string">
+            <column name="introduction" length="4000" />
+        </property>
+        <property name="contactName" type="string">
+            <column name="contact_name" length="10" />
+        </property>
+        <property name="contactTel" type="string">
+            <column name="contact_tel" length="20" />
+        </property>
+        <property name="contactEmail" type="string">
+            <column name="contact_email" length="50" />
+        </property>
+        <property name="contactTitle" type="string">
+            <column name="contact_title" length="40" />
+        </property>
+        <property name="investDomain" type="string">
+            <column name="invest_domain" length="200" />
+        </property>
+        <property name="investAmount" type="string">
+            <column name="invest_amount" length="10" />
+        </property>
+        <property name="investPhase" type="string">
+            <column name="invest_phase" length="30" />
+        </property>
+        <property name="investArea" type="string">
+            <column name="invest_area" length="500" />
+        </property>
+        <property name="investType" type="string">
+            <column name="invest_type" length="30" />
+        </property>
+        <property name="investExperience" type="string">
+            <column name="invest_experience" length="4000" />
+        </property>
+        <property name="investOutline" type="string">
+            <column name="invest_outline" length="4000" />
+        </property>
+        <property name="fundType" type="string">
+            <column name="fund_type" length="30" />
+        </property>
+        <property name="attachUrl" type="string">
+            <column name="attach_url" length="5000" />
+        </property>
+        <property name="recommendFlag" type="string">
+            <column name="recommendFlag" length="10" />
+        </property>
+        <property name="seqNum" type="string">
+            <column name="seqNum" length="10" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="30" />
+        </property>
+        <property name="communicateStatus" type="string">
+            <column name="communicate_status" length="30" />
+        </property>
+        <property name="whenCreate" type="date">
+            <column name="when_create" length="10" />
+        </property>
+        <property name="whoCreate" type="string">
+            <column name="who_create" length="30" />
+        </property>
+        <property name="whenLastUpdate" type="date">
+            <column name="when_last_update" length="10" />
+        </property>
+        <property name="whoLastUpdate" type="string">
+            <column name="who_last_update" length="30" />
+        </property>
+        <property name="removeFlag" type="string">
+            <column name="remove_Flag" length="10" />
+        </property>
+        <set name="investorFollowers" table="investor_follower" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="investor_id" length="50" not-null="true" />
+            </key>
+            <one-to-many class="com.deep.two.orm.InvestorFollower" />
+        </set>
+    </class>
+</hibernate-mapping>

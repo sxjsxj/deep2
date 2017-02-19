@@ -1,0 +1,13 @@
+<!DOCTYPE jboss-web PUBLIC "-//JBoss//DTD Web Application 5.0//EN"  
+"http://www.jboss.org/j2ee/dtd/jboss-web_5_0.dtd">
+<jboss-web>
+	<!-- 用来配置JBoss的class loader，避免class加载冲突  -->
+	<class-loading java2ClassLoadingCompliance='true'>
+		<loader-repository>
+			com.example:archive=unique-archive-name
+			<loader-repository-config>
+				java2ParentDelegaton=true  
+           </loader-repository-config>
+		</loader-repository>
+	</class-loading>
+</jboss-web>  

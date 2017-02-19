@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-12-8 15:41:26 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.deep.two.orm.Resource" table="resource" catalog="alibaba">
+        <id name="id" type="string">
+            <column name="id" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="resourceName" type="string">
+            <column name="resource_name" length="45" />
+        </property>
+        <property name="resourceDesc" type="string">
+            <column name="resource_desc" length="200" />
+        </property>
+        <property name="resourceType" type="string">
+            <column name="resource_type" length="30" />
+        </property>
+        <property name="resourceStr" type="string">
+            <column name="resource_str" length="500" />
+        </property>
+        <set name="roleResources" table="role_resource" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="resource_id" length="50" not-null="true" />
+            </key>
+            <one-to-many class="com.deep.two.orm.RoleResource" />
+        </set>
+    </class>
+</hibernate-mapping>

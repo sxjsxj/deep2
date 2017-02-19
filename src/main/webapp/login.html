@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+        <title>三圣信息管理系统V1.0</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="back/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="back/css/bootstrap-responsive.min.css" />
+        <link rel="stylesheet" href="back/css/unicorn.login.css" />
+        <script src="back/js/jquery.min.js"></script>  
+        <script src="back/js/unicorn.login.js"></script> 
+        <script type="text/javascript" src="resources/js/back/login/login.js"></script>
+    </head>
+    <body>
+        <div id="logo">
+            <img src="back/img/logo.png" alt="" />
+        </div>
+        <div id="loginbox">            
+            <form id="loginform" class="form-vertical">
+				<p>Enter username and password to continue.</p>
+                <div class="control-group">
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-user"></i></span><input type="text" name="username" id="username" placeholder="用户名" />
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-lock"></i></span><input type="password" name="password" id="password" placeholder="密码" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <span class="pull-left"><a href="#" class="flip-link" id="to-recover">忘记密码?</a></span>
+                    <span class="pull-right">
+                    <a href="javascript:void(0)" class="btn btn-inverse" data-options="iconCls:'icon-ok'" onclick="doLogin()">登录</a>
+                    </span>
+                </div>
+            </form>
+            <form id="recoverform" action="#" class="form-vertical">
+				<p>Enter your e-mail address below and we will send you instructions how to recover a password.</p>
+				<div class="control-group">
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-envelope"></i></span><input type="text" name="email" id="email" placeholder="请输入您的邮箱" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <span class="pull-left"><a href="#" class="flip-link" id="to-login">&lt; 返回登陆界面</a></span>
+                    <span class="pull-right">
+                    <a href="javascript:void(0)" class="btn btn-inverse" data-options="iconCls:'icon-ok'" onclick="send()">发送邮件</a>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-12-8 15:41:26 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.deep.two.orm.User" table="user" catalog="alibaba">
+        <id name="id" type="string">
+            <column name="id" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="username" type="string">
+            <column name="username" length="45" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="45" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="45" />
+        </property>
+        <property name="telno" type="string">
+            <column name="telno" length="45" />
+        </property>
+        <property name="userType" type="string">
+            <column name="user_type" length="30" />
+        </property>
+        <property name="whenCreate" type="date">
+            <column name="when_create" length="10" />
+        </property>
+        <property name="whenLastUpdate" type="date">
+            <column name="when_last_update" length="10" />
+        </property>
+        <property name="whenLastLogin" type="date">
+            <column name="when_last_login" length="10" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="30" />
+        </property>
+        <property name="communicateStatus" type="string">
+            <column name="communicate_status" length="30" />
+        </property>
+        <property name="remark" type="string">
+            <column name="remark" length="4000" />
+        </property>
+        <property name="whoCreate" type="string">
+            <column name="who_create" length="30" />
+        </property>
+        <property name="whoLastUpdate" type="string">
+            <column name="who_last_update" length="30" />
+        </property>
+        <property name="removeFlag" type="string">
+            <column name="remove_Flag" length="10" />
+        </property>
+        <set name="achievementFollowers" table="achievement_follower" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user_id" length="50" not-null="true" />
+            </key>
+            <one-to-many class="com.deep.two.orm.AchievementFollower" />
+        </set>
+        <set name="companyUsers" table="company_user" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user_id" length="50" not-null="true" unique="true" />
+            </key>
+            <one-to-many class="com.deep.two.orm.CompanyUser" />
+        </set>
+        <set name="techRequirementFollowers" table="tech_requirement_follower" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user_id" length="50" not-null="true" />
+            </key>
+            <one-to-many class="com.deep.two.orm.TechRequirementFollower" />
+        </set>
+        <set name="fundRequirementFollowers" table="fund_requirement_follower" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user_id" length="50" not-null="true" />
+            </key>
+            <one-to-many class="com.deep.two.orm.FundRequirementFollower" />
+        </set>
+        <set name="researchUsers" table="research_user" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user_id" length="50" not-null="true" unique="true" />
+            </key>
+            <one-to-many class="com.deep.two.orm.ResearchUser" />
+        </set>
+        <set name="researchGroupFollowers" table="research_group_follower" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user_id" length="50" not-null="true" />
+            </key>
+            <one-to-many class="com.deep.two.orm.ResearchGroupFollower" />
+        </set>
+        <set name="userRoles" table="user_role" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user_id" length="50" not-null="true" />
+            </key>
+            <one-to-many class="com.deep.two.orm.UserRole" />
+        </set>
+        <set name="investorUsers" table="investor_user" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user_id" length="50" not-null="true" />
+            </key>
+            <one-to-many class="com.deep.two.orm.InvestorUser" />
+        </set>
+        <set name="investorFollowers" table="investor_follower" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user_id" length="50" not-null="true" />
+            </key>
+            <one-to-many class="com.deep.two.orm.InvestorFollower" />
+        </set>
+    </class>
+</hibernate-mapping>

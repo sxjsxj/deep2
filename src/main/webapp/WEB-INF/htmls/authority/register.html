@@ -1,0 +1,126 @@
+<link type="text/css" rel="stylesheet" href="../../../resources/css/front/style.css"/>
+<link type="text/css" rel="stylesheet" href="../../../resources/css/front/alert.css"/>
+<script type="text/javascript" src="../../../resources/js/front/jquery/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../../../resources/js/front/jquery/jquery.validate.js"></script>
+<script type="text/javascript" src="../../../resources/js/front/jquery/jquery.serializeJSON.js"></script>
+<script type="text/javascript" src="../../../resources/js/front/jquery/ajaxfileupload.js"></script>
+<script type="text/javascript" src="../../../resources/js/front/common/common.js"></script>
+<script type="text/javascript" src="../../../resources/js/front/common/header.js"></script>
+<script type="text/javascript" src="../../../resources/js/front/common/commonQuery.js"></script>
+<script type="text/javascript" src="../../../resources/js/front/common/commonInit.js"></script>
+<script type="text/javascript" src="../../../resources/js/front/common/cooperateCollectCommon.js"></script>
+<script type="text/javascript" src="../../../resources/js/front/common/cooperateCollectDetailCommon.js"></script>
+<script type="text/javascript" src="../../../resources/js/front/common/myRecommendCommon.js"></script>
+<script type="text/javascript" src="../../../resources/js/front/common/commonActionControl.js"></script><!--<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<title>联科-选择身份</title>
+<!--<% request.setCharacterEncoding("UTF-8");%>-->
+<!--<% response.setCharacterEncoding("UTF-8");%>-->
+<link rel="shortcut icon" type="image/x-icon" href="../../../resources/images/front/img/homepage.png" media="screen" />
+<link type="text/css" rel="stylesheet" href="../../../resources/css/front/style.css"/>
+<script type="text/javascript" src="../../../resources/js/front/jquery/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../../../resources/js/front/common/common.js"></script>
+<script type="text/javascript" src="../../../resources/js/front/authority/regchoose.js"></script>
+</head>
+<body>
+	<div class='regchoose'>
+		<div class='width1200'>
+			<div class='topLogo'>
+			<a href="../../../security/homepage">
+			<img style="width:200px;height:40px;" src='../../../resources/images/front/img/logo.png'/>
+			</a>
+			</div>
+			<div class='topTxt' style="font-size:22px;margin-top:-25px;">请选择您的身份进行注册</div>
+			<ul style="margin-top:10px;">
+				<li>
+					<div class='topimg'  id="company" url="../../../security/companyUserRegister">
+						<img src='../../../resources/images/front/img/reg1.png' style='margin-top:33px' class='img1'/>
+						<img src='../../../resources/images/front/img/reg5.png' style='margin-top:49px' class='hide img2'/>
+					</div>
+					<div class='bottomf'>我是企业</div>
+					<div class='bottomt'>我有技术难题寻求合作</div>
+					<div class='bottomt'>我有项目成果寻求资金</div>
+				</li>
+				<li>
+					<div class='topimg' id="researchGroup" url="../../../security/researchUserRegister">
+						<img src='../../../resources/images/front/img/reg4.png' style='margin-top:35px;margin-left:-3px' class='img1'/>
+						<img src='../../../resources/images/front/img/reg2.png' class='hide img2'/>
+					</div>
+					<div class='bottomf'>我是科研团队</div>
+					<div class='bottomt'>我有科研成果寻求转让</div>
+					<div class='bottomt'>我有在研课题寻求合作</div>
+				</li>
+				<li>
+					<div class='topimg' url="../../../security/investorUserRegister" id="investor">
+						<img src='../../../resources/images/front/img/reg3.png' class='img1'/>
+						<img src='../../../resources/images/front/img/reg6.png' style='margin-top:65px' class='hide img2'/>
+					</div>
+					<div class='bottomf'>我是投资方</div>
+					<div class='bottomt'>我有资金</div>
+					<div class='bottomt'>寻求合作</div>
+				</li>
+			</ul>
+			<div style="margin-top:20px;" class='logis'><a href='../../../security/loginPage'>已有帐号，去登录>></a></div>
+			<div  style="margin-top:-10px;" class='ques'>
+				<div class='ts'>如有任何疑问，请您拨打：</div>
+				<div class='tss'>010-57207996</div>
+			</div>
+		</div>
+	</div>
+	<iframe src="../../pages/common/footer.html" width="100%" border="0" frameborder="0" scrolling="no"></iframe>
+	<!--<%-- <div class='footer'>
+		<div class='width1200'>
+			<ul>
+				<li style="font-size:16px;" class='titles'>关于我们</li>
+				<li>
+					<div><a style="font-size:13px; color:#ffffff;"  href=''>公司介绍</a></div>
+					<div><a style="font-size:13px; color:#ffffff;" href=''>联系我们</a></div>
+					<div><a style="font-size:13px; color:#ffffff;" href=''>加入我们</a></div>
+					<div><a style="font-size:13px; color:#ffffff;" href=''>友情链接</a></div>
+				</li>
+			</ul>
+			<ul>
+				<li style="font-size:16px;" class='titles'>产品功能</li>
+				<li>
+					<div><a style="font-size:13px; color:#ffffff;" href=''>注册</a></div>
+					<div><a style="font-size:13px; color:#ffffff;" href=''>需求解决</a></div>
+					<div><a style="font-size:13px; color:#ffffff;" href=''>资源搜索</a></div>
+					<div><a style="font-size:13px; color:#ffffff;" href=''>项目对接</a></div>
+				</li>
+			</ul>
+			<!-- <ul>
+				<li style="font-size:16px;" class='titles'>常见问题</li>
+				<li>
+					<div><a style="font-size:13px; color:#ffffff;" href=''>关于平台</a></div>
+					<div><a style="font-size:13px; color:#ffffff;" href=''>关于用户</a></div>
+				</li>
+			</ul> -->
+			<div class='fl'>
+				<div class='logo'>LOGO</div>
+				<div class='txt' style="font-size:12px;">联系电话：010-57207996</div>
+				<div class='txt' style="font-size:12px;">电子邮箱：linkcc_service@yeah.net</div>
+			</div>
+			<div class='fr'>
+				<div class='fl code'><img src='../../../resources/images/front/img/code.png'/></div>
+				<div class='fl code'><img src='../../../resources/images/front/img/code.png'/></div>
+				<div class='fl code'></div>
+				<div class='fl code'></div>
+				<div class='clear'></div>
+			</div>
+			<div class='clear'></div>
+		</div>
+		<div style="margin-top:20px;font-size:12px; color:#ffffff;text-align:center" ><a href="http://www.miitbeian.gov.cn/">京ICP备16046710号</a>   © 2016-2017 Linkcc.cn，All rights reserved.</div>
+	</div> --%>-->
+</body>
+<script type="text/javascript">
+	$(function(){
+		
+	})
+</script>
+</html>

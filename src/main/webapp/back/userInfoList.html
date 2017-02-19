@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Unicorn Admin</title>
+		<meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+        <link rel="stylesheet" href="css/jquery-ui.css" />
+        <link rel="stylesheet" href="css/jquery.gritter.css" />
+		<link rel="stylesheet" href="css/uniform.css" />
+		<link rel="stylesheet" href="css/select2.css" />		
+		<link rel="stylesheet" href="css/unicorn.main.css" />
+		<link rel="stylesheet" href="css/unicorn.grey.css" class="skin-color" />
+		<link rel="stylesheet" href="css/pagination.css" />
+		<input id="currentPage" type="hidden" value="1"></input>
+			<style>
+body,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6,table,tr,th,td,p,input,dl,dt,dd,ul,ol,li,input,textarea { font-family:"微软雅黑"!important;font-weight:bold;font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;word-break:keep-all;
+				white-space:nowrap;}
+		</style>
+	</head>
+	<body>	
+		<div id="header">
+			<h1><a href="./dashboard.html">Unicorn Admin</a></h1>		
+		</div>
+		
+		<div id="search">
+			<input type="text" placeholder="Search here..."/><button type="submit" class="tip-right" title="Search"><i class="icon-search icon-white"></i></button>
+		</div>
+		<div id="user-nav" class="navbar navbar-inverse">
+            <ul class="nav btn-group">
+                <li class="btn btn-inverse" ><a title="" href="#"><i class="icon icon-user"></i> <span class="text">Profile</span></a></li>
+                <li class="btn btn-inverse"><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li>
+                <li class="btn btn-inverse"><a title="" href="../logout"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
+            </ul>
+        </div>
+            
+		<div id="sidebar">
+			<a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
+			<ul>
+				<li class="active"><a href="index.html"><i class="icon icon-home"></i> <span>首页</span></a></li>
+				<li><a href="userInfoList.html"><i class="icon icon-th"></i> <span>用户管理</span></a></li>
+				<li class="submenu">
+					<a href="#"><i class="icon icon-th-list"></i> <span>企业管理</span> <span class="label">4</span></a>
+					<ul>
+						<li><a href="companyUserInfoList.html">企业用户管理</a></li>
+						<li><a href="requirementInfoList.html">技术需求管理</a></li>
+						<li><a href="fundRequirementInfoList.html">资金需求管理</a></li>
+						<li><a href="techRequirementFollowerInfoList.html">寻求合作&收藏-技术需求</a></li>
+						<li><a href="fundRequirementFollowerInfoList.html">寻求合作&收藏-资金需求</a></li>
+					</ul>
+				</li>
+				<li class="submenu">
+					<a href="#"><i class="icon icon-th-list"></i> <span>高校/科研机构</span> <span class="label">5</span></a>
+					<ul>
+						<li><a href="researchUserList.html">科研团队用户管理</a></li>
+						<li><a href="researchGroupList.html">科研团队管理</a></li>
+						<li><a href="achievementList.html">技术成果管理</a></li>
+						<li><a href="researchGroupFollowerList.html">寻求合作&收藏-科研团队</a></li>
+						<li><a href="achievementFollowerList.html">寻求合作&收藏-技术成果</a></li>
+					</ul>
+				</li>
+				<li class="submenu">
+					<a href="#"><i class="icon icon-th-list"></i> <span>投资方管理</span> <span class="label">3</span></a>
+					<ul>
+					    <li><a href="investorUserList.html">投资机构管理</a></li>
+						<li><a href="investorFollowerList.html">寻求合作&收藏-投资机构</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		
+		<div id="style-switcher">
+			<i class="icon-arrow-left icon-white"></i>
+			<span>Style:</span>
+			<a href="#grey" style="background-color: #555555;border-color: #aaaaaa;"></a>
+            <a href="#light-blue" style="background-color: #8399b0;"></a>
+			<a href="#blue" style="background-color: #2D2F57;"></a>
+			<a href="#red" style="background-color: #673232;"></a>
+            <a href="#red-green" style="background-image: url('img/demo/red-green.png');background-repeat: no-repeat;"></a>
+		</div>
+		
+		<div id="content">
+			<div id="content-header">
+				<h1>用户管理</h1>
+			</div>
+			<div id="breadcrumb">
+				<a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 后台管理</a>
+				<a href="#" class="current">用户管理</a>
+			</div>
+			
+		<form id="userListForm">
+			<div id="noselect-open-modal"></div>
+			<div align="center" id="noselect-modal-dialog" title="选择记录">
+				<font  style="font-size:12px";color="blue">请选择操作的记录！</font>
+			</div>
+
+			<div id="confirm-delete-open-dialog"></div>
+			<div align="center" id="confirmDeleteDialog" title="信息删除">
+				<p>确定要删除吗？</p>
+			</div>
+			
+			<div id="onlyoneselect-open-modal"></div>
+			<div align="center" id="onlyoneselect-modal-dialog" title="只能选一条记录">
+				<font  style="font-size:12px";color="blue">只能选择一条审核数据！</font>
+			</div>
+            <!-- 审核弹框start -->
+            <div id="review-open-dialog"></div>
+            <div align="center" id="reviewDialog" title="审核信息">
+				<div>
+					<div title="基本信息" style="height: 100%;">
+						<table>
+							<tr>
+								<td colspan="3" align="center"><h4 align="center">确认审核该条记录</h4></td>
+							</tr>
+							<tr>
+								<td colspan="3">
+								<font size="3px" color="blue">审核状态:</font>
+								<input type="radio" name="reviewstatus" value="0" class="reviewStatus" id="reviewstatus0" style="width: 12px" />待审核 
+								<input type="radio" name="reviewstatus" value="1" class="reviewStatus"  id="reviewstatus1" style="width: 12px" />审核通过 
+								<input type="radio" name="reviewstatus" value="2" class="reviewStatus" id="reviewstatus2" style="width: 12px" />拒绝 
+								<input id="reviewStatusId" type="hidden" />
+								</td>
+							</tr>
+						   <tr>
+								<td colspan="3">
+								  <font size="3px" color="blue">沟通状态:</font>
+								 <input type="radio" name="reviewcommunicateStatus" id="reviewCommunicateStatus0"class="reviwCommunicateStatus" value="0" style="width: 12px" />待沟通
+								 <input type="radio" name="reviewcommunicateStatus" id="reviewCommunicateStatus1" class="reviwCommunicateStatus" value="1" style="width: 12px" />已初步沟通
+								 <input type="radio" name="reviewcommunicateStatus" id="reviewCommunicateStatus2" class="reviwCommunicateStatus" value="2" style="width: 12px" />有合作意向
+								 <input type="radio" name="reviewcommunicateStatus" id="reviewCommunicateStatus3" class="reviwCommunicateStatus" value="3" style="width: 12px" />一般
+								 <input type="radio" name="reviewcommunicateStatus" id="reviewCommunicateStatus4" class="reviwCommunicateStatus" value="4" style="width: 12px" />暂无合作意向
+								 <input id="reviewCommunicateStatusId" type="hidden" /></td>
+							</tr>
+							<tr>
+								<td>备注：</td>
+								<td>
+								<textarea id="reviewRemark" data-color="#000000" class="colorpicker" name="remark"style="width: 300px; height: 100px"></textarea>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+           </div>
+			<!-- 审核弹框end -->
+			<div id="returnInfo-open-modal"></div>
+			<div align="center" id="returnInfo-modal-dialog" title="INFO">
+				<font  id="returnInfo" style="font-size:12px";color="blue"></font>
+			</div>
+			
+
+			<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span12">
+					<div class="widget-box">
+						<div class="widget-content">
+									邮箱:<input type="text" id="email" name="email" style="width: 180px" data-color="#000000" value="" class="colorpicker input-small"/>
+									手机号:<input type="text" id="telno" name="telno" style="width: 180px" data-color="#000000" value="" class="colorpicker input-small"/>
+									备注:<input id="remark" name="remark" type="text" style="width: 180px" data-color="#000000" value="" class="colorpicker input-small"/>
+									<br/>
+								         用户类型:
+									<input type="checkbox" name="userType" style="width: 12px" class="userType" value="0" id="cstMobile" /> 企业
+									<input type="checkbox" name="userType" style="width: 12px" class="userType" value="1" id="cstMobile" /> 科研团队
+									<input type="checkbox" name="userType" style="width: 12px" class="userType" value="2" id="cstMobile" /> 投资方
+									<input id="userTypeId" type="hidden" />
+									<br/>
+									审核状态:
+									<input type="checkbox" name="status" value="0" class="status" id="cstMobile" style="width: 12px" />待审核
+									<input type="checkbox" name="status" value="1" class="status" id="cstMobile" style="width: 12px" />审核通过
+									<input type="checkbox" name="status" value="2" class="status" id="cstMobile" style="width: 12px" />拒绝
+									<input id="statusId" type="hidden" />
+									<br/>
+									沟通状态:
+									<input type="checkbox" name="communicateStatus" class="communicateStatus" value="0" id="cstMobile" style="width: 12px" />待沟通
+									<input type="checkbox" name="communicateStatus" class="communicateStatus" value="1" id="cstMobile" style="width: 12px" />已初步沟通
+									<input type="checkbox" name="communicateStatus" class="communicateStatus" value="2" id="cstMobile" style="width: 12px" />有合作意向
+									<input type="checkbox" name="communicateStatus" class="communicateStatus" value="3" id="cstMobile" style="width: 12px" />一般
+									<input type="checkbox" name="communicateStatus" class="communicateStatus" value="4" id="cstMobile" style="width: 12px" />暂无合作意向
+									<input id="communicateStatusId" type="hidden" />
+									<br/>
+									<a id="searchBtn" url="../security/user/query" class="btn btn-info btn-mini">查询</a>
+									<a href="javascript:void(0)" url="../security/user/delete" id="removeBtn" class="btn btn-danger btn-mini"><i class="icon-remove icon-white"></i>删除</a>
+									<a href="javascript:void(0)" url="../security/user/approve" id="reviewBtn"   class="btn btn-success btn-mini">审核</a>
+						</div>
+					</div>
+				</div>
+			</div>
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="widget-box">
+							<div class="widget-title">
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+								<h5>用户列表</h5>
+							</div>
+							<div class="widget-content nopadding" style="overflow:scroll;">
+								<table class="table table-bordered table-striped table-hover data-table">
+									<thead>
+									<tr>
+									<th class="checkAll"><input type="checkbox" id="selectAll" />全选</th>
+									<th>用户ID</th>
+									<th>用户名</th>
+									<th>邮箱</th>
+									<th>手机号</th>
+									<th>用户类型</th>
+									<th>注册时间</th>
+									<th>最近登录时间</th>
+									<th>状态</th>
+									<th>沟通状态</th>
+									<th>备注</th>
+									</tr>
+									</thead>
+									<tbody id="userQueryTBody">
+									</tbody>
+								 </table>  
+							</div>
+							<div id="noResult" class="red"></div>
+						</div>
+						<div align="center" id="pagination">
+						</div>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div id="footer" class="span12">
+						2012 - 2013 &copy; Unicorn Admin. Brought to you by <a href="#">diablo9983</a>
+					</div>
+				</div>
+			</div>
+	   </form>
+	 </div>
+	        
+          <!--   <script src="js/jquery.min.js"></script>
+            <script src="js/jquery-ui.custom.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+            <script src="js/jquery.uniform.js"></script>
+             <script src="js/jquery.gritter.min.js"></script>
+            <script src="js/jquery.peity.min.js"></script>
+            <script src="js/select2.min.js"></script>
+            <script src="js/jquery.dataTables.min.js"></script>
+            <script src="js/unicorn.js"></script>
+            <script src="js/unicorn.interface.js"></script>
+            <script src="js/unicorn.tables.js"></script>
+            <script src="../resources/js/back/usermanager/userInfoList.js"></script>
+            <script src="../resources/js/back/common/common.js"></script> -->
+            
+             <script src="js/jquery.min.js"></script>
+            <script src="js/jquery-ui.custom.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+            <script src="js/jquery.uniform.js"></script>
+             <script src="js/jquery.gritter.min.js"></script>
+            <script src="js/jquery.peity.min.js"></script>
+            <!-- <script src="js/select2.min.js"></script> -->
+            <script src="js/jquery.dataTables.min.js"></script>
+            <script src="js/unicorn.js"></script>
+            <script src="js/unicorn.interface.js"></script>
+            <script src="../resources/js/back/common/commonAction.js"></script>
+           <script src="../resources/js/back/usermanager/userInfoList.js"></script>
+            <script src="../resources/js/back/common/common.js"></script>
+            
+	</body>
+</html>
+<script>
+   //查询条件
+	$('.userType').change(function(){
+		$('#userTypeId').val($('.userType:checked').map(function(){return this.value}).get().join(','))
+	})
+	$('.status').change(function(){
+		$('#statusId').val($('.status:checked').map(function(){return this.value}).get().join(','))
+	})
+	$('.communicateStatus').change(function(){
+		$('#communicateStatusId').val($('.communicateStatus:checked').map(function(){return this.value}).get().join(','))
+	})
+	//审核
+	$('.reviwCommunicateStatus').change(function(){
+		$('#reviewCommunicateStatusId').val($('.reviwCommunicateStatus:checked').map(function(){return this.value}).get().join(','))
+	})
+		
+	$('.reviewStatus').change(function(){
+		$('#reviewStatusId').val($('.reviewStatus:checked').map(function(){return this.value}).get().join(','))
+	})
+</script>

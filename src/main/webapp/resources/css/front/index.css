@@ -1,0 +1,73 @@
+.banner{height: 255px;width: 100%;overflow: hidden}
+.banner ul{width: 400%;}
+.banner li{float:left;position: relative;z-index: 5}
+.banner .width1200{bottom: 0px;height: 365px;top: 0px}
+.banner .width1200 .txt{position: absolute;bottom: 20px;color:#fff;font-size: 51.79px;left: 0px}
+.banner .width1200 .leftbutton{position: absolute;top: 50%;height: 94px;width: 54px;left: 0px;margin-top: -110px;cursor: pointer;display: none}
+.banner .width1200 .rightbutton{position: absolute;top: 50%;height: 94px;width: 54px;right: 0px;margin-top: -110px;cursor: pointer;display: none}
+.banner .btns{position: absolute;right: 0px;bottom: 30px}
+.banner .btns div{width: 18px;height: 18px;border-radius: 18px;background: #fff;display: inline-block;margin-right: 8px;cursor: pointer;}
+.banner .btns div.active{background: #1faece}
+.banner .clic{z-index: 98}
+.banner .clic:hover .leftbutton,.banner .clic:hover .rightbutton{display: block}
+
+.topnav{height: 52px;width: 100%;background: #349fc4;
+	margin-bottom: 20px;
+	-moz-box-shadow:0px 0px 15px #000;/*firefox*/ 
+	-webkit-box-shadow:0px 0px 15px #000;/*webkit*/ 
+	box-shadow: 0px 0px 15px #000;position: relative;
+	z-index: 6;
+}
+
+.topnav .play{width: 23px;height: 23px;margin-top: 14px}
+.topnav .righttxt{width: 1160px;margin-left: 10px;overflow: hidden;height: 52px}
+.topnav .righttxt li{height: 52px;line-height: 52px;color: #fff;width: 1160px}
+.topnav .reghomepage a{height: 52px;line-height: 52px;color: #fff;width: 1160px}
+.cs {
+	height: 440px;
+	width: 100%;
+	-moz-box-shadow:0px 8px 15px #e2e1e2;/*firefox*/ 
+	-webkit-box-shadow:0px 8px 15px #e2e1e2;/*webkit*/ 
+	box-shadow: 0px 8px 15px #e2e1e2;
+	background: #fff;
+	margin-top: -16px;
+	padding-top: 16px;
+	position: relative;
+	z-index: 5;
+}
+.cs ul li{width: 33%;display: inline-block;text-align: center;height: 400px;}
+.cs ul li .bgs{width: 214px;height: 214px;background: #fff;border-radius: 214px;
+	box-shadow: 0px 0px 25px #b1d3de;
+	-moz-box-shadow:0px 0px 25px #b1d3de;/*firefox*/ 
+	-webkit-box-shadow:0px 0px 25px #b1d3de;/*webkit*/ 
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 30px
+}
+.cs ul li .img2{display: none}
+.cs ul li:hover{
+	-moz-box-shadow:0px 0px 15px #d9e0e7;/*firefox*/ 
+	-webkit-box-shadow:0px 0px 15px #d9e0e7;/*webkit*/ 
+	box-shadow: 0px 0px 15px #d9e0e7;
+	background: #fff;
+}
+.cs ul li:hover .bgs{background: #349fc4}
+.cs ul li:hover .img1{display: none}
+.cs ul li:hover .img2{display: inline-block;}
+.cs ul li .t{font-size: 24px;color: #7d7d7d;margin-top: 24px;}
+.cs ul li .im{margin-top:6px;margin-bottom: 6px}
+.cs ul li .f{color: #7d7d7d;font-size: 16px}
+
+
+.abt{background: #f4f4f4;height: 372px;width: 100%;position: relative;margin-top: }
+.abt .abt_t{height: 3px;width: 588px;margin: 0 auto;background: #1faece;margin-top: 98px;position: relative;margin-bottom:80px}
+.abt .abt_t div{color: #1faece;font-size: 40px;width: 240px;text-align: center;position: absolute;left: 50%;margin-left:-120px;top: 50%;margin-top: -30px;background: #f4f4f4}
+.abt .abt_s{color: #525d64;font-size: 18px;text-align: center;}
+.abt .more{color: #ffffff;font-size: 18px;background: #349fc4;width: 198px;height: 36px;line-height: 3px;text-align: center;margin:0 auto;line-height: 36px;border-radius: 5px;margin-top: 60px}
+
+.righttoul{position: fixed;right: 0px;top: 450px;z-index: 102;}
+.righttoul li{background: #bfbfbf;width: 52px;height: 50px;text-align: center;border-radius: 5px;margin-bottom: 5px;float:right;}
+.righttoul li:hover{background: #349fc4}
+.righttoul .txt1{color: #ffffff;font-size: 14px;width: 34px;margin-top:6px;margin-left: 10px;display: none}
+.righttoul .txt2{color: #ffffff;font-size: 14px;width: 96px;margin-left: 10px;margin-right: 10px;line-height: 50px;display: none}
+.righttoul .txt3{color: #ffffff;font-size: 14px;width: 34px;margin-top:6px;margin-left: 10px;margin-right: 5px;display: none}

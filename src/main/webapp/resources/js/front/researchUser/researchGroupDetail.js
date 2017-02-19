@@ -29,6 +29,8 @@ $(document).ready(function() {
 function initResearchGroupManager() {
 	//下拉注册事件
 	setSelectValue();
+	//自动带出联系方式
+	$("#leaderTel").val($('#commonUserTel').val());
 	
 	$("#leaderPosition").keyup(function(){
 		var leaderPosition=$("#leaderPosition").val();
@@ -85,7 +87,9 @@ function initResearchGroupManager() {
 		if(leaderName===""){
 			$("#leaderNameResult").html('<font color="red">必填</font>');
 		}
-		
+		if($.trim($('#achievement').val() =='')) {
+			$("#achievementResult").html('<font color="red">必填</font>');
+		}
 		var leaderTitle=$("#leaderTitle").val();
 		var leaderPosition=$("#leaderPosition").val();
 		if(leaderPosition===""){

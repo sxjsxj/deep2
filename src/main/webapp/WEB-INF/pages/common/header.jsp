@@ -27,6 +27,8 @@
 <body>
 <input type="hidden" value="" id="commonUserLoginId"/>
 <input type="hidden" value="" id="commonUserType"/>
+<input type="hidden" value="" id="commonUserTel"/>
+
 <input type="hidden" value="" id="commonCompanyUserId"/>
 <input type="hidden" value="" id="commonResearchUserId"/>
 <input type="hidden" value="" id="commonResearchUserType"/>

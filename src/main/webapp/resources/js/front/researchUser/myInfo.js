@@ -250,7 +250,8 @@ function setSelect(){
 		  }
 		 $('#showUniCity').val("请选择市");
 		 $("#uniCity").val("");
-		//根据省查省下市
+		
+		 //根据省查省下市
 		var provinceCityMap=FrontCommonFunction.tempProvinceCity();
 		var listCity=provinceCityMap[uniProvince];
 		var dd = '';
@@ -267,6 +268,39 @@ function setSelect(){
 			if(uniCity!==""){
 				 $('#unRequiredCityCheckResult').html('');
 			  }
+			//根据省市查高校名称
+			var url = $('#selectUniName').attr('url');
+			var queryParam={};
+			var requestParam = {};
+			requestParam['province']=uniProvince;
+			requestParam['city']=uniCity;
+			var jsonStr=JSON.stringify(requestParam);
+			queryParam['str']=jsonStr;
+			FrontCommonFunction.baseOptions['url'] = url;
+			FrontCommonFunction.baseOptions['data'] = queryParam;
+			FrontCommonFunction.baseOptions['success'] = function(datas) {
+				//根据key取list
+				var queryReturnList=datas[uniProvince+"_"+uniCity];
+				var dd = '';
+				for(var i = 0; i < queryReturnList.length; i++) {
+					dd += '<dd value="'+queryReturnList[i].name+'">' + queryReturnList[i].name + '</dd>';
+				}
+				$("#showUniName").val("请选择高校");
+				$("#selectUniName").html("");
+				$("#selectUniName").append(dd);
+				//高校名称click
+				$("#selectUniName").find("dd").click(function(){
+					$("#uniName").val($(this).attr("value"));
+					var uniName=$('#uniName').val();
+					 $('#showUniName').val(uniName);
+					 var uniName=$('#uniName').val();
+						if(uniName!==""){
+							$('#unNameFlag').html('');
+						}
+				});
+				
+			};
+			$.ajax(FrontCommonFunction.baseOptions);
 		});
 	});
 	//科研机构

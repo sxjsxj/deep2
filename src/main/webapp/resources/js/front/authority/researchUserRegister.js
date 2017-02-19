@@ -279,7 +279,7 @@ function setSelect(){
 		  }
 		 $('#showUniCity').val("请选择市");
 		 $("#uniCity").val("");
-		//根据省查省下市
+		 //根据省查省下市
 			var provinceCityMap=FrontCommonFunction.tempProvinceCity();
 			var listCity=provinceCityMap[uniProvince];
 			var dd = '';

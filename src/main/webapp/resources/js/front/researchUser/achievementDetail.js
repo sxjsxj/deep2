@@ -191,13 +191,13 @@ function getDetail(id) {
 		typeArr=typeId.split(",");
 		for(var i=0;i<typeArr.length;i++){
 			if(typeArr[i]==="0"){
-				$("#typeCheckBox0").attr("checked", true);
+				$("#typeCheckBox0").click();
 			}else if(typeArr[i]==="1"){
-				$("#typeCheckBox1").attr("checked", true);
+				$("#typeCheckBox1").click();
 			}else if(typeArr[i]==="2"){
-				$("#typeCheckBox2").attr("checked", true);
+				$("#typeCheckBox2").click();
 			}else if(typeArr[i]==="3"){
-				$("#typeCheckBox3").attr("checked", true);
+				$("#typeCheckBox3").click();
 			}
 		}
 		//寻求合作方式
@@ -207,17 +207,17 @@ function getDetail(id) {
 		arr=cooperationTypeId.split(",");
 		for(var i=0;i<arr.length;i++){
 			if(arr[i]==="0"){
-				$("#cooperationTypeCheckBox0").attr("checked", true);
+				$("#cooperationTypeCheckBox0").click();
 			}else if(arr[i]==="1"){
-				$("#cooperationTypeCheckBox1").attr("checked", true);
+				$("#cooperationTypeCheckBox1").click();
 			}else if(arr[i]==="2"){
-				$("#cooperationTypeCheckBox2").attr("checked", true);
+				$("#cooperationTypeCheckBox2").click();
 			}else if(arr[i]==="3"){
-				$("#cooperationTypeCheckBox3").attr("checked", true);
+				$("#cooperationTypeCheckBox3").click();
 			}else if(arr[i]==="4"){
-				$("#cooperationTypeCheckBox4").attr("checked", true);
+				$("#cooperationTypeCheckBox4").click();
 			}else if(arr[i]==="5"){
-				$("#cooperationTypeCheckBox5").attr("checked", true);
+				$("#cooperationTypeCheckBox5").click();
 			}
 			
 		}

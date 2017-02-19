@@ -170,10 +170,11 @@
 				</div>
 				
 				<div class='xuqiu xuqiu3'>
-					<div class='name fl'><span></span>研究成果</div>
+					<div class='name fl'><span>*</span>研究成果</div>
 					<div class='fl'>
 						<textarea name="achievement" maxlength="300" placeholder='请输入研究成果' id="achievement"></textarea>
 					</div>
+					<div id="achievementResult" style="display:inline"></div>
 					<div class='clear'></div>
 				</div>
 				

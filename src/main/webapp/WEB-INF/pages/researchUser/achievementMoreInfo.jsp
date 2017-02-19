@@ -39,7 +39,8 @@
 						<div class='txts' id="phase"></div>
 						<div class='txts'></div>
 						<div class='stils' style='margin-top:30px'>
-							<a id="domain"></a><img src='${pageContext.request.contextPath}/resources/images/front/img/address.png'/>&nbsp;<a id="provinceName"></a><a id="scanNumber"></a>
+							<a id="domain"></a><img src='${pageContext.request.contextPath}/resources/images/front/img/address.png'/>&nbsp;
+							<a id="provinceName"></a><a id="amount"></a><a id="status"></a><a id="scanNumber"></a>
 						</div>
 						<div class='mortis'><span></span></div>
 						<div style="margin-top:20px;margin-left:-2px;" class='btns' >

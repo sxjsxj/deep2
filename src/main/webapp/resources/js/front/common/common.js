@@ -527,13 +527,13 @@ var FrontCommonFunction = {
 		}
 		return result;
 	},
-	setStrAchievementType:function(dataObj){
+	setAchievementType:function(dataObj){
 		var result = '';
 		if(dataObj === null || dataObj === 'null'||dataObj === undefined){
 			result = '';
 		} else {
 			if(dataObj==="0"){
-				result = "新产品研发";
+				result = "新产品原型";
 			 }else if(dataObj==="1"){
 				 result = "新技术";
 			 }else if(dataObj=="2"){
@@ -569,7 +569,7 @@ var FrontCommonFunction = {
 		}
 		return result;
 	},
-	setInbestorCooperationType:function(dataObj){
+	setCooperationType:function(dataObj){
 		var result = '';
 		if(dataObj === null || dataObj === 'null'||dataObj === undefined){
 			result = '';
@@ -589,6 +589,18 @@ var FrontCommonFunction = {
 			 }else{
 				 result = '其他';
 			 }
+		}
+		return result;
+	},
+	setMultiType:function(dataObj){
+		var result = '';
+		if(dataObj === null || dataObj === 'null'||dataObj === undefined){
+			result = '';
+		} else {
+			var datas = dataObj.split(',');
+			for(var i = 0; i <datas.length; i++) {
+				result = result + ' ' + setCooperationType(datas[i]);
+			}
 		}
 		return result;
 	},

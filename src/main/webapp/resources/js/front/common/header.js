@@ -69,6 +69,7 @@ function initLoginUser() {
 			//$('#currentUser').html('您好：'+data.email);
 			$('#commonUserLoginId').val(data.id);
 			$('#commonUserType').val(data.userType);
+			$('#commonUserTel').val(data.telno);
 			var companys = data.companyUserModels;
 			for(var i = 0; i < companys.length; i++) {
 				$('#commonCompanyUserId').val(companys[i].id);

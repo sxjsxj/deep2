@@ -72,7 +72,7 @@ function query(param) {
 				li+='<input type="hidden" id="operateId'+i+'" value="'+queryReturnList[i].id+'"/>'
 				li+='<input type="hidden" id="status'+i+'" value="'+queryReturnList[i].status+'"/>'
 				var imgUrl="";
-			var img=queryReturnList[i].attachUrl;
+			var img=queryReturnList[i].logoUrl;
 			if(img!==null && img!=="" && img!==undefined){
 				imgUrl=img;
 				li+='<a href="'+moreInfoUrl+'"><div class="fl ims">'+'<img src="'+$('#downFile').attr('url')+'?path='+imgUrl+'" style="width:240px;height:182px;"/></div></a>'
@@ -89,8 +89,8 @@ function query(param) {
 			li+="</div></a>"
 			li+="<div class='cs'>"	 
 			li+="<div class='mod borderright'>" 
-			li+='<a href="'+moreInfoUrl+'"><div class="cs_tis">'+"研究方向："+FrontCommonFunction.setInvestorDomain(queryReturnList[i].domain)+"</div></a>"
-			li+="<div class=''><a class='fl rems'></a><span class='fl'>"+'<a href="'+moreInfoUrl+'">'+"简介&nbsp;:&nbsp;"+FrontCommonFunction.getResultMaitText(queryReturnList[i].introduction,30,"#researchGroupMoreInfo",queryReturnList[i].id)+"</a></span><div class='clear'></div></div>"
+			li+='<a href="'+moreInfoUrl+'"><div class="cs_tis">'+"研究方向："+queryReturnList[i].field+"</div></a>"
+			//li+="<div class=''><a class='fl rems'></a><span class='fl'>"+'<a href="'+moreInfoUrl+'">'+"简介&nbsp;:&nbsp;"+FrontCommonFunction.getResultMaitText(queryReturnList[i].introduction,30,"#researchGroupMoreInfo",queryReturnList[i].id)+"</a></span><div class='clear'></div></div>"
 			li+="</div>"
 			li+="<div class='mod marginleft'>"
 			li+='<a href="'+moreInfoUrl+'"><div class="cs_tis">'+'研究成果:'+"</div></a>"

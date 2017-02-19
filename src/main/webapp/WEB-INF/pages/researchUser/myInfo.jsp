@@ -110,7 +110,7 @@
 						<div class='fl input' style="overflow-y:scroll;height:120px;">
 							<input type='text' style="width:300px;" value='请选择' id="showUniName" readonly/>
 							<img src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png'/>
-							<dl id="selectUniName" url="${pageContext.request.contextPath}/basicUniversity/query">
+							<dl id="selectUniName" url="${pageContext.request.contextPath}/basicUniversity/queryUniversity">
 							</dl>
 						</div>
 						<div class='clear'></div>

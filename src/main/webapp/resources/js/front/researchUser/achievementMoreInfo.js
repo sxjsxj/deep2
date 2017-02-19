@@ -34,6 +34,8 @@ function getDeatil() {
 		}else{
 			path="../resources/images/front/img/keyanchengguo.png";
 		}
+		$("#amount").html(FrontCommonFunction.setAmount(datas.amount));
+		$("#status").html(FrontCommonFunction.setRequirementStatus(datas.status));
 		$("#detailImg").attr('src',path); 
 		$("#name").html(FrontCommonFunction.replaceNull(datas.name));
 		$('head title').html(datas.name);
@@ -41,8 +43,8 @@ function getDeatil() {
 		$("#phase").html("阶段："+FrontCommonFunction.setInvestorPhase(datas.phase)); 
 		$("#domain").html(FrontCommonFunction.setInvestorDomain(datas.domain));
 		$("#scanNumber").html("访问量："+FrontCommonFunction.replaceNull(datas.scanNumber));
-		$("#type").html(FrontCommonFunction.setInbestorType(datas.type));
-		$("#cooperationType").html(FrontCommonFunction.setInbestorCooperationType(datas.cooperationType));
+		$("#type").html(setMultiAchievementType(datas.type));
+		$("#cooperationType").html(setMultiCooperationType(datas.cooperationType));
 		$("#applyTo").html(FrontCommonFunction.replaceNull(datas.applyTo));
 		$("#expectedEffect").html(FrontCommonFunction.replaceNull(datas.expectedEffect));
 		if(datas.caseNum) {

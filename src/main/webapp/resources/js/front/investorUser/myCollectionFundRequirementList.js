@@ -170,10 +170,10 @@ function query(param) {
 				li+='<input type="hidden" id="operateFollowerType'+i+'" value="'+queryReturnList[i].followerType+'"/>'
 				li+='<input type="hidden" id="operateRelationType'+i+'" value="'+queryReturnList[i].id.relationType+'"/>'
 			
-			var attachUrl =queryReturnList[i].fundRequirementResultModel.attachUrl;
+			var logochUrl =queryReturnList[i].fundRequirementResultModel.logochUrl;
 			var imgUrl="";
-			if(attachUrl!==null && attachUrl!=="" && attachUrl!==undefined){
-				imgUrl=attachUrl;
+			if(logochUrl!==null && logochUrl!=="" && logochUrl!==undefined){
+				imgUrl=logochUrl;
 				li+='<a href="'+moreInfoUrl+'"><div class="fl ims">'+'<img style="width:240px;height:182px" src="'+$('#downFile').attr('url')+'?path='+imgUrl+'"/>'+"</div></a>"
 			}else{
 				imgUrl="../resources/images/front/img/zijinxuqiu.png";

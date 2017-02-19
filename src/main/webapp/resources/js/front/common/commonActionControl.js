@@ -1,3 +1,28 @@
+	function setMultiCooperationType(dataObj){
+		var result = '';
+		if(dataObj === null || dataObj === 'null'||dataObj === undefined){
+			result = '';
+		} else {
+			var datas = dataObj.split(',');
+			for(var i = 0; i <datas.length; i++) {
+				result = result + ' ' + FrontCommonFunction.setCooperationType(datas[i]);
+			}
+		}
+		return result;
+	};
+	function setMultiAchievementType(dataObj){
+		var result = '';
+		if(dataObj === null || dataObj === 'null'||dataObj === undefined){
+			result = '';
+		} else {
+			var datas = dataObj.split(',');
+			for(var i = 0; i <datas.length; i++) {
+				result = result + ' ' + FrontCommonFunction.setAchievementType(datas[i]);
+			}
+		}
+		return result;
+	};
+
 /**
  * 分享控件控制
  * @param moreType 详情类型

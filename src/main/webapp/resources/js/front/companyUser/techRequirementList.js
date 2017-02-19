@@ -34,24 +34,6 @@ function initAmountDemandListManager() {
 	FrontCommonFunction.initCheckBoxRegion("#region");
 	//设置大区
 	setRegionClick();
-	//只查看本省市
-	$("#onlySeeLocalCity").click(function() {
-		if(!FrontCommonFunction.isLogin()){
-			$('#nologin').show();
-			$("#onlySeeLocalCity").removeClass("on");
-			setTimeout(function(){//5秒后隐藏
-				$('#nologin').hide();
-			}, 1500);
-		}else{
-			if($("#onlySeeLocalCity").hasClass("on")){
-				$("#region").show();
-			}else{
-				$("#region").hide();
-			}
-		}
-	});
-	
-	
 	//学科领域
 	$("#checkBoxDomain [id^=domainCheckBox]").click(function() {
 		//domainCheckBox固定长度是14

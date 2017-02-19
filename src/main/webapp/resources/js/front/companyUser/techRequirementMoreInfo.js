@@ -30,6 +30,8 @@ function getDeatil() {
 		}
 		$("#province").html(datas.companyUserResultModel.province);
 		$("#requireId").val(datas.id);
+		//分享控件控制
+		shareControl('techRequirement', datas.status, 'bdsharebuttonbox');
 		//注册收藏、关注事件
 		setCooperateCollectFlagD(datas);
 		cooperateCollectFlagControlD('techRequirement');

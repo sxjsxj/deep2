@@ -59,20 +59,21 @@
 					<div class='clear'></div>
 				</li>
 				
-				<li style='margin-bottom:5px'>
+				<li>
 					<div class='fl ti2' style="font-size:15px;">省市地区</div>
-					<div class='fl list'>
-						<div class='checkbox fl' id="onlySeeLocalCity">
-							<img src='${pageContext.request.contextPath}/resources/images/front/img/checkbox.png'/>
+					<div id="checkBoxOnlySeeLocalCity" style="width:300px;height:50px;border:1px solid #F00">					
+						<div class='fl list'>
+							<div class='checkbox fl'>
+								<img id="onlySeeLocalCity" src='${pageContext.request.contextPath}/resources/images/front/img/checkbox.png'/>
+							</div>
+							<div class='fl'>只查看本省市</div>
+							<div class='clear'></div>
 						</div>
-						<div class='fl'>只查看本省市</div>
-						<div class='clear'></div>
 					</div>
 					<div class='clear'></div>
 				</li>
 				<div id="region" url="${pageContext.request.contextPath}/basicProvinceArea/queryAreaProvince">
-				
-			</div>
+				</div>
 				
 				<li>
 					<div class='fl ti2' style="font-size:15px;">阶段</div>
@@ -342,7 +343,6 @@
 				$(this).addClass("on");
 				$(this).find('img').attr("src",'${pageContext.request.contextPath}/resources/images/front/img/checkbox2.png')
 			}
-			
 		})
 
 		$(".molist").slideUp(0);
@@ -367,7 +367,6 @@
 				$(this).addClass("on");
 				$(this).find('img').attr("src",'${pageContext.request.contextPath}/resources/images/front/img/checkbox2.png')
 			}
-			
 		})
 	})
 </script>

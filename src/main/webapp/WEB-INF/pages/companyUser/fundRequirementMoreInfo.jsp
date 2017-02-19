@@ -41,8 +41,8 @@
 						<div class='txts' id="sequenceNumber"></div>
 						<div class='txts' id="projectPhase"></div>
 						<div class='stils' style='margin-top:30px'>
-							<a id="domain"></a><img src='${pageContext.request.contextPath}/resources/images/front/img/address.png'/>&nbsp;<a id="companyProvince"></a><a id="amountNeeded"></a>
-							<a id="scanNumber"></a>
+							<a id="domain"></a><img src='${pageContext.request.contextPath}/resources/images/front/img/address.png'/>&nbsp;
+							<a id="companyProvince"></a><a id="amountNeeded"><a id="status"></a><a id="scanNumber"></a>
 						</div>
 						<div class='mortis'><span></span></div>
 						<div style="margin-left:2px; margin-top:20px;" class='btns' >

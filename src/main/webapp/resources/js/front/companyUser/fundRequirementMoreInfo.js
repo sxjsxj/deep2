@@ -23,15 +23,18 @@ function getDeatil() {
 		$("#name").html(datas.name); 
 		$('head title').html(datas.name);
 		$("#sequenceNumber").html("编号："+FrontCommonFunction.replaceNull(datas.sequenceNumber));
-		$("#projectPhase").html("实验阶段："+FrontCommonFunction.setPhase(datas.projectPhase));
+		$("#projectPhase").html("项目阶段："+FrontCommonFunction.setPhase(datas.projectPhase));
 		$("#domain").html(FrontCommonFunction.setInvestorDomain(datas.domain));
 		$("#companyProvince").html(FrontCommonFunction.replaceNull(datas.companyUserResultModel.province))
 		$("#amountNeeded").html(FrontCommonFunction.setAmount(datas.amountNeeded));
+		$("#status").html(FrontCommonFunction.setRequirementStatus(datas.status));
 		$("#scanNumber").html("浏览量："+FrontCommonFunction.replaceNull(datas.scanNumber));
 		$("#projectTeam").html(FrontCommonFunction.replaceNull(datas.projectTeam));
 		$("#projectProspect").html(FrontCommonFunction.replaceNull(datas.projectProspect));
 		$("#projectIntro").html(FrontCommonFunction.replaceNull(datas.projectIntro));
 		$("#requireId").val(datas.id);
+		//分享控件控制
+		shareControl('fundRequirement', datas.status, 'bdsharebuttonbox');
 		//注册收藏、关注事件
 		setCooperateCollectFlagD(datas);
 		cooperateCollectFlagControlD('fundRequirement');

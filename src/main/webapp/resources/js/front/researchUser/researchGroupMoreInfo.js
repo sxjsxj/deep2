@@ -69,6 +69,8 @@ function getDeatil() {
 			$("#leaderAchieveTitle").hide();
 		}
 		$("#researchId").val(datas.id);
+		//分享控件控制
+		shareControl('researchGroup', datas.status, 'bdsharebuttonbox');
 		//注册收藏、关注事件
 		setCooperateCollectFlagD(datas);
 		cooperateCollectFlagControlD('researchGroup');

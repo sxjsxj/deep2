@@ -12,7 +12,9 @@ function getDeatil() {
 	requestParamTemp['id']=id;
 	FrontCommonFunction.baseOptions['data'] = requestParamTemp;
 	FrontCommonFunction.baseOptions['success'] = function(datas) {
-		$('head title').html(datas.name);
+		if(datas.name){
+			$('head title').html(datas.name);
+		}
 		var type = $('#commonInvestorUserType').val();
 		if(type == '0') {
 			$("#name").html(FrontCommonFunction.replaceNull(datas.name)); 
@@ -27,6 +29,8 @@ function getDeatil() {
 		$("#investAmount").html("投资额："+FrontCommonFunction.setAmount(datas.investAmount)); 
 		$("#introduction").html(FrontCommonFunction.replaceNull(datas.introduction)); 
 		$("#investorId").val(datas.id);
+		//分享控件控制
+		shareControl('investorUser', datas.userModel.status, 'bdsharebuttonbox');
 		//注册收藏、关注事件
 		setCooperateCollectFlagD(datas);
 		cooperateCollectFlagControlD('investor');

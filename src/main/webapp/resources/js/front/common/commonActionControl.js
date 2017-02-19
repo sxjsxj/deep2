@@ -1,3 +1,38 @@
+/**
+ * 分享控件控制
+ * @param moreType 详情类型
+ * @param status  审批状态
+ * @param selector 控件选择器
+ */
+function shareControl(moreType, status, selector) {
+	if(moreType == 'researchGroup') {
+		if(status == '0' || status == '2'){
+			$(selector).hide();
+		}
+	}
+	if(moreType == 'achievement') {
+		if(status == '0' || status == '5'){
+			$(selector).hide();
+		}
+	}
+	if(moreType == 'techRequirement') {
+		if(status == '0' || status == '5'){
+			$(selector).hide();
+		}
+	}
+	if(moreType == 'fundRequirement') {
+		if(status == '0' || status == '5'){
+			$(selector).hide();
+		}
+	}
+	if(moreType == 'investorUser') {
+		if(status == '0' || status == '2'){
+			$(selector).hide();
+		}
+	}
+	
+}
+
 function dialogControl() {
 	$('#altstwo').hide();
 	$('#altsthree').hide();
@@ -47,6 +82,24 @@ function CloseDiv(show_div,bg_div){
 };
 
 function setRegionClick(){
+	//只查看本省市
+	$("#onlySeeLocalCity").click(function(){
+		if(!FrontCommonFunction.isLogin()){
+			$('#nologin').show();
+			$("#onlySeeLocalCity").removeClass("on");
+			setTimeout(function(){//5秒后隐藏
+				$('#nologin').hide();
+			}, 1500);
+		}else{
+			if($("#onlySeeLocalCity").hasClass("on")){
+				$(this).removeClass("on");
+				$("#region").show();
+			}else{
+				$(this).click();
+				$("#region").hide();
+			}
+		}
+	});
 	//热门地区 
 	$("#remenParent").click(function() {
 		if($("#remenParentShow").hasClass("on")){

@@ -163,7 +163,6 @@ function getData() {
 	}
 	fundRequirementQueryModel['domain']=$.trim($("#domainId").val());
 	fundRequirementQueryModel['amountNeeded']=$.trim($('#amountId').val());
-	fundRequirementQueryModel['status']=$.trim($('#statusId').val());
 	if($("#onlySeeLocalCity").hasClass("on")){
 		//加入勾选本市值
 		companyUserQueryModel['province']=$("#commonMySelfProvince").val();
@@ -227,6 +226,9 @@ function getData() {
 	getDefaultQuery('companyUser', '1', companyUserQueryModel); 
 	paramTemp['companyUserQueryModel']=companyUserQueryModel;
 	getDefaultQuery('fundRequirement', '1', fundRequirementQueryModel); 
+	if($('#statusId').val() !== '') {
+		fundRequirementQueryModel['status']=$.trim($('#statusId').val());
+	}
 	paramTemp['fundRequirementQueryModel'] = fundRequirementQueryModel;
 	var userQueryModel = {};
 	getDefaultQuery('user', '1', userQueryModel);

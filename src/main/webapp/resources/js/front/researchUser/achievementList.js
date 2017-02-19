@@ -189,7 +189,6 @@ function getData() {
 	achievementQueryModel['domain']=$.trim($("#domainId").val());
 	achievementQueryModel['amount']=$.trim($('#amountId').val());
 	achievementQueryModel['phase']=$.trim($('#phaseId').val());
-	achievementQueryModel['status']=$.trim($('#statusId').val());
 	achievementQueryModel['cooperationType']=$.trim($('#cooperationTypeId').val());
 	 if ($("#onlySeeLocalCity").hasClass("on")) {
 		// 加入勾选本市值
@@ -254,6 +253,9 @@ function getData() {
 	}
 	getDefaultQuery('achievement', '1', achievementQueryModel);
 	paramTemp['achievementQueryModel']=achievementQueryModel;
+	if($('#statusId').val() !== '') {
+		achievementQueryModel['status']=$.trim($('#statusId').val());
+	}
 	var researchGroupQueryModel = {};
 	getDefaultQuery('researchGroup', '1', researchGroupQueryModel);
 	paramTemp['researchGroupQueryModel'] = researchGroupQueryModel;

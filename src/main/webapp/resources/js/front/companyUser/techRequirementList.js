@@ -266,6 +266,9 @@ function getData() {
 	paramTemp['companyUserQueryModel']=companyUserQueryModel;
 	getDefaultQuery('techRequirement', '1', techRequirementQueryModel); 
 	paramTemp['techRequirementQueryModel'] = techRequirementQueryModel;
+	if($('#statusId').val() !== '') {
+		techRequirementQueryModel['status']=$.trim($('#statusId').val());
+	}
 	var userQueryModel = {};
 	getDefaultQuery('user', '1', userQueryModel);
 	paramTemp['userQueryModel'] = userQueryModel;

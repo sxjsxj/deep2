@@ -92,10 +92,8 @@ function setRegionClick(){
 			}, 1500);
 		}else{
 			if($("#onlySeeLocalCity").hasClass("on")){
-				$(this).removeClass("on");
 				$("#region").show();
 			}else{
-				$(this).click();
 				$("#region").hide();
 			}
 		}

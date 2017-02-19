@@ -60,13 +60,27 @@ function initMyRequirementManager() {
 	$('#techRequire').click(function() {
 		$("#fundRequire").removeClass("active");
 		$('#techRequire').addClass("active");
+		$('#child0').addClass("active");
+		$('#child1').removeClass("active");
+		$('#child2').removeClass("active");
+		$('#child3').removeClass("active");
+		$('#child4').removeClass("active");
+		$('#child5').removeClass("active");
 		$('#tagValue').val("0");
+		$('#childtagValue').val("5");
 		$('#currentPage').val('1');
 	    query(queryParam);
     });
 	$('#fundRequire').click(function() {
 		$("#fundRequire").addClass("active");
 		$('#techRequire').removeClass("active");
+		$('#child0').addClass("active");
+		$('#child1').removeClass("active");
+		$('#child2').removeClass("active");
+		$('#child3').removeClass("active");
+		$('#child4').removeClass("active");
+		$('#child5').removeClass("active");
+		$('#childtagValue').val("5");
 		$('#tagValue').val("1");
 		$('#currentPage').val('1');
 	    query(queryParam);

@@ -27,7 +27,7 @@ function getDeatil() {
 		$("#domain").html(FrontCommonFunction.setInvestorDomain(datas.domain));
 		$("#companyProvince").html(FrontCommonFunction.replaceNull(datas.companyUserResultModel.province))
 		$("#amountNeeded").html(FrontCommonFunction.setAmount(datas.amountNeeded));
-		$("#scanNumber").html("访问量："+FrontCommonFunction.replaceNull(datas.scanNumber));
+		$("#scanNumber").html("浏览量："+FrontCommonFunction.replaceNull(datas.scanNumber));
 		$("#projectTeam").html(FrontCommonFunction.replaceNull(datas.projectTeam));
 		$("#projectProspect").html(FrontCommonFunction.replaceNull(datas.projectProspect));
 		$("#projectIntro").html(FrontCommonFunction.replaceNull(datas.projectIntro));

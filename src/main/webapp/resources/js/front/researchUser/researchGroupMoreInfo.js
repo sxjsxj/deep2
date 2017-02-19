@@ -11,7 +11,6 @@ function getDeatil() {
 	requestParamTemp['id']=id;
 	FrontCommonFunction.baseOptions['data'] = requestParamTemp;
 	FrontCommonFunction.baseOptions['success'] = function(datas) {
-		var type=datas.researchUserResultModel.type;
 		var path="";
 		var logoUrl=datas.logoUrl;
 		if(logoUrl!==null && logoUrl!=="" && logoUrl!==undefined){
@@ -22,23 +21,53 @@ function getDeatil() {
 		$("#detailImg").attr('src',path); 
 		$("#name").html(datas.name); 
 		$('head title').html(datas.name);
-		$("#domain").html("领域："+FrontCommonFunction.setInvestorDomain(datas.domain));
 		$("#domain2").html(FrontCommonFunction.setInvestorDomain(datas.domain));
+		$("#scanNumber").html("浏览量："+FrontCommonFunction.replaceNull(datas.scanNumber));
+		var type=datas.researchUserResultModel.type;
         if(type==="0"){
-        	$("#provinceName").html(FrontCommonFunction.replaceNull(datas.researchUserResultModel.uniName));
+        	$("#provinceName").html(FrontCommonFunction.replaceNull(datas.researchUserResultModel.uniProvince));
+			$("#uniOrgName").html($("#uniOrgName").html()+FrontCommonFunction.replaceNull(datas.researchUserResultModel.uniName));
+			$("#uniOrgDepart").html($("#uniOrgDepart").html()+FrontCommonFunction.replaceNull(datas.researchUserResultModel.uniDepartment));
 		}else if(type==="1"){
-			$("#provinceName").html(FrontCommonFunction.replaceNull(datas.researchUserResultModel.orgName));
+        	$("#provinceName").html(FrontCommonFunction.replaceNull(datas.researchUserResultModel.orgProvince));
+			$("#uniOrgName").html($("#uniOrgName").html()+FrontCommonFunction.replaceNull(datas.researchUserResultModel.orgName));
+			$("#uniOrgDepart").hide();
 		}else if(type==="2"){
-			$("#provinceName").html(FrontCommonFunction.replaceNull(datas.researchUserResultModel.orgName));
+        	$("#provinceName").html(FrontCommonFunction.replaceNull(datas.researchUserResultModel.orgProvince));
+			$("#uniOrgName").html($("#uniOrgName").html()+FrontCommonFunction.replaceNull(datas.researchUserResultModel.orgName));
+			$("#uniOrgDepart").hide();
 		}
-		$("#scanNumber").html("访问量："+FrontCommonFunction.replaceNull(datas.scanNumber));
-		$("#leaderDepart").html("主管部门："+FrontCommonFunction.replaceNull(datas.leaderDepart));
-		$("#introduction").html(FrontCommonFunction.replaceNull(datas.introduction));
+        if(datas.introduction) {
+    		$("#introduction").html(FrontCommonFunction.replaceNull(datas.introduction));
+        }else {
+        	$("#introduction").hide();
+        	$("#introductionTitle").hide();
+        }
 		$("#field").html(FrontCommonFunction.replaceNull(datas.field));
-		$("#achievement").html(FrontCommonFunction.replaceNull(datas.achievement));
-		$("#teamSize").html(FrontCommonFunction.replaceNull(datas.teamSize));
-		$("#leaderInfo").html(FrontCommonFunction.replaceNull(datas.leaderName)+"&nbsp;&nbsp;"+FrontCommonFunction.replaceNull(datas.leaderTitle)+"&nbsp;&nbsp;"+FrontCommonFunction.replaceNull(datas.leaderTel));
-		$("#leaderAchieve").html(FrontCommonFunction.replaceNull(datas.leaderAchieve));
+		if(datas.achievement) {
+			$("#achievement").html(FrontCommonFunction.replaceNull(datas.achievement));
+		} else {
+			$("#achievement").hide();
+			$("#achievementTitle").hide();
+		}
+		if(datas.teamSize) {
+			$("#teamSize").html(FrontCommonFunction.replaceNull(datas.teamSize));
+		}else {
+			$("#teamSize").hide();
+			$("#teamSizeTitle").hide();
+		}
+		if(datas.leaderIntro) {
+			$("#leaderInfo").html(FrontCommonFunction.replaceNull(datas.leaderIntro));
+		}else {
+			$("#leaderInfo").hide();
+			$("#leaderInfoTitle").hide();
+		}
+		if(datas.leaderAchieve) {
+			$("#leaderAchieve").html(FrontCommonFunction.replaceNull(datas.leaderAchieve));
+		}else {
+			$("#leaderAchieve").hide();
+			$("#leaderAchieveTitle").hide();
+		}
 		$("#researchId").val(datas.id);
 		//注册收藏、关注事件
 		setCooperateCollectFlagD(datas);

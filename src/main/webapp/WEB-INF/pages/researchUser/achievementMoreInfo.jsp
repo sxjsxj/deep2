@@ -61,8 +61,8 @@
 					<div class='clear'></div>
 				</div>
 				<div class='title'>基本情况</div>
-				<div class='txt'>所在单位：211高校；985高校</div>
-				<div class='txt' id="leaderDepart"></div>
+				<div class='txt' id="uniOrgName">所在单位：</div>
+				<div class='txt' id="uniOrgDepart">主管部门：</div>
 				<div class='title' style='margin-top:30px'>成果形式</div>
 				<div class='txt' id="type"></div>
 
@@ -75,10 +75,10 @@
 				<div class='title' style='margin-top:30px'>预期效果</div>
 				<div class='txt' id="expectedEffect"></div>
 				
-				<div class='title' style='margin-top:30px'>成功转化案例数</div>
+				<div class='title' id="caseNumTitle" style='margin-top:30px'>成功转化案例数</div>
 				<div class='txt' id="caseNum"></div>
 				
-				<div class='title' style='margin-top:30px'>案例详述</div>
+				<div class='title' id="caseDetailTitle" style='margin-top:30px'>案例详述</div>
 				<div class='txt' id="caseDetail"></div>
 				
 				<div id='mores'>

@@ -60,25 +60,25 @@
 					<div class='clear'></div>
 				</div>
 				<div class='title'>基本情况</div>
-				<div class='txt'>所在单位：211高校；985高校</div>
-				<div class='txt' id="leaderDepart"></div>
-				<div class='title' style='margin-top:30px'>团队介绍</div>
+				<div class='txt' id="uniOrgName">所在单位：</div>
+				<div class='txt' id="uniOrgDepart">主管部门：</div>
+				<div class='title' id="introductionTitle" style='margin-top:30px'>团队介绍</div>
 				<div class='txt' id="introduction"></div>
 
 				<div class='title' style='margin-top:30px'>研究方向</div>
 				<div class='txt' id="field"></div>
 
-				<div class='title' style='margin-top:30px'>研究成果</div>
+				<div class='title' id="achievementTitle" style='margin-top:30px'>研究成果</div>
 				<div class='txt' id="achievement"></div>
 
-				<div class='title' style='margin-top:30px'>团队人数</div>
+				<div class='title' id="teamSizeTitle" style='margin-top:30px'>团队人数</div>
 				<div class='txt' id="teamSize"></div>
 				
-				<div class='title' style='margin-top:30px'>负责人信息</div>
+				<div class='title' id="leaderInfoTitle" style='margin-top:30px'>负责人信息</div>
 				<div class='txt' id="leaderInfo"></div>
 				
 				<div id='mores'>
-					<div class='title' style='margin-top:30px'>主要成就</div>
+					<div class='title' id="leaderAchieveTitle" style='margin-top:30px'>主要成就</div>
 					<div class='txt2' id="leaderAchieve"></div>
 				</div>
 				<div class='more'>查看更多信息>></div>

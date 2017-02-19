@@ -13,10 +13,16 @@ function getDeatil() {
 	FrontCommonFunction.baseOptions['data'] = requestParamTemp;
 	FrontCommonFunction.baseOptions['success'] = function(datas) {
 		$('head title').html(datas.name);
-		$("#name").html(FrontCommonFunction.replaceNull(datas.name)); 
+		var type = $('#commonInvestorUserType').val();
+		if(type == '0') {
+			$("#name").html(FrontCommonFunction.replaceNull(datas.name)); 
+		}
+		if(type == '1') {
+			$("#name").html(FrontCommonFunction.replaceNull(datas.contactName)); 
+		}
 		$("#investDomain").html("投资领域："+FrontCommonFunction.setInvestorDomain(datas.investDomain)); 
 		$("#investPhase").html("投资阶段："+FrontCommonFunction.setInvestorPhase(datas.investPhase)); 
-		$("#investOutline").html("投资概述："+FrontCommonFunction.replaceNull(datas.investOutline)); 
+		$("#investOutline").html(FrontCommonFunction.replaceNull(datas.investOutline)); 
 		$("#investProvince").html(FrontCommonFunction.replaceNull(datas.province)); 
 		$("#investAmount").html("投资额："+FrontCommonFunction.setAmount(datas.investAmount)); 
 		$("#introduction").html(FrontCommonFunction.replaceNull(datas.introduction)); 

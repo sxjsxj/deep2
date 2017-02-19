@@ -19,13 +19,15 @@ function getDeatil() {
 		$("#status").html(FrontCommonFunction.setRequirementStatus(datas.status));
 		$("#scanNumber").html("浏览量: "+FrontCommonFunction.replaceNull(datas.scanNumber)); 
 		$("#address").html("公司所在地："+FrontCommonFunction.replaceNull(datas.companyUserResultModel.province))
-		$("#domain2").html("领域："+FrontCommonFunction.setInvestorDomain(datas.domain));
+		$("#domain2").html("所在领域："+FrontCommonFunction.setInvestorDomain(datas.domain));
 		$("#amount").html("研发经费："+FrontCommonFunction.setAmount(datas.amount));
 		$("#type").html("需求类型："+FrontCommonFunction.setType(datas.type));
 		$("#duration").html("研发周期："+FrontCommonFunction.setDuration(datas.duration));
 		$("#cooperationType").html("合作方式："+FrontCommonFunction.setInbestorCooperationType(datas.cooperationType));
-		$("#similarProduct").html(FrontCommonFunction.replaceNull(datas.similarProduct));
 		$("#detail").html(FrontCommonFunction.replaceNull(datas.detail));
+		if(!datas.similarProduct) {
+			$("#similarProduct").html(FrontCommonFunction.replaceNull(datas.similarProduct));
+		}
 		$("#province").html(datas.companyUserResultModel.province);
 		$("#requireId").val(datas.id);
 		//注册收藏、关注事件

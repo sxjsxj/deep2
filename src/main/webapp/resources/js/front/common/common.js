@@ -1184,7 +1184,7 @@ var FrontCommonFunction = {
 	},
 	replaceNull:function(dataObj){
 		var result = '';
-		if(dataObj == 0) return 0;
+		if(dataObj ==="0") return "0";
 		if(dataObj == null || dataObj==""|| dataObj == 'null' ||dataObj == undefined ||dataObj == "undefined"){
 			result = '';
 		} else {

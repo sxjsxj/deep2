@@ -32,6 +32,9 @@ public class EmailServiceImpl implements EmailService {
 	@Qualifier("daoUtil")
     private DaoUtil daoUtil;
 	
+	@Autowired
+	private SendMailUtil sendMailUtil;
+	
 	@Override
 	public boolean sendEmail(String to) throws ViewException {
 		if (StringUtil.isEmpty(to)) return false;
@@ -43,7 +46,7 @@ public class EmailServiceImpl implements EmailService {
 			mail.setSubject("忘记密码:");
 			String code = RandomUtil.getRandomString(6);
 			mail.setMessage(code);
-			SendMailUtil.send(mail);
+			sendMailUtil.send(mail);
 			map.put(to, code);
 		} catch (MessagingException e) {
 			ViewException ve = new ViewException("邮件发送失败！");

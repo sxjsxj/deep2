@@ -36,7 +36,7 @@ import com.deep.two.orm.User;
 //指定测试用例的运行器 这里是指定了Junit4
 @RunWith(SpringJUnit4ClassRunner.class)
 //指定Spring的配置文件
-@ContextConfiguration({ "/deep2-context.xml" })
+@ContextConfiguration({ "classpath:spring/deep2-*.xml" })
 //对所有的测试方法都使用事务，并在测试完成后回滚事务
 @TransactionConfiguration(transactionManager = "transactionManager")
 @Transactional

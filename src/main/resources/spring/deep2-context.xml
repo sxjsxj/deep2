@@ -38,7 +38,7 @@
 	<bean id="configProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
         <property name="locations"> 
             <list>
-                <value>classpath:proterties/deep2.properties</value>
+                <value>classpath:properties/deep2.properties</value>
             </list>
         </property>
     </bean>

@@ -23,8 +23,8 @@
 	<aop:aspectj-autoproxy proxy-target-class="true"/> 
 
 	<!-- Handles HTTP GET requests for static resources by efficiently serving up static resources in the ${webappRoot}/resources directory -->
-	<mvc:default-servlet-handler/>
-	
+<!-- 	<mvc:default-servlet-handler/>
+ -->	
 	<bean id="configProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
         <property name="locations"> 
             <list>

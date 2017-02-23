@@ -29,9 +29,10 @@ public class SendMailUtil {
 		
 		// 创建邮件对象
 		Message msg = new MimeMessage(session);
-		msg.setSubject(mail.getSubject());
+		msg.setSubject(properties.getProperty("mail.subject"));
 		// 设置邮件内容
 		msg.setText(mail.getMessage());
+		msg.setContent(mail.getMessage(), "text/html;charset=UTF-8");
 		// 设置发件人
 		msg.setFrom(new InternetAddress(properties.getProperty("mail.sender.username")));
 		

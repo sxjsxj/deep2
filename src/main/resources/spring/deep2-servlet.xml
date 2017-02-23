@@ -28,7 +28,7 @@
 	<bean id="configProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
         <property name="locations"> 
             <list>
-                <value>/WEB-INF/config/deep2.properties</value>
+                <value>classpath:properties/deep2.properties</value>
             </list>
         </property>
     </bean>

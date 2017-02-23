@@ -34,6 +34,7 @@
 				<img src='${pageContext.request.contextPath}/resources/images/front/img/banner31.png' width="100%" height="100%" />
 				<div class='width1200'>
 					<div class='txt'>
+						唯有联合，引领未来
 					</div>
 				</div>
 			</li>
@@ -41,6 +42,7 @@
 				<img src='${pageContext.request.contextPath}/resources/images/front/img/banner32.png' width="100%" height="100%" />
 				<div class='width1200'>
 					<div class='txt'>
+						让资本、科技和产业联合起来
 					</div>
 				</div>
 			</li>
@@ -48,6 +50,7 @@
 				<img src='${pageContext.request.contextPath}/resources/images/front/img/banner33.png' width="100%" height="100%" />
 				<div class='width1200'>
 					<div class='txt'>
+						为情怀赋予价值，为社会创造财富
 					</div>
 				</div>
 			</li>
@@ -117,15 +120,15 @@
 			<div style="color: #525d64;font-size: 19px;text-align: center;">
 				推动企业生产技术升级——帮助企业解决生产、转型中的技术难题
 			</div>
-			
+
 			<div style="color: #525d64;font-size: 19px;margin-left:340px;">
 				推动科研项目产业化——推动高校、科研机构的科技成果向市场转化
 			</div>
-			
+
 			<div  style="color: #525d64;font-size: 19px;margin-left:434px;">
 				资本对接——提供科技创业项目资本的对接服务
 			</div>
-			
+
 			<div style="color: #525d64;font-size: 19px;margin-left:396px;">
 				团队人才对接——创业就业人才团队对接搭建
 			</div>
@@ -142,7 +145,7 @@
 	</div>
 	<%@ include file="/WEB-INF/pages/common/footer.jsp" %>
 	<ul class='righttoul '>
-	   <div id="go_top">  
+	   <div id="go_top">
 		<li class='goup'>
 			<div class='txt1 fl tss'>回到顶部</div>
 			<a  href="javascript:scroll(0,0)" title='回到顶部' class='fl' style='text-align:center;margin-left:10px'><img src='${pageContext.request.contextPath}/resources/images/front/img/goup.png' style='margin-top:10px'/></a>
@@ -218,7 +221,7 @@
 			clearInterval(time);
 		})
 		$(".banner ul li img").css({'width':$(".banner").width(),'height':$(".banner").height()});
-		
+
 		function mos(){
 			clearInterval(time);
 			$(".banner ul").stop(true,true).animate({'margin-left' : -now * $('.banner').width()},300,function(){
@@ -275,25 +278,25 @@
 		})
 	})
 </script>
-<script>  
-$(document).ready(function(){  
-    $("#go_top").hide();  
-    $(function () {  
-        //检测屏幕高度  
-        var height=$(window).height();  
-        //scroll() 方法为滚动事件  
-        $(window).scroll(function(){  
-            if ($(window).scrollTop()>height){  
-                $("#go_top").fadeIn(500);  
-            }else{  
-                $("#go_top").fadeOut(500);  
-                }  
-        });  
-        $("#go_top").click(function(){  
-            $('body,html').animate({scrollTop:0},100);  
-            return false;  
-        });  
-    });  
-});  
-</script>  
+<script>
+$(document).ready(function(){
+    $("#go_top").hide();
+    $(function () {
+        //检测屏幕高度
+        var height=$(window).height();
+        //scroll() 方法为滚动事件
+        $(window).scroll(function(){
+            if ($(window).scrollTop()>height){
+                $("#go_top").fadeIn(500);
+            }else{
+                $("#go_top").fadeOut(500);
+                }
+        });
+        $("#go_top").click(function(){
+            $('body,html').animate({scrollTop:0},100);
+            return false;
+        });
+    });
+});
+</script>
 </html>

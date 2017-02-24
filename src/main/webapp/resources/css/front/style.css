@@ -11,15 +11,15 @@ ul li{list-style: none}
 .width1200{width: 1200px;margin: 0 auto}
 .headbg{
 	height: 58px;width: 100%;box-shadow: 0px 0px 20px #000;position: fixed;top: 0px;min-width: 1200px;
-	-moz-box-shadow:0px 0px 20px #000;/*firefox*/ 
-	-webkit-box-shadow:0px 0px 20px #000;/*webkit*/ 
-	background: #254e77; /* Old browsers */  
-	background: -moz-linear-gradient(top,  #254e77 0%, #1d3d5e 100%); /* FF3.6+ */  
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#254e77), color-stop(100%,#1d3d5e)); /* Chrome,Safari4+ */  
-	background: -webkit-linear-gradient(top,  #254e77 0%,#1d3d5e 100%); /* Chrome10+,Safari5.1+ */  
-	background: -o-linear-gradient(top,  #254e77 0%,#1d3d5e 100%); /* Opera 11.10+ */  
-	background: -ms-linear-gradient(top,  #254e77 0%,#1d3d5e 100%); /* IE10+ */  
-	background: linear-gradient(top,  #254e77 0%,#1d3d5e 100%); /* W3C */  
+	-moz-box-shadow:0px 0px 20px #000;/*firefox*/
+	-webkit-box-shadow:0px 0px 20px #000;/*webkit*/
+	background: #254e77; /* Old browsers */
+	background: -moz-linear-gradient(top,  #254e77 0%, #1d3d5e 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#254e77), color-stop(100%,#1d3d5e)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #254e77 0%,#1d3d5e 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #254e77 0%,#1d3d5e 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #254e77 0%,#1d3d5e 100%); /* IE10+ */
+	background: linear-gradient(top,  #254e77 0%,#1d3d5e 100%); /* W3C */
 	z-index: 99
 }
 
@@ -84,8 +84,8 @@ ul li{list-style: none}
 .cons .right .xuqiu2 .lis input{background: #fff;height: 36px;line-height: 36px;color: #1b1b1b;font-size: 14px;width: 174px;border-radius: 4px;text-indent: 12px;-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);outline: 0px;margin-right: 0px}
 .cons .right .xuqiu2 .lis input:focus{border:1px solid #99cfe1;
 	box-shadow: 0px 0px 5px #99cfe1;
-	-moz-box-shadow:0px 0px 5px #99cfe1;/*firefox*/ 
-	-webkit-box-shadow:0px 0px 5px #99cfe1;/*webkit*/ 
+	-moz-box-shadow:0px 0px 5px #99cfe1;/*firefox*/
+	-webkit-box-shadow:0px 0px 5px #99cfe1;/*webkit*/
 }
 .cons .right .xuqiu3{margin-top: 24px}
 .cons .right .xuqiu3 textarea{color: #1b1b1b;font-size: 14px;border-radius: 4px;-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);width: 785px;height: 150px;resize: none;padding-top: 6px;text-indent: 12px;border:1px solid #ccc;}
@@ -94,7 +94,7 @@ ul li{list-style: none}
 .cons .right .xuqiu4 .input{position: relative;}
 .cons .right .xuqiu4 .input dl{border:1px solid #99cfe1;width: 100%;position: absolute;background: #fff;text-indent: 12px;display: none;z-index: 50;
 	box-shadow: 0px 0px 5px #99cfe1;
-	-moz-box-shadow:0px 0px 5px #99cfe1;/*firefox*/ 
+	-moz-box-shadow:0px 0px 5px #99cfe1;/*firefox*/
 	-webkit-box-shadow:0px 0px 5px #99cfe1;/*webkit*/
 }
 .cons .right .xuqiu4 .input dl dd{height: 33px;line-height: 33px;color: #1b1b1b;font-size: 14px;}
@@ -117,7 +117,7 @@ ul li{list-style: none}
 .cons .right .xuqiu6{margin-top: 24px}
 .cons .right .xuqiu6 .ris .btn{width: 18px;height: 18px;border-radius: 4px;background: #fff;border:1px solid #99cfe1;outline: 0px;
 	box-shadow: 0px 0px 5px #99cfe1;
-	-moz-box-shadow:0px 0px 5px #99cfe1;/*firefox*/ 
+	-moz-box-shadow:0px 0px 5px #99cfe1;/*firefox*/
 	-webkit-box-shadow:0px 0px 5px #99cfe1;/*webkit*/
 }
 .cons .right .xuqiu6 .txt{color: #434343;font-size: 14px;margin-left: 10px}
@@ -157,8 +157,8 @@ ul li{list-style: none}
 .tuijian .right .lis li .ims{height: 182px}
 .tuijian .right .lis li.active{
 	box-shadow: 0px 3px 8px #808080;
-	-moz-box-shadow:0px 3px 8px #808080;/*firefox*/ 
-	-webkit-box-shadow:0px 3px 8px #808080;/*webkit*/ 
+	-moz-box-shadow:0px 3px 8px #808080;/*firefox*/
+	-webkit-box-shadow:0px 3px 8px #808080;/*webkit*/
 }
 .tuijian .right .lis .rights{width: 618px;background: #fff;height: 182px;padding-left: 14px;padding-right: 26px;}
 .tuijian .right .lis .tits {margin-top: 8px}
@@ -210,8 +210,8 @@ ul li{list-style: none}
 .ins .healist li{width: 442px;height: 152px;background: #fff;border-radius: 5px;margin-bottom: 16px}
 .ins .healist li.active{
 	box-shadow: 0px 3px 8px #808080;
-	-moz-box-shadow:0px 3px 8px #808080;/*firefox*/ 
-	-webkit-box-shadow:0px 3px 8px #808080;/*webkit*/ 
+	-moz-box-shadow:0px 3px 8px #808080;/*firefox*/
+	-webkit-box-shadow:0px 3px 8px #808080;/*webkit*/
 }
 .ins .healist .ims{width: 122px;height: 122px;margin-top: 14px;margin-left: 14px}
 .ins .healist .ims img{width: 100%}
@@ -253,8 +253,8 @@ ul li{list-style: none}
 .listd .lis li .ims{height: 182px}
 .listd .lis li.active{
 	box-shadow: 0px 3px 8px #808080;
-	-moz-box-shadow:0px 3px 8px #808080;/*firefox*/ 
-	-webkit-box-shadow:0px 3px 8px #808080;/*webkit*/ 
+	-moz-box-shadow:0px 3px 8px #808080;/*firefox*/
+	-webkit-box-shadow:0px 3px 8px #808080;/*webkit*/
 }
 .listd .lis .rights{width: 618px;background: #fff;height: 182px;padding-left: 14px;padding-right: 26px;}
 .listd .lis .tits {margin-top: 8px}
@@ -306,12 +306,12 @@ ul li{list-style: none}
 .listd li.other .f{margin-top: 18px}
 
 /*登录页*/
-.loginbg{background: url(../../images/front/img/loginbg.png);height: 1068px;width: 100%;}
+.loginbg{background: url(../../images/front/img/loginbg.jpg);height: 1068px;width: 100%;}
 .loginbg .topLogo{width: 223px;height: 58px;margin: 0 auto;padding-top: 58px;margin-bottom: 135px}
 .loginbg .loginkuang{height: 410px;width: 536px;background: rgba(255,255,255,0.1);border-radius: 10px;
 	box-shadow: 0px 3px 8px #254e77;
-	-moz-box-shadow:0px 3px 8px #254e77;/*firefox*/ 
-	-webkit-box-shadow:0px 3px 8px #254e77;/*webkit*/ 
+	-moz-box-shadow:0px 3px 8px #254e77;/*firefox*/
+	-webkit-box-shadow:0px 3px 8px #254e77;/*webkit*/
 	margin: 0 auto;
 }
 
@@ -323,8 +323,8 @@ ul li{list-style: none}
 .loginbg .loginkuang .list .input input:focus{
 	border:1px solid #99cfe1;
 	box-shadow: 0px 0px 5px #99cfe1;
-	-moz-box-shadow:0px 0px 5px #99cfe1;/*firefox*/ 
-	-webkit-box-shadow:0px 0px 5px #99cfe1;/*webkit*/ 
+	-moz-box-shadow:0px 0px 5px #99cfe1;/*firefox*/
+	-webkit-box-shadow:0px 0px 5px #99cfe1;/*webkit*/
 }
 .loginbg .loginkuang .userpass{margin-top: 30px}
 .loginbg .loginkuang .rem{margin-top: 24px}
@@ -335,7 +335,7 @@ ul li{list-style: none}
 .loginbg .loginkuang .loginbtns{width: 230px;height: 50px;line-height: 50px;border-radius: 6px;background: #f2961c;color:#fff;font-size: 20px;text-align: center;margin: 0 auto;margin-top: 30px}
 .loginbg .loginkuang .loginbtns:hover{background: #f9963c}
 
-.loginbg2{background: url(../../images/front/img/loginbg3.png);height: 1000px;width: 100%;}
+.loginbg2{background: url(../../images/front/img/loginbg3.jpg);height: 1000px;width: 100%;}
 .loginbg2 .topLogo{margin-bottom: 58px;}
 .loginbg2 .loginkuang{width: 780px;height: 800px}
 .loginbg2 .keyankuang .tit{color: #ffffff;font-size: 28px;text-align: center;height: 86px;line-height: 86px;}
@@ -351,15 +351,15 @@ ul li{list-style: none}
 .loginbg2 .keyankuang ul.cons .list input:focus{
 	border:1px solid #99cfe1;
 	box-shadow: 0px 0px 5px #99cfe1;
-	-moz-box-shadow:0px 0px 5px #99cfe1;/*firefox*/ 
-	-webkit-box-shadow:0px 0px 5px #99cfe1;/*webkit*/ 
+	-moz-box-shadow:0px 0px 5px #99cfe1;/*firefox*/
+	-webkit-box-shadow:0px 0px 5px #99cfe1;/*webkit*/
 }
 
 .loginbg2 .keyankuang ul.cons .lis .input{position: relative;margin-right: 10px}
 .loginbg2 .keyankuang ul.cons .lis .input dl{border:1px solid #99cfe1;width: 100%;position: absolute;background: #fff;text-indent: 12px;z-index: 50;
 	display: none;
 	box-shadow: 0px 0px 5px #99cfe1;
-	-moz-box-shadow:0px 0px 5px #99cfe1;/*firefox*/ 
+	-moz-box-shadow:0px 0px 5px #99cfe1;/*firefox*/
 	-webkit-box-shadow:0px 0px 5px #99cfe1;/*webkit*/
 }
 .loginbg2 .keyankuang ul.cons .lis .input dl dd{height: 33px;line-height: 33px;color: #1b1b1b;font-size: 14px;}
@@ -378,7 +378,7 @@ ul li{list-style: none}
 .loginbg3 .hes li:nth-child(2){margin-right: 0px}
 .loginbg3 .keyankuang .rem{margin-left: 20px;margin-top: 0px}
 
-.regchoose{background: url(../../images/front/img/loginbg3.png);height: 1000px;width: 100%;}
+.regchoose{background: url(../../images/front/img/loginbg3.jpg);height: 1000px;width: 100%;}
 .regchoose .topLogo{width: 223px;height: 58px;margin: 0 auto;padding-top: 58px;margin-bottom: 60px}
 .regchoose .topTxt{text-align: center;color: #ffffff;font-size: 30px;}
 .regchoose ul {margin-top: 46px}
@@ -386,8 +386,8 @@ ul li{list-style: none}
 .regchoose ul li:hover {
 	background: rgba(255,255,255,0.1);border-radius: 3px;
 	box-shadow: 0px 3px 8px #254e77;
-	-moz-box-shadow:0px 3px 8px #254e77;/*firefox*/ 
-	-webkit-box-shadow:0px 3px 8px #254e77;/*webkit*/ 
+	-moz-box-shadow:0px 3px 8px #254e77;/*firefox*/
+	-webkit-box-shadow:0px 3px 8px #254e77;/*webkit*/
 	margin: 0 auto;
 }
 .regchoose ul li:hover .topimg{background: #1e719a}
@@ -453,8 +453,8 @@ ul li{list-style: none}
 #alts{height: 100%;width: 100%;background: rgba(83,83,83,0.6);left: 0px;top: 0px;z-index: 101;}
 #alts .altsbg{width: 906px;height: 442px;border-radius: 8px;background: #fff;padding-top: 50px;
 	box-shadow: 0px 3px 8px #254e77;
-	-moz-box-shadow:0px 3px 8px #254e77;/*firefox*/ 
-	-webkit-box-shadow:0px 3px 8px #254e77;/*webkit*/ 
+	-moz-box-shadow:0px 3px 8px #254e77;/*firefox*/
+	-webkit-box-shadow:0px 3px 8px #254e77;/*webkit*/
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -467,8 +467,8 @@ ul li{list-style: none}
 
 #alts .altsubmit{width: 780px;min-height: 150px;border-radius: 8px;background: #fff;
 	box-shadow: 0px 3px 8px #254e77;
-	-moz-box-shadow:0px 3px 8px #254e77;/*firefox*/ 
-	-webkit-box-shadow:0px 3px 8px #254e77;/*webkit*/ 
+	-moz-box-shadow:0px 3px 8px #254e77;/*firefox*/
+	-webkit-box-shadow:0px 3px 8px #254e77;/*webkit*/
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -483,8 +483,8 @@ ul li{list-style: none}
 
 .xuqiualert{width: 900px;min-height: 560px;border-radius: 8px;background: #fff;
 	box-shadow: 0px 3px 8px #254e77;
-	-moz-box-shadow:0px 3px 8px #254e77;/*firefox*/ 
-	-webkit-box-shadow:0px 3px 8px #254e77;/*webkit*/ 
+	-moz-box-shadow:0px 3px 8px #254e77;/*firefox*/
+	-webkit-box-shadow:0px 3px 8px #254e77;/*webkit*/
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -499,9 +499,9 @@ ul li{list-style: none}
 .xuqiualert ul{width: 760px;margin:0 auto;}
 .xuqiualert ul li{height: 420px;width: 374px;float:left;}
 .xuqiualert ul li:hover{box-shadow: 0px 1px 8px #254e77;
-	-moz-box-shadow:0px 1px 8px #254e77;/*firefox*/ 
+	-moz-box-shadow:0px 1px 8px #254e77;/*firefox*/
 	-webkit-box-shadow:0px 1px 8px #254e77;/*webkit*/ }
-.xuqiualert ul li:hover .bg{background: #349fc4}	
+.xuqiualert ul li:hover .bg{background: #349fc4}
 .xuqiualert ul li:hover .img2{display: inline-block;}
 .xuqiualert ul li:hover .img1{display: none}
 .xuqiualert ul li .img2{display: none}
@@ -509,8 +509,8 @@ ul li{list-style: none}
 .xuqiualert ul li .bg{width: 214px;height: 214px;border-radius: 214px;background: #fff;margin: 0 auto;text-align: center;
 	margin-top: 46px;
 	box-shadow: 0px 0px 40px #e9f3f7;
-	-moz-box-shadow:0px 0px 40px #e9f3f7;/*firefox*/ 
-	-webkit-box-shadow:0px 0px 40px #e9f3f7;/*webkit*/ 
+	-moz-box-shadow:0px 0px 40px #e9f3f7;/*firefox*/
+	-webkit-box-shadow:0px 0px 40px #e9f3f7;/*webkit*/
 }
 .xuqiualert ul li .tx .t{color: #707070;font-size: 24px;text-align: center;margin-top: 20px;margin-bottom: 14px}
 .xuqiualert ul li .tx .f{color: #959595;font-size: 18px;text-align: center;}
@@ -532,8 +532,8 @@ ul li{list-style: none}
 .info .right .conul input{background: #fff;height: 36px;line-height: 36px;color: #959595;font-size: 14px;width: 328px;border-radius: 4px;text-indent: 12px;-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);outline: 0px;margin-right: 0px}
 .info .right .conul input:focus{border:1px solid #99cfe1;
 	box-shadow: 0px 0px 5px #99cfe1;
-	-moz-box-shadow:0px 0px 5px #99cfe1;/*firefox*/ 
-	-webkit-box-shadow:0px 0px 5px #99cfe1;/*webkit*/ 
+	-moz-box-shadow:0px 0px 5px #99cfe1;/*firefox*/
+	-webkit-box-shadow:0px 0px 5px #99cfe1;/*webkit*/
 }
 
 .change2 .btn_top{width: 260px;height: 50px;text-align: center;line-height: 50px;color: #fff;font-size: 20px;border-radius: 4px;background: #f2961c;cursor: pointer;margin-left: 80px;}
@@ -553,7 +553,7 @@ ul li{list-style: none}
 .change2 .nav2 li.active{border-bottom: 3px solid #349fc4;height: 45px}
 .change2 .con {margin-top: 20px;margin-left: 80px}
 .change2 .con li{padding-top: 15px;height: 176px;background: #fff;width: 900px;margin-bottom: 20px}
-.change2 .con .titl .les{color: #626262;font-size: 24px;margin-left: 10px} 
+.change2 .con .titl .les{color: #626262;font-size: 24px;margin-left: 10px}
 .change2 .con .titl .fr div{font-size: 14px;color:#959595;}
 .change2 .con .titl .fr div.ge{color: #254e77;margin-right: 10px;margin-left: 10px}
 .change2 .con .txt{color: #535353;font-size: 14px;margin-left: 10px;margin-right: 10px;margin-top: 8px;}

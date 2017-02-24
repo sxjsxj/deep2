@@ -9,22 +9,22 @@
 <title>投资方列表</title>
 <link type="text/css" rel="stylesheet" href="../../../resources/css/front/style.css"/>
 <link type="text/css" rel="stylesheet" href="../../../resources/css/front/alert.css"/>
-<style> 
-.mydiv1 {} 
-.mydiv2 { 
+<style>
+.mydiv1 {}
+.mydiv2 {
      box-shadow: 0px 3px 8px #808080;
-	-moz-box-shadow:0px 3px 8px #808080;/*firefox*/ 
-	-webkit-box-shadow:0px 3px 8px #808080;/*webkit*/ 
-} 
-</style> 
+	-moz-box-shadow:0px 3px 8px #808080;/*firefox*/
+	-webkit-box-shadow:0px 3px 8px #808080;/*webkit*/
+}
+</style>
 </head>
 <body>
 	<iframe src="../../pages/common/header.html" width="100%" marginheight="50px" border="0" height="50px"></iframe>
 	<iframe src="../../pages/common/dialog.html" style="width:100%" border="0" hidden="hidden"></iframe>
 	<script type="text/javascript" src="../../../resources/js/front/investorUser/investorList.js"></script>
-	
+
 	<div style="margin-bottom:-17px;" class='banner'>
-		<img src='../../../resources/images/front/img/banner.png' style="width:100%" height="100%" />
+		<img src='../../../resources/images/front/img/banner.jpg' style="width:100%" height="100%" />
 	</div>
 	<input id="currentPage" type="hidden" value="1"></input>
 	<input type="hidden" id="searchHeaderName" value="${headerName}"/>
@@ -48,12 +48,12 @@
 				<li>
 					<div class='fl ti2' style="font-size:15px;">学科领域</div>
 				    <div id="checkBoxDomain" url="../../../basicResearchField/query">
-					
+
 					<input type="hidden" id="domainId"/>
 					</div>
 					<div class='clear'></div>
 				</li>
-				
+
 				<li style='margin-bottom:5px'>
 					<div class='fl ti2' style="font-size:15px;">省市地区</div>
 					<div class='fl list'>
@@ -66,9 +66,9 @@
 					<div class='clear'></div>
 				</li>
 				<div id="region" url="../../../basicProvinceArea/queryAreaProvince">
-				
+
 			    </div>
-				
+
 				<li>
 					<div class='fl ti2' style="font-size:15px;">投资额</div>
 					<div id="checkBoxAmount">
@@ -165,8 +165,8 @@
 			<div id="investorUserMoreInfo" url="../../../investorUser/getMoreInfoPage"></div>
 			<div id="addFollowerUrl" url="../../../investorUserFollower/add"></div>
         		<div id="cancelFollowerUrl" url="../../../investorUserFollower/delete"></div>
-        		<div id="loginUrl" url="../../../security/loginPage"></div> 
-        
+        		<div id="loginUrl" url="../../../security/loginPage"></div>
+
 			<div class='title2'>
 				<%-- <div class='checkbox fl'>
 					<img src='../../../resources/images/front/img/checkbox.png'/>
@@ -176,15 +176,15 @@
 			</div>
 			<div class='fl'>
 				<ul class='lis' id="investorListQuery">
-					
+
 				</ul>
 				<div id="noResult" class="red"></div>
 				<ul id="pagination" class='page'>
-				
+
 				</ul>
 			</div>
-			
-			
+
+
 			<div class='fr bg_img'>
 				<img src='../../../resources/images/front/img/fr_bg2.png' height="780" width="281" />
 				<%-- <img src='../../../resources/images/front/img/fr_bg2.png' height="521" width="281" /> --%>
@@ -196,7 +196,7 @@
 </body>
 <script type="text/javascript">
 	$(function(){
-		
+
 		$('.cons .right .xuqiu4 .input').click(function(){
 			if($(this).hasClass('on')){
 				$(this).removeClass("on");
@@ -232,7 +232,7 @@
 				$(this).addClass("on");
 				$(this).find('img').attr("src",'../../../resources/images/front/img/checkbox2.png')
 			}
-			
+
 		})
 
 	$(".molist").slideUp(0);
@@ -257,7 +257,7 @@
 				$(this).addClass("on");
 				$(this).find('img').attr("src",'../../../resources/images/front/img/checkbox2.png')
 			}
-			
+
 		})
 	})
 </script>
@@ -268,36 +268,36 @@ $(function () {
   $(window).scroll(function () {
     var top = $(window).scrollTop() + 200;
     var left = $(window).scrollLeft() + 320;
-    $("#editInfo1").animate({ "top": top }, 30); 
+    $("#editInfo1").animate({ "top": top }, 30);
   });
-  
+
   $(window).scroll(function () {
 	    var top = $(window).scrollTop() + 200;
 	    var left = $(window).scrollLeft() + 320;
-	    $("#editInfo2").animate({ "top": top }, 30); 
+	    $("#editInfo2").animate({ "top": top }, 30);
  });
-  
-  
+
+
   $(window).scroll(function () {
 	    var top = $(window).scrollTop() + 200;
 	    var left = $(window).scrollLeft() + 320;
 	    $("#altstwo").animate({ "top": top }, 30);
   });
-  
-  
+
+
   $(window).scroll(function () {
 	    var top = $(window).scrollTop() + 200;
 	    var left = $(window).scrollLeft() + 320;
 	    $("#altsthree").animate({ "top": top }, 30);
   });
-  
-  
+
+
   $(window).scroll(function () {
 	    var top = $(window).scrollTop() + 200;
 	    var left = $(window).scrollLeft() + 320;
 	    $("#nologin").animate({ "top": top }, 30);
   });
-  
+
 });
 </script>
 </html>

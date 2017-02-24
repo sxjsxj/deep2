@@ -14,9 +14,9 @@
 <body>
 	<%@ include file="/WEB-INF/pages/common/header.jsp" %>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/companyUser/fundRequirementDetail.js"></script>
-	
+
 	<%-- <div class='banner'>
-		<img src='${pageContext.request.contextPath}/resources/images/front/img/banner.png' style="width:100%" height="100%" />
+		<img src='${pageContext.request.contextPath}/resources/images/front/img/banner.jpg' style="width:100%" height="100%" />
 		<div class='width1200'>
 			<div class='topbtxt'>唯有合作&nbsp;&nbsp;&nbsp;引领未来</div>
 			<div class='bottombtxt'>
@@ -41,7 +41,7 @@
 					<font id="errorInfo">&nbsp;&nbsp;</font> <br /> <br />
 				</div>
 			</div> -->
-			
+
 				<!-- 保存失败start -->
 	<div class="registSuccess" id="alertClick"></div>
 		<!-- version4 点击发布需求弹框start -->
@@ -91,7 +91,7 @@
            <div id="myRequireUrl" url="${pageContext.request.contextPath}/companyUser/getMyRequirementBrowsePage"></div>
 			<!-- 保存成功弹框 statr -->
 			<div id="Button1" onclick="ShowDiv('MyDiv','fade')"></div>
-			
+
 			<div id="fade" class="black_overlay"></div>
 			<div id="MyDiv" class="white_content" style="margin-top:900px">
 				<div style="text-align: right; cursor: default; height: 40px;">
@@ -100,7 +100,7 @@
 				<div style="margin-top:120px;margin-left:300px"><font size="10">恭喜您,保存成功</font></div>
 			</div>
 			<!-- 保存成功弹框 end -->
-			
+
 			<input type="hidden" value="${id}" id="updateId"/>
 		<form id="fundRequirementForm" method="post" enctype="multipart/form-data">
 		    <input id="str" name="str" type="hidden" value="" />
@@ -140,8 +140,8 @@
 					</div>
 					<div class='clear'></div>
 				</div>
-				
-				
+
+
 				<div class='xuqiu xuqiu3'>
 					<div class='name fl'><span>*</span>团队介绍</div>
 					<div class='fl'>
@@ -149,7 +149,7 @@
 					</div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu xuqiu3'>
 					<div class='name fl'><span>*</span>项目简述</div>
 					<div class='fl'>
@@ -157,7 +157,7 @@
 					</div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu xuqiu4 xuqiu8'>
 				    <input id="projectPhase" name="projectPhase" type='hidden' value=''/>
 					<div class='lis'>
@@ -186,7 +186,7 @@
 					</div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu xuqiu4 xuqiu8'>
 				    <input id="amountNeeded" name="amountNeeded" type='hidden' value=''/>
 					<div class='lis'>
@@ -246,7 +246,7 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
-	
+
 	$('#companyFile').change(function() {
 		 //文件大小限制
 		   var dom = document.getElementById("companyFile");
@@ -264,8 +264,8 @@ $(document).ready(function() {
 		   }
 		$('#fileTypeCheckResult').html("已上传文件:"+$(this).val());
 	});
-	
-	
+
+
 	$('.cons .right .xuqiu4 .input').click(function(){
 		if($(this).hasClass('on')){
 			$(this).removeClass("on");

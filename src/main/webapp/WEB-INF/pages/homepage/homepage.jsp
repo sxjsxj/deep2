@@ -31,7 +31,7 @@
 		</div>
 		<ul>
 			<li>
-				<img src='${pageContext.request.contextPath}/resources/images/front/img/banner31.png' width="100%" height="100%" />
+				<img src='${pageContext.request.contextPath}/resources/images/front/img/banner31.jpg' width="100%" height="100%" />
 				<div class='width1200'>
 					<div class='txt'>
 						唯有联合，引领未来
@@ -39,7 +39,7 @@
 				</div>
 			</li>
 			<li>
-				<img src='${pageContext.request.contextPath}/resources/images/front/img/banner32.png' width="100%" height="100%" />
+				<img src='${pageContext.request.contextPath}/resources/images/front/img/banner32.jpg' width="100%" height="100%" />
 				<div class='width1200'>
 					<div class='txt'>
 						让资本、科技和产业联合起来
@@ -47,7 +47,7 @@
 				</div>
 			</li>
 			<li>
-				<img src='${pageContext.request.contextPath}/resources/images/front/img/banner33.png' width="100%" height="100%" />
+				<img src='${pageContext.request.contextPath}/resources/images/front/img/banner33.jpg' width="100%" height="100%" />
 				<div class='width1200'>
 					<div class='txt'>
 						为情怀赋予价值，为社会创造财富

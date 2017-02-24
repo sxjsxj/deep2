@@ -12,21 +12,21 @@
 <% request.setCharacterEncoding("UTF-8");%>
 <% response.setCharacterEncoding("UTF-8");%>
 <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/images/front/img/homepage.png" media="screen" />
-<style> 
-.mydiv1 {} 
-.mydiv2 { 
+<style>
+.mydiv1 {}
+.mydiv2 {
      box-shadow: 0px 3px 8px #808080;
-	-moz-box-shadow:0px 3px 8px #808080;/*firefox*/ 
-	-webkit-box-shadow:0px 3px 8px #808080;/*webkit*/ 
-} 
-</style> 
+	-moz-box-shadow:0px 3px 8px #808080;/*firefox*/
+	-webkit-box-shadow:0px 3px 8px #808080;/*webkit*/
+}
+</style>
 </head>
 <body>
 	<%@ include file="/WEB-INF/pages/common/header.jsp" %>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/researchUser/researchGroupList.js"></script>
-	
+
 	<div class='banner' style="margin-bottom:-150px;">
-		<img style="height:131px;width: 100%;"  src='${pageContext.request.contextPath}/resources/images/front/img/banner.png' style="width:100%" height="100%" />
+		<img style="height:131px;width: 100%;"  src='${pageContext.request.contextPath}/resources/images/front/img/banner.jpg' style="width:100%" height="100%" />
 	</div>
 	<input id="currentPage" type="hidden" value="1"></input>
 	<input type="hidden" id="searchHeaderName" value="${headerName}"/>
@@ -44,19 +44,19 @@
 	<!-- 提交查询条件时 大区里的值end -->
 	<!-- 寻求合作弹框start -->
 	<input id="opeationIdIndex" type="hidden" value=""></input>
-	
+
 	<div class='cons listd listps'>
 		<div class='width1200'>
 			<ul class='heads'>
 				<li>
 					<div class='fl ti2' style="font-size:15px;">学科领域</div>
 				    <div id="checkBoxDomain" url="${pageContext.request.contextPath}/basicResearchField/query">
-					
+
 					<input type="hidden" id="domainId"/>
 					</div>
 					<div class='clear'></div>
 				</li>
-				
+
 				<li style='margin-bottom:5px'>
 					<div class='fl ti2' style="font-size:15px;">省市地区</div>
 					<div class='fl list'>
@@ -69,15 +69,15 @@
 					<div class='clear'></div>
 				</li>
 				<div id="region" url="${pageContext.request.contextPath}/basicProvinceArea/queryAreaProvince">
-				
+
 			</div>
-				
+
 				<li id="queryResearchGroup" url="${pageContext.request.contextPath}/researchGroup/query" class='selectbtn'>查询</li>
 			</ul>
 			<div id="researchGroupMoreInfo" url="${pageContext.request.contextPath}/researchGroup/getMoreInfoPage"></div>
 			<div id="addFollowerUrl" url="${pageContext.request.contextPath}/researchGroupFollower/add"></div>
             		<div id="cancelFollowerUrl" url="${pageContext.request.contextPath}/researchGroupFollower/delete"></div>
-			<div id="loginUrl" url="${pageContext.request.contextPath}/security/loginPage"></div> 
+			<div id="loginUrl" url="${pageContext.request.contextPath}/security/loginPage"></div>
 			<div class='title2'>
 				<%-- <div class='checkbox fl'>
 					<img src='${pageContext.request.contextPath}/resources/images/front/img/checkbox.png'/>
@@ -87,15 +87,15 @@
 			</div>
 			<div class='fl'>
 				<ul class='lis' id="researchGroupListQuery">
-					
+
 				</ul>
 				<div id="noResult" class="red"></div>
 				<ul id="pagination" class='page'>
-				
+
 				</ul>
 			</div>
-			
-			
+
+
 			<div class='fr bg_img'>
 				<img src='${pageContext.request.contextPath}/resources/images/front/img/fr_bg2.png' height="780" width="281" />
 				<%-- <img src='${pageContext.request.contextPath}/resources/images/front/img/fr_bg2.png' height="521" width="281" /> --%>
@@ -107,7 +107,7 @@
 </body>
 <script type="text/javascript">
 	$(function(){
-		
+
 		$('.cons .right .xuqiu4 .input').click(function(){
 			if($(this).hasClass('on')){
 				$(this).removeClass("on");
@@ -143,7 +143,7 @@
 				$(this).addClass("on");
 				$(this).find('img').attr("src",'${pageContext.request.contextPath}/resources/images/front/img/checkbox2.png')
 			}
-			
+
 		})
 
 		$(".molist").slideUp(0);
@@ -168,7 +168,7 @@
 				$(this).addClass("on");
 				$(this).find('img').attr("src",'${pageContext.request.contextPath}/resources/images/front/img/checkbox2.png')
 			}
-			
+
 		})
 	})
 </script>
@@ -179,36 +179,36 @@ $(function () {
   $(window).scroll(function () {
     var top = $(window).scrollTop() + 200;
     var left = $(window).scrollLeft() + 320;
-    $("#editInfo1").animate({ "top": top }, 30); 
+    $("#editInfo1").animate({ "top": top }, 30);
   });
-  
+
   $(window).scroll(function () {
 	    var top = $(window).scrollTop() + 200;
 	    var left = $(window).scrollLeft() + 320;
-	    $("#editInfo2").animate({ "top": top }, 30); 
+	    $("#editInfo2").animate({ "top": top }, 30);
  });
-  
-  
+
+
   $(window).scroll(function () {
 	    var top = $(window).scrollTop() + 200;
 	    var left = $(window).scrollLeft() + 320;
 	    $("#altstwo").animate({ "top": top }, 30);
   });
-  
-  
+
+
   $(window).scroll(function () {
 	    var top = $(window).scrollTop() + 200;
 	    var left = $(window).scrollLeft() + 320;
 	    $("#altsthree").animate({ "top": top }, 30);
   });
-  
-  
+
+
   $(window).scroll(function () {
 	    var top = $(window).scrollTop() + 200;
 	    var left = $(window).scrollLeft() + 320;
 	    $("#nologin").animate({ "top": top }, 30);
   });
-  
+
 });
 </script>
 </html>

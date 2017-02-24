@@ -14,9 +14,9 @@
 <body>
 	<%@ include file="/WEB-INF/pages/common/header.jsp" %>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/researchUser/researchGroupDetail.js"></script>
-	
+
 	<%-- <div class='banner'>
-		<img src='${pageContext.request.contextPath}/resources/images/front/img/banner.png' style="width:100%" height="100%" />
+		<img src='${pageContext.request.contextPath}/resources/images/front/img/banner.jpg' style="width:100%" height="100%" />
 	</div> --%>
 	<div class='cons'>
 		<div class='width1200'>
@@ -61,7 +61,7 @@
 				</div>
 			</div>
 			<!-- version4 点击发布需求弹框end -->
-			
+
 			<!-- version3 点击发布需求弹框start -->
 			<div id="altstwo" style="display:none">
 				<div class='xuqiualert' style="margin-top:1810px;width:740px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
@@ -77,13 +77,13 @@
 					</div>
 					<div>
 						<div>
-							<font style="font-size: 18px;"  color="#349fc4">我们会尽快审核您的信息,请您耐心等待结果~</font> 
+							<font style="font-size: 18px;"  color="#349fc4">我们会尽快审核您的信息,请您耐心等待结果~</font>
 							<br>
-							<font style="font-size: 18px;" color="#349fc4"> 
+							<font style="font-size: 18px;" color="#349fc4">
 							<a href="${pageContext.request.contextPath}/achievement/getDetailPageForAdd">现在就去发布我的科研成果>> </a>
 							</font>
 							<br>
-							 <font style="font-size: 18px;" color="#349fc4"> 
+							 <font style="font-size: 18px;" color="#349fc4">
 							 <a href="${pageContext.request.contextPath}/researchUser/getMyResearchGroupPage">以后再说>> </a>
 							</font>
 						</div>
@@ -91,7 +91,7 @@
 				</div>
 			</div>
 			<!-- version3 点击发布需求弹框end -->
-			
+
 		<!-- 保存成功弹框 statr -->
 			<div id="Button1" onclick="ShowDiv('MyDiv','fade')"></div>
 			<div id="fade" class="black_overlay"></div>
@@ -128,7 +128,7 @@
 						</div>
 						<div style="float:left;margin-top:25px;" id="imgTypeCheckResult"></div>
 						<input type="hidden" value="" id="imgCheckFlag"/>
-						
+
 					</div>
 					<div class='clear'></div>
 				</div>
@@ -152,7 +152,7 @@
 					</div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu xuqiu3'>
 					<div class='name fl'><span></span>团队简介</div>
 					<div class='fl'>
@@ -160,7 +160,7 @@
 					</div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu xuqiu3'>
 					<div class='name fl'><span>*</span>研究方向</div>
 					<div class='fl'>
@@ -168,7 +168,7 @@
 					</div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu xuqiu3'>
 					<div class='name fl'><span>*</span>研究成果</div>
 					<div class='fl'>
@@ -177,13 +177,13 @@
 					<div id="achievementResult" style="display:inline"></div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu'>
 					<div class='name fl'><span></span>团队人数</div>
 					<div class='fl'><input type='text' maxlength="5" placeholder='团队人数只能是数字' id="teamSize" name="teamSize" value=''/></div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu xuqiu3'>
 					<div class='name fl'><span>*</span>项目经历</div>
 					<div class='fl'>
@@ -207,7 +207,7 @@
 					</div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu xuqiu4'>
 					<div class='lis'>
 						<div class='name fl'>*姓名</div>
@@ -227,13 +227,13 @@
 					</div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu'>
 					<div class='name fl'>*高校院系/部门</div>
 					<div class='fl'><input style="width:755px;" type='text' id="leaderDepart" name="leaderDepart" value=''/></div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu xuqiu4'>
 				    <input id="leaderTitle" name="leaderTitle" type='hidden' value=''/>
 					<div class='lis'>
@@ -266,7 +266,7 @@
 					<div id="checkResult2"></div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu xuqiu3'>
 					<div class='name fl'><span></span>个人介绍</div>
 					<div class='fl'>
@@ -274,7 +274,7 @@
 					</div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu xuqiu3'>
 					<div class='name fl'><span></span>个人主要成就</div>
 					<div class='fl'>
@@ -282,7 +282,7 @@
 					</div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu xuqiu3'>
 					<div class='name fl'><span></span>其他主要成员介绍</div>
 					<div class='fl'>
@@ -290,7 +290,7 @@
 					</div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu xuqiu5'>
 					<div class='name fl'>材料补充</div>
 					<!-- <div class='fl input'>
@@ -330,7 +330,7 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
-	
+
 	$('#companyFile').change(function() {
 		 //文件大小限制
 		   var dom = document.getElementById("companyFile");
@@ -348,7 +348,7 @@ $(document).ready(function() {
 		   }
 		$('#fileTypeCheckResult').html("已上传文件:"+$(this).val());
 	});
-	
+
 	$('.cons .right .xuqiu4 .input').click(function(){
 		if($(this).hasClass('on')){
 			$(this).removeClass("on");

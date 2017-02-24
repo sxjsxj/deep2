@@ -14,9 +14,9 @@
 <body>
 	<%@ include file="/WEB-INF/pages/common/header.jsp" %>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/researchUser/achievementDetail.js"></script>
-	
+
 	<%-- <div class='banner'>
-		<img src='${pageContext.request.contextPath}/resources/images/front/img/banner.png' style="width:100%" height="100%" />
+		<img src='${pageContext.request.contextPath}/resources/images/front/img/banner.jpg' style="width:100%" height="100%" />
 		<div class='width1200'>
 			<div class='topbtxt'>唯有合作&nbsp;&nbsp;&nbsp;引领未来</div>
 			<div class='bottombtxt'>
@@ -29,7 +29,7 @@
 	<div class='cons'>
 		<div class='width1200'>
 		<jsp:include page="/WEB-INF/pages/common/researchUserLeft.jsp"></jsp:include>
-			
+
 		<!-- 保存失败start -->
 		<div class="registSuccess" id="alertClick"></div>
 		<!-- version4 点击发布需求弹框start -->
@@ -74,12 +74,12 @@
 				</div>
 			</div>
 			<!-- version3 点击发布需求弹框end -->
-			
+
 			<!-- 保存成功跳转url -->
            <div id="myAchievementUrl" url="${pageContext.request.contextPath}/researchUser/getMyAchievementPage"></div>
            <!-- 保存成功弹框 statr -->
 			<div id="Button1" onclick="ShowDiv('MyDiv','fade')"></div>
-			
+
 			<div id="fade" class="black_overlay"></div>
 			<div id="MyDiv" class="white_content" style="margin-top:1350px">
 				<div style="text-align: right; cursor: default; height: 40px;">
@@ -108,7 +108,7 @@
 					</div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='name fl'>
 				<font color="blue" size="3">
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -161,7 +161,7 @@
 					</div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu xuqiu6'>
 					<div class='name fl'><span>*</span>成果形式</div>
 					<div id="checkBoxType">
@@ -211,14 +211,14 @@
 					</div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu' style="margin-top:15px;" id="patenterDiv" >
 					<div class='name fl'><span>*</span>专利权人</div>
 					<div class='fl'><input type='text' id="patenter"  maxlength="30" name="patenter" value=''/></div>
 					<div id="checkResultpatenter"></div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu xuqiu4 xuqiu8'>
 				    <input id="amount" name="amount" type='hidden' value=''/>
 					<div class='lis'>
@@ -239,7 +239,7 @@
 					</div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu xuqiu3'>
 					<div class='name fl'><span>*</span>成果简述</div>
 					<div class='fl'>
@@ -247,7 +247,7 @@
 					</div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu xuqiu4 xuqiu8'>
 				    <input id="phase" name="phase" type='hidden' value=''/>
 					<div class='lis'>
@@ -269,13 +269,13 @@
 					</div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu'>
 					<div class='name fl'><span>*</span>适用对象</div>
 					<div class='fl'><input type='text'  maxlength="30" id="applyTo" name="applyTo" value=''/></div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu xuqiu3'>
 					<div class='name fl'><span>*</span>预期效果</div>
 					<div class='fl'>
@@ -283,13 +283,13 @@
 					</div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu'>
 					<div class='name fl'>成果转化案例数</div>
 					<div class='fl'><input type='text'  maxlength="5" id="caseNum" name="caseNum" value=''/></div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu xuqiu3'>
 					<div class='name fl'>案例详述</div>
 					<div class='fl'>
@@ -297,7 +297,7 @@
 					</div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu xuqiu6'>
 					<div class='name fl'><span>*</span>寻求合作方式</div>
 					<div id="checkBoxCooperationType">
@@ -339,7 +339,7 @@
 					</div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu xuqiu5'>
 					<div class='name fl'>材料补充</div>
 					<!-- <div class='fl input'>

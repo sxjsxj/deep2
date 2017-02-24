@@ -17,9 +17,9 @@ a:hover { text-decoration:underline;}
 <body>
 	<%@ include file="/WEB-INF/pages/common/header.jsp" %>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/investorUser/investorPersonalUserDetail.js"></script>
-	
+
 	<%-- <div class='banner'>
-		<img src='${pageContext.request.contextPath}/resources/images/front/img/banner.png' style="width:100%" height="100%" />
+		<img src='${pageContext.request.contextPath}/resources/images/front/img/banner.jpg' style="width:100%" height="100%" />
 		<div class='width1200'>
 			<div class='topbtxt'>唯有合作&nbsp;&nbsp;&nbsp;引领未来</div>
 			<div class='bottombtxt'>
@@ -32,7 +32,7 @@ a:hover { text-decoration:underline;}
 	<div class='cons'>
 		<div class='width1200'>
 		<jsp:include page="/WEB-INF/pages/common/investorUserLeft.jsp"></jsp:include>
-			
+
 				<!-- 保存失败start -->
 	<div class="registSuccess" id="alertClick"></div>
 		<!-- version4 点击发布需求弹框start -->
@@ -77,12 +77,12 @@ a:hover { text-decoration:underline;}
 				</div>
 			</div>
 			<!-- version3 点击发布需求弹框end -->
-			
+
 			 <!-- 保存成功跳转url -->
            <div id="myRecommendUrl" url="${pageContext.request.contextPath}/investorUser/getMyRecommendBrowsePage"></div>
 			<!-- 保存成功弹框 statr -->
 			<div id="Button1" onclick="ShowDiv('MyDiv','fade')"></div>
-			
+
 			<div id="fade" class="black_overlay"></div>
 			<div id="MyDiv" class="white_content" style="margin-top:900px">
 				<div style="text-align: right; cursor: default; height: 40px;">
@@ -130,7 +130,7 @@ a:hover { text-decoration:underline;}
 					<div id="checkResult1"></div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<!-- 省市 start-->
 				<div class='xuqiu xuqiu4 xuqiu7'>
 				    <input id="province" name="province" type='hidden' value=''/>
@@ -178,7 +178,7 @@ a:hover { text-decoration:underline;}
 					<div class='fl'><input type='text'  maxlength="30" style="width:755px;" id="address" name="address" value=''/></div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu xuqiu6'>
 					<div class='name fl'>* 投资方式</div>
 					<div id="checkBoxInvestType">
@@ -215,7 +215,7 @@ a:hover { text-decoration:underline;}
 					</div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu xuqiu3'>
 					<div class='name fl'>投资经历</div>
 					<div class='fl'>
@@ -223,7 +223,7 @@ a:hover { text-decoration:underline;}
 					</div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<!-- 投资意向start -->
 				<div>
 					<div style="margin-left:132px;margin-top:20px;margin-bottom:10px;">&nbsp;&nbsp;&nbsp;&nbsp;<font size="2" color="#666">投资意向若未填写，则意味着您的投资没有任何限制。</font></div>
@@ -319,7 +319,7 @@ a:hover { text-decoration:underline;}
 						<div class='clear'></div>
 				</div>
 				<!-- 投资意向end -->
-				
+
 				<div class='xuqiu xuqiu3'>
 					<div class='name fl'>投资概述</div>
 					<div class='fl'>
@@ -334,7 +334,7 @@ a:hover { text-decoration:underline;}
 						<div class='bgs'></div>
 						<div class='bgtxt' id='fileName'>选择要上传附件</div>
 					</div> -->
-					
+
 					<div style="margin-left:-35px;" class='fl' onclick="$(this).children()[1].click()">
 						<div class='uploadFilebtn'>上传附件</div>
 						<input type='file' name="file" id="companyFile" style='display:none'/>
@@ -356,7 +356,7 @@ a:hover { text-decoration:underline;}
 				<div class='commitbtns' saveUrl="${pageContext.request.contextPath}/investorUser/add" id="saveBtn">提交</div>
 			 <div detailUrl="${pageContext.request.contextPath}/investorUser/getDetail" id="getDetailUrl"></div>
 				<div updateUrl="${pageContext.request.contextPath}/investorUser/update" id="updateUrl"></div>
-			
+
 			</div>
 			</form>
 			</div>
@@ -368,7 +368,7 @@ a:hover { text-decoration:underline;}
 <script type="text/javascript">
 
 $(document).ready(function() {
-	
+
 	$('#companyFile').change(function() {
 		 //文件大小限制
 		   var dom = document.getElementById("companyFile");
@@ -386,7 +386,7 @@ $(document).ready(function() {
 		   }
 		$('#fileTypeCheckResult').html("已上传文件:"+$(this).val());
 	});
-	
+
 	$(".molist").slideUp(0);
 	$("#mores").click(function(){
 		if($(this).hasClass('SM')){
@@ -399,7 +399,7 @@ $(document).ready(function() {
 			$(".molist").slideDown(100);
 		}
 	})
-	
+
 	$('.cons .right .xuqiu4 .input').click(function(){
 		if($(this).hasClass('on')){
 			$(this).removeClass("on");

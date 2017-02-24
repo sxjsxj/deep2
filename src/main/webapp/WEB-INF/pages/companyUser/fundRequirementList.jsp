@@ -12,22 +12,22 @@
 <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/images/front/img/homepage.png" media="screen" />
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-<style> 
-.mydiv1 {} 
-.mydiv2 { 
+<style>
+.mydiv1 {}
+.mydiv2 {
      box-shadow: 0px 3px 8px #808080;
-	-moz-box-shadow:0px 3px 8px #808080;/*firefox*/ 
-	-webkit-box-shadow:0px 3px 8px #808080;/*webkit*/ 
-} 
-</style> 
+	-moz-box-shadow:0px 3px 8px #808080;/*firefox*/
+	-webkit-box-shadow:0px 3px 8px #808080;/*webkit*/
+}
+</style>
 </head>
 <body>
 	<%@ include file="/WEB-INF/pages/common/header.jsp" %>
 	<%@ include file="/WEB-INF/pages/common/dialog.jsp" %>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/companyUser/fundRequirementList.js"></script>
-	
+
 	<div class='banner' style="margin-bottom:-135px;">
-		<img style="height:131px;width: 100%;" src='${pageContext.request.contextPath}/resources/images/front/img/banner.png' style="width:100%" height="100%" />
+		<img style="height:131px;width: 100%;" src='${pageContext.request.contextPath}/resources/images/front/img/banner.jpg' style="width:100%" height="100%" />
 		<%-- <div class='width1200'>
 			<div class='topbtxt'>唯有合作&nbsp;&nbsp;&nbsp;引领未来</div>
 			<div class='bottombtxt'>
@@ -61,12 +61,12 @@
 				<li>
 					<div class='fl ti2' style="font-size:15px;">学科领域</div>
 				    <div id="checkBoxDomain" url="${pageContext.request.contextPath}/basicResearchField/query">
-					
+
 					<input type="hidden" id="domainId"/>
 					</div>
 					<div class='clear'></div>
 				</li>
-				
+
 				<li style='margin-bottom:5px'>
 					<div class='fl ti2' style="font-size:15px;">省市地区</div>
 					<div class='fl list'>
@@ -79,9 +79,9 @@
 					<div class='clear'></div>
 				</li>
 			<div id="region" url="${pageContext.request.contextPath}/basicProvinceArea/queryAreaProvince">
-				
+
 			</div>
-				
+
 				<li>
 					<div class='fl ti2' style="font-size:15px;">所需投资额</div>
 					<div id="checkBoxAmount">
@@ -124,7 +124,7 @@
 					</div>
 					<div class='clear'></div>
 				</li>
-				
+
 				<li>
 					<div class='fl ti2'></div>
 					<div id="checkBoxStatus">
@@ -139,14 +139,14 @@
 					</div>
 					<div class='clear'></div>
 				</li>
-				
+
 				<li id="queryFundRequirement" url="${pageContext.request.contextPath}/fundRequirement/query" class='selectbtn'>查询</li>
 			</ul>
 			<div id="fundRequirementMoreInfo" url="${pageContext.request.contextPath}/fundRequirement/getMoreInfoPage"></div>
-			
+
 			<div id="addFollowerUrl" url="${pageContext.request.contextPath}/fundRequirementFollower/add"></div>
             		<div id="cancelFollowerUrl" url="${pageContext.request.contextPath}/fundRequirementFollower/delete"></div>
-			 <div id="loginUrl" url="${pageContext.request.contextPath}/security/loginPage"></div> 
+			 <div id="loginUrl" url="${pageContext.request.contextPath}/security/loginPage"></div>
 			<div class='title2'>
 				<%-- <div class='checkbox fl'>
 					<img src='${pageContext.request.contextPath}/resources/images/front/img/checkbox.png'/>
@@ -156,12 +156,12 @@
 			</div>
 			<div class='fl'>
 				<ul class='lis' id="amountDemandListQuery">
-					
+
 				</ul>
 				<div id="noResult" class="red"></div>
-				
+
 				<ul id="pagination" class='page'>
-				
+
 				</ul>
 			</div>
 			<div class='fr'>
@@ -171,7 +171,7 @@
 		</div>
 	</div>
 	<%@ include file="/WEB-INF/pages/common/footer.jsp" %>
-	
+
 </body>
 <script type="text/javascript">
 	$(function(){
@@ -210,7 +210,7 @@
 				$(this).addClass("on");
 				$(this).find('img').attr("src",'${pageContext.request.contextPath}/resources/images/front/img/checkbox2.png')
 			}
-			
+
 		})
 
 		$(".molist").slideUp(0);
@@ -235,7 +235,7 @@
 				$(this).addClass("on");
 				$(this).find('img').attr("src",'${pageContext.request.contextPath}/resources/images/front/img/checkbox2.png')
 			}
-			
+
 		})
 	})
 </script>
@@ -245,36 +245,36 @@ $(function () {
   $(window).scroll(function () {
     var top = $(window).scrollTop() + 200;
     var left = $(window).scrollLeft() + 320;
-    $("#editInfo1").animate({ "top": top }, 30); 
+    $("#editInfo1").animate({ "top": top }, 30);
   });
-  
+
   $(window).scroll(function () {
 	    var top = $(window).scrollTop() + 200;
 	    var left = $(window).scrollLeft() + 320;
-	    $("#editInfo2").animate({ "top": top }, 30); 
+	    $("#editInfo2").animate({ "top": top }, 30);
  });
-  
-  
+
+
   $(window).scroll(function () {
 	    var top = $(window).scrollTop() + 200;
 	    var left = $(window).scrollLeft() + 320;
 	    $("#altstwo").animate({ "top": top }, 30);
   });
-  
-  
+
+
   $(window).scroll(function () {
 	    var top = $(window).scrollTop() + 200;
 	    var left = $(window).scrollLeft() + 320;
 	    $("#altsthree").animate({ "top": top }, 30);
   });
-  
-  
+
+
   $(window).scroll(function () {
 	    var top = $(window).scrollTop() + 200;
 	    var left = $(window).scrollLeft() + 320;
 	    $("#nologin").animate({ "top": top }, 30);
   });
-  
+
 });
 </script>
 </html>

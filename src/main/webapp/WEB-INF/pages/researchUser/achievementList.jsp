@@ -12,22 +12,22 @@
 <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/images/front/img/homepage.png" media="screen" />
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-<style> 
-.mydiv1 {} 
-.mydiv2 { 
+<style>
+.mydiv1 {}
+.mydiv2 {
      box-shadow: 0px 3px 8px #808080;
-	-moz-box-shadow:0px 3px 8px #808080;/*firefox*/ 
-	-webkit-box-shadow:0px 3px 8px #808080;/*webkit*/ 
-} 
-</style> 
+	-moz-box-shadow:0px 3px 8px #808080;/*firefox*/
+	-webkit-box-shadow:0px 3px 8px #808080;/*webkit*/
+}
+</style>
 </head>
 <body>
 	<%@ include file="/WEB-INF/pages/common/header.jsp" %>
-	<%@ include file="/WEB-INF/pages/common/dialog.jsp" %>		
+	<%@ include file="/WEB-INF/pages/common/dialog.jsp" %>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/researchUser/achievementList.js"></script>
-	
+
 	<div class='banner' style="margin-bottom:-135px;">
-		<img style="height:131px;width: 100%;" src='${pageContext.request.contextPath}/resources/images/front/img/banner.png' style="width:100%" height="100%" />
+		<img style="height:131px;width: 100%;" src='${pageContext.request.contextPath}/resources/images/front/img/banner.jpg' style="width:100%" height="100%" />
 	</div>
 	<input id="currentPage" type="hidden" value="1"></input>
 	<input type="hidden" id="searchHeaderName" value="${headerName}"/>
@@ -53,12 +53,12 @@
 				<li>
 					<div class='fl ti2' style="font-size:15px;">学科领域</div>
 				    <div id="checkBoxDomain" url="${pageContext.request.contextPath}/basicResearchField/query">
-					
+
 					<input type="hidden" id="domainId"/>
 					</div>
 					<div class='clear'></div>
 				</li>
-				
+
 				<li>
 					<div class='fl ti2' style="font-size:15px;">省市地区</div>
 						<div class='fl list'>
@@ -72,7 +72,7 @@
 				</li>
 				<div id="region" url="${pageContext.request.contextPath}/basicProvinceArea/queryAreaProvince">
 				</div>
-				
+
 				<li>
 					<div class='fl ti2' style="font-size:15px;">阶段</div>
 					<div id="checkBoxPhase">
@@ -164,7 +164,7 @@
 					</div>
 					<div class='clear'></div>
 				</li>
-				
+
 				<li>
 					<div class='fl ti2' style="font-size:15px;">合作方式</div>
 					<div id="checkBoxCooperationType">
@@ -214,7 +214,7 @@
 					</div>
 					<div class='clear'></div>
 				</li>
-				
+
 				<li>
 					<div class='fl ti2'></div>
 					<div id="checkBoxStatus">
@@ -229,13 +229,13 @@
 					</div>
 					<div class='clear'></div>
 				</li>
-				
+
 				<li id="queryAchievement" url="${pageContext.request.contextPath}/achievement/query" class='selectbtn'>查询</li>
 			</ul>
 			<div id="achievementMoreInfo" url="${pageContext.request.contextPath}/achievement/getMoreInfoPage"></div>
 			<div id="addFollowerUrl" url="${pageContext.request.contextPath}/achievementFollower/add"></div>
 			<div id="cancelFollowerUrl" url="${pageContext.request.contextPath}/achievementFollower/delete"></div>
-			<div id="loginUrl" url="${pageContext.request.contextPath}/security/loginPage"></div> 
+			<div id="loginUrl" url="${pageContext.request.contextPath}/security/loginPage"></div>
 			<div class='title2'>
 				<%-- <div class='checkbox fl'>
 					<img src='${pageContext.request.contextPath}/resources/images/front/img/checkbox.png'/>
@@ -245,13 +245,13 @@
 			</div>
 			<div class='fl'>
 				<ul class='lis' id="achievementListQuery">
-					
+
 				</ul>
 				<div id="noResult" class="red"></div>
-				
+
 				<div>
 					<ul id="pagination" class='page'>
-					
+
 					</ul>
 				</div>
 			</div>
@@ -302,7 +302,7 @@
 			<div class='clear'></div>
 		</div>
 	</div> --%>
-	
+
 </body>
 <script type="text/javascript">
 	$(function(){
@@ -374,36 +374,36 @@ $(function () {
   $(window).scroll(function () {
     var top = $(window).scrollTop() + 200;
     var left = $(window).scrollLeft() + 320;
-    $("#editInfo1").animate({ "top": top }, 30); 
+    $("#editInfo1").animate({ "top": top }, 30);
   });
-  
+
   $(window).scroll(function () {
 	    var top = $(window).scrollTop() + 200;
 	    var left = $(window).scrollLeft() + 320;
-	    $("#editInfo2").animate({ "top": top }, 30); 
+	    $("#editInfo2").animate({ "top": top }, 30);
  });
-  
-  
+
+
   $(window).scroll(function () {
 	    var top = $(window).scrollTop() + 200;
 	    var left = $(window).scrollLeft() + 320;
 	    $("#altstwo").animate({ "top": top }, 30);
   });
-  
-  
+
+
   $(window).scroll(function () {
 	    var top = $(window).scrollTop() + 200;
 	    var left = $(window).scrollLeft() + 320;
 	    $("#altsthree").animate({ "top": top }, 30);
   });
-  
-  
+
+
   $(window).scroll(function () {
 	    var top = $(window).scrollTop() + 200;
 	    var left = $(window).scrollLeft() + 320;
 	    $("#nologin").animate({ "top": top }, 30);
   });
-  
+
 });
 </script>
 </html>

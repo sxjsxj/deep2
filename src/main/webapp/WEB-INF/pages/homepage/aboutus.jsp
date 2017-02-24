@@ -1,29 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta charset='utf-8'/>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<%@ include file="/WEB-INF/pages/common/head.jsp" %>
 <title>关于我们</title>
-<% request.setCharacterEncoding("UTF-8");%>
-<% response.setCharacterEncoding("UTF-8");%>
-<link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/images/front/img/homepage.png" media="screen" />
-<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/front/style.css"/>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/jquery/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/common/common.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/authority/aboutus.js"></script>
 </head>
 <body>
 	<%@ include file="/WEB-INF/pages/common/header.jsp" %>
-	
+
 	<input type="text"  id="registAgreement" value="${registAgreement}"/>
-	
+
 	<!--控制页脚连接  联系我们,信息发布 -->
 	<input type="text"  id="callUs" value="${callUs}"/>
 	<input type="text"  id="infoPublish" value="${infoPublish}"/>
-	
+
 	<div class='cons aboutus' style="margin-top:80px;">
 		<div class='width1200'>
 			<div class='fl l_toul'>
@@ -64,7 +52,7 @@
 致力于打造科技服务第一平台。
 成为推动人类品质生活的技术服务商。</div>
 			</div>
-			
+
 			<div class='fl cn' id="divCallUs">
 				<div class='cn_ti'>联系我们</div>
 				<div class='ims'><%-- <img src='${pageContext.request.contextPath}/resources/images/front/img/ims.png' width="100%" /> --%></div>
@@ -74,7 +62,7 @@
 				<div class='cn_t'>QQ：2174530387</div>
 				<div class='cn_t'>邮件：linkcc_service@yeah.net</div>
 			</div>
-			
+
 			<div class='fl cn' id="divJoin">
 				<div class='cn_ti'>信息发布</div>
 				<div class='ims'><%-- <img src='${pageContext.request.contextPath}/resources/images/front/img/ims.png' width="100%" /> --%></div>
@@ -165,7 +153,7 @@
 8.2 如本协议中的任何条款无论因何种原因完全或部分无效或不具有执行力，本协议的其余条款仍应有效并且有约束力。
 8.3 本协议解释权及修订权归北京东正影视文化传播有限公司所有。</div>
 			</div>
-			
+
 			<div class='fl cn' id="divAgreement">
 				<div class='cn_ti'>注册协议</div>
 				<div class='ims'><%-- <img src='${pageContext.request.contextPath}/resources/images/front/img/ims.png' width="100%" /> --%></div>
@@ -235,6 +223,7 @@
 		</div>
 	</div>
 	<%@ include file="/WEB-INF/pages/common/footer.jsp" %>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/authority/aboutus.js"></script>
 </body>
 <script type="text/javascript">
 	$(function(){
@@ -273,10 +262,10 @@
 				$(this).addClass("on");
 				$(this).find('img').attr("src",'${pageContext.request.contextPath}/resources/images/front/img/checkbox2.png')
 			}
-			
+
 		})
 
-		
+
 	})
 </script>
 </html>

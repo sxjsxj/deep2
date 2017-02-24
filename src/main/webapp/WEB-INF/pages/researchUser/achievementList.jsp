@@ -1,18 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta charset='utf-8'/>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<%@ include file="/WEB-INF/pages/common/head.jsp" %>
 <title>科研成果列表</title>
-<% request.setCharacterEncoding("UTF-8");%>
-<% response.setCharacterEncoding("UTF-8");%>
-<link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/images/front/img/homepage.png" media="screen" />
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-<style>
+<style type="text/css">
 .mydiv1 {}
 .mydiv2 {
      box-shadow: 0px 3px 8px #808080;
@@ -24,7 +16,6 @@
 <body>
 	<%@ include file="/WEB-INF/pages/common/header.jsp" %>
 	<%@ include file="/WEB-INF/pages/common/dialog.jsp" %>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/researchUser/achievementList.js"></script>
 
 	<div class='banner' style="margin-bottom:-135px;">
 		<img style="height:131px;width: 100%;" src='${pageContext.request.contextPath}/resources/images/front/img/banner.jpg' style="width:100%" height="100%" />
@@ -262,46 +253,7 @@
 		</div>
 	</div>
 	<%@ include file="/WEB-INF/pages/common/footer.jsp" %>
-	<%-- <div class='footer'>
-		<div class='width1200'>
-			<ul>
-				<li class='titles'>关于我们</li>
-				<li>
-					<div><a href=''>公司介绍</a></div>
-					<div><a href=''>联系我们</a></div>
-					<div><a href=''>加入我们</a></div>
-					<div><a href=''>友情链接</a></div>
-				</li>
-			</ul>
-			<ul>
-				<li class='titles'>产品功能</li>
-				<li>
-					<div><a href=''>注册</a></div>
-					<div><a href=''>需求解决</a></div>
-					<div><a href=''>资源搜索</a></div>
-					<div><a href=''>项目对接</a></div>
-				</li>
-			</ul>
-			<ul>
-				<li class='titles'>常见问题</li>
-				<li>
-					<div><a href=''>关于平台</a></div>
-					<div><a href=''>关于用户</a></div>
-				</li>
-			</ul>
-			<div class='fl'>
-				<div class='logo'>LOGO</div>
-				<div class='txt'>联系电话：010-68686868</div>
-				<div class='txt'>电子邮箱：12345@123.com</div>
-			</div>
-			<div class='fr'>
-				<div class='fl code'><img src='${pageContext.request.contextPath}/resources/images/front/img/code.png'/></div>
-				<div class='fl code'><img src='${pageContext.request.contextPath}/resources/images/front/img/code.png'/></div>
-				<div class='clear'></div>
-			</div>
-			<div class='clear'></div>
-		</div>
-	</div> --%>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/researchUser/achievementList.js"></script>
 
 </body>
 <script type="text/javascript">

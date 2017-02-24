@@ -9,9 +9,6 @@
 <title>公共头部</title>
 <% request.setCharacterEncoding("UTF-8");%>
 <% response.setCharacterEncoding("UTF-8");%>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/common/common.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/common/header.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/common/investorUserCommon.js"></script>
 </head>
 <body>
 <div class="cons info" style="margin-top:10px;margin-bottom:0px;">
@@ -60,4 +57,8 @@
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/common/common.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/common/header.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/common/investorUserCommon.js"></script>
 </body>
+</html>

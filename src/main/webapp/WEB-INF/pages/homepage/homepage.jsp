@@ -1,24 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta charset='utf-8'/>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<%@ include file="/WEB-INF/pages/common/head.jsp" %>
 <title>联科——让科技、资本和产业联合起来</title>
-<% request.setCharacterEncoding("UTF-8");%>
-<% response.setCharacterEncoding("UTF-8");%>
-<link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/images/front/img/homepage.png" media="screen" />
-<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/front/style.css"/>
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/front/index.css"/>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/jquery/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/common/common.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/authority/homepage.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/common/header.js"></script>
 </head>
 <body>
-<%@ include file="/WEB-INF/pages/common/header.jsp" %>
+	<%@ include file="/WEB-INF/pages/common/header.jsp" %>
 	<div class='banner'>
 		<div class='width1200 clic'>
 			<div class='leftbutton'><img style="height:55px;width:29px;margin-top:80px;" src='${pageContext.request.contextPath}/resources/images/front/img/leftbutton.png'/></div>
@@ -143,7 +130,6 @@
 			<div class='more' style="margin-top:30px;"><a href='${pageContext.request.contextPath}/security/aboutusPage'>查看更多</a></div>
 		</div>
 	</div>
-	<%@ include file="/WEB-INF/pages/common/footer.jsp" %>
 	<ul class='righttoul '>
 	   <div id="go_top">
 		<li class='goup'>
@@ -165,6 +151,9 @@
 			<div class='clear'></div>
 		</li>
 	</ul>
+	<%@ include file="/WEB-INF/pages/common/footer.jsp" %>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/common/header.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/authority/homepage.js"></script>
 </body>
 <script type="text/javascript">
 	$(function(){

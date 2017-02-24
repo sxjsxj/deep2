@@ -1,16 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta charset='utf-8'/>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<%@ include file="/WEB-INF/pages/common/head.jsp" %>
 <title>投资方列表</title>
-<% request.setCharacterEncoding("UTF-8");%>
-<% response.setCharacterEncoding("UTF-8");%>
-<link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/images/front/img/homepage.png" media="screen" />
-<style>
+<style type="text/css">
 .mydiv1 {}
 .mydiv2 {
      box-shadow: 0px 3px 8px #808080;
@@ -22,7 +14,6 @@
 <body>
 	<%@ include file="/WEB-INF/pages/common/header.jsp" %>
 	<%@ include file="/WEB-INF/pages/common/dialog.jsp" %>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/investorUser/investorList.js"></script>
 
 	<div style="margin-bottom:-150px;" class='banner'>
 		<img style="height:131px;width: 100%;" src='${pageContext.request.contextPath}/resources/images/front/img/banner.jpg' style="width:100%" height="100%" />
@@ -202,6 +193,7 @@
 		</div>
 	</div>
 	<%@ include file="/WEB-INF/pages/common/footer.jsp" %>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/investorUser/investorList.js"></script>
 </body>
 <script type="text/javascript">
 	$(function(){

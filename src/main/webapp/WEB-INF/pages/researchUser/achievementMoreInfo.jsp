@@ -1,32 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta charset='utf-8'/>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<%@ include file="/WEB-INF/pages/common/head.jsp" %>
 <title>科研成果更多信息</title>
-<% request.setCharacterEncoding("UTF-8");%>
-<% response.setCharacterEncoding("UTF-8");%>
-<link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/images/front/img/homepage.png" media="screen" />
 </head>
 <body>
-	<%@ include file="/WEB-INF/pages/common/header.jsp" %>	
-	<%@ include file="/WEB-INF/pages/common/dialog.jsp" %>		
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/researchUser/achievementMoreInfo.js"></script>
-	
+	<%@ include file="/WEB-INF/pages/common/header.jsp" %>
+	<%@ include file="/WEB-INF/pages/common/dialog.jsp" %>
+
 	<div class='cons'>
 	    <input type="hidden" id="detailId" value="${id}"/>
 	    <input type="hidden" id="cooperateFlag" value=""/>
 	    <input type="hidden" id="collectFlag" value=""/>
 	    <input type="hidden" id="achievementId" value=""/>
 	    <input type="hidden" id="userId" value=""/>
-	    
+
 	    <div id="achievementDetail" url="${pageContext.request.contextPath}/achievement/getDetail"></div>
 		<div id="addFollowerUrl" url="${pageContext.request.contextPath}/achievementFollower/add"></div>
         <div id="cancelFollowerUrl" url="${pageContext.request.contextPath}/achievementFollower/delete"></div>
-		<div id="loginUrl" url="${pageContext.request.contextPath}/security/loginPage"></div> 
+		<div id="loginUrl" url="${pageContext.request.contextPath}/security/loginPage"></div>
 		<div class='width1200'>
 			<div class='fl delleft'>
 				<div class='heads'>
@@ -75,13 +66,13 @@
 
 				<div class='title' style='margin-top:30px'>预期效果</div>
 				<div class='txt' id="expectedEffect"></div>
-				
+
 				<div class='title' id="caseNumTitle" style='margin-top:30px'>成功转化案例数</div>
 				<div class='txt' id="caseNum"></div>
-				
+
 				<div class='title' id="caseDetailTitle" style='margin-top:30px'>案例详述</div>
 				<div class='txt' id="caseDetail"></div>
-				
+
 				<div id='mores'>
 					<div class='title' style='margin-top:30px'>成果简述</div>
 					<div class='txt2' id="solution"></div>
@@ -92,11 +83,12 @@
 				<img src='${pageContext.request.contextPath}/resources/images/front/img/fr_bg3.png'/>
 			</div>
 			<div class='clear'>
-				
+
 			</div>
 		</div>
 	</div>
 	<%@ include file="/WEB-INF/pages/common/footer.jsp" %>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/researchUser/achievementMoreInfo.js"></script>
 </body>
 <script type="text/javascript">
 $(function(){

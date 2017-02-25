@@ -60,7 +60,7 @@
 				<div class='txt' id="detail"></div>
 
 				<div id='mores'>
-					<div class='title' style='margin-top:30px'>市场类似产品情况</div>
+					<div class='title' style='margin-top:30px' id="similarProductTitle">市场类似产品情况</div>
 					<div class='txt' id="similarProduct"></div>
 				</div>
 				<div class='more'>查看更多信息>></div>

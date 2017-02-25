@@ -27,7 +27,7 @@ function initAchievementListManager() {
 		}).get().join(',');
 		$("#domainId").val(text);
 	});
-	
+
 	//阶段
 	$("#checkBoxPhase [id^=phaseCheckBox]").click(function() {
 		//phaseCheckBox固定长度是13
@@ -43,7 +43,7 @@ function initAchievementListManager() {
 		}).get().join(',');
 		$("#phaseId").val(text);
 	});
-	
+
 	//投资额
 	$("#checkBoxAmount [id^=amountCheckBox]").click(function() {
 		//amountCheckBox固定长度是14
@@ -59,8 +59,8 @@ function initAchievementListManager() {
 		}).get().join(',');
 		$("#amountId").val(text);
 	});
-	
-	
+
+
 	//合作方式
 	$("#checkBoxCooperationType [id^=cooperationTypeCheckBox]").click(function() {
 		//cooperationTypeCheckBox固定长度是23
@@ -76,7 +76,7 @@ function initAchievementListManager() {
 		}).get().join(',');
 		$("#cooperationTypeId").val(text);
 	});
-	
+
 	//状态
 	$("#statusCheckBox").click(function() {
 		if($("#statusCheckBoxValue").hasClass("on")){
@@ -89,7 +89,7 @@ function initAchievementListManager() {
 			 $("#statusId").val("1,2");
 		}
 	});
-	
+
 	//页面加载查询
 	queryParam = getData();
 	query(queryParam);
@@ -108,21 +108,21 @@ function query(param) {
 	$('#pagination').html('');
 	var url = $('#queryAchievement').attr('url');
 	FrontCommonFunction.baseOptions['url'] = url;
-		
+
 	var jsonStr=JSON.stringify(param);
 	var requestParamTemp = {};
 	requestParamTemp['str']=jsonStr;
 	requestParamTemp['currentPage'] = $('#currentPage').val();
 	requestParamTemp['maxRecordPerPage'] = FrontCommonFunction.maxRecordPerPage;
 	FrontCommonFunction.baseOptions['data'] = requestParamTemp;
-	
+
 	FrontCommonFunction.baseOptions['success'] = function(datas) {
 		var queryReturnList = datas.queryReturnList;
 		if (queryReturnList === null || queryReturnList.length === 0) {
 			$('#noResult').html('<font color="red">未查询到符合条件的记录！</font>');
 			return;
-		} 
-		for(var i = 0; i < queryReturnList.length; i++) {	
+		}
+		for(var i = 0; i < queryReturnList.length; i++) {
 			var type=queryReturnList[i].researchGroupResultModel.researchUserResultModel.type;
 			var provinceName="";
 			if(type==="0"){
@@ -132,11 +132,11 @@ function query(param) {
 			}else if(type==="2"){
 				provinceName=FrontCommonFunction.replaceNull(queryReturnList[i].researchGroupResultModel.researchUserResultModel.orgProvince);
 			}
-			
+
 			var moreInfoUrl = $("#achievementMoreInfo").attr('url')+"?id="+queryReturnList[i].id;
 			var li = '<div id="shaDowShow'+i+'"  class="mydiv1" onmouseout="delShaDowClass('+i+')" onmouseover="addShaDowClass('+i+')"><li>'
 				li+='<input type="hidden" id="operateId'+i+'" value="'+queryReturnList[i].id+'"/>'
-			
+
 			var imgUrl="";
 			var logoUrl =queryReturnList[i].logoUrl;
 			if(logoUrl!==null && logoUrl!=="" && logoUrl!==undefined){
@@ -149,15 +149,15 @@ function query(param) {
 			li+="<div class='fl rights'>"
 			li+='<a href="'+moreInfoUrl+'"><div class="tits">'
 			li+="<div class='fl'>"+FrontCommonFunction.replaceNull(queryReturnList[i].name)+"</div>"
-			li+="<div class='fr'>"+FrontCommonFunction.setInvestorPhase(queryReturnList[i].phase)+"</div>"	
+			li+="<div class='fr'>"+FrontCommonFunction.setInvestorPhase(queryReturnList[i].phase)+"</div>"
 			li+="<div class='clear'></div>"
 			li+="</div></a>"
 			li+='<a href="'+moreInfoUrl+'"><div class="cs">'
 			li+=FrontCommonFunction.getResultMaitText(queryReturnList[i].solution,300,"#achievementMoreInfo",queryReturnList[i].id)
 			li+="</div></a>"
 			li+="<div class='f'>"
-			li+='<a href="'+moreInfoUrl+'"><div style=" margin-top:58px" class="fl">'+FrontCommonFunction.setInvestorDomain(queryReturnList[i].domain)+"&nbsp;&nbsp;"+provinceName+"&nbsp;&nbsp;"+FrontCommonFunction.setAmount(queryReturnList[i].amount)+"&nbsp;&nbsp;"+FrontCommonFunction.setRequirementStatus(queryReturnList[i].status)+"</div></a>"
-			li+='<div class="fr" style=" margin-top:55px">'	
+			li+='<a href="'+moreInfoUrl+'"><div class="fl">'+FrontCommonFunction.setInvestorDomain(queryReturnList[i].domain)+"&nbsp;&nbsp;"+provinceName+"&nbsp;&nbsp;"+FrontCommonFunction.setAmount(queryReturnList[i].amount)+"&nbsp;&nbsp;"+FrontCommonFunction.setRequirementStatus(queryReturnList[i].status)+"</div></a>"
+			li+='<div class="fr">'
 			li+=cooperateCollectFlagDiv(queryReturnList[i], i)
 			li+="</div>"
 			li+="</div>"
@@ -174,8 +174,8 @@ function query(param) {
 		}
 	};
 	$.ajax(FrontCommonFunction.baseOptions);
-};		
-		
+};
+
 
 function getData() {
 	var paramTemp = {};
@@ -237,17 +237,17 @@ function getData() {
 		if(haiwai!==""){
 			str+=haiwai+",";
 		}
-		
-		var ar2 = str.split(","); 
-		var array = new Array(); 
-		var j=0 
-		for(var i=0;i<ar2.length;i++){ 
-			if((array == "" || array.toString().match(new RegExp(ar2[i],"g")) == null)&&ar2[i]!=""){ 
-			array[j] =ar2[i]; 
-			array.sort(); 
-			j++; 
-			} 
-		} 
+
+		var ar2 = str.split(",");
+		var array = new Array();
+		var j=0
+		for(var i=0;i<ar2.length;i++){
+			if((array == "" || array.toString().match(new RegExp(ar2[i],"g")) == null)&&ar2[i]!=""){
+			array[j] =ar2[i];
+			array.sort();
+			j++;
+			}
+		}
 		universityUserQueryModel['uniProvince']=array.toString();
 		organizationUserQueryModel['orgProvince']=array.toString();
 	}

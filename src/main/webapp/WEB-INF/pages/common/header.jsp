@@ -89,3 +89,4 @@
 <div id="companyUserCenter" url="${pageContext.request.contextPath}/companyUser/getMyRecommendAchievementBrowsePage"></div>
 <div id="researchUserCenter" url="${pageContext.request.contextPath}/researchUser/getMyRecommendTechRequirePage"></div>
 <div id="investorUserCenter" url="${pageContext.request.contextPath}/investorUser/getMyRecommendBrowsePage"></div>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/common/header.js"></script>

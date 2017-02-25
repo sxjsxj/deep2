@@ -9,6 +9,7 @@
 <title>登录页</title>
 <% request.setCharacterEncoding("UTF-8");%>
 <% response.setCharacterEncoding("UTF-8");%>
+<link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/images/front/img/homepage.png" media="screen" />
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/front/style.css"/>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/jquery/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/common/common.js"></script>
@@ -30,14 +31,14 @@
 				<form id="loginForm" action="${pageContext.request.contextPath}/security/login" method="POST">
 				<div id="loginError" style="margin-bottom:-30px;" align="center">&nbsp;</div>
 				<div class='username list'>
-					<div class='nams fl'>用户名</div>	
+					<div class='nams fl'>用户名</div>
 					<div class='input fl'>
 						<input type='text' style="color:black" id="j_username" name="j_username" placeholder='请输入邮箱' value="${j_username}"/>
 					</div>
 					<div class='clear'></div>
 				</div>
 				<div class='username userpass list'>
-					<div class='nams fl'>密&nbsp;码</div>	
+					<div class='nams fl'>密&nbsp;码</div>
 					<div class='input fl'>
 						<input type='password' id="j_password" name="j_password" placeholder='6-20个大小写英文字母、符号或数字' value="${j_password}"/>
 					</div>
@@ -52,7 +53,7 @@
 				</div>
 				<div class='loginbtns anniu'><a href='#' id="login">登录</a></div>
 				<!-- <div class='fl anniu_login_submit-btn anniu' style='margin-right:10px'>登录</div> -->
-				
+
 				</form>
 			</div>
 		</div>

@@ -41,14 +41,12 @@
 		</div>
 		<div class='clear'></div>
 	</div>
-	<div style="margin-top:50px;font-size:12px; color:#ffffff;text-align:center" ><a href="http://www.miitbeian.gov.cn/">京ICP备16046710号</a>   © 2016-2017 Linkcc.cn，All rights reserved.</div>
+	<div style="margin-top:50px;font-size:12px; color:#ffffff;text-align:center" ><a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备16046710号</a>   © 2016-2017 Linkcc.cn，All rights reserved.</div>
 </div>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/jquery/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/jquery/jquery.validate.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/jquery/jquery.serializeJSON.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/jquery/ajaxfileupload.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/common/common.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/common/header.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/common/commonQuery.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/common/commonInit.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/common/cooperateCollectCommon.js"></script>

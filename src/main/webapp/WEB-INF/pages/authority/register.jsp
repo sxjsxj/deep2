@@ -61,53 +61,10 @@
 		</div>
 	</div>
 	<%@ include file="/WEB-INF/pages/common/footer.jsp" %>
-	<%-- <div class='footer'>
-		<div class='width1200'>
-			<ul>
-				<li style="font-size:16px;" class='titles'>关于我们</li>
-				<li>
-					<div><a style="font-size:13px; color:#ffffff;"  href=''>公司介绍</a></div>
-					<div><a style="font-size:13px; color:#ffffff;" href=''>联系我们</a></div>
-					<div><a style="font-size:13px; color:#ffffff;" href=''>加入我们</a></div>
-					<div><a style="font-size:13px; color:#ffffff;" href=''>友情链接</a></div>
-				</li>
-			</ul>
-			<ul>
-				<li style="font-size:16px;" class='titles'>产品功能</li>
-				<li>
-					<div><a style="font-size:13px; color:#ffffff;" href=''>注册</a></div>
-					<div><a style="font-size:13px; color:#ffffff;" href=''>需求解决</a></div>
-					<div><a style="font-size:13px; color:#ffffff;" href=''>资源搜索</a></div>
-					<div><a style="font-size:13px; color:#ffffff;" href=''>项目对接</a></div>
-				</li>
-			</ul>
-			<!-- <ul>
-				<li style="font-size:16px;" class='titles'>常见问题</li>
-				<li>
-					<div><a style="font-size:13px; color:#ffffff;" href=''>关于平台</a></div>
-					<div><a style="font-size:13px; color:#ffffff;" href=''>关于用户</a></div>
-				</li>
-			</ul> -->
-			<div class='fl'>
-				<div class='logo'>LOGO</div>
-				<div class='txt' style="font-size:12px;">联系电话：010-57207996</div>
-				<div class='txt' style="font-size:12px;">电子邮箱：linkcc_service@yeah.net</div>
-			</div>
-			<div class='fr'>
-				<div class='fl code'><img src='${pageContext.request.contextPath}/resources/images/front/img/code.png'/></div>
-				<div class='fl code'><img src='${pageContext.request.contextPath}/resources/images/front/img/code.png'/></div>
-				<div class='fl code'></div>
-				<div class='fl code'></div>
-				<div class='clear'></div>
-			</div>
-			<div class='clear'></div>
-		</div>
-		<div style="margin-top:20px;font-size:12px; color:#ffffff;text-align:center" ><a href="http://www.miitbeian.gov.cn/">京ICP备16046710号</a>   © 2016-2017 Linkcc.cn，All rights reserved.</div>
-	</div> --%>
 </body>
 <script type="text/javascript">
 	$(function(){
-		
+
 	})
 </script>
 </html>

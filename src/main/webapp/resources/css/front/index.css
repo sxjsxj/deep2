@@ -1,10 +1,11 @@
-.banner{height: 255px;width: 100%;overflow: hidden}
+.banner{height: 365px;width: 100%;overflow: hidden}
 .banner ul{width: 400%;}
 .banner li{float:left;position: relative;z-index: 5}
 .banner .width1200{bottom: 0px;height: 365px;top: 0px}
-.banner .width1200 .txt{    position: absolute;
+.banner .width1200 .txt{   position: absolute;
     width: 100%;
-    bottom: 42px;
+    top: 143px;
+    text-shadow: 0px 2px #000;
     color: #fff;
     font-size: 47px;
     text-align: center;}

@@ -164,7 +164,7 @@ ul li{list-style: none}
 .tuijian .right .lis .tits {margin-top: 8px}
 .tuijian .right .lis .tits .fl{color: #626262;font-size: 24px;}
 .tuijian .right .lis .tits .fr{color: #254e77;font-size: 14px; }
-.tuijian .right .lis .cs{font-size: 14px;color: #535353;margin-top: 10px}
+.tuijian .right .lis .cs {word-break: break-word; font-size: 14px;color: #535353;margin-top: 10px}
 .tuijian .right .lis .cs a{color: #7ba6da}
 .tuijian .right .lis .f {height: 38px;line-height: 38px;margin-top: 8px}
 .tuijian .right .lis .f .fl{color: #898989;font-size: 14px}

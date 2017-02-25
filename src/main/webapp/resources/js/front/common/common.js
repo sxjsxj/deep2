@@ -31,7 +31,7 @@ var FrontCommonFunction = {
 		$("[class*='date-pick']").each(function(){
 			$(this).datepicker({ dateFormat: 'yy-mm-dd' });
 		});
-		
+
 	},
 	/* 判断用户是否登录 */
 	isLogin : function() {
@@ -59,7 +59,7 @@ var FrontCommonFunction = {
 		this.baseOptions['success'] = function(datas) {
 			var queryReturnList = datas;
 			var dd = '';
-			for(var i = 0; i < queryReturnList.length; i++) {	
+			for(var i = 0; i < queryReturnList.length; i++) {
 				dd += '<dd value="'+i+'">' + queryReturnList[i].name + '</dd>';
 			}
 			$(id).append(dd);
@@ -77,7 +77,7 @@ var FrontCommonFunction = {
 		this.baseOptions['success'] = function(datas) {
 			var queryReturnList = datas;
 			var dd = '';
-			for(var i = 0; i < queryReturnList.length; i++) {	
+			for(var i = 0; i < queryReturnList.length; i++) {
 				dd += '<dd value="'+i+'">' + queryReturnList[i].name + '</dd>';
 			}
 			$(id).append(dd);
@@ -147,7 +147,7 @@ var FrontCommonFunction = {
 		this.baseOptions['success'] = function(datas) {
 			var queryReturnList = datas.queryReturnList;
 			var dd = '';
-			for(var i = 0; i < queryReturnList.length; i++) {	
+			for(var i = 0; i < queryReturnList.length; i++) {
 				dd += '<dd id="'+queryReturnList[i].id+'">' + queryReturnList[i].name + '</dd>';
 			}
 			$(id).append(dd);
@@ -165,11 +165,11 @@ var FrontCommonFunction = {
 		this.baseOptions['success'] = function(datas) {
 			var queryReturnList = datas;
 			var option = ""
-				for(var i = 0; i < queryReturnList.length; i++) {	
+				for(var i = 0; i < queryReturnList.length; i++) {
 						option += "<div class='fl list'><div class='checkbox fl'>"
 						option+='<img id="domainCheckBox'+i+'" src="../resources/images/front/img/checkbox.png"/>'
                         option+="</div>"
-                        option+="<div class='fl'>"+'<input type="hidden" value="'+i+'" id="domainCheckBoxValue'+i+'"/>'+queryReturnList[i].name+"</div>"	
+                        option+="<div class='fl'>"+'<input type="hidden" value="'+i+'" id="domainCheckBoxValue'+i+'"/>'+queryReturnList[i].name+"</div>"
                         option += "<div class='clear'></div>"
 						+'</div>';
 			     }
@@ -196,17 +196,17 @@ var FrontCommonFunction = {
 				  host+='<img id="remenParent" src="../resources/images/front/img/checkbox.png"/>'
 				host+='</div>'
 				host+="<div class='fl'>热门地区</div>"
-				host+="<div class='clear'></div>"	
+				host+="<div class='clear'></div>"
 			host+='</div>'
 			var list0=provinceAreaMap["0"];
 			if(list0!==undefined && list0!==null){
-				for(var i = 0; i < list0.length; i++) {	
+				for(var i = 0; i < list0.length; i++) {
 					host+='<div class="fl list">'
 					    host+='<div class="checkbox fl">'
 						  host+='<img id="remenChild'+i+'" src="../resources/images/front/img/checkbox.png"/>'
 						host+='</div>'
 						host+="<div class='fl'>"+'<input type="hidden" value="'+list0[i]+'" id="remenChildValue'+i+'"/>'+list0[i]+"</div>"
-						host+="<div class='clear'></div>"	
+						host+="<div class='clear'></div>"
 					host+='</div>'
 				}
 				host+="<div class='more fl' id='moresLink' style='margin-top:2px'><a href='#'>更多>><a></div>"
@@ -214,7 +214,7 @@ var FrontCommonFunction = {
 				host+="</li>"
 				option+=host;
 			}
-			
+
 			var more="";
             more+="<div class='molist'>"
 			//华南地区
@@ -225,7 +225,7 @@ var FrontCommonFunction = {
             	huanan+='<img id="huananParent" src="../resources/images/front/img/checkbox.png"/>'
             	huanan+='</div>'
             	huanan+="<div class='fl'>华南地区</div>"
-            	huanan+="<div class='clear'></div>"	
+            	huanan+="<div class='clear'></div>"
               huanan+='</div>'
 			var list1 = provinceAreaMap["1"];
 			if (list1 !== undefined && list1 !== null) {
@@ -277,7 +277,7 @@ var FrontCommonFunction = {
 				huadong += '</div>'
 			var list3=provinceAreaMap["3"];
 			if(list3!==undefined && list3!==null){
-				for(var i = 0; i < list3.length; i++) {	
+				for(var i = 0; i < list3.length; i++) {
 					huadong += "<div class='fl list'>"
 						huadong += "<div class='checkbox fl'>"
 						huadong += '<img id="huadongChild'+i+'" src="../resources/images/front/img/checkbox.png"/>'
@@ -301,7 +301,7 @@ var FrontCommonFunction = {
 				huazhong += '</div>'
 			var list4=provinceAreaMap["4"];
 			if(list4!==undefined && list4!==null){
-				for(var i = 0; i < list4.length; i++) {	
+				for(var i = 0; i < list4.length; i++) {
 					huazhong += "<div class='fl list'>"
 						huazhong += "<div class='checkbox fl'>"
 						huazhong += '<img id="huazhongChild'+i+'" src="../resources/images/front/img/checkbox.png"/>'
@@ -325,7 +325,7 @@ var FrontCommonFunction = {
 				xibei += '</div>'
 			var list5=provinceAreaMap["5"];
 			if(list5!==undefined && list5!==null){
-				for(var i = 0; i < list5.length; i++) {	
+				for(var i = 0; i < list5.length; i++) {
 					xibei += "<div class='fl list'>"
 						xibei += "<div class='checkbox fl'>"
 						xibei += '<img id="xibeiChild'+i+'" src="../resources/images/front/img/checkbox.png"/>'
@@ -349,7 +349,7 @@ var FrontCommonFunction = {
 				dongbei += '</div>'
 			var list6=provinceAreaMap["6"];
 			if(list6!==undefined && list6!==null){
-				for(var i = 0; i < list6.length; i++) {	
+				for(var i = 0; i < list6.length; i++) {
 					dongbei += "<div class='fl list'>"
 						dongbei += "<div class='checkbox fl'>"
 						dongbei += '<img id="dongbeiChild'+i+'" src="../resources/images/front/img/checkbox.png"/>'
@@ -373,7 +373,7 @@ var FrontCommonFunction = {
 				xinan += '</div>'
 			var list7=provinceAreaMap["7"];
 			if(list7!==undefined && list7!==null){
-				for(var i = 0; i < list7.length; i++) {	
+				for(var i = 0; i < list7.length; i++) {
 					xinan += "<div class='fl list'>"
 						xinan += "<div class='checkbox fl'>"
 						xinan += '<img id="xinanChild'+i+'" src="../resources/images/front/img/checkbox.png"/>'
@@ -397,7 +397,7 @@ var FrontCommonFunction = {
 			gangaotai += '</div>'
 			var list8=provinceAreaMap["8"];
 			if(list8!==undefined && list8!==null){
-				for(var i = 0; i < list8.length; i++) {	
+				for(var i = 0; i < list8.length; i++) {
 					gangaotai += "<div class='fl list'>"
 						gangaotai += "<div class='checkbox fl'>"
 						gangaotai += '<img id="gangaotaiChild'+i+'" src="../resources/images/front/img/checkbox.png"/>'
@@ -421,7 +421,7 @@ var FrontCommonFunction = {
 			haiwai += '</div>'
 			var list9=provinceAreaMap["9"];
 			if(list9!==undefined && list9!==null){
-				for(var i = 0; i < list9.length; i++) {	
+				for(var i = 0; i < list9.length; i++) {
 					haiwai += "<div class='fl list'>"
 						haiwai += "<div class='checkbox fl'>"
 						haiwai += '<img id="haiwaiChild'+i+'" src="../resources/images/front/img/checkbox.png"/>'
@@ -450,7 +450,7 @@ var FrontCommonFunction = {
 		this.baseOptions['success'] = function(datas) {
 			var queryReturnList = datas;
 			var option = ""
-				for(var i = 0; i < queryReturnList.length; i++) {	
+				for(var i = 0; i < queryReturnList.length; i++) {
 						option+= "<div class='fl txts'>"
 						option+='<input class="checkbox" id="investDomainCheckBox'+i+'" value="'+i+'" name="investDomain" type="checkbox">'
 						option+='<div class="fl s">'+queryReturnList[i].name+'</div>'
@@ -705,7 +705,7 @@ var FrontCommonFunction = {
 		if(dataObj === null || dataObj === 'null'||dataObj === undefined){
 			result = '不限';
 		} else {
-			
+
 			if(dataObj.length>5){
 				dataObj=dataObj.substring(0,5);
 			}
@@ -856,7 +856,7 @@ var FrontCommonFunction = {
 			for(var i = 0; i < queryReturnList.length; i++){
 				var list=queryReturnList[i];
 				var areaDesc='';
-				for(var j = 0; j < list.length; j++) {	
+				for(var j = 0; j < list.length; j++) {
 					areaDesc=list[j].areaDec;
 					option += '<div class="checkbox-inline"><label>'
 					option += '<input type="checkbox" name="basicProvinceAreaCheckbox[]" value="+'+i+j+'+" />'+list[j].province
@@ -867,7 +867,7 @@ var FrontCommonFunction = {
 			$(id).append(option);
 		};
 		$.ajax(this.baseOptions);
-	},	
+	},
 	setStrAmount:function(dataObj){
 		var result = '';
 		if(dataObj === null || dataObj === 'null'||dataObj === undefined){
@@ -1012,7 +1012,7 @@ var FrontCommonFunction = {
 			}
 		});
 	},
-	
+
 	/* 保存form中的input的value值 */
 	formValue : function(formId) {
 		var result = [];
@@ -1024,7 +1024,7 @@ var FrontCommonFunction = {
 		});
 		return result;
 	},
-	
+
 	hiddenDiv : function(clickId, hiddenId, showId) {
 		$('#' + clickId).live('click', function() {
 			$(this).hide();
@@ -1064,6 +1064,32 @@ var FrontCommonFunction = {
 				$.showTuiErrorDialog('发生通讯错误！');
 			}
 		}
+	 },
+	 limitTextLineNum: function(str, $el, maxLineNum, extraLabel) {
+		 // $el 必须声明 lineheight 属性
+		 var realHeight = $el.height();
+		 var limitHeight = $el.css('line-height') * maxLineNum;
+		 var $temp = $el.clone();
+		 var strTemp = '';
+		 var ti = str.length;
+		 var cutTail = function(str, $el) {
+			 str = str.substr(0, str.length - 2);
+			 var strTemp = str + extraLabel;
+			 $el.html(strTemp);
+			 if($el.height() > limitHeight) {
+				 return cutTail(str, $el);
+			 }
+			 return strTemp;
+		 }
+		 for (i = 0; i < ti; i++) {
+			 strTemp += str[i];
+			 $temp.html(strTemp);
+			 if ($temp.height() > limitHeight) {
+				 strTemp = cutTail(strTemp, $temp);
+				 break;
+			 }
+		 }
+		 $el.html(strTemp);
 	 },
 	 getResultMaitText: function(str, size,moreInfoId,id) {
 		 if(str === null || str === 'null' ||str === undefined){
@@ -1142,7 +1168,7 @@ var FrontCommonFunction = {
 			  $(titleInputedWord).html(inputNum + "字节");
 			  $(titleInputingWord).html((maxlenth - inputNum)+ "字母," + (Math.round(((maxlenth -inputNum) / 2) - 0.5)) + "汉字");
 		}
-		 
+
 		 //取得被*替换掉的字符串
 	     var replaceText=$(id).val().replace(/[^\x00-\xff]/g, "**");
 	     var maxStr=replaceText.substring(0,maxlenth);
@@ -1215,7 +1241,7 @@ var FrontCommonFunction = {
 		}
 		var paginationInfo =
 			          '<div id="paginationInfo">' +
-		        		 initPaginationBar(sumPage, currentPage) + 
+		        		 initPaginationBar(sumPage, currentPage) +
 		        	   '</div>'+
 		            	'<li class="fl all">共<span id="sumPage">'+ sumPage +'</span>页</li>'+
 		            	'<li class="inpus fl"><input id="toPage" type="text"/>页</li>' +
@@ -1248,7 +1274,7 @@ var FrontCommonFunction = {
 			}
 			obj[methodName](null);
 		});
-	},	
+	},
 	maxRecordPerPage:function() {
 		//每页显示几条
 		var maxRecordPerPage = 8;
@@ -1367,9 +1393,9 @@ function initPaginationBar(sumPage, currentPage) {
 			} else {
 				paginationBar = paginationBar + '<div><a>'+ i +'</a></div>';
 			}
-		} 
+		}
 		paginationBar=paginationBar+"</li>";
-	} 
+	}
 	// 如果总页数大于5页，并且当前页小于等于5，显示 '12345...下一页'
 	if (sumPage > 5 && currentPage <= 5) {
 		for(var j = 1; j <= currentPage; j++) {
@@ -1378,10 +1404,10 @@ function initPaginationBar(sumPage, currentPage) {
 					paginationBar = paginationBar + '<div><a>'+ (j-1) +'</a></div>';
 				}
 				paginationBar = paginationBar + '<b class="pageCur"><div class="active">'+ j +'</div></b>';
-			} 
-		} 
+			}
+		}
 		if (currentPage === sumPage-1) {
-			paginationBar = paginationBar + '<div><a>'+ (currentPage+1) +'</a></div>'; 
+			paginationBar = paginationBar + '<div><a>'+ (currentPage+1) +'</a></div>';
 		}
 		if (currentPage < sumPage-2) {
 			var tem='';
@@ -1395,7 +1421,7 @@ function initPaginationBar(sumPage, currentPage) {
 	    }
 		paginationBar=paginationBar+"</li>";
 	}
-	
+
 	// 如果总页数大于5页，并且当前页大于5，显示 '123..下一页'
 	if (sumPage > 5 && currentPage > 5) {
 		var tem1="";
@@ -1406,7 +1432,7 @@ function initPaginationBar(sumPage, currentPage) {
 		if (currentPage === sumPage-1) {
 			tem2= '<div><a>'+ (currentPage-1) +'</a></div>';
 		}
-		
+
 		var tem3="";
 		if (currentPage === sumPage) {
 			tem3+= '<div><a>'+ (currentPage-2) +'</a></div>';
@@ -1417,14 +1443,14 @@ function initPaginationBar(sumPage, currentPage) {
 						tem1+
 						tem2+
 						tem3+
-						'<b class="pageCur"><div class="active">'+ currentPage +'</div></b>'; 
+						'<b class="pageCur"><div class="active">'+ currentPage +'</div></b>';
 		if (currentPage === sumPage-1) {
-			paginationBar = paginationBar + '<div><a>'+ (currentPage+1) +'</a></div>'; 
+			paginationBar = paginationBar + '<div><a>'+ (currentPage+1) +'</a></div>';
 		}
 		if (currentPage === sumPage-2) {
 			paginationBar = paginationBar +
-			'<div><a>'+ (currentPage+1) +'</a></div>' + 
-			'<div><a>'+ (currentPage+2) +'</a></div>'; 
+			'<div><a>'+ (currentPage+1) +'</a></div>' +
+			'<div><a>'+ (currentPage+2) +'</a></div>';
 		}
 		if (currentPage < sumPage-2) {
 			paginationBar =paginationBar + '<div><a>'+ (currentPage+1) +'</a></div>' +
@@ -1445,6 +1471,3 @@ function initPaginationBar(sumPage, currentPage) {
 $(document).ready(function() {
 	FrontCommonFunction.toUpperCase();
 });
-
-
-

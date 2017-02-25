@@ -1,20 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta charset='utf-8'/>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<%@ include file="/WEB-INF/pages/common/head.jsp" %>
 <title>修改账号信息</title>
-<% request.setCharacterEncoding("UTF-8");%>
-<% response.setCharacterEncoding("UTF-8");%>
-<link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/images/front/img/homepage.png" media="screen" />
-<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/front/style.css"/>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/jquery/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/jquery/jquery.validate.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/researchgroup/updateMyPasswordInfo.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/common/common.js"></script>
 </head>
 <body>
 	<%@ include file="/WEB-INF/pages/common/header.jsp" %>
@@ -110,7 +97,7 @@
 						<div class='anniu' id="commit" url="${pageContext.request.contextPath}/security/user/update">确定</div>
 					  </form>
 					</li>
-				
+
 					<li class='lists hide'>
 					<form id="emailForm">
 						<div class='list'>
@@ -132,6 +119,7 @@
 		</div>
 	</div>
 	<%@ include file="/WEB-INF/pages/common/footer.jsp" %>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/researchgroup/updateMyPasswordInfo.js"></script>
 </body>
 <script type="text/javascript">
 	$(function(){

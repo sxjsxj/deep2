@@ -1,29 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta charset='utf-8'/>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<%@ include file="/WEB-INF/pages/common/head.jsp" %>
 <title>我的需求</title>
-<% request.setCharacterEncoding("UTF-8");%>
-<% response.setCharacterEncoding("UTF-8");%>
-<link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/images/front/img/homepage.png" media="screen" />
-<style> 
-.mydiv1 {} 
-.mydiv2 { 
+<style type="text/css">
+.mydiv1 {}
+.mydiv2 {
      box-shadow: 0px 3px 8px #808080;
-	-moz-box-shadow:0px 3px 8px #808080;/*firefox*/ 
-	-webkit-box-shadow:0px 3px 8px #808080;/*webkit*/ 
-} 
-</style> 
+	-moz-box-shadow:0px 3px 8px #808080;/*firefox*/
+	-webkit-box-shadow:0px 3px 8px #808080;/*webkit*/
+}
+</style>
 
 </head>
 <body>
 	<%@ include file="/WEB-INF/pages/common/header.jsp" %>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/companyUser/myRequirement.js"></script>
-	
+
 	<div class='cons tuijian'>
 		<div class='width1200'>
 		<jsp:include page="/WEB-INF/pages/common/companyUserLeft.jsp"></jsp:include>
@@ -39,15 +30,15 @@
 					<br />
 					<br />
 					<br /> <font size="5">请您先维护企业信息!</font> <br />
-					<br /> 
+					<br />
 					<font align="center" color="blue"><a
 						href="${pageContext.request.contextPath}/companyUser/getDetailPageForAdd"><font size="5">现在完善企业信息</font></a></font>
 					<br />
 				</div>
 			</div> --%>
 			<!-- version1 点击发布需求弹框end -->
-			
-			
+
+
 			<!-- version2 点击发布需求弹框start -->
 			<div id="altsone" style="display:none">
 				<div class='xuqiualert' style="margin-top:-90px;margin-left:-400px;width:740px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
@@ -73,20 +64,20 @@
 								  </font>
 						  </div>
 					</div>
-					
+
 				</div>
 			</div>
 			<!-- version2 点击发布需求弹框end -->
-			
-			
-			
+
+
+
 			 <!--发布需求弹框start  -->
 			<div id="alts" style="display:none">
 				<div class='xuqiualert'>
 					<div class='tits'>
 						请选择您的需求类型
 						<div class='imgs'>
-							<img src='${pageContext.request.contextPath}/resources/images/front/img/close.png' class='img1' /> 
+							<img src='${pageContext.request.contextPath}/resources/images/front/img/close.png' class='img1' />
 							<img src='${pageContext.request.contextPath}/resources/images/front/img/close2.png' class='img2' />
 						</div>
 					</div>
@@ -140,7 +131,7 @@
 				</div>
 			</div>
 			<!-- version4 点击发布需求弹框end -->
-			
+
 			<!-- version3 点击发布需求弹框start -->
 			<div id="altstwo" style="display:none">
 				<div class='xuqiualert' style="width:740px;margin-top:15px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
@@ -186,13 +177,13 @@
 			<div id="techRequirementMoreInfo" url="${pageContext.request.contextPath}/techRequirement/getMoreInfoPage"></div>
 			<div id="techRequirementDetail" url="${pageContext.request.contextPath}/techRequirement/getDetailPageForUpdate"></div>
 			<div id="techRequirementDelete" url="${pageContext.request.contextPath}/techRequirement/delete"></div>
-			
-			
+
+
 			<div id="queryFundRequirement" url="${pageContext.request.contextPath}/fundRequirement/query"></div>
 			<div id="fundRequirementMoreInfo" url="${pageContext.request.contextPath}/fundRequirement/getMoreInfoPage"></div>
 		    <div id="fundRequirementDetail" url="${pageContext.request.contextPath}/fundRequirement/getDetailPageForUpdate"></div>
 		    <div id="fundRequirementDelete" url="${pageContext.request.contextPath}/fundRequirement/delete"></div>
-		
+
 			<input id="currentPage" type="hidden" value="1"></input>
 			<div class='fl right change2' style="margin-left:-50px;">
 				<div class='publishmyrequire' id="publishMyRequirement">发布需求</div>
@@ -214,18 +205,19 @@
 					<li id="child5">已完成(0)</li>
 				</ul>
 				<ul class='con' id="requirementListQuery">
-				
+
 				</ul>
 				<div id="noResult" class="red"></div>
-				
+
 				<ul style="margin-left:280px;" id="pagination" class='page'>
-				
+
 				</ul>
 			</div>
 			<div class='clear'></div>
 		</div>
 	</div>
 	<%@ include file="/WEB-INF/pages/common/footer.jsp" %>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/companyUser/myRequirement.js"></script>
 </body>
 <script type="text/javascript">
 	$(function(){

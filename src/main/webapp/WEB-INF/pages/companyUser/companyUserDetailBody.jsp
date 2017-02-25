@@ -1,22 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta charset='utf-8'/>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<%@ include file="/WEB-INF/pages/common/head.jsp" %>
 <title>个人中心-企业-企业信息</title>
-<% request.setCharacterEncoding("UTF-8");%>
-<% response.setCharacterEncoding("UTF-8");%>
-<link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/images/front/img/homepage.png" media="screen" />
 </head>
 <body>
 	<%@ include file="/WEB-INF/pages/common/header.jsp" %>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/companyUser/myInfo.js"></script>
-	
+
 	<%-- <div class='banner'>
-		<img src='${pageContext.request.contextPath}/resources/images/front/img/banner.png' style="width:100%" height="100%" />
+		<img src='${pageContext.request.contextPath}/resources/images/front/img/banner.jpg' style="width:100%" height="100%" />
 		<div class='width1200'>
 			<div class='topbtxt'>唯有合作&nbsp;&nbsp;&nbsp;引领未来</div>
 			<div class='bottombtxt'>
@@ -47,13 +38,13 @@
                     <font size="5" color="blue">
                     <a href="${pageContext.request.contextPath}/companyUser/getMyRecommendAchievementBrowsePage">暂不发布</a>
                     </font> --%>
-						<font size="5" color="#349fc4">恭喜您,保存成功</font> 
-						<br /> 
+						<font size="5" color="#349fc4">恭喜您,保存成功</font>
+						<br />
 						<div>
-							<font size="4" color="#349fc4"> 
+							<font size="4" color="#349fc4">
 							  <a href="javascript:;" id="publishMyRequirement">现在就去发布我的需求>> </a>
 							</font>
-							 <br /> 
+							 <br />
 							 <br />
                             <font size="4" color="#349fc4"> <a
 								href="${pageContext.request.contextPath}/companyUser/getMyRecommendAchievementBrowsePage">暂不发布>>
@@ -71,7 +62,7 @@
 					<div class='tits'>
 						请选择您的需求类型
 						<div class='imgs'>
-							<img src='${pageContext.request.contextPath}/resources/images/front/img/close.png' class='img1' /> 
+							<img src='${pageContext.request.contextPath}/resources/images/front/img/close.png' class='img1' />
 							<img src='${pageContext.request.contextPath}/resources/images/front/img/close2.png' class='img2' />
 						</div>
 					</div>
@@ -101,7 +92,7 @@
 				</div>
 			</div>
            <!--发布需求弹框end  -->
-           
+
            	<!-- 保存失败start -->
 	<div class="registSuccess" id="alertClick"></div>
 		<!-- version4 点击发布需求弹框start -->
@@ -140,10 +131,10 @@
 					</div>
 					<div>
 						<div>
-							<font size="4" color="#349fc4"> 
+							<font size="4" color="#349fc4">
 							  <a href="#" id="publishMyRequirementnew">现在就去发布我的需求>> </a>
 							</font>
-							 <br /> 
+							 <br />
 							 <br />
                             <font size="4" color="#349fc4"> <a
 								href="${pageContext.request.contextPath}/companyUser/getMyRecommendAchievementBrowsePage">暂不发布>>
@@ -179,7 +170,7 @@
 					<div class='clear'></div>
 				</div>
 				<div class='xuqiu xuqiu4'>
-				
+
 				    <input name="domain" id="domain" type='hidden' value=''/>
 					<div class='lis'>
 						<div class='name fl'><span>*</span>所属行业</div>
@@ -192,7 +183,7 @@
 						<div id="domainCheckResult" style="display:inline"></div>
 						<div class='clear'></div>
 					</div>
-					
+
 					<input id="nature" name="nature" type='hidden' value=''/>
 					<div class='lis'>
 						<div class='name fl'>*公司性质</div>
@@ -212,7 +203,7 @@
 					</div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu xuqiu4'>
 				    <input id="scale" name="scale" type='hidden' value=''/>
 					<div class='lis'>
@@ -252,7 +243,7 @@
 					</div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<!-- 省市 start-->
 				<div class='xuqiu xuqiu4 xuqiu7'>
 				    <input id="province" name="province" type='hidden' value=''/>
@@ -299,7 +290,7 @@
 					<div class='fl'><input type='text' style="width:755px;" maxlength="50" id="address" name="address"value=''/></div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu xuqiu4'>
 					<div class='lis'>
 						<div class='name fl'>*联系人</div>
@@ -324,7 +315,7 @@
 					<div class='fl'><input type='text' style="width:755px;" maxlength="20"  id="contactTitle" name="contactTitle" value=''/></div>
 					<div class='clear'></div>
 				</div>
-				
+
 				<div class='xuqiu xuqiu3'>
 					<div class='name fl'>公司简介</div>
 					<div class='fl'>
@@ -366,6 +357,7 @@
 		</div>
 	</div>
 	<%@ include file="/WEB-INF/pages/common/footer.jsp" %>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/companyUser/myInfo.js"></script>
 </body>
 <script type="text/javascript">
 
@@ -387,7 +379,7 @@ $(document).ready(function() {
 		   }
 		$('#fileTypeCheckResult').html("已上传文件:"+$(this).val());
 	});
-	
+
 	$('.cons .right .xuqiu4 .input').click(function(){
 		if($(this).hasClass('on')){
 			$(this).removeClass("on");

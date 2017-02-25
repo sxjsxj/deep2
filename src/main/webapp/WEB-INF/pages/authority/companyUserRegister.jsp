@@ -32,7 +32,7 @@
 			<br />
 		</div>
 	</div> -->
-	
+
 		<!-- version4 点击发布需求弹框start -->
 			<div id="altsthree">
 				<div class='xuqiualert' style="width:740px;margin-top:-60px;margin-left:-370px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
@@ -54,7 +54,7 @@
 				</div>
 			</div>
 			<!-- version4 点击发布需求弹框end -->
-	
+
 		<!-- version3 点击发布需求弹框start -->
 			<div id="altstwo">
 				<div class='xuqiualert' style="width:740px;font-size:24px;margin-top:-60px;margin-left:-370px;text-align:center;color:#434343;min-height:280px;">
@@ -86,7 +86,7 @@
 			</a>
 			</div>
 			<div class='loginkuang keyankuang'>
-				<div id="loginUrl" url="${pageContext.request.contextPath}/security/loginPage"></div> 
+				<div id="loginUrl" url="${pageContext.request.contextPath}/security/loginPage"></div>
 				<div class='tit' style="font-size:25px;margin-bottom:2px;">我是企业</div>
 				<ul class='cons'>
 				<form id="companyUserRegistorForm">
@@ -122,7 +122,7 @@
 					</div>
 				</form>
 				</ul>
-				
+
 				<div class='rem'>
 					<div class='fl'>
 						<input type='checkbox' checked="checked" id="agree"/>我已阅读并同意《<a style='color:#1faece' href='${pageContext.request.contextPath}/security/registAgreement'  id="registXieyi">linkcc.cn注册协议</a>》

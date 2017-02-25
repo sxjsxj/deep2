@@ -1,24 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta charset='utf-8'/>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<%@ include file="/WEB-INF/pages/common/head.jsp" %>
 <title>联科——让科技、资本和产业联合起来</title>
-<% request.setCharacterEncoding("UTF-8");%>
-<% response.setCharacterEncoding("UTF-8");%>
-<link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/images/front/img/homepage.png" media="screen" />
-<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/front/style.css"/>
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/front/index.css"/>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/jquery/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/common/common.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/authority/homepage.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/common/header.js"></script>
 </head>
 <body>
-<%@ include file="/WEB-INF/pages/common/header.jsp" %>
+	<%@ include file="/WEB-INF/pages/common/header.jsp" %>
 	<div class='banner'>
 		<div class='width1200 clic'>
 			<div class='leftbutton'><img style="height:55px;width:29px;margin-top:80px;" src='${pageContext.request.contextPath}/resources/images/front/img/leftbutton.png'/></div>
@@ -31,23 +18,26 @@
 		</div>
 		<ul>
 			<li>
-				<img src='${pageContext.request.contextPath}/resources/images/front/img/banner31.png' width="100%" height="100%" />
+				<img src='${pageContext.request.contextPath}/resources/images/front/img/banner31.jpg' width="100%" height="100%" />
 				<div class='width1200'>
 					<div class='txt'>
+						唯有联合，引领未来
 					</div>
 				</div>
 			</li>
 			<li>
-				<img src='${pageContext.request.contextPath}/resources/images/front/img/banner32.png' width="100%" height="100%" />
+				<img src='${pageContext.request.contextPath}/resources/images/front/img/banner32.jpg' width="100%" height="100%" />
 				<div class='width1200'>
 					<div class='txt'>
+						让资本、科技和产业联合起来
 					</div>
 				</div>
 			</li>
 			<li>
-				<img src='${pageContext.request.contextPath}/resources/images/front/img/banner33.png' width="100%" height="100%" />
+				<img src='${pageContext.request.contextPath}/resources/images/front/img/banner33.jpg' width="100%" height="100%" />
 				<div class='width1200'>
 					<div class='txt'>
+						为情怀赋予价值，为社会创造财富
 					</div>
 				</div>
 			</li>
@@ -117,15 +107,15 @@
 			<div style="color: #525d64;font-size: 19px;text-align: center;">
 				推动企业生产技术升级——帮助企业解决生产、转型中的技术难题
 			</div>
-			
+
 			<div style="color: #525d64;font-size: 19px;margin-left:340px;">
 				推动科研项目产业化——推动高校、科研机构的科技成果向市场转化
 			</div>
-			
+
 			<div  style="color: #525d64;font-size: 19px;margin-left:434px;">
 				资本对接——提供科技创业项目资本的对接服务
 			</div>
-			
+
 			<div style="color: #525d64;font-size: 19px;margin-left:396px;">
 				团队人才对接——创业就业人才团队对接搭建
 			</div>
@@ -140,9 +130,8 @@
 			<div class='more' style="margin-top:30px;"><a href='${pageContext.request.contextPath}/security/aboutusPage'>查看更多</a></div>
 		</div>
 	</div>
-	<%@ include file="/WEB-INF/pages/common/footer.jsp" %>
 	<ul class='righttoul '>
-	   <div id="go_top">  
+	   <div id="go_top">
 		<li class='goup'>
 			<div class='txt1 fl tss'>回到顶部</div>
 			<a  href="javascript:scroll(0,0)" title='回到顶部' class='fl' style='text-align:center;margin-left:10px'><img src='${pageContext.request.contextPath}/resources/images/front/img/goup.png' style='margin-top:10px'/></a>
@@ -162,6 +151,9 @@
 			<div class='clear'></div>
 		</li>
 	</ul>
+	<%@ include file="/WEB-INF/pages/common/footer.jsp" %>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/common/header.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/authority/homepage.js"></script>
 </body>
 <script type="text/javascript">
 	$(function(){
@@ -218,7 +210,7 @@
 			clearInterval(time);
 		})
 		$(".banner ul li img").css({'width':$(".banner").width(),'height':$(".banner").height()});
-		
+
 		function mos(){
 			clearInterval(time);
 			$(".banner ul").stop(true,true).animate({'margin-left' : -now * $('.banner').width()},300,function(){
@@ -275,25 +267,25 @@
 		})
 	})
 </script>
-<script>  
-$(document).ready(function(){  
-    $("#go_top").hide();  
-    $(function () {  
-        //检测屏幕高度  
-        var height=$(window).height();  
-        //scroll() 方法为滚动事件  
-        $(window).scroll(function(){  
-            if ($(window).scrollTop()>height){  
-                $("#go_top").fadeIn(500);  
-            }else{  
-                $("#go_top").fadeOut(500);  
-                }  
-        });  
-        $("#go_top").click(function(){  
-            $('body,html').animate({scrollTop:0},100);  
-            return false;  
-        });  
-    });  
-});  
-</script>  
+<script>
+$(document).ready(function(){
+    $("#go_top").hide();
+    $(function () {
+        //检测屏幕高度
+        var height=$(window).height();
+        //scroll() 方法为滚动事件
+        $(window).scroll(function(){
+            if ($(window).scrollTop()>height){
+                $("#go_top").fadeIn(500);
+            }else{
+                $("#go_top").fadeOut(500);
+                }
+        });
+        $("#go_top").click(function(){
+            $('body,html').animate({scrollTop:0},100);
+            return false;
+        });
+    });
+});
+</script>
 </html>

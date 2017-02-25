@@ -1,30 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta charset='utf-8'/>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="renderer" content="webkit|ie-comp|ie-stand">
-<title>公共头部</title>
-<% request.setCharacterEncoding("UTF-8");%>
-<% response.setCharacterEncoding("UTF-8");%>
-<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/front/style.css"/>
-<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/front/alert.css"/>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/jquery/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/jquery/jquery.validate.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/jquery/jquery.serializeJSON.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/jquery/ajaxfileupload.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/common/common.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/common/header.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/common/commonQuery.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/common/commonInit.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/common/cooperateCollectCommon.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/common/cooperateCollectDetailCommon.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/common/myRecommendCommon.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/common/commonActionControl.js"></script>
-</head>
-<body>
 <input type="hidden" value="" id="commonUserLoginId"/>
 <input type="hidden" value="" id="commonUserType"/>
 <input type="hidden" value="" id="commonUserTel"/>
@@ -53,67 +26,64 @@
 <div id="headerSearchFundRequirement" url="${pageContext.request.contextPath}/fundRequirement/getBrowsePage"></div>
 <div id="headerSearchResearchGroup" url="${pageContext.request.contextPath}/researchGroup/getBrowsePage"></div>
 <div id="headerSearchInvestorUser" url="${pageContext.request.contextPath}/investorUser/getBrowsePage"></div>
-	<div class='headbg'>
-		<div class='width1200'>
-			<div class='logo fl'>
-			    <a href="${pageContext.request.contextPath}/security/homepage">
-				<img style="width:150px;height:30px;margin-top:10px;" src='${pageContext.request.contextPath}/resources/images/front/img/logo.png'/>
-				</a>
-			</div>
-			<ul class='fl nav'>
-				<%-- <li><a href="${pageContext.request.contextPath}/security/homePage">首页</a></li> --%>
-				<a href="${pageContext.request.contextPath}/achievement/getBrowsePage"><li>找科研成果</li></a>
-				<li>
-					找企业需求
-					<dl>
-						<a href="${pageContext.request.contextPath}/techRequirement/getBrowsePage"><dd>技术需求</dd></a>
-						<a href="${pageContext.request.contextPath}/fundRequirement/getBrowsePage"><dd>资金需求</dd></a>
+<div class='headbg'>
+	<div class='width1200'>
+		<div class='logo fl'>
+		    <a href="${pageContext.request.contextPath}/security/homepage">
+			<img style="width:150px;height:30px;margin-top:10px;" src='${pageContext.request.contextPath}/resources/images/front/img/logo.png'/>
+			</a>
+		</div>
+		<ul class='fl nav'>
+			<%-- <li><a href="${pageContext.request.contextPath}/security/homePage">首页</a></li> --%>
+			<a href="${pageContext.request.contextPath}/achievement/getBrowsePage"><li>找科研成果</li></a>
+			<li>
+				找企业需求
+				<dl>
+					<a href="${pageContext.request.contextPath}/techRequirement/getBrowsePage"><dd>技术需求</dd></a>
+					<a href="${pageContext.request.contextPath}/fundRequirement/getBrowsePage"><dd>资金需求</dd></a>
+				</dl>
+			</li>
+			<a href="${pageContext.request.contextPath}/researchGroup/getBrowsePage"><li>找科研团队</li></a>
+			<a href="${pageContext.request.contextPath}/investorUser/getBrowsePage"><li>找投资资金</li></a>
+			<!-- <div class='clear'></div> -->
+		</ul>
+		<div style="margin-left:4px;"  class='fr right'>
+			<div class='input fl'>
+				<input type='text' placeholder='' id="searchName" class='fl'/>
+				<div class='button fl'>
+					<span>科研成果</span><img src='${pageContext.request.contextPath}/resources/images/front/img/downicon.png'/>
+					<input id="headerSelectCheck" type='hidden' value='0'/>
+					<dl id="headerSelectSearch">
+					    <dd value="0">科研成果</dd>
+						<dd value="1">技术需求</dd>
+						<dd value="2">资金需求</dd>
+						<dd value="3">科研团队</dd>
+						<dd value="4">投资资金</dd>
 					</dl>
-				</li>
-				<a href="${pageContext.request.contextPath}/researchGroup/getBrowsePage"><li>找科研团队</li></a>
-				<a href="${pageContext.request.contextPath}/investorUser/getBrowsePage"><li>找投资资金</li></a>
+				</div>
 				<!-- <div class='clear'></div> -->
-			</ul>
-			<div style="margin-left:4px;"  class='fr right'>
-				<div class='input fl'>
-					<input type='text' placeholder='' id="searchName" class='fl'/>
-					<div class='button fl'>
-						<span>科研成果</span><img src='${pageContext.request.contextPath}/resources/images/front/img/downicon.png'/>
-						<input id="headerSelectCheck" type='hidden' value='0'/>
-						<dl id="headerSelectSearch">
-						    <dd value="0">科研成果</dd>
-							<dd value="1">技术需求</dd>
-							<dd value="2">资金需求</dd>
-							<dd value="3">科研团队</dd>
-							<dd value="4">投资资金</dd>
-						</dl>
-					</div>
-					<!-- <div class='clear'></div> -->
-				</div>
-				<div class='fl searbtn'>
-					<a href="#" id="headerSerarch">搜索</a>
-				</div>
-				<div class='fl usericon'><img src='${pageContext.request.contextPath}/resources/images/front/img/usericon.png'/></div>
-				<div class='fl loginreg'>
-					<a id="login" href="${pageContext.request.contextPath}/security/loginPage">登录</a>
-					<a id="register" href="${pageContext.request.contextPath}/security/register">注册</a>
-				</div>
-				<div class='fl loginreg'>
-					<a style="font-size:12px;" id="currentUser" url="${pageContext.request.contextPath}/security/getCurrentUser" hidden></a>
-					<a style="font-size:12px;" id="goCenter" href="javascript:;" hidden>个人中心</a>
-					<a style="font-size:12px;" id="logout" href="${pageContext.request.contextPath}/logout" hidden>退出</a>
-				</div>
-				<div class='clear'></div>
+			</div>
+			<div class='fl searbtn'>
+				<a href="#" id="headerSerarch">搜索</a>
+			</div>
+			<div class='fl usericon'><img src='${pageContext.request.contextPath}/resources/images/front/img/usericon.png'/></div>
+			<div class='fl loginreg'>
+				<a id="login" href="${pageContext.request.contextPath}/security/loginPage">登录</a>
+				<a id="register" href="${pageContext.request.contextPath}/security/register">注册</a>
+			</div>
+			<div class='fl loginreg'>
+				<a style="font-size:12px;" id="currentUser" url="${pageContext.request.contextPath}/security/getCurrentUser" hidden></a>
+				<a style="font-size:12px;" id="goCenter" href="javascript:;" hidden>个人中心</a>
+				<a style="font-size:12px;" id="logout" href="${pageContext.request.contextPath}/logout" hidden>退出</a>
 			</div>
 			<div class='clear'></div>
 		</div>
-		<div>
-			<input style="padding-left:500px;width:100%;height:30px;color:red;" type="text" value="${jspPath}" />
-		</div>
+		<div class='clear'></div>
 	</div>
-	<div id="companyUserCenter" url="${pageContext.request.contextPath}/companyUser/getMyRecommendAchievementBrowsePage"></div>
-	<div id="researchUserCenter" url="${pageContext.request.contextPath}/researchUser/getMyRecommendTechRequirePage"></div>
-	<div id="investorUserCenter" url="${pageContext.request.contextPath}/investorUser/getMyRecommendBrowsePage"></div>
-	
-	
-	
+	<div>
+		<input style="padding-left:500px;width:100%;height:30px;color:red;" type="text" value="${jspPath}" />
+	</div>
+</div>
+<div id="companyUserCenter" url="${pageContext.request.contextPath}/companyUser/getMyRecommendAchievementBrowsePage"></div>
+<div id="researchUserCenter" url="${pageContext.request.contextPath}/researchUser/getMyRecommendTechRequirePage"></div>
+<div id="investorUserCenter" url="${pageContext.request.contextPath}/investorUser/getMyRecommendBrowsePage"></div>

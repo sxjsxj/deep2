@@ -1,33 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta charset='utf-8'/>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<%@ include file="/WEB-INF/pages/common/head.jsp" %>
 <title>技术需求列表</title>
-<% request.setCharacterEncoding("UTF-8");%>
-<% response.setCharacterEncoding("UTF-8");%>
-<link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/images/front/img/homepage.png" media="screen" />
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-<style> 
-.mydiv1 {} 
-.mydiv2 { 
+<style type="text/css">
+.mydiv1 {}
+.mydiv2 {
      box-shadow: 0px 3px 8px #808080;
-	-moz-box-shadow:0px 3px 8px #808080;/*firefox*/ 
-	-webkit-box-shadow:0px 3px 8px #808080;/*webkit*/ 
-} 
-</style> 
+	-moz-box-shadow:0px 3px 8px #808080;/*firefox*/
+	-webkit-box-shadow:0px 3px 8px #808080;/*webkit*/
+}
+</style>
 </head>
 <body>
 	<%@ include file="/WEB-INF/pages/common/header.jsp" %>
 	<%@ include file="/WEB-INF/pages/common/dialog.jsp" %>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/companyUser/techRequirementList.js"></script>
-	
+
 	<div class='banner' style="margin-bottom:-135px;">
-		<img style="height:131px;width: 100%;" src='${pageContext.request.contextPath}/resources/images/front/img/banner.png' style="width:100%" height="100%" />
+		<img style="height:131px;width: 100%;" src='${pageContext.request.contextPath}/resources/images/front/img/banner.jpg' style="width:100%" height="100%" />
 	</div>
 	<input id="currentPage" type="hidden" value="1"></input>
 	<input type="hidden" id="searchHeaderName" value="${headerName}"/>
@@ -53,12 +44,12 @@
 				<li>
 					<div class='fl ti2' style="font-size:15px;">学科领域</div>
 				    <div id="checkBoxDomain" url="${pageContext.request.contextPath}/basicResearchField/query">
-					
+
 					<input type="hidden" id="domainId"/>
 					</div>
 					<div class='clear'></div>
 				</li>
-				
+
 				<li style='margin-bottom:5px'>
 					<div class='fl ti2' style="font-size:15px;">省市地区</div>
 					<div class='fl list'>
@@ -71,7 +62,7 @@
 					<div class='clear'></div>
 				</li>
 			<div id="region" url="${pageContext.request.contextPath}/basicProvinceArea/queryAreaProvince">
-				
+
 			</div>
 				<li>
 					<div class='fl ti2' style="font-size:15px;">研发类型</div>
@@ -143,7 +134,7 @@
 					</div>
 					<div class='clear'></div>
 				</li>
-				
+
 				<li>
 					<div class='fl ti2' style="font-size:15px;">合作方式</div>
 					<div id="checkBoxCooperationType">
@@ -193,7 +184,7 @@
 					</div>
 					<div class='clear'></div>
 				</li>
-				
+
 				<li>
 					<div class='fl ti2'></div>
 					<div id="checkBoxStatus">
@@ -208,15 +199,15 @@
 					</div>
 					<div class='clear'></div>
 				</li>
-				
+
 				<li id="queryTechRequirement" url="${pageContext.request.contextPath}/techRequirement/query" class='selectbtn'>查询</li>
 			</ul>
 			<div id="techRequirementMoreInfo" url="${pageContext.request.contextPath}/techRequirement/getMoreInfoPage"></div>
-			
+
 			<div id="addFollowerUrl" url="${pageContext.request.contextPath}/techRequirementFollower/add"></div>
             		<div id="cancelFollowerUrl" url="${pageContext.request.contextPath}/techRequirementFollower/delete"></div>
-            
-            		<div id="loginUrl" url="${pageContext.request.contextPath}/security/loginPage"></div> 
+
+            		<div id="loginUrl" url="${pageContext.request.contextPath}/security/loginPage"></div>
 			<%-- <div class='title2'>
 				<div class='checkbox fl'>
 					<img src='${pageContext.request.contextPath}/resources/images/front/img/checkbox.png'/>
@@ -233,12 +224,12 @@
 			</div>
 			<div class='fl'>
 				<ul class='lis' id="techRequirementListQuery">
-					
+
 				</ul>
 				<div id="noResult" class="red"></div>
-				
+
 				<ul id="pagination" class='page'>
-				
+
 				</ul>
 			</div>
 			<div class='fr'>
@@ -247,9 +238,9 @@
 			<div class='clear'></div>
 		</div>
 	</div>
-	
+
 <%@ include file="/WEB-INF/pages/common/footer.jsp" %>
-	
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/companyUser/techRequirementList.js"></script>
 </body>
 <script type="text/javascript">
 	$(function(){
@@ -288,7 +279,7 @@
 				$(this).addClass("on");
 				$(this).find('img').attr("src",'${pageContext.request.contextPath}/resources/images/front/img/checkbox2.png')
 			}
-			
+
 		})
 
 		$(".molist").slideUp(0);
@@ -313,7 +304,7 @@
 				$(this).addClass("on");
 				$(this).find('img').attr("src",'${pageContext.request.contextPath}/resources/images/front/img/checkbox2.png')
 			}
-			
+
 		})
 	})
 </script>
@@ -323,36 +314,36 @@ $(function () {
   $(window).scroll(function () {
     var top = $(window).scrollTop() + 200;
     var left = $(window).scrollLeft() + 320;
-    $("#editInfo1").animate({ "top": top }, 30); 
+    $("#editInfo1").animate({ "top": top }, 30);
   });
-  
+
   $(window).scroll(function () {
 	    var top = $(window).scrollTop() + 200;
 	    var left = $(window).scrollLeft() + 320;
-	    $("#editInfo2").animate({ "top": top }, 30); 
+	    $("#editInfo2").animate({ "top": top }, 30);
  });
-  
-  
+
+
   $(window).scroll(function () {
 	    var top = $(window).scrollTop() + 200;
 	    var left = $(window).scrollLeft() + 320;
 	    $("#altstwo").animate({ "top": top }, 30);
   });
-  
-  
+
+
   $(window).scroll(function () {
 	    var top = $(window).scrollTop() + 200;
 	    var left = $(window).scrollLeft() + 320;
 	    $("#altsthree").animate({ "top": top }, 30);
   });
-  
-  
+
+
   $(window).scroll(function () {
 	    var top = $(window).scrollTop() + 200;
 	    var left = $(window).scrollLeft() + 320;
 	    $("#nologin").animate({ "top": top }, 30);
   });
-  
+
 });
 </script>
 </html>

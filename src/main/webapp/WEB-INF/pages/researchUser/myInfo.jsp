@@ -1,25 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta charset='utf-8'/>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="renderer" content="webkit|ie-comp|ie-stand">
-<title>科研团队我的资料</title>
-<% request.setCharacterEncoding("UTF-8");%>
-<% response.setCharacterEncoding("UTF-8");%>
-<link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/images/front/img/homepage.png" media="screen" />
+<%@ include file="/WEB-INF/pages/common/head.jsp" %>
 </head>
 <body>
 	<%@ include file="/WEB-INF/pages/common/header.jsp" %>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/researchUser/myInfo.js"></script>
-	
+
 	<div class='cons info'>
 		<div class='width1200'>
 		<div style="margin-top:-79px;">
 		<%@ include file="/WEB-INF/pages/common/researchUserLeft.jsp" %>
-		</div>	
+		</div>
 		<div class="registSuccess" id="alertClick"></div>
 		<!-- version4 点击发布需求弹框start -->
 			<div id="altsthree" style="display:none">
@@ -42,7 +32,7 @@
 				</div>
 			</div>
 			<!-- version4 点击发布需求弹框end -->
-			
+
 			<!-- version3 点击发布需求弹框start -->
 			<div id="altstwo" style="display:none">
 				<div class='xuqiualert' style="width:740px;margin-top:15px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
@@ -64,8 +54,8 @@
 				</div>
 			</div>
 			<!-- version3 点击发布需求弹框end -->
-			
-			
+
+
 			<div style="margin-left:-40px;" class='fl right'>
 				<ul class='nav' style="width: 600px">
 				    <input type="hidden" id="tagCheckValue" value="0"/>
@@ -77,7 +67,7 @@
 			<form id="shcoolFormValidate">
 			<div id="shcoolForm">
 				<div class='xuqiu xuqiu4'>
-				   <input type='hidden' id="uniProvince" name="uniProvince" value='' /> 
+				   <input type='hidden' id="uniProvince" name="uniProvince" value='' />
 					<div class='lis'>
 						<div class='name fl'>*所在地址</div>
 						<div class='fl input' style="overflow-y:scroll;height:120px;">
@@ -89,7 +79,7 @@
 						<div id="unRequiredProvinceCheckResult" style="display:inline"></div>
 						<div class='clear'></div>
 					</div>
-					<input type='hidden' id="uniCity" name="uniCity" value="" /> 
+					<input type='hidden' id="uniCity" name="uniCity" value="" />
 					<div class='lis'>
 						<div class='name fl'>&nbsp;&nbsp;</div>
 						<div class='fl input' style="overflow-y:scroll;height:120px;">
@@ -104,7 +94,7 @@
 					<div class='clear'></div>
 				</div>
 				<div class='xuqiu xuqiu4'>
-				   <input type='hidden' id="uniName" name="uniName" value='' /> 
+				   <input type='hidden' id="uniName" name="uniName" value='' />
 					<div class='lis'>
 						<div class='name fl'>*高校名称</div>
 						<div class='fl input' style="overflow-y:scroll;height:120px;">
@@ -116,7 +106,7 @@
 						<div class='clear'></div>
 					</div>
 					<div style="float:left" id="unNameRequiredFlag"></div>
-					
+
 				</div>
 			</div>
 			</form>
@@ -258,6 +248,7 @@
 		</div>
 	</div>
 	<%@ include file="/WEB-INF/pages/common/footer.jsp" %>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/front/researchUser/myInfo.js"></script>
 </body>
 <script type="text/javascript">
 	$(function(){

@@ -11,7 +11,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<junit.version>4.10</junit.version>
-		<spring.version>3.2.1.RELEASE</spring.version>
+		<spring.version>4.0.0.RELEASE</spring.version>
 		<org.slf4j-version>1.5.10</org.slf4j-version>
 	</properties>
 
@@ -153,7 +153,6 @@
 			<artifactId>spring-orm</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
@@ -194,18 +193,18 @@
 			<version>2.5</version>
 			<scope>compile</scope>
 		</dependency>
-		
+
 		<dependency>
-		    <groupId>org.hibernate</groupId>
-		    <artifactId>ejb3-persistence</artifactId>
-		    <version>1.0.2.GA</version>
+			<groupId>org.hibernate</groupId>
+			<artifactId>ejb3-persistence</artifactId>
+			<version>1.0.2.GA</version>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 		<dependency>
-		    <groupId>org.hibernate</groupId>
-		    <artifactId>hibernate-core</artifactId>
-		    <version>3.3.2.GA</version>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>3.3.2.GA</version>
 		</dependency>
 
 		<dependency>
@@ -230,19 +229,19 @@
 			<artifactId>hibernate-annotations</artifactId>
 			<version>3.4.0.GA</version>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-commons-annotations -->
 		<dependency>
-		    <groupId>org.hibernate</groupId>
-		    <artifactId>hibernate-commons-annotations</artifactId>
-		    <version>3.1.0.GA</version>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-commons-annotations</artifactId>
+			<version>3.1.0.GA</version>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/stax/stax-api -->
 		<dependency>
-		    <groupId>stax</groupId>
-		    <artifactId>stax-api</artifactId>
-		    <version>1.0.1</version>
+			<groupId>stax</groupId>
+			<artifactId>stax-api</artifactId>
+			<version>1.0.1</version>
 		</dependency>
 
 		<dependency>
@@ -289,7 +288,11 @@
 			<artifactId>aspectjweaver</artifactId>
 			<version>1.7.0</version>
 		</dependency>
-
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib-nodep</artifactId>
+			<version>3.1</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-web</artifactId>

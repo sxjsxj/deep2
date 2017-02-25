@@ -118,8 +118,24 @@ function query(param) {
 			noresult+="</div>"
 			$('#noResult').html(noresult);
 			return;
+<<<<<<< HEAD
 		}
 		for(var i = 0; i < queryReturnList.length; i++) {
+=======
+		}
+		for(var i = 0; i < queryReturnList.length; i++) {
+			var type=queryReturnList[i].researchGroupResultModel.researchUserResultModel.type;
+			var provinceName="";
+			if(type==="0"){
+				provinceName=FrontCommonFunction.replaceNull(queryReturnList[i].researchGroupResultModel.researchUserResultModel.uniProvince);
+			}else if(type==="1"){
+				provinceName=FrontCommonFunction.replaceNull(queryReturnList[i].researchGroupResultModel.researchUserResultModel.orgProvince);
+			}else if(type==="2"){
+				provinceName=FrontCommonFunction.replaceNull(queryReturnList[i].researchGroupResultModel.researchUserResultModel.orgProvince);
+			}
+			var universityType=FrontCommonFunction.setUniversityType(queryReturnList[i].researchGroupResultModel.researchUserResultModel);
+
+>>>>>>> 01ac3074ea251fead136232094d015741e053cb5
 			var moreInfoUrl = $("#researchGroupMoreInfo").attr('url')+"?id="+queryReturnList[i].researchGroupResultModel.id;;
 			var li = '<div id="shaDowShow'+i+'"  class="mydiv1" onmouseout="delShaDowClass('+i+')" onmouseover="addShaDowClass('+i+')"><li>'
 				li+='<input type="hidden" id="operateId'+i+'" value="'+queryReturnList[i].id.researchId+'"/>'
@@ -155,8 +171,8 @@ function query(param) {
 				li+="<div class='clear'></div>"
 				li+="</div>"
 				li+="<div class='f'>"
-				li+='<div class="fl"><a>'+'<a href="'+moreInfoUrl+'">'+FrontCommonFunction.replaceNull(queryReturnList[i].researchGroupResultModel.researchUserResultModel.uniCity)+"</a></a></div>"
-				li+='<div class="fr">'
+				li+='<div class="fl"><a>'+'<a href="'+moreInfoUrl+'">'+FrontCommonFunction.setDomain(queryReturnList[i].researchGroupResultModel.domain) + "&nbsp;&nbsp;"+ universityType+ "&nbsp;&nbsp;"+provinceName+"</a></a></div>"
+				li+='<div class="fr">' 
 				li+=cooperateCollectFlagDiv(queryReturnList[i].researchGroupResultModel, i)
 				li+="</div>"
 				li+="<div class='clear'></div>"

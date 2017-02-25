@@ -67,7 +67,7 @@ function query(param) {
 			}else if(type==="2"){
 				provinceName=FrontCommonFunction.replaceNull(queryReturnList[i].researchUserResultModel.orgProvince);
 			}
-			var universityType =  FrontCommonFunction.getUniversityType(queryReturnList[i].researchUserResultModel);
+			var universityType =  FrontCommonFunction.setUniversityType(queryReturnList[i].researchUserResultModel);
 			var moreInfoUrl = $("#researchGroupMoreInfo").attr('url')+"?id="+queryReturnList[i].id;
 			var li = '<div id="shaDowShow'+i+'"  class="mydiv1" onmouseout="delShaDowClass('+i+')" onmouseover="addShaDowClass('+i+')"><li>'
 				li+='<input type="hidden" id="operateId'+i+'" value="'+queryReturnList[i].id+'"/>'

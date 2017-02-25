@@ -149,37 +149,49 @@ function query(param) {
 				li+='<input type="hidden" id="operateFollowerType'+i+'" value="'+queryReturnList[i].followerType+'"/>'
 				li+='<input type="hidden" id="operateRelationType'+i+'" value="'+queryReturnList[i].id.relationType+'"/>'
 				
-				var imgUrl="";
-				var logoUrl=queryReturnList[i].investorUserResultModel.logoUrl;
+			   var logoUrl=queryReturnList[i].investorUserResultModel.logoUrl;
+			   var imgUrl="";
 				if(logoUrl!==null && logoUrl!=="" && logoUrl!==undefined){
 					imgUrl=logoUrl;
 					li+='<a href="'+moreInfoUrl+'"><div class="fl ims">'+'<img style="width:240px;height:182px" src="'+$('#downFile').attr('url')+'?path='+imgUrl+'"/></div></a>'
 				}else{
 					imgUrl="../resources/images/front/img/touzifang.png";
-					li+='<a href="'+moreInfoUrl+'"><div class="fl ims">'+'<img style="width:240px;height:182px" src="'+imgUrl+'"/></div></a>'
+					li+='<a href="'+moreInfoUrl+'"><div class="fl ims">'+'<img style="width:240px;height:182px" src="'+imgUrl+'"/></div></a>';
 				}
 			
 				li+="<div class='fl rights'>"
-				li+='<a href="'+moreInfoUrl+'"><div class="tits">'	
-				li+="<div class='fl'>"+FrontCommonFunction.replaceNull(queryReturnList[i].investorUserResultModel.name)+"</div>"
-				li+="<div class='fr'>"+FrontCommonFunction.setInbestorType(queryReturnList[i].investorUserResultModel.type)+"</div>"
+				li+='<a href="'+moreInfoUrl+'"><div class="tits">'	;
+				var userType=queryReturnList[i].investorUserResultModel.type;
+				//1是个人 显示contactName
+				var name="";
+				var introduction="";
+				if(userType=="1"){
+					name=FrontCommonFunction.replaceNull(queryReturnList[i].investorUserResultModel.contactName);
+					introduction=FrontCommonFunction.getResultMaitText(queryReturnList[i].investorUserResultModel.investExperience,80,"#investorUserMoreInfo",queryReturnList[i].id);
+				}else{
+					//0机构显示 name
+					name=FrontCommonFunction.replaceNull(queryReturnList[i].investorUserResultModel.name);
+					introduction=FrontCommonFunction.getResultMaitText(queryReturnList[i].investorUserResultModel.introduction,80,"#investorUserMoreInfo",queryReturnList[i].id);
+				}
+				li+="<div class='fl'>"+name+"</div>"
+				li+="<div class='fr'>"+FrontCommonFunction.setInbestorUserType(userType)+"</div>"
 				li+="<div class='clear'></div>"
 				li+="</div></a>"
 				li+="<div class='cs'>"	 
-					li+="<div class='mod borderright'>" 
-						li+='<a href="'+moreInfoUrl+'"><div class="cs_tis">'+"投资领域："+FrontCommonFunction.setInvestorDomain(queryReturnList[i].investorUserResultModel.investDomain)+"</div></a>"
-						li+='<a href="'+moreInfoUrl+'"><div class="cs_tis">'+"投资阶段："+FrontCommonFunction.setInvestorPhase(queryReturnList[i].investorUserResultModel.investPhase)+"</div></a>"
-						li+="<div class=''><a class='fl rems'></a>"+'<a href="'+moreInfoUrl+'">'+"<span class='fl'>"+"投资概述&nbsp;:&nbsp;"+FrontCommonFunction.getResultMaitText(queryReturnList[i].investorUserResultModel.investOutline,60,"#investorUserMoreInfo",queryReturnList[i].investorUserResultModel.id)+"</span></a><div class='clear'></div></div>"
-					li+="</div>"
+				li+="<div class='mod borderright'>" 
+				li+='<a href="'+moreInfoUrl+'"><div class="cs_tis">'+"投资领域："+FrontCommonFunction.setInvestorDomain(queryReturnList[i].investorUserResultModel.investDomain)+"</div></a>"
+				li+='<a href="'+moreInfoUrl+'"><div class="cs_tis">'+"投资阶段："+FrontCommonFunction.setInvestorPhase(queryReturnList[i].investorUserResultModel.investPhase)+"</div></a>"
+				li+="<div class=''><a class='fl rems'></a><span class='fl'>"+'<a href="'+moreInfoUrl+'">'+"投资概述&nbsp;:&nbsp;"+FrontCommonFunction.getResultMaitText(queryReturnList[i].investorUserResultModel.investOutline,10,"#investorUserMoreInfo",queryReturnList[i].investorUserResultModel.id)+"</a></span><div class='clear'></div></div>"
+				li+="</div>"
 				li+="<div class='mod marginleft'>"
 				li+='<a href="'+moreInfoUrl+'"><div class="cs_tis">'+'简介:'+"</div></a>"
-				li+="<div class=''><a class='fl rems'></a><span class='fl'>"+'<a href="'+moreInfoUrl+'">'+FrontCommonFunction.getResultMaitText(queryReturnList[i].investorUserResultModel.introduction,80,"#investorUserMoreInfo",queryReturnList[i].investorUserResultModel.id)+"</a></span><div class='clear'></div></div>"
+				li+="<div class=''><a class='fl rems'></a><span class='fl'>"+'<a href="'+moreInfoUrl+'">'+introduction+"</a></span><div class='clear'></div></div>"
 				li+="</div>"
 				li+="<div class='clear'></div>"
 				li+="</div>"	 
 				li+="<div class='f'>"
-				li+='<a href="'+moreInfoUrl+'"><div style=" margin-top:60px" class="fl">'+FrontCommonFunction.replaceNull(queryReturnList[i].investorUserResultModel.province)+"</div></a>" 
-				li+='<div class="fr" style=" margin-top:38px">'	
+				li+='<a href="'+moreInfoUrl+'"><div style=" margin-top:40px" class="fl">'+FrontCommonFunction.replaceNull(queryReturnList[i].investorUserResultModel.province)+"</div></a>" 
+				li+='<div class="fr" style=" margin-top:40px">'	
 				li+=cooperateCollectFlagDiv(queryReturnList[i].investorUserResultModel, i)
 				li+="</div>"
 				li+="</div>"	 

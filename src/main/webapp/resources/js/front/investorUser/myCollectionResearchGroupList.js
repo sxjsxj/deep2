@@ -30,7 +30,7 @@ $(document).ready(function() {
 var queryParam = {};
 function initResearchGroupListManager() {
 	FrontCommonFunction.initCheckBoxBaseResearchField("#checkBoxDomain");
-	
+
 	//查询条件初始化大区
 	FrontCommonFunction.initCheckBoxRegion("#region");
 	//设置大区
@@ -90,69 +90,81 @@ function query(param) {
 	requestParamTemp['currentPage'] = $('#currentPage').val();
 	requestParamTemp['maxRecordPerPage'] = FrontCommonFunction.maxRecordPerPage;
 	FrontCommonFunction.baseOptions['data'] = requestParamTemp;
-	
+
 	FrontCommonFunction.baseOptions['success'] = function(datas) {
 		var queryReturnList = datas.queryReturnList;
 		if (queryReturnList === null || queryReturnList.length === 0) {
 			var noresult="";
 			noresult+="<div align='center' class='fl right'>";
 			noresult+="<div class='title'></div>"
-			noresult+="<div style='width:900px;margin-top:2px;' class='my_tuijian_con'>"	
-				noresult+="<div class='my_tuijian_con_title'>"	
+			noresult+="<div style='width:900px;margin-top:2px;' class='my_tuijian_con'>"
+				noresult+="<div class='my_tuijian_con_title'>"
 				noresult+="<font style='color:#333333;'>您还未收藏任何科研团队</font>"
 				noresult+='<div style="color:#349fc4;margin-top:-5px;" ><a href="../researchGroup/getBrowsePage">现在就查看科研团队>></a></div>'
 				noresult+="</div>"
 					noresult+="<div class='my_tuijian_con_txt'>"
-					noresult+="</div>"	
-			noresult+="</div>"	
+					noresult+="</div>"
+			noresult+="</div>"
 			noresult+="</div>"
 			$('#noResult').html(noresult);
 			return;
-		} 
-		for(var i = 0; i < queryReturnList.length; i++) {	
-			var moreInfoUrl = $("#researchGroupMoreInfo").attr('url')+"?id="+queryReturnList[i].researchGroupResultModel.id;
+		}
+		for(var i = 0; i < queryReturnList.length; i++) {
+			var type=queryReturnList[i].researchGroupResultModel.researchUserResultModel.type;
+			var provinceName="";
+			if(type==="0"){
+				provinceName=FrontCommonFunction.replaceNull(queryReturnList[i].researchGroupResultModel.researchUserResultModel.uniProvince);
+			}else if(type==="1"){
+				provinceName=FrontCommonFunction.replaceNull(queryReturnList[i].researchGroupResultModel.researchUserResultModel.orgProvince);
+			}else if(type==="2"){
+				provinceName=FrontCommonFunction.replaceNull(queryReturnList[i].researchGroupResultModel.researchUserResultModel.orgProvince);
+			}
+			var universityType=FrontCommonFunction.setUniversityType(queryReturnList[i].researchGroupResultModel.researchUserResultModel);
+
+			var moreInfoUrl = $("#researchGroupMoreInfo").attr('url')+"?id="+queryReturnList[i].researchGroupResultModel.id;;
 			var li = '<div id="shaDowShow'+i+'"  class="mydiv1" onmouseout="delShaDowClass('+i+')" onmouseover="addShaDowClass('+i+')"><li>'
 				li+='<input type="hidden" id="operateId'+i+'" value="'+queryReturnList[i].id.researchId+'"/>'
 				li+='<input type="hidden" id="operateIdUserId'+i+'" value="'+queryReturnList[i].id.userId+'"/>'
 				li+='<input type="hidden" id="operateFollowerType'+i+'" value="'+queryReturnList[i].followerType+'"/>'
 				li+='<input type="hidden" id="operateRelationType'+i+'" value="'+queryReturnList[i].id.relationType+'"/>'
-			
-			var imgUrl="";
-			var logoUrl =queryReturnList[i].researchGroupResultModel.logoUrl;
-			if(logoUrl!==null && logoUrl!=="" && logoUrl!==undefined){
-				imgUrl=logoUrl;
-				li+='<a href="'+moreInfoUrl+'"><div class="fl ims">'+'<img style="width:240px;height:182px" src="'+$('#downFile').attr('url')+'?path='+imgUrl+'"/></div></a>'
-			}else{
-				imgUrl="../resources/images/front/img/keyantuandui.png";
-				li+='<a href="'+moreInfoUrl+'"><div class="fl ims">'+'<img style="width:240px;height:182px" src="'+imgUrl+'"/></div></a>'
-			}
-			li+="<div class='fl rights'>"
-			li+='<a href="'+moreInfoUrl+'"><div class="tits">'	
-			li+="<div class='fl'>"+FrontCommonFunction.replaceNull(queryReturnList[i].researchGroupResultModel.name)+"</div>"
-			li+="<div class='fr'>"+FrontCommonFunction.setResearchUserType(queryReturnList[i].researchGroupResultModel.researchUserResultModel.type)+"</div>"
-			li+="<div class='clear'></div>"
-			li+="</div></a>"
-			li+="<div class='cs'>"	 
-			li+="<div class='mod borderright'>" 
-			li+='<a href="'+moreInfoUrl+'"><div class="cs_tis">'+"研究方向："+FrontCommonFunction.setInvestorDomain(queryReturnList[i].researchGroupResultModel.domain)+"</div></a>"
-			li+="<div class=''><a class='fl rems'></a>"+'<a href="'+moreInfoUrl+'">'+"<span class='fl'>"+"简介&nbsp;:&nbsp;"+FrontCommonFunction.getResultMaitText(queryReturnList[i].researchGroupResultModel.introduction,100,"#researchGroupMoreInfo",queryReturnList[i].researchGroupResultModel.id)+"</span></a><div class='clear'></div></div>"
-			li+="</div>"
-			li+="<div class='mod marginleft'>"
-			li+='<a href="'+moreInfoUrl+'"><div class="cs_tis">'+'研究成果:'+"</div></a>"
-			li+="<div class=''><a class='fl rems'></a>"+'<a href="'+moreInfoUrl+'">'+"<span class='fl'>"+FrontCommonFunction.getResultMaitText(queryReturnList[i].researchGroupResultModel.achievement,60,"#researchGroupMoreInfo",queryReturnList[i].researchGroupResultModel.id)+"</span></a><div class='clear'></div></div>"
-			li+="</div>"
-			li+="<div class='clear'></div>"
-			li+="</div>"	 
-			li+="<div class='f'>"
-			li+='<div style=" margin-top:50px" class="fl"><a>'+'<a href="'+moreInfoUrl+'">'+FrontCommonFunction.replaceNull(queryReturnList[i].researchGroupResultModel.researchUserResultModel.uniCity)+"</a></a></div>" 
-			li+='<div class="fr" style=" margin-top:40px">'	
-			li+=cooperateCollectFlagDiv(queryReturnList[i].researchGroupResultModel, i)
-			li+="</div>"
-			li+="<div class='clear'></div>"
-			li+="</div>"	 
-			li+="</div>"
-			li+="<div class='clear'></div>"
-			li+='</li></div>';
+
+				var imgUrl="";
+				var logoUrl=queryReturnList[i].researchGroupResultModel.logoUrl;
+				if(logoUrl!==null && logoUrl!=="" && logoUrl!==undefined){
+					imgUrl=logoUrl;
+					li+='<a href="'+moreInfoUrl+'"><div class="fl ims">'+'<img style="width:240px;height:182px" src="'+$('#downFile').attr('url')+'?path='+imgUrl+'"/></div></a>'
+				}else{
+					imgUrl="../resources/images/front/img/keyantuandui.png";
+					li+='<a href="'+moreInfoUrl+'"><div class="fl ims">'+'<img style="width:240px;height:182px" src="'+imgUrl+'"/></div></a>'
+				}
+
+				li+="<div class='fl rights'>"
+				 li+='<a href="'+moreInfoUrl+'"><div class="tits">'
+				li+="<div class='fl'>"+FrontCommonFunction.setTextSize(queryReturnList[i].researchGroupResultModel.name, 20, '...')+"</div>"
+				li+="<div class='fr'>"+FrontCommonFunction.setResearchUserType(queryReturnList[i].researchGroupResultModel.researchUserResultModel.type)+"</div>"
+				li+="<div class='clear'></div>"
+				 li+="</div></a>"
+				li+="<div class='cs'>"
+				li+='<div class="mod borderright">'
+				li+='<a href="'+moreInfoUrl+'"><div class="cs_tis">'+"研究方向："+FrontCommonFunction.setInvestorDomain(queryReturnList[i].researchGroupResultModel.domain)+"</div></a>"
+				li+="<div class=''><a class='fl rems'></a>"+'<a href="'+moreInfoUrl+'"><span class="fl">'+"简介&nbsp;:&nbsp;"+FrontCommonFunction.getResultMaitText(queryReturnList[i].researchGroupResultModel.introduction,100,"#researchGroupMoreInfo",queryReturnList[i].researchGroupResultModel.id)+"</span></a><div class='clear'></div></div>"
+				li+="</div>"
+				li+='<div class="mod marginleft">'
+				li+='<a href="'+moreInfoUrl+'"><div class="cs_tis">'+'研究成果:'+"</div></a>"
+				li+='<div class="">'+"<a class='fl rems'></a><span class='fl'>"+'<a href="'+moreInfoUrl+'">'+FrontCommonFunction.getResultMaitText(queryReturnList[i].researchGroupResultModel.achievement,90,"#researchGroupMoreInfo",queryReturnList[i].researchGroupResultModel.id)+"</a></span><div class='clear'></div></div>"
+				li+="</div>"
+				li+="<div class='clear'></div>"
+				li+="</div>"
+				li+="<div class='f'>"
+				li+='<div class="fl"><a>'+'<a href="'+moreInfoUrl+'">'+FrontCommonFunction.setDomain(queryReturnList[i].researchGroupResultModel.domain) + "&nbsp;&nbsp;"+ universityType+ "&nbsp;&nbsp;"+provinceName+"</a></a></div>"
+				li+='<div class="fr" >'
+				li+=cooperateCollectFlagDiv(queryReturnList[i].researchGroupResultModel, i)
+				li+="</div>"
+				li+="<div class='clear'></div>"
+				li+="</div>"
+				li+="</div>"
+				li+="<div class='clear'></div>"
+				li+='</li></div>';
 			$("#researchGroupListQuery").append(li);
 		}
 		if (queryReturnList.length !== 0) {
@@ -217,22 +229,22 @@ function getData() {
 		if(haiwai!==""){
 			str+=haiwai+",";
 		}
-		
-		var ar2 = str.split(","); 
-		var array = new Array(); 
-		var j=0 
-		for(var i=0;i<ar2.length;i++){ 
-			if((array == "" || array.toString().match(new RegExp(ar2[i],"g")) == null)&&ar2[i]!=""){ 
-				array[j] =ar2[i]; 
-				array.sort(); 
-				j++; 
-			} 
-		} 
+
+		var ar2 = str.split(",");
+		var array = new Array();
+		var j=0
+		for(var i=0;i<ar2.length;i++){
+			if((array == "" || array.toString().match(new RegExp(ar2[i],"g")) == null)&&ar2[i]!=""){
+				array[j] =ar2[i];
+				array.sort();
+				j++;
+			}
+		}
 		universityUserQueryModel['uniProvince']=array.toString();
 		organizationUserQueryModel['orgProvince']=array.toString();
 	}
 	var researchGroupFollowerQueryModel = {};
-	getDefaultQuery('researchGroupFollower', '4', researchGroupFollowerQueryModel); 
+	getDefaultQuery('researchGroupFollower', '4', researchGroupFollowerQueryModel);
 	paramTemp['researchGroupFollowerQueryModel']=researchGroupFollowerQueryModel;
 	getDefaultQuery('researchGroup', '4', researchGroupQueryModel);
 	paramTemp['researchGroupQueryModel'] = researchGroupQueryModel;

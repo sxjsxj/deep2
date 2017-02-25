@@ -1110,6 +1110,8 @@ var FrontCommonFunction = {
 	 },
 	 limitTextLineNum: function(str, $el, maxLineNum, extraLabel) {
 		 // $el 必须声明 lineheight 属性
+		 extraLabel = extraLabel || '<a href="#" style="color:blue;" onclick="doMoreInfo(\''+moreInfoUrl+'\')">' + '&gt;&gt;详细' + '</a>';
+
 		 var realHeight = $el.height();
 		 var limitHeight = $el.css('line-height') * maxLineNum;
 		 var $temp = $el.clone();
@@ -1139,7 +1141,7 @@ var FrontCommonFunction = {
 			 return '';
 		 }
 		 var moreInfoUrl = $(moreInfoId).attr('url')+"?id="+id;
-			var link = '<a href="#" style="color:blue;" onclick="doMoreInfo(\''+moreInfoUrl+'\')">' + '更多信息' + '</a>';
+			var link = '<a href="#" style="color:blue;" onclick="doMoreInfo(\''+moreInfoUrl+'\')">' + '&gt;&gt;详细' + '</a>';
 			var subStr = str;
 			var inputNum = str.replace(/[^\x00-\xff]/g, "**").length; // 得到输入的字节数;
 			if (inputNum > size) {
@@ -1149,10 +1151,28 @@ var FrontCommonFunction = {
 				if (temp !== null) {
 					count0 = temp.length;
 				}
-//				subStr = str.substring(0, ((size - count0) + parseInt(count0 / 2)))+'......'+link;
-				subStr = str.substring(0, ((size - count0) + parseInt(count0 / 2)))+'......';
+				subStr = str.substring(0, ((size - count0) + parseInt(count0 / 2)))+link;
 			}
 			return subStr;
+		},
+		setTextSize: function(str, size, omitText) {
+			// 注意这里的size 是按照汉字的标准，双倍来算的
+			str = this.replaceNull(str);
+			size *= 2;
+			var inputNum = str.replace(/[^\x00-\xff]/g, "**").length;
+			if(!inputNum || inputNum <= size) {
+				return str;
+			}
+			var omitSize = omitText.replace(/[^\x00-\xff]/g, "**").length;
+			size = size - omitSize;
+			var temp = str.replace(/[^\x00-\xff]/g, "**"); // 得到替换后的字符;
+			var count0 = 0;
+			temp = temp.substring(0, size).match(/\*/g);
+			if (temp !== null) {
+				count0 = temp.length;
+			}
+			str = str.substring(0, ((size - count0) + parseInt(count0 / 2)))+omitText;
+			return str
 		},
 		getSpace: function() {
 			var str="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
@@ -1265,7 +1285,7 @@ var FrontCommonFunction = {
 	},
 	replaceNull:function(dataObj){
 		var result = '';
-		if(dataObj ==="0") return "0";
+		if(dataObj === "0" || dataObj === 0) return "0";
 		if(dataObj == null || dataObj==""|| dataObj == 'null' ||dataObj == undefined ||dataObj == "undefined"){
 			result = '';
 		} else {

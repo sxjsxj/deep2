@@ -160,7 +160,7 @@ ul li{list-style: none}
 	-webkit-box-shadow:0px 3px 8px #808080;/*webkit*/
 	-moz-box-shadow:0px 3px 8px #808080;/*firefox*/
 }
-.tuijian .right .lis .rights{width: 618px;background: #fff;height: 182px;padding-left: 14px;padding-right: 26px;}
+.tuijian .right .lis .rights{position: relative; width: 618px;background: #fff;height: 182px;padding-left: 14px;padding-right: 26px;}
 .tuijian .right .lis .tits {margin-top: 8px}
 .tuijian .right .lis .tits .fl{color: #626262;font-size: 24px;}
 .tuijian .right .lis .tits .fr{color: #254e77;font-size: 14px; }
@@ -256,13 +256,17 @@ ul li{list-style: none}
 	-moz-box-shadow:0px 3px 8px #808080;/*firefox*/
 	-webkit-box-shadow:0px 3px 8px #808080;/*webkit*/
 }
-.listd .lis .rights{width: 618px;background: #fff;height: 182px;padding-left: 14px;padding-right: 26px;}
+.listd .lis .rights{position: relative; width: 618px;background: #fff;height: 182px;padding-left: 14px;padding-right: 26px;}
 .listd .lis .tits {margin-top: 8px}
 .listd .lis .tits .fl{color: #626262;font-size: 24px;}
 .listd .lis .tits .fr{color: #254e77;font-size: 14px; }
 .listd .lis .cs{font-size: 14px;color: #535353;margin-top: 10px}
 .listd .lis .cs a{color: #7ba6da}
-.listd .lis .f {height: 38px;line-height: 38px;margin-top: 8px}
+.listd .lis .f { height: 38px;
+    position: absolute;
+    width: 618px;
+    bottom: 14px;
+    line-height: 38px;}
 .listd .lis .f .fl{color: #898989;font-size: 14px}
 .listd .lis .f .fl a{margin-right: 10px}
 .listd .lis .f .fr div{display: inline-block;width: 134px;height: 36px;text-align: center;line-height: 36px;color: #fff;font-size: 18px;background: #b5b5b5;border-radius: 5px;cursor: pointer;}
@@ -555,15 +559,22 @@ ul li{list-style: none}
 .change2 .nav2 li{font-size: 14px;color: #434343;display: inline-block;padding: 0 15px;cursor: pointer;}
 .change2 .nav2 li.active{border-bottom: 3px solid #349fc4;height: 45px}
 .change2 .con {margin-top: 20px;margin-left: 80px}
-.change2 .con li{padding-top: 15px;height: 176px;background: #fff;width: 900px;margin-bottom: 20px}
+.change2 .con li{height: 176px;background: #fff;width: 900px;margin-bottom: 20px}
 .change2 .con .titl .les{color: #626262;font-size: 24px;margin-left: 10px}
 .change2 .con .titl .fr div{font-size: 14px;color:#959595;}
 .change2 .con .titl .fr div.ge{color: #254e77;margin-right: 10px;margin-left: 10px}
 .change2 .con .txt{color: #535353;font-size: 14px;margin-left: 10px;margin-right: 10px;margin-top: 8px;}
 .change2 .con .txt a{color: #7ba6da}
-.change2 .con .b{color: #898989;font-size: 14px;margin-top: 18px}
-.change2 .con .b span{margin-right: 5px;margin-left: 10px;line-height: 46px}
-.change2 .con .b .look{width: 108px;height: 46px;background: #eeeeee;text-align: center;}
+.change2 .con .b{  position: absolute;
+    width: 618px;
+    bottom: 8px;
+    color: #898989;
+    font-size: 14px;
+    margin-top: 18px;}
+.change2 .con .b span{margin-right: 14px;line-height: 46px}
+.change2 .con .b .look{position: relative; width: 108px;height: 46px;background: #eeeeee;text-align: left;
+text-indent: 12px;
+}
 .change2 .con .b .look div{color: #898989;font-size: 14px;margin-top: 3px}
 .change2 .con .b .bianji{width: 78px;height: 36px;line-height: 36px;text-align: center;background: #e19c40;border-radius: 4px;color: #fff;font-size: 16px;margin-top: 5px;margin-left: 10px;cursor: pointer;}
 .change2 .con .b .del{width: 78px;height: 36px;line-height: 36px;text-align: center;background: #b5b5b5;border-radius: 4px;color: #fff;font-size: 16px;margin-top: 5px;margin-left: 10px;cursor: pointer;}

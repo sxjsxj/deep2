@@ -120,6 +120,17 @@ function query(param) {
 			return;
 		} 
 		for(var i = 0; i < queryReturnList.length; i++) {	
+			var type=queryReturnList[i].researchGroupResultModel.researchUserResultModel.type;
+			var provinceName="";
+			if(type==="0"){
+				provinceName=FrontCommonFunction.replaceNull(queryReturnList[i].researchGroupResultModel.researchUserResultModel.uniProvince);
+			}else if(type==="1"){
+				provinceName=FrontCommonFunction.replaceNull(queryReturnList[i].researchGroupResultModel.researchUserResultModel.orgProvince);
+			}else if(type==="2"){
+				provinceName=FrontCommonFunction.replaceNull(queryReturnList[i].researchGroupResultModel.researchUserResultModel.orgProvince);
+			}
+			var universityType=FrontCommonFunction.setUniversityType(queryReturnList[i].researchGroupResultModel.researchUserResultModel);
+			
 			var moreInfoUrl = $("#researchGroupMoreInfo").attr('url')+"?id="+queryReturnList[i].researchGroupResultModel.id;;
 			var li = '<div id="shaDowShow'+i+'"  class="mydiv1" onmouseout="delShaDowClass('+i+')" onmouseover="addShaDowClass('+i+')"><li>'
 				li+='<input type="hidden" id="operateId'+i+'" value="'+queryReturnList[i].id.researchId+'"/>'
@@ -155,7 +166,7 @@ function query(param) {
 				li+="<div class='clear'></div>"
 				li+="</div>"	 
 				li+="<div class='f'>"
-				li+='<div style=" margin-top:58px" class="fl"><a>'+'<a href="'+moreInfoUrl+'">'+FrontCommonFunction.replaceNull(queryReturnList[i].researchGroupResultModel.researchUserResultModel.uniCity)+"</a></a></div>" 
+				li+='<div style="margin-top:50px" class="fl"><a>'+'<a href="'+moreInfoUrl+'">'+FrontCommonFunction.setDomain(queryReturnList[i].researchGroupResultModel.domain) + "&nbsp;&nbsp;"+ universityType+ "&nbsp;&nbsp;"+provinceName+"</a></a></div>" 
 				li+='<div class="fr" style=" margin-top:55px">' 
 				li+=cooperateCollectFlagDiv(queryReturnList[i].researchGroupResultModel, i)
 				li+="</div>"

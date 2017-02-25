@@ -136,7 +136,8 @@ $(function(){
 		"image" : {
 			"viewList" : [ "qzone", "tsina", "tqq", "renren", "weixin" ],
 			"viewText" : "分享到：",
-			"viewSize" : "16"
+			"viewSize" : "16",
+			"tag" : "sharePhoto",
 		},
 		"selectShare" : {
 			"bdContainerClass" : null,

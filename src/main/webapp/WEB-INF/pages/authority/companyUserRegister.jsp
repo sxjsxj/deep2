@@ -94,28 +94,28 @@
 					<li class='list'>
 						<div style="font-size:15px;" class='fl names'>*邮&nbsp;箱</div>
 						<div class='input fl'>
-							<input id="email" style="color:black" name="email" type='text' placeholder='请输入邮箱'/>
+							<input id="email" name="email" type='text' placeholder='请输入邮箱'/>
 						</div>
 						<div class='clear'></div>
 					</li>
 					<li class='list'>
 						<div style="font-size:15px;" class='fl names'>*手机号</div>
 						<div class='input fl'>
-							<input type='text' style="color:black" id="telno" name="telno" placeholder='请输入手机号'/>
+							<input type='text' id="telno" name="telno" placeholder='请输入手机号'/>
 						</div>
 						<div class='clear'></div>
 					</li>
 					<li class='list'>
 						<div style="font-size:15px;" class='fl names'>*密&nbsp;码</div>
 						<div class='input fl'>
-							<input type='password' style="color:black" id="passwordone" name="passwordone" placeholder='6-20个大小写英文字母、符号或数字'/>
+							<input type='password' id="passwordone" name="passwordone" placeholder='6-20个大小写英文字母、符号或数字'/>
 						</div>
 						<div class='clear'></div>
 					</li>
 					<li class='list'>
 						<div style="font-size:15px;" class='fl names'>*确认密码</div>
 						<div class='input fl'>
-							<input type='password' style="color:black" id="passwordtwo" name="passwordtwo" placeholder='请再次输入密码'/>
+							<input type='password' id="passwordtwo" name="passwordtwo" placeholder='请再次输入密码'/>
 						</div>
 						<div class='clear'></div>
 					</li>

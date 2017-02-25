@@ -13,11 +13,11 @@ function getDeatil() {
 	FrontCommonFunction.baseOptions['data'] = requestParamTemp;
 	FrontCommonFunction.baseOptions['success'] = function(datas) {
 		$('head title').html(datas.name);
-		$("#name").html(FrontCommonFunction.replaceNull(datas.name)); 
-		$("#sequenceNumber").html("编号："+FrontCommonFunction.replaceNull(datas.sequenceNumber)); 
-		$("#domain").html(FrontCommonFunction.setInvestorDomain(datas.domain)); 
+		$("#name").html(FrontCommonFunction.replaceNull(datas.name));
+		$("#sequenceNumber").html("编号："+FrontCommonFunction.replaceNull(datas.sequenceNumber));
+		$("#domain").html(FrontCommonFunction.setInvestorDomain(datas.domain));
 		$("#status").html(FrontCommonFunction.setRequirementStatus(datas.status));
-		$("#scanNumber").html("浏览量: "+FrontCommonFunction.replaceNull(datas.scanNumber)); 
+		$("#scanNumber").html("浏览量： "+FrontCommonFunction.replaceNull(datas.scanNumber));
 		$("#address").html("公司所在地："+FrontCommonFunction.replaceNull(datas.companyUserResultModel.province))
 		$("#domain2").html("所在领域："+FrontCommonFunction.setInvestorDomain(datas.domain));
 		$("#amount").html("研发经费："+FrontCommonFunction.setAmount(datas.amount));

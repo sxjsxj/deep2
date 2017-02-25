@@ -256,12 +256,12 @@ function commonFromValidate() {
 			},
 			passwordOne : {
 				required : '<font color="red">&nbsp;&nbsp;必填</font>',
-				rangelength : jQuery.format('<font color="red">&nbsp;6~20个字符</font>'),
+				rangelength : jQuery.format('<font color="red">&nbsp;&nbsp;6~20个字符</font>'),
 			},
 			passwordTwo : {
 				required : '<font color="red">&nbsp;&nbsp;必填</font>',
-				rangelength : jQuery.format('<font color="red">&nbsp;6~20个字符</font>'),
-				equalTo : '<font color="red">&nbsp;密码不一致</font>'
+				rangelength : jQuery.format('<font color="red">&nbsp;&nbsp;6~20个字符</font>'),
+				equalTo : '<font color="red">&nbsp;&nbsp;密码不一致</font>'
 			}
 		}
 	}).form();

@@ -33,7 +33,7 @@
 				<div class='username list'>
 					<div class='nams fl'>用户名</div>
 					<div class='input fl'>
-						<input type='text' style="color:black" id="j_username" name="j_username" placeholder='请输入邮箱' value="${j_username}"/>
+						<input type='text' id="j_username" name="j_username" placeholder='请输入邮箱' value="${j_username}"/>
 					</div>
 					<div class='clear'></div>
 				</div>

@@ -34,7 +34,7 @@ function getDeatil() {
 		$("#projectIntro").html(FrontCommonFunction.replaceNull(datas.projectIntro));
 		$("#requireId").val(datas.id);
 		//分享控件控制
-		shareControl('fundRequirement', datas.status, 'bdsharebuttonbox');
+		shareControl('fundRequirement', datas.status, '.bdsharebuttonbox');
 		//注册收藏、关注事件
 		setCooperateCollectFlagD(datas);
 		cooperateCollectFlagControlD('fundRequirement');

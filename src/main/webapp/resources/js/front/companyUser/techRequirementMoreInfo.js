@@ -27,11 +27,14 @@ function getDeatil() {
 		$("#detail").html(FrontCommonFunction.replaceNull(datas.detail));
 		if(!datas.similarProduct) {
 			$("#similarProduct").html(FrontCommonFunction.replaceNull(datas.similarProduct));
+		}else {
+			$('#similarProductTitle').hide();
+			$("#similarProduct").hide();
 		}
 		$("#province").html(datas.companyUserResultModel.province);
 		$("#requireId").val(datas.id);
 		//分享控件控制
-		shareControl('techRequirement', datas.status, 'bdsharebuttonbox');
+		shareControl('techRequirement', datas.status, '.bdsharebuttonbox');
 		//注册收藏、关注事件
 		setCooperateCollectFlagD(datas);
 		cooperateCollectFlagControlD('techRequirement');

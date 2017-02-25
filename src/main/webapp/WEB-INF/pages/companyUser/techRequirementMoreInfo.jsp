@@ -55,7 +55,7 @@
 				<div class='txt' id="duration"></div>
 				<div class='txt' id="cooperationType"></div>
 
-				<div class='title' style='margin-top:30px'>市场类似产品情况</div>
+				<div class='title' style='margin-top:30px' id="similarProductTitle">市场类似产品情况</div>
 				<div class='txt' id="similarProduct"></div>
 
 				<div id='mores'>

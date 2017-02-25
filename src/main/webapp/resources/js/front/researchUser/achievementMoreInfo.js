@@ -62,7 +62,7 @@ function getDeatil() {
 		$("#solution").html(FrontCommonFunction.replaceNull(datas.solution));
 		$("#achievementId").val(datas.id);
 		//分享控件控制
-		shareControl('achievement', datas.status, 'bdsharebuttonbox');
+		shareControl('achievement', datas.status, '.bdsharebuttonbox');
 		//注册收藏、关注事件
 		setCooperateCollectFlagD(datas);
 		cooperateCollectFlagControlD('achievement');

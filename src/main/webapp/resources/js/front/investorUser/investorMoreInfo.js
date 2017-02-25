@@ -27,10 +27,15 @@ function getDeatil() {
 		$("#investOutline").html(FrontCommonFunction.replaceNull(datas.investOutline)); 
 		$("#investProvince").html(FrontCommonFunction.replaceNull(datas.province)); 
 		$("#investAmount").html("投资额："+FrontCommonFunction.setAmount(datas.investAmount)); 
-		$("#introduction").html(FrontCommonFunction.replaceNull(datas.introduction)); 
+		if(datas.introduction){
+			$("#introduction").html(FrontCommonFunction.replaceNull(datas.introduction)); 
+		} else {
+			$("#introduction").hide();
+			$("#introductionTitle").hide();
+		}
 		$("#investorId").val(datas.id);
 		//分享控件控制
-		shareControl('investorUser', datas.userModel.status, 'bdsharebuttonbox');
+		shareControl('investorUser', datas.userModel.status, '.bdsharebuttonbox');
 		//注册收藏、关注事件
 		setCooperateCollectFlagD(datas);
 		cooperateCollectFlagControlD('investor');

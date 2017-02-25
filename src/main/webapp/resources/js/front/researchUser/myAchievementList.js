@@ -193,10 +193,14 @@ function query(param) {
 				li+=templi;  
 			    li+="</div><a>"
 				li+="<div class='fl rights'>"
-				  li+='<a href="'+moreInfoUrl+'"><div class="tits">'
-			        li+="<div class='fl'>"+FrontCommonFunction.replaceNull(queryReturnList[i].name)+"</div>"
-					li+="<div class='fr'>"+FrontCommonFunction.setAchievementStatus(queryReturnList[i].status)+"</div>"
-			        li+="<div class='fr'>"+FrontCommonFunction.setInvestorPhase(queryReturnList[i].phase)+"</div>" 
+				  li+='<a href="'+moreInfoUrl+'"><div class="titl">'
+			        li+="<div class='fl les'>"+FrontCommonFunction.replaceNull(queryReturnList[i].name)+"</div>"
+					li+="<div class='fr'>"
+					 li+="<div class='fl'>"+FrontCommonFunction.setAchievementStatus(queryReturnList[i].status)+"</div>"
+					 li+="<div class='fl ge'>"+FrontCommonFunction.setInvestorPhase(queryReturnList[i].phase)+"</div>"
+					 li+="<div class='clear'></div>"
+					li+="</div>"
+					li+="<div class='clear'></div>"
 			        li+="<div class='clear'></div>"
 				  li+="</div></a>"
 				  

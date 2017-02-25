@@ -99,10 +99,10 @@
 		<div class='width1200'>
 			<div class='topLogo'>
 			<a href="${pageContext.request.contextPath}/security/homepage">
-			<img style="width:223px;height:58px;" src='${pageContext.request.contextPath}/resources/images/front/img/logo.png'/>
+			<img style="width:200px;height:40px;" src='${pageContext.request.contextPath}/resources/images/front/img/logo.png'/>
 			</a>
 			</div>
-			<div class='loginkuang'>
+			<div class='loginkuang' style="margin-top: -80px;">
 				<div class='fl name'>找回密码</div>
 				<div class='fr reg'><a href='${pageContext.request.contextPath}/security/loginPage' >返回登录界面>></a></div>
 				<div class='clear'></div>

@@ -99,7 +99,7 @@
 		<div class='width1200'>
 			<div class='topLogo'>
 			<a href="${pageContext.request.contextPath}/security/homepage">
-			<img style="width:223px;height:58px;" src='${pageContext.request.contextPath}/resources/images/front/img/logo.png'/>
+			<img style="width:200px;height:40px;" src='${pageContext.request.contextPath}/resources/images/front/img/logo.png'/>
 			</a>
 			</div>
 			<div class='loginkuang' style="margin-top:-80px;">

@@ -51,7 +51,7 @@ function fromValidate() {
 		var length = value.length;
 		var mobile = /^(13[0-9]{9})|(18[0-9]{9})|(14[0-9]{9})|(17[0-9]{9})|(15[0-9]{9})$/;
 		return this.optional(element) || (length == 11 && mobile.test(value));
-	}, '<font color="red">&nbsp;&nbsp;手机号不正确</font>');
+	}, '<font color="red">&nbsp;手机号不正确</font>');
 	
 	return $('#companyUserRegistorForm').validate({
 		rules : {

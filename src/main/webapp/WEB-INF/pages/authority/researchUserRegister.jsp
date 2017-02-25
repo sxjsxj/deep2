@@ -53,8 +53,8 @@
 				</div>
 			</div>
 			<!-- version4 点击发布需求弹框end -->
-	
-		<div id="loginUrl" url="${pageContext.request.contextPath}/security/loginPage"></div> 
+
+		<div id="loginUrl" url="${pageContext.request.contextPath}/security/loginPage"></div>
 		<div id="Button1" onclick="ShowDiv('MyDiv','fade')"></div>
 			<div id="fade" class="black_overlay"></div>
 			<div id="MyDiv" class="white_content" style="margin-top:200px">
@@ -74,8 +74,8 @@
 				</div>
 			</div>
 	<!-- 注册成功弹框 end -->
-	
-	
+
+
 		<!-- version2 点击发布需求弹框start -->
 			<div id="altsone">
 				<div class='xuqiualert' style="width:740px;font-size:24px;margin-top:-10px;margin-left:-370px;text-align:center;color:#434343;min-height:280px;">
@@ -101,12 +101,12 @@
 								  </font>
 						  </div>
 					</div>
-					
+
 				</div>
 			</div>
 			<!-- version2 点击发布需求弹框end -->
-			
-			
+
+
 				<!-- version3 点击发布需求弹框start -->
 			<div id="altstwo">
 				<div class='xuqiualert' style="width:740px;font-size:24px;margin-top:-10px;margin-left:-370px;text-align:center;color:#434343;min-height:280px;">
@@ -128,8 +128,8 @@
 				</div>
 			</div>
 			<!-- version3 点击发布需求弹框end -->
-			
-			
+
+
 
 	<div class='loginbg loginbg2'>
 		<div class='width1200'>
@@ -147,53 +147,53 @@
 					<li id="personal" value="2" style="font-size:17px;">个人</li>
 				</ul>
 				<div class='tit2' style="font-size:15px;">＊科研团队的类型不能修改，请您认真选择</div>
-			
+
 				<ul class='cons'>
 				<form id="commonFormValidate">
 						<li class='list'>
 							<div style="font-size:15px;" class='fl names'>邮&nbsp;箱</div>
 							<div class='input fl'>
-								<input type='text' style="color:black" id="email" name="email" placeholder='请输入邮箱'/>
+								<input type='text' id="email" name="email" placeholder='请输入邮箱'/>
 							</div>
 							<div class='clear'></div>
 						</li>
 						<li class='list'>
 							<div style="font-size:15px;" class='fl names'>手机号</div>
 							<div class='input fl'>
-								<input type='text' style="color:black" id="telno" name="telno" placeholder='请输入手机号'/>
+								<input type='text' id="telno" name="telno" placeholder='请输入手机号'/>
 							</div>
 							<div class='clear'></div>
 						</li>
 						<li class='list'>
 							<div style="font-size:15px;" class='fl names'>密&nbsp;码</div>
 							<div class='input fl'>
-								<input type="password" style="color:black" id="passwordOne" name="passwordOne"  value="" placeholder='6-20个大小写英文字母、符号或数字'/>
+								<input type="password" id="passwordOne" name="passwordOne"  value="" placeholder='6-20个大小写英文字母、符号或数字'/>
 							</div>
 							<div class='clear'></div>
 						</li>
 						<li class='list'>
 							<div style="font-size:15px;" class='fl names'>确认密码</div>
 							<div class='input fl'>
-								<input type='password' style="color:black" id="passwordTwo" name="passwordTwo" placeholder='请再次输入密码'/>
+								<input type='password' id="passwordTwo" name="passwordTwo" placeholder='请再次输入密码'/>
 							</div>
 							<div class='clear'></div>
 						</li>
 					</form>
-				<form id="shcoolFormValidate">	
+				<form id="shcoolFormValidate">
 					<div id="shcoolForm">
 						<li class='lis'>
 							<div style="font-size:15px;" class='fl names'>所在地址</div>
-							<input type='hidden' style="color:black" id="uniProvince" name="uniProvince" value='' /> 
+							<input type='hidden' id="uniProvince" name="uniProvince" value='' />
 							<div class='fl input'>
-								<input type='text' style="color:black; width:135px;" value='请选择省份' id="showUniProvince" readonly/>
+								<input type='text' style="width:135px;color: #959595;" value='请选择省份' id="showUniProvince" readonly/>
 								 <img src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png' />
 								<dl id="selectUniProvince"  url="${pageContext.request.contextPath}/basicProvince/queryProvinceCity">
 								</dl>
 							</div>
 							<div id="uniProvinceFlag"></div>
-							<input type='hidden' id="uniCity" name="uniCity" value="" /> 
-							<div style="float:left;margin-left:20px;" class='fl input'>
-								<input type='text' style="color:black;width:135px;" value='请选择市' id="showUniCity" readonly/> <img
+							<input type='hidden' id="uniCity" name="uniCity" value="" />
+							<div style="float:left;margin-left:16px;" class='fl input'>
+								<input type='text' style="width:135px;color: #959595;" value='请选择市' id="showUniCity" readonly/> <img
 									src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png' />
 								<dl id="selectUniCity" url="${pageContext.request.contextPath}/basicProvince/queryCityCounty">
 								</dl>
@@ -201,12 +201,12 @@
 							<div id="unRequiredFlag"></div>
 							<div class='clear'></div>
 						</li>
-						
+
 						<li class='lis'>
 							<div style="font-size:15px;" class='fl names'>高校名称</div>
-							<input type='hidden' id="uniName" style="color:black;" name="uniName" value='' /> 
+							<input type='hidden' id="uniName" name="uniName" value='' />
 							<div class='fl input'>
-								<input type='text' style="color:black;width:300px;" value='请选择高校' id="showUniName" readonly/> 
+								<input type='text' style="width:300px;color: #959595;" value='请选择高校' id="showUniName" readonly/>
 								 <img src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png' />
 								<dl id="selectUniName" url="${pageContext.request.contextPath}/basicUniversity/queryUniversity">
 								</dl>
@@ -217,34 +217,34 @@
 					</div>
 				</form>
 					<!-- 科研机构 -->
-				<form id="organizationFormValidate">	
+				<form id="organizationFormValidate">
 					<div id="organizationForm">
 					 <li class='list'>
 						<div style="font-size:15px;" class='fl names'>机构名称</div>
 						<div class='input fl'>
-							<input type='text' style="color:black" id="orgName" name="orgName" placeholder='请输入机构名称'/>
+							<input type='text' id="orgName" name="orgName" placeholder='请输入机构名称'/>
 						</div>
 						<div class='clear'></div>
 					</li>
 					<li class='lis'>
 						<div style="font-size:15px;" class='fl names'>所在地址</div>
-						<input type='hidden' style="color:black" id="orgProvince" name="orgProvince" value='' /> 
+						<input type='hidden' id="orgProvince" name="orgProvince" value='' />
 						<div class='fl input'>
-							<input type='text' style="width:91px;" value='请选择' id="showOrgProvince" readonly />
+							<input type='text' style="width:91px;color: #959595;" value='请选择' id="showOrgProvince" readonly />
 							<img src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png'/>
 							<dl id="selectOrgProvince" url="${pageContext.request.contextPath}/basicProvince/queryProvinceCity">
 							</dl>
 						</div>
-						<input type='hidden' id="orgCity" style="color:black" name="orgCity" value='' /> 
+						<input type='hidden' id="orgCity" name="orgCity" value='' />
 						<div class='fl input'>
-							<input type='text' style="width:91px;color:black" value="请选择" id="showOrgCity" readonly />
+							<input type='text' style="width:91px;color: #959595;" value="请选择" id="showOrgCity" readonly />
 							<img src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png'/>
 							<dl id="selectOrgCity" url="${pageContext.request.contextPath}/basicProvince/queryCityCounty">
 							</dl>
 						</div>
-						<input type='hidden' id="orgCounty" name="orgCounty" value='' /> 
+						<input type='hidden' id="orgCounty" name="orgCounty" value='' />
 						<div class='fl input'>
-							<input type='text' style="width:91px;color:black" value='请选择' id="showOrgCounty" readonly />
+							<input type='text' style="width:91px;color: #959595;" value='请选择' id="showOrgCounty" readonly />
 							<img src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png'/>
 							<dl id="selectOrgCounty">
 							</dl>
@@ -255,42 +255,42 @@
 					<li class='list'>
 						<div style="font-size:15px;" class='fl names'>详细地址</div>
 						<div class='input fl'>
-							<input type='text' style="color:black" id="orgAddress" name="orgAddress" placeholder='详细地址'/>
+							<input type='text' id="orgAddress" name="orgAddress" placeholder='详细地址'/>
 						</div>
 						<div class='clear'></div>
 					</li>
 					</div>
-				</form>	
-					
+				</form>
+
 					<!-- 个人 -->
 				<form id="personalFormValidate">
 					<div id="personalForm">
 					 <li class='list'>
 						<div style="font-size:15px;" class='fl names'>联系人</div>
 						<div class='input fl'>
-							<input type='text' style="color:black" id="personalName" name="personalName" placeholder='请输入联系人姓名'/>
+							<input type='text' id="personalName" name="personalName" placeholder='请输入联系人姓名'/>
 						</div>
 						<div class='clear'></div>
 					</li>
 					<li class='lis'>
 						<div style="font-size:15px;" class='fl names'>所在地址</div>
-						<input type='hidden' style="color:black" id="personalProvince" name="personalProvince" value='' /> 
+						<input type='hidden' id="personalProvince" name="personalProvince" value='' />
 						<div class='fl input'>
-							<input type='text' style="width:91px;" value='请选择' id="showPersonalProvince" readonly />
+							<input type='text' style="width:91px;color: #959595;" value='请选择' id="showPersonalProvince" readonly />
 							<img src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png'/>
 							<dl id="selectPersonalProvince" url="${pageContext.request.contextPath}/basicProvince/queryProvinceCity">
 							</dl>
 						</div>
-						<input type='hidden' id="personalCity" name="personalCity" value='' /> 
+						<input type='hidden' id="personalCity" name="personalCity" value='' />
 						<div class='fl input'>
-							<input type='text' style="width:91px;" value='请选择' id="showPersonalCity" readonly />
+							<input type='text' style="width:91px;color: #959595;" value='请选择' id="showPersonalCity" readonly />
 							<img src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png'/>
 							<dl id="selectPersonalCity" url="${pageContext.request.contextPath}/basicProvince/queryCityCounty">
 							</dl>
 						</div>
-						<input type='hidden' id="personalCounty" name="personalCounty" value='' /> 
+						<input type='hidden' id="personalCounty" name="personalCounty" value='' />
 						<div class='fl input'>
-							<input type='text' style="width:91px;" value='请选择' id="showPersonalCounty" readonly />
+							<input type='text' style="width:91px;color: #959595;" value='请选择' id="showPersonalCounty" readonly />
 							<img src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png'/>
 							<dl id="selectPersonalCounty">
 							</dl>
@@ -301,7 +301,7 @@
 					<li class='list'>
 						<div style="font-size:15px;" class='fl names'>详细地址</div>
 						<div class='input fl'>
-							<input type='text' style="color:black" id="personalAddress" name="personalAddress" placeholder='详细地址'/>
+							<input type='text' id="personalAddress" name="personalAddress" placeholder='详细地址'/>
 						</div>
 						<div class='clear'></div>
 					</li>

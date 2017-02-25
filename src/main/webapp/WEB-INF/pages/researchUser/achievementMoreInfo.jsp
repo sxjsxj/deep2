@@ -22,7 +22,7 @@
 			<div class='fl delleft'>
 				<div class='heads'>
 					<div class='fl img'>
-						<img id="detailImg" style="width:320px;height:240px" src=''/>
+						<img id="detailImg" data-tag="sharePhoto" style="width:320px;height:240px" src=''/>
 					</div>
 					<div class='fl rightmore'>
 						<div class='tils' id="name"></div>
@@ -155,7 +155,8 @@ $(function(){
 		"image" : {
 			"viewList" : [ "qzone", "tsina", "tqq", "renren", "weixin" ],
 			"viewText" : "分享到：",
-			"viewSize" : "16"
+			"viewSize" : "16",
+			"tag" : "sharePhoto",
 		},
 		"selectShare" : {
 			"bdContainerClass" : null,

@@ -50,13 +50,13 @@ function query(param) {
 	requestParamTemp['currentPage'] = $('#currentPage').val();
 	requestParamTemp['maxRecordPerPage'] = FrontCommonFunction.maxRecordPerPage;
 	FrontCommonFunction.baseOptions['data'] = requestParamTemp;
-	
+
 	FrontCommonFunction.baseOptions['success'] = function(datas) {
 		var queryReturnList = datas.queryReturnList;
 		if (queryReturnList === null || queryReturnList.length === 0) {
 			$('#noResult').html('<font color="red">未查询到符合条件的记录！</font>');
 			return;
-		} 
+		}
 		for(var i = 0; i < queryReturnList.length; i++) {
 			var type=queryReturnList[i].researchUserResultModel.type;
 			var provinceName="";
@@ -81,12 +81,12 @@ function query(param) {
 					li+='<a href="'+moreInfoUrl+'"><div class="fl ims"><img style="width:240px;height:182px" src="'+imgUrl+'"/></div></a>'
 				}
 			    li+='<div class="fl rights">'
-				li+='<a href="'+moreInfoUrl+'"><div class="tits">'	
-				li+="<div class='fl'>"+FrontCommonFunction.replaceNull(queryReturnList[i].name)+"</div>"
+				li+='<a href="'+moreInfoUrl+'"><div class="tits">'
+				li+="<div class='fl'>"+FrontCommonFunction.setTextSize(queryReturnList[i].name, 20, '...')+"</div>"
 			    li+="<div class='fr'>"+FrontCommonFunction.setResearchUserType(queryReturnList[i].researchUserResultModel.type)+"</div>"
 			    li+="<div class='clear'></div>"
 				li+="</div></a>"
-				li+='<div class="cs">'	 
+				li+='<div class="cs">'
 				li+='<div class="mod borderright">'
 				li+='<a href="'+moreInfoUrl+'"><div class="cs_tis">'+"研究方向："+queryReturnList[i].field+"</div></a>"
 				li+="<div class=''><a class='fl rems'></a>"+"<span class='fl'>"+"简介&nbsp;:&nbsp;"+'<a href="'+moreInfoUrl+'">'+FrontCommonFunction.getResultMaitText(queryReturnList[i].introduction,70,"#researchGroupMoreInfo",queryReturnList[i].id)+"</span></a><div class='clear'></div></div>"
@@ -96,14 +96,14 @@ function query(param) {
 				li+="<div class=''><a class='fl rems'></a><span class='fl'>"+'<a href="'+moreInfoUrl+'">'+FrontCommonFunction.getResultMaitText(queryReturnList[i].achievement,70,"#researchGroupMoreInfo",queryReturnList[i].id)+"</a></span><div class='clear'></div></div>"
 				li+="</div>"
 				li+="<div class='clear'></div>"
-				li+="</div>"	 
+				li+="</div>"
 				li+="<div class='f'>"
-				li+='<div style="margin-top:50px" class="fl"><a>'+'<a href="'+moreInfoUrl+'">'+FrontCommonFunction.setDomain(queryReturnList[i].domain) + "&nbsp;&nbsp;"+ universityType+ "&nbsp;&nbsp;"+provinceName+"</a></a></div>" 
-				li+='<div class="fr" style=" margin-top:40px">'	
+				li+='<div class="fl"><a>'+'<a href="'+moreInfoUrl+'">'+FrontCommonFunction.setDomain(queryReturnList[i].domain) + "&nbsp;&nbsp;"+ universityType+ "&nbsp;&nbsp;"+provinceName+"</a></a></div>"
+				li+='<div class="fr">'
 				li+=cooperateCollectFlagDiv(queryReturnList[i], i)
 				li+="</div>"
 				li+="<div class='clear'></div>"
-				li+="</div>"	 
+				li+="</div>"
 				li+="</div>"
 				li+="<div class='clear'></div>"
 			    li+='</li></div>';
@@ -117,11 +117,11 @@ function query(param) {
 		}
 	};
 	$.ajax(FrontCommonFunction.baseOptions);
-};		
+};
 
 function getData() {
 	var paramTemp = {};
-	
+
 	var researchGroupQueryModel = {};
 	var searchHeaderName=$('#searchHeaderName').val();
 	if(searchHeaderName!==""){
@@ -177,16 +177,16 @@ function getData() {
 		if(haiwai!==""){
 			str+=haiwai+",";
 		}
-		var ar2 = str.split(","); 
-		var array = new Array(); 
-		var j=0 
-		for(var i=0;i<ar2.length;i++){ 
-			if((array == "" || array.toString().match(new RegExp(ar2[i],"g")) == null)&&ar2[i]!=""){ 
-				array[j] =ar2[i]; 
-				array.sort(); 
-				j++; 
-			} 
-		} 
+		var ar2 = str.split(",");
+		var array = new Array();
+		var j=0
+		for(var i=0;i<ar2.length;i++){
+			if((array == "" || array.toString().match(new RegExp(ar2[i],"g")) == null)&&ar2[i]!=""){
+				array[j] =ar2[i];
+				array.sort();
+				j++;
+			}
+		}
 		universityUserQueryModel['uniProvince']=array.toString();
 		organizationUserQueryModel['orgProvince']=array.toString();
 	}

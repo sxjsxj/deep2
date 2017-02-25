@@ -11,9 +11,9 @@ $(document).ready(function() {
 	FrontCommonFunction.initSelectProvince("#selectPersonalProvince");
 	//个人始化市
 	FrontCommonFunction.initSelectCity("#selectPersonalCity");
-	
+
 	initResearchGroupRegistor();
-	
+
 	$('#altsone').hide();
 	$('#altstwo').hide();
 	$('#altsthree').hide();
@@ -32,74 +32,74 @@ function initResearchGroupRegistor() {
 	$('.registSuccess').click(function(){
 //		$('.city').show();
 		$('#altsthree').show();
-		
+
 	});
 	$('.ok').click(function(){
 		$('.city').hide();
 	})
-	
+
 	$('#Button1').click(function(){
 	});
-	
+
 	setSelect();
-	$("#shcoolForm").show(); 
+	$("#shcoolForm").show();
 	$("#organizationForm").hide();
 	$("#personalForm").hide();
-	
+
 	$('#agree').click(function() {
 		if($("#agree").is(":checked")){
 			$("#notAgree").html('');
 		}
     });
-	
+
 	$('#shcool').click(function() {
 		$('#tagCheckValue').val("");
 		$('#tagCheckValue').val("0");
-		$("#shcoolForm").show(); 
+		$("#shcoolForm").show();
 		$("#organizationForm").hide();
 		$("#personalForm").hide();
     });
     $('#organization').click(function() {
     	$('#tagCheckValue').val("");
 		$('#tagCheckValue').val("1");
-		$("#shcoolForm").hide(); 
+		$("#shcoolForm").hide();
 		$("#organizationForm").show();
 		$("#personalForm").hide();
     });
     $('#personal').click(function() {
     	$('#tagCheckValue').val("");
 		$('#tagCheckValue').val("2");
-		$("#shcoolForm").hide(); 
+		$("#shcoolForm").hide();
 		$("#organizationForm").hide();
 		$("#personalForm").show();
     });
-	
+
 	$('#registComit').click(function() {
 		var uniProvince=$('#uniProvince').val();
 		var uniCity=$('#uniCity').val();
 		if(uniProvince==="" || uniCity===""){
 			$('#unRequiredFlag').html('<font color="red">必填</font>');
 		}
-		
+
 		var uniName=$('#uniName').val();
 		if(uniName===""){
 			$('#unNameFlag').html('<font color="red">必填</font>');
 		}
-		
+
 		var orgProvince=$('#orgProvince').val();
 		var orgCity=$('#orgCity').val();
 		var orgCounty=$('#orgCounty').val();
 		if(orgProvince==="" || orgCity==="" || orgCounty===""){
 			$('#orgRequiredFlag').html('<font color="red">必填</font>');
 		}
-		
+
 		var personalProvince=$('#personalProvince').val();
 		var personalCity=$('#personalCity').val();
 		var personalCounty=$('#personalCounty').val();
 		if(personalProvince==="" || personalCity==="" || personalCounty===""){
 			$('#personalRequiredFlag').html('<font color="red">必填</font>');
 		}
-		
+
 		if(commonFromValidate()){
 			var tagflg=$('#tagCheckValue').val();
 			if(tagflg==="0"){
@@ -113,13 +113,13 @@ function initResearchGroupRegistor() {
 					$('#unRequiredFlag').html('<font color="red">必填</font>');
 					return;
 				}
-				
+
 				var uniName=$('#uniName').val();
 				if(uniName===""){
 					$('#unNameFlag').html('<font color="red">必填</font>');
 					return;
 				}
-				
+
 			}else if(tagflg==="1"){
 				//科研机构
 				if(!organizationFormValidate()){
@@ -226,7 +226,7 @@ function commonFromValidate() {
 		var mobile = /^(13[0-9]{9})|(18[0-9]{9})|(14[0-9]{9})|(17[0-9]{9})|(15[0-9]{9})$/;
 		return this.optional(element) || (length == 11 && mobile.test(value));
 	}, '<font color="red">&nbsp;&nbsp;请正确填写您的手机号码</font>');
-	
+
 	return $('#commonFormValidate').validate({
 		rules : {
 			email : {
@@ -256,12 +256,12 @@ function commonFromValidate() {
 			},
 			passwordOne : {
 				required : '<font color="red">&nbsp;&nbsp;必填</font>',
-				rangelength : jQuery.format('<font color="red">&nbsp;6~20个字符</font>'),
+				rangelength : jQuery.format('<font color="red">&nbsp;&nbsp;6~20个字符</font>'),
 			},
 			passwordTwo : {
 				required : '<font color="red">&nbsp;&nbsp;必填</font>',
-				rangelength : jQuery.format('<font color="red">&nbsp;6~20个字符</font>'),
-				equalTo : '<font color="red">&nbsp;密码不一致</font>'
+				rangelength : jQuery.format('<font color="red">&nbsp;&nbsp;6~20个字符</font>'),
+				equalTo : '<font color="red">&nbsp;&nbsp;密码不一致</font>'
 			}
 		}
 	}).form();
@@ -271,7 +271,7 @@ function commonFromValidate() {
 function setSelect(){
 	//高校
 	 $("#selectUniProvince").find("dd").click(function(){
-		 $("#uniProvince").val($(this).attr("value")); 
+		 $("#uniProvince").val($(this).attr("value"));
 		 var uniProvince=$('#uniProvince').val();
 		 var uniCity=$('#uniCity').val();
 		 if(uniProvince!=="" && uniCity!==""){
@@ -283,14 +283,14 @@ function setSelect(){
 			var provinceCityMap=FrontCommonFunction.tempProvinceCity();
 			var listCity=provinceCityMap[uniProvince];
 			var dd = '';
-			for(var i = 0; i < listCity.length; i++) {	
+			for(var i = 0; i < listCity.length; i++) {
 				dd += '<dd value="'+listCity[i]+'">' + listCity[i] + '</dd>';
 			}
 			$("#selectUniCity").html("");
 			$("#selectUniName").html("");
 			$("#showUniName").val("请选择高校");
 			$("#selectUniCity").append(dd);
-			
+
 			$("#selectUniCity").find("dd").click(function(){
 				$("#uniCity").val($(this).attr("value"));
 				var uniProvince=$('#uniProvince').val();
@@ -329,21 +329,21 @@ function setSelect(){
 								$('#unNameFlag').html('');
 							}
 					});
-					
+
 				};
 				$.ajax(FrontCommonFunction.baseOptions);
 			});
 	});
 	//科研机构
 	 $("#selectOrgProvince").find("dd").click(function(){
-		 $("#orgProvince").val($(this).attr("value")); 
+		 $("#orgProvince").val($(this).attr("value"));
 			var orgProvince=$('#orgProvince').val();
 			var orgCity=$('#orgCity').val();
 			var orgCounty=$('#orgCounty').val();
 			if(orgProvince!=="" && orgCity!=="" && orgCounty!==""){
 				$('#orgRequiredFlag').html('');
 			}
-			
+
 			 $('#showOrgCity').val("请选择");
 			 $("#showOrgCounty").val("请选择");
 			 $("#selectOrgCounty").html("");
@@ -352,13 +352,13 @@ function setSelect(){
 				var provinceCityMap=FrontCommonFunction.tempProvinceCity();
 				var listCity=provinceCityMap[orgProvince];
 				var dd = '';
-				for(var i = 0; i < listCity.length; i++) {	
+				for(var i = 0; i < listCity.length; i++) {
 					dd += '<dd value="'+listCity[i]+'">' + listCity[i] + '</dd>';
 				}
 				$("#selectOrgCity").html("");
 				$("#selectOrgCity").append(dd);
 				$("#selectOrgCity").find("dd").click(function(){
-					 $("#orgCity").val($(this).attr("value")); 
+					 $("#orgCity").val($(this).attr("value"));
 					 var orgProvince=$('#orgProvince').val();
 						var orgCity=$('#orgCity').val();
 						var orgCounty=$('#orgCounty').val();
@@ -368,19 +368,19 @@ function setSelect(){
 						$("#showOrgCity").val(orgCity);
 						$("#showOrgCounty").val("请选择");
 						$("#orgCounty").val("");
-						
+
 						//根据市查县
 						var cityCountyMap=FrontCommonFunction.tempCityCounty();
 						var listCounty=cityCountyMap[orgCity];
 						var dd = '';
-						for(var i = 0; i < listCounty.length; i++) {	
+						for(var i = 0; i < listCounty.length; i++) {
 							dd += '<dd value="'+listCounty[i]+'">' + listCounty[i] + '</dd>';
 						}
 						$("#selectOrgCounty").html("");
 						$("#selectOrgCounty").append(dd);
-						
+
 						$("#selectOrgCounty").find("dd").click(function(){
-							 $("#orgCounty").val($(this).attr("value")); 
+							 $("#orgCounty").val($(this).attr("value"));
 							 var orgProvince=$('#orgProvince').val();
 								var orgCity=$('#orgCity').val();
 								var orgCounty=$('#orgCounty').val();
@@ -393,30 +393,30 @@ function setSelect(){
 	});
 	//个人
 	 $("#selectPersonalProvince").find("dd").click(function(){
-		 $("#personalProvince").val($(this).attr("value")); 
+		 $("#personalProvince").val($(this).attr("value"));
 		 var personalProvince=$('#personalProvince').val();
 			var personalCity=$('#personalCity').val();
 			var personalCounty=$('#personalCounty').val();
 			if(personalProvince!=="" && personalCity!=="" && personalCounty!==""){
 				$('#personalRequiredFlag').html('');
 			}
-			
+
 			$("#showPersonalCity").val("请选择");
 			$("#showPersonalCounty").val("请选择");
 			$("#selectPersonalCounty").html("");
 			$("#personalCounty").val("");
-			
+
 			//根据省查省下市
 			var provinceCityMap=FrontCommonFunction.tempProvinceCity();
 			var listCity=provinceCityMap[personalProvince];
 			var dd = '';
-			for(var i = 0; i < listCity.length; i++) {	
+			for(var i = 0; i < listCity.length; i++) {
 				dd += '<dd value="'+listCity[i]+'">' + listCity[i] + '</dd>';
 			}
 			$("#selectPersonalCity").html("");
 			$("#selectPersonalCity").append(dd);
 			$("#selectPersonalCity").find("dd").click(function(){
-				 $("#personalCity").val($(this).attr("value")); 
+				 $("#personalCity").val($(this).attr("value"));
 				 var personalProvince=$('#personalProvince').val();
 					var personalCity=$('#personalCity').val();
 					var personalCounty=$('#personalCounty').val();
@@ -430,13 +430,13 @@ function setSelect(){
 					var cityCountyMap=FrontCommonFunction.tempCityCounty();
 					var listCounty=cityCountyMap[personalCity];
 					var dd = '';
-					for(var i = 0; i < listCounty.length; i++) {	
+					for(var i = 0; i < listCounty.length; i++) {
 						dd += '<dd value="'+listCounty[i]+'">' + listCounty[i] + '</dd>';
 					}
 					$("#selectPersonalCounty").html("");
 					$("#selectPersonalCounty").append(dd);
 					$("#selectPersonalCounty").find("dd").click(function(){
-						 $("#personalCounty").val($(this).attr("value")); 
+						 $("#personalCounty").val($(this).attr("value"));
 						 var personalProvince=$('#personalProvince').val();
 							var personalCity=$('#personalCity').val();
 							var personalCounty=$('#personalCounty').val();
@@ -485,11 +485,11 @@ function save() {
 				location.href=loginUrl;
 			}, 1500);
 		}else{
-			//注册失败 
+			//注册失败
 			$('#errorInfo').html("");
 			FrontCommonFunction.processResult(datas,"#alertClick","#errorInfo");
 		}
-		
+
 	};
 	$.ajax(FrontCommonFunction.baseOptions);
 };
@@ -530,14 +530,3 @@ function getData() {
 	paramTemp['researchUser']=researchUser;
 	return paramTemp;
 };
-
-
-
-
-
-
-
-
-
-
-

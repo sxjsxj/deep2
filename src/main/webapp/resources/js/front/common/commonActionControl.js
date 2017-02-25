@@ -55,7 +55,7 @@ function shareControl(moreType, status, selector) {
 			$(selector).hide();
 		}
 	}
-	
+
 }
 
 function dialogControl() {
@@ -84,11 +84,13 @@ function dialogControl() {
 };
 
 function delShaDowClass(index){
-	$("#shaDowShow"+index).attr("class","mydiv1");
+	$("#shaDowShow"+index).removeClass("mydiv2");
+	$("#shaDowShow"+index).addClass("mydiv1");
 };
 
 function addShaDowClass(index){
-	$("#shaDowShow"+index).attr("class","mydiv2");
+	$("#shaDowShow"+index).removeClass("mydiv1");
+	$("#shaDowShow"+index).addClass("mydiv2");
 };
 
 //弹出隐藏层
@@ -123,7 +125,7 @@ function setRegionClick(){
 			}
 		}
 	});
-	//热门地区 
+	//热门地区
 	$("#remenParent").click(function() {
 		if($("#remenParentShow").hasClass("on")){
 			$("[id^=remenChild]").each(function(n){
@@ -149,7 +151,7 @@ function setRegionClick(){
 		}).get().join(',');
 		$("#renmenCheckboxResult").val(text);
 	});
-	
+
 	$("[id^=remenChild]").click(function() {
 		//remenChild固定长度是10
 		var idIndex=$(this).attr("id").substring(10);
@@ -190,7 +192,7 @@ function setRegionClick(){
 		}).get().join(',');
 		$("#huananCheckboxResult").val(text);
 	});
-	
+
 	$("[id^=huananChild]").click(function() {
 		//huananChild固定长度是11
 		var idIndex=$(this).attr("id").substring(11);
@@ -243,7 +245,7 @@ function setRegionClick(){
 		}).get().join(',');
 		$("#huabeiCheckboxResult").val(text);
 	});
-	//华东 
+	//华东
 	$("#huadongParent").click(function() {
 		if($("#huadongParentShow").hasClass("on")){
 			$("[id^=huadongChild]").each(function(n){
@@ -269,7 +271,7 @@ function setRegionClick(){
 		}).get().join(',');
 		$("#huadongCheckboxResult").val(text);
 	});
-	
+
 	$("[id^=huadongChild]").click(function() {
 		//huadongChild固定长度是12
 		var idIndex=$(this).attr("id").substring(12);
@@ -309,7 +311,7 @@ function setRegionClick(){
 		}).get().join(',');
 		$("#huazhongCheckboxResult").val(text);
 	});
-	
+
 	$("[id^=huazhongChild]").click(function() {
 		//huazhongChild固定长度是13
 		var idIndex=$(this).attr("id").substring(13);
@@ -349,7 +351,7 @@ function setRegionClick(){
 		}).get().join(',');
 		$("#xibeiCheckboxResult").val(text);
 	});
-	
+
 	$("[id^=xibeiChild]").click(function() {
 		//xibeiChild固定长度是10
 		var idIndex=$(this).attr("id").substring(10);
@@ -363,7 +365,7 @@ function setRegionClick(){
 		}).get().join(',');
 		$("#xibeiCheckboxResult").val(text);
 	});
-	//东北 
+	//东北
 	$("#dongbeiParent").click(function() {
 		if($("#dongbeiParentShow").hasClass("on")){
 			$("[id^=dongbeiChild]").each(function(n){
@@ -389,7 +391,7 @@ function setRegionClick(){
 		}).get().join(',');
 		$("#dongbeiCheckboxResult").val(text);
 	});
-	
+
 	$("[id^=dongbeiChild]").click(function() {
 		//dongbeiChild固定长度是12
 		var idIndex=$(this).attr("id").substring(12);
@@ -429,7 +431,7 @@ function setRegionClick(){
 		}).get().join(',');
 		$("#xinanCheckboxResult").val(text);
 	});
-	
+
 	$("[id^=xinanChild]").click(function() {
 		//xinanChild固定长度是10
 		var idIndex=$(this).attr("id").substring(10);
@@ -469,7 +471,7 @@ function setRegionClick(){
 		}).get().join(',');
 		$("#gangaotaiCheckboxResult").val(text);
 	});
-	
+
 	$("[id^=gangaotaiChild]").click(function() {
 		//gangaotaiChild固定长度是14
 		var idIndex=$(this).attr("id").substring(14);
@@ -509,7 +511,7 @@ function setRegionClick(){
 		}).get().join(',');
 		$("#haiwaiCheckboxResult").val(text);
 	});
-	
+
 	$("[id^=haiwaiChild]").click(function() {
 		//haiwaiChild固定长度是11
 		var idIndex=$(this).attr("id").substring(11);

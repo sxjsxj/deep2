@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <input type="hidden" value="" id="commonUserLoginId"/>
 <input type="hidden" value="" id="commonUserType"/>
 <input type="hidden" value="" id="commonUserTel"/>

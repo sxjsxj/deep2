@@ -69,6 +69,7 @@ function initMyRequirementManager() {
 		$('#tagValue').val("0");
 		$('#childtagValue').val("5");
 		$('#currentPage').val('1');
+		$("#child0FlagFirst").val('0');
 	    query(queryParam);
     });
 	$('#fundRequire').click(function() {
@@ -83,6 +84,7 @@ function initMyRequirementManager() {
 		$('#childtagValue').val("5");
 		$('#tagValue').val("1");
 		$('#currentPage').val('1');
+		$("#child0FlagFirst").val('0');
 	    query(queryParam);
     });
 	//审核状态页
@@ -164,7 +166,6 @@ function query(param) {
 	$('#requirementListQuery').html("");
 	$('#noResult').html('');
 	$('#pagination').html('');
-	$("#child0FlagFirst").val('0');
 	
 	var url ="";
 	var tagValue=$("#tagValue").val();

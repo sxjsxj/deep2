@@ -37,12 +37,12 @@ $(document).ready(function() {
 		$('#altsone').hide();
 		//ShowDiv('MyDiv','fade')
 	});
-	
+
 });
 
 var queryParam = {};
 function initMyAchievementManager() {
-	
+
 	//审核状态页
 	$('#child0').click(function() {
 		$('#childtagValue').val("5");
@@ -129,30 +129,30 @@ function query(param) {
 	requestParamTemp['currentPage'] = $('#currentPage').val();
 	requestParamTemp['maxRecordPerPage'] = FrontCommonFunction.maxRecordPerPage;
 	FrontCommonFunction.baseOptions['data'] = requestParamTemp;
-	
+
 	FrontCommonFunction.baseOptions['success'] = function(datas) {
 		var queryReturnList = datas.queryReturnList;
 		if (queryReturnList === null || queryReturnList.length === 0) {
 			var noresult="";
 			noresult+="<div align='center' class='fl right'>";
 			noresult+="<div class='title'></div>"
-			noresult+="<div style='width:900px;margin-top:2px;' class='my_tuijian_con'>"	
-				noresult+="<div style='font-size:18px;' class='my_tuijian_con_title'>"	
+			noresult+="<div style='width:900px;margin-top:2px;' class='my_tuijian_con'>"
+				noresult+="<div style='font-size:18px;' class='my_tuijian_con_title'>"
 				noresult+="暂未找到符合要求的记录"
 				noresult+="</div>"
 					noresult+="<div class='my_tuijian_con_txt'>"
-					noresult+="</div>"	
-			noresult+="</div>"	
+					noresult+="</div>"
+			noresult+="</div>"
 			noresult+="</div>"
 			$('#noResult').html(noresult);
 			return;
-		} 
+		}
 		var child1=0;
 		var child2=0;
 		var child3=0;
 		var child4=0;
 		var child5=0;
-		for(var i = 0; i < queryReturnList.length; i++) {	
+		for(var i = 0; i < queryReturnList.length; i++) {
 			var status=queryReturnList[i].status;
 			if(status=== '0'){
 				child1++;
@@ -165,7 +165,7 @@ function query(param) {
 			}else if(status=== '4'){
 				child5++;
 			}
-			
+
 			var type=queryReturnList[i].researchGroupResultModel.researchUserResultModel.type;
 			var provinceName="";
 			if(type==="0"){
@@ -190,24 +190,28 @@ function query(param) {
 				li+='<input type="hidden" id="operateId'+i+'" value="'+queryReturnList[i].id+'"/>'
 				li+='<input type="hidden" id="status'+i+'" value="'+queryReturnList[i].status+'"/>'
 				li+='<a href="'+moreInfoUrl+'"><div class="fl ims">'
-				li+=templi;  
+				li+=templi;
 			    li+="</div><a>"
 				li+="<div class='fl rights'>"
 				  li+='<a href="'+moreInfoUrl+'"><div class="tits">'
-			        li+="<div class='fl'>"+FrontCommonFunction.replaceNull(queryReturnList[i].name)+"</div>"
-			        li+="<div class='fr'>"+FrontCommonFunction.setInvestorPhase(queryReturnList[i].phase)+"</div>" 
+			        li+="<div class='fl'>"+FrontCommonFunction.setTextSize(queryReturnList[i].name, 20, '...')+"</div>"
+			        li+="<div class='fr'>"+FrontCommonFunction.setInvestorPhase(queryReturnList[i].phase)+"</div>"
 			        li+="<div class='clear'></div>"
 				  li+="</div></a>"
-				  
+
 				  li+='<a href="'+moreInfoUrl+'"><div class="cs">'
 					  li+=FrontCommonFunction.getResultMaitText(queryReturnList[i].solution,200,"#achievementMoreInfo",queryReturnList[i].id)
 				  li+="</div></a>"
-				
+
 				li+="<div class='b'>"
-					  li+='<div style=" margin-top:50px" class="fl">'
-					   li+="<span>"+'<a href="'+moreInfoUrl+'">'+FrontCommonFunction.setInvestorDomain(queryReturnList[i].domain)+"</span><span>"+provinceName+"</span><span>"+FrontCommonFunction.setAmount(queryReturnList[i].amount)+"</span><span>"+FrontCommonFunction.setRequirementStatus(queryReturnList[i].status)+"</a></span>"
-					  li+="</div>"
-					  li+='<div class="fr" style=" margin-top:40px">'
+					  li+='<div class="fl">'
+					   	li+="<span>"+'<a href="'+moreInfoUrl+'">'+FrontCommonFunction.setInvestorDomain(queryReturnList[i].domain)+"</span>"
+						  li+="<span>"+provinceName+"</span>"
+						 	li+="<span>"+FrontCommonFunction.setAmount(queryReturnList[i].amount)+"</span>"
+						  li+="<span>"+FrontCommonFunction.setRequirementStatus(queryReturnList[i].status)+"</a></span>"
+
+						li+="</div>"
+					  li+='<div class="fr">'
 						  li+='<div class="fl look">'
 						    li+="<div class='coll'>收藏量："+FrontCommonFunction.replaceNull(queryReturnList[i].concernNumber)+"</div>"
 						    li+="<div class='find'>访问量："+FrontCommonFunction.replaceNull(queryReturnList[i].scanNumber)+"</div>"
@@ -215,16 +219,16 @@ function query(param) {
 							  li+='<div id="edit'+i+'" class="fl bianji">编辑</div>'
 							  li+='<div id="delete'+i+'" class="fl del">删除</div>'
 						  li+="<div class='clear'></div>"
-					 li+="</div>"  
-					
-				  li+="<div class='clear'></div>"	
-				li+="</div>"	
-					
-				li+="</div>"	
+					 li+="</div>"
+
+				  li+="<div class='clear'></div>"
+				li+="</div>"
+
+				li+="</div>"
 				li+="<div class='clear'></div>"
 				li+='</li></div>';
 			$("#myAchievementQuery").append(li);
-			
+
 			$('#edit'+i).click(function() {
 				//edit固定长度4
 				var idIndex=$(this).attr("id").substring(4);
@@ -233,13 +237,13 @@ function query(param) {
 				var url=$('#achievementDetail').attr('url');
 				location.href=url+"?id="+idValue;
 			});
-			
+
 			$('#delete'+i).click(function() {
 				//delete固定长度6
 				var idIndex=$(this).attr("id").substring(6);
 				var statusId="#status"+idIndex
 				var status=	$(statusId).val();
-				
+
 				if(status==="0" || status==="1" || status==="3"){
 					var id="#operateId"+idIndex
 					var idValue=$(id).val();
@@ -255,7 +259,7 @@ function query(param) {
 				 }
 			});
 		}
-		
+
 		var cf=$("#child0FlagFirst").val();
 		if(cf==="0"){
 			$("#child0FlagFirst").val("1");
@@ -266,7 +270,7 @@ function query(param) {
 			$("#child4").html("合作中（"+child4+"）");
 			$("#child5").html("已完成（"+child5+"）");
 		}
-		
+
 		if (queryReturnList.length !== 0) {
 			FrontCommonFunction.pagination(datas.pagination.sumPage, '#currentPage', '#pagination', that, 'query');
 		}
@@ -285,7 +289,7 @@ function delAchievement(reqParam,url){
 				query(queryParam);
 			}, 500);
 		}else{
-			//删除失败 
+			//删除失败
 			$('#errorInfo').html("");
 			FrontCommonFunction.processResult(datas,"#alertClick","#errorInfo");
 		}
@@ -296,7 +300,7 @@ function delAchievement(reqParam,url){
 function getData() {
 	var status=$('#childtagValue').val();
 	var paramTemp = {};
-	
+
 	var achievementQueryModel = {};
 	getDefaultQuery('achievement', '2', achievementQueryModel);
 	if(status!=="5"){
@@ -337,7 +341,7 @@ function getReserachGroup() {
 	FrontCommonFunction.baseOptions['data'] = data;
 	FrontCommonFunction.baseOptions['success'] = function(datas) {
 		if(datas.queryReturnList.length > 0){
-			//表示已经维护设置researchGroupId 
+			//表示已经维护设置researchGroupId
 			$("#hasResearchGroup").val("true");
 		}else{
 			$("#hasResearchGroup").val("");

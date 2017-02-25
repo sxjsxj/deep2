@@ -3,10 +3,10 @@
 	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	id="WebApp_ID" version="2.5">
-	<display-name>deep2Web</display-name>
+	<display-name>deep2</display-name>
 	<context-param> 
 		<param-name>webAppRootKey</param-name> 
-		<param-value>deep2Web.root </param-value> 
+		<param-value>deep2.root </param-value> 
     </context-param> 
 	<listener>
 		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
@@ -41,7 +41,7 @@
 	</listener>
 	
 	<servlet>
-		<servlet-name>deep2Web</servlet-name>
+		<servlet-name>deep2</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
@@ -51,7 +51,7 @@
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>deep2Web</servlet-name>
+		<servlet-name>deep2</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	

@@ -146,7 +146,6 @@ function query(param) {
 				imgUrl="../resources/images/front/img/keyanchengguo.png";
 				li+='<a href="'+moreInfoUrl+'"><div class="fl ims">'+'<img style="width:240px;height:182px" src="'+imgUrl+'"/>'+"</div></a>"
 			}
-
 			li+="<div class='fl rights'>"
 			li+='<a href="'+moreInfoUrl+'"><div class="tits">'
 			li+="<div class='fl'>"+FrontCommonFunction.setTextSize(queryReturnList[i].name, 20, '...')+"</div>"
@@ -154,10 +153,9 @@ function query(param) {
 			li+="<div class='clear'></div>"
 			li+="</div></a>"
 			li+='<a href="'+moreInfoUrl+'"><div class="cs">'
-			li+=FrontCommonFunction.getResultMaitText(queryReturnList[i].solution,300,"#achievementMoreInfo",queryReturnList[i].id)
 			li+="</div></a>"
 			li+="<div class='f'>"
-			li+='<a href="'+moreInfoUrl+'"><div style=" margin-top:58px" class="fl">'+FrontCommonFunction.setInvestorDomain(queryReturnList[i].domain)+"&nbsp;&nbsp;"+provinceName+"&nbsp;&nbsp;"+FrontCommonFunction.setAmount(queryReturnList[i].amount)+"&nbsp;&nbsp;"+FrontCommonFunction.setRequirementStatus(queryReturnList[i].status)+"</div></a>"
+			li+='<a href="'+moreInfoUrl+'"><div class="fl">'+FrontCommonFunction.setInvestorDomain(queryReturnList[i].domain)+"&nbsp;&nbsp;"+provinceName+"&nbsp;&nbsp;"+FrontCommonFunction.setAmount(queryReturnList[i].amount)+"&nbsp;&nbsp;"+FrontCommonFunction.setRequirementStatus(queryReturnList[i].status)+"</div></a>"
 			li+='<div class="fr">'
 			li+=cooperateCollectFlagDiv(queryReturnList[i], i)
 			li+="</div>"
@@ -166,6 +164,9 @@ function query(param) {
 			li+="<div class='clear'></div>"
 			li+='</li></div>';
 			$("#achievementListQuery").append(li);
+
+			var $el = $("#achievementListQuery").find(".cs:last-child");
+			FrontCommonFunction.limitTextLineNum($el, queryReturnList[i].solution,"#achievementMoreInfo",queryReturnList[i].id);
 		}
 		if (queryReturnList.length !== 0) {
 			FrontCommonFunction.pagination(datas.pagination.sumPage, '#currentPage', '#pagination', that, 'query');

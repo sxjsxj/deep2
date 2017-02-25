@@ -64,7 +64,7 @@ function initAmountDemandListManager() {
 		}).get().join(',');
 		$("#amountId").val(text);
 	});
-	
+
 	//状态
 	$("#statusCheckBox").click(function() {
 		if($("#statusCheckBoxValue").hasClass("on")){
@@ -77,7 +77,7 @@ function initAmountDemandListManager() {
 			 $("#statusId").val("1,2");
 		}
 	});
-	
+
 	//页面加载查询
 	queryParam = getData();
 	query(queryParam);
@@ -102,14 +102,14 @@ function query(param) {
 	requestParamTemp['currentPage'] = $('#currentPage').val();
 	requestParamTemp['maxRecordPerPage'] = FrontCommonFunction.maxRecordPerPage;
 	FrontCommonFunction.baseOptions['data'] = requestParamTemp;
-	
+
 	FrontCommonFunction.baseOptions['success'] = function(datas) {
 		var queryReturnList = datas.queryReturnList;
 		if (queryReturnList === null || queryReturnList.length === 0) {
 			$('#noResult').html('<font color="red">未查询到符合条件的记录！</font>');
 			return;
-		} 
-		for(var i = 0; i < queryReturnList.length; i++) {	
+		}
+		for(var i = 0; i < queryReturnList.length; i++) {
 			var moreInfoUrl = $("#fundRequirementMoreInfo").attr('url')+"?id="+queryReturnList[i].id;
 			var li = '<div id="shaDowShow'+i+'"  class="mydiv1" onmouseout="delShaDowClass('+i+')" onmouseover="addShaDowClass('+i+')"><li>'
 			li+='<input type="hidden" id="operateId'+i+'" value="'+queryReturnList[i].id+'"/>'
@@ -124,16 +124,15 @@ function query(param) {
 			}
 			li+="<div class='fl rights'>"
 			li+='<a href="'+moreInfoUrl+'"><div class="tits">'
-			li+="<div class='fl'>"+FrontCommonFunction.replaceNull(queryReturnList[i].name)+"</div>"
-			li+="<div class='fr'>"+FrontCommonFunction.setPhase(queryReturnList[i].projectPhase)+"</div>"	
+			li+="<div class='fl'>"+FrontCommonFunction.setTextSize(queryReturnList[i].name, 20, '...')+"</div>"
+			li+="<div class='fr'>"+FrontCommonFunction.setPhase(queryReturnList[i].projectPhase)+"</div>"
 			li+="<div class='clear'></div>"
 			li+="</div></a>"
 			li+='<a href="'+moreInfoUrl+'"><div style=" margin-bottom:-30px" class="cs">'
-			li+=FrontCommonFunction.getResultMaitText(queryReturnList[i].projectIntro,200,"#fundRequirementMoreInfo",queryReturnList[i].id)
 			li+="</div></a>"
 			li+="<div class='f'>"
-			li+='<a href="'+moreInfoUrl+'"><div style=" margin-top:58px" class="fl">'+FrontCommonFunction.setDomain(queryReturnList[i].domain)+"&nbsp;&nbsp;"+FrontCommonFunction.replaceNull(queryReturnList[i].companyUserResultModel.province)+"&nbsp;&nbsp;"+FrontCommonFunction.setStrAmount(queryReturnList[i].amountNeeded)+"&nbsp;&nbsp;"+FrontCommonFunction.setRequirementStatus(queryReturnList[i].status)+"</div></a>"
-			li+='<div class="fr" style=" margin-top:50px">'		
+			li+='<a href="'+moreInfoUrl+'"><div class="fl">'+FrontCommonFunction.setDomain(queryReturnList[i].domain)+"&nbsp;&nbsp;"+FrontCommonFunction.replaceNull(queryReturnList[i].companyUserResultModel.province)+"&nbsp;&nbsp;"+FrontCommonFunction.setStrAmount(queryReturnList[i].amountNeeded)+"&nbsp;&nbsp;"+FrontCommonFunction.setRequirementStatus(queryReturnList[i].status)+"</div></a>"
+			li+='<div class="fr">'
 			li+=cooperateCollectFlagDiv(queryReturnList[i], i)
 			li+="</div>"
 			li+="</div>"
@@ -141,6 +140,9 @@ function query(param) {
 			li+="<div class='clear'></div>"
 			li+='</li></div>';
 			$("#amountDemandListQuery").append(li);
+
+			var $el = $("#amountDemandListQuery").find(".cs:last-child");
+			FrontCommonFunction.limitTextLineNum($el, queryReturnList[i].projectIntro,"#fundRequirementMoreInfo",queryReturnList[i].id);
 		}
 		if (queryReturnList.length !== 0) {
 			FrontCommonFunction.pagination(datas.pagination.sumPage, '#currentPage', '#pagination', that, 'query');
@@ -154,7 +156,7 @@ function query(param) {
 
 function getData() {
 	var paramTemp = {};
-	
+
 	var companyUserQueryModel = {};
 	var fundRequirementQueryModel={};
 	var searchHeaderName=$('#searchHeaderName').val();
@@ -178,7 +180,7 @@ function getData() {
 		var xinan=$('#xinanCheckboxResult').val();
 		var gangaotai=$('#gangaotaiCheckboxResult').val();
 		var haiwai=$('#haiwaiCheckboxResult').val();
-		
+
 		var str="";
 		if(remen!==""){
 			str+=remen+",";
@@ -210,22 +212,22 @@ function getData() {
 		if(haiwai!==""){
 			str+=haiwai+",";
 		}
-		
-		var ar2 = str.split(","); 
-		var array = new Array(); 
-		var j=0 
-		for(var i=0;i<ar2.length;i++){ 
-			if((array == "" || array.toString().match(new RegExp(ar2[i],"g")) == null)&&ar2[i]!=""){ 
-			array[j] =ar2[i]; 
-			array.sort(); 
-			j++; 
-			} 
-		} 
+
+		var ar2 = str.split(",");
+		var array = new Array();
+		var j=0
+		for(var i=0;i<ar2.length;i++){
+			if((array == "" || array.toString().match(new RegExp(ar2[i],"g")) == null)&&ar2[i]!=""){
+			array[j] =ar2[i];
+			array.sort();
+			j++;
+			}
+		}
 		companyUserQueryModel['province']=array.toString();
 	}
-	getDefaultQuery('companyUser', '1', companyUserQueryModel); 
+	getDefaultQuery('companyUser', '1', companyUserQueryModel);
 	paramTemp['companyUserQueryModel']=companyUserQueryModel;
-	getDefaultQuery('fundRequirement', '1', fundRequirementQueryModel); 
+	getDefaultQuery('fundRequirement', '1', fundRequirementQueryModel);
 	if($('#statusId').val() !== '') {
 		fundRequirementQueryModel['status']=$.trim($('#statusId').val());
 	}

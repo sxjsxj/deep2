@@ -31,7 +31,7 @@
 				<div class='stils'>
 					<a id="scanNumber"></a><img src='${pageContext.request.contextPath}/resources/images/front/img/address.png'/>&nbsp;<a id="province"></a>
 				</div>
-				<div class='mortis'><span></span></div>
+				<!-- <div class='mortis'><span></span></div> -->
 				<div style="margin-left:342px;" class='btns'>
 					<div style='margin-right: 20px;font-size:15px;'  id="collect">收藏</div>
 					<div style='margin-right:20px;font-size:15px;' id="cancelCollect">取消收藏</div>
@@ -55,12 +55,13 @@
 				<div class='txt' id="duration"></div>
 				<div class='txt' id="cooperationType"></div>
 
-				<div class='title' style='margin-top:30px' id="similarProductTitle">市场类似产品情况</div>
-				<div class='txt' id="similarProduct"></div>
+				
+				<div class='title' style='margin-top:30px'>需求描述</div>
+				<div class='txt' id="detail"></div>
 
 				<div id='mores'>
-					<div class='title' style='margin-top:30px'>需求描述</div>
-					<div class='txt' id="detail"></div>
+					<div class='title' style='margin-top:30px'>市场类似产品情况</div>
+					<div class='txt' id="similarProduct"></div>
 				</div>
 				<div class='more'>查看更多信息>></div>
 			</div>
@@ -139,7 +140,8 @@ $(function(){
 		"image" : {
 			"viewList" : [ "qzone", "tsina", "tqq", "renren", "weixin" ],
 			"viewText" : "分享到：",
-			"viewSize" : "16"
+			"viewSize" : "16",
+			"tag" : "sharePhoto",
 		},
 		"selectShare" : {
 			"bdContainerClass" : null,

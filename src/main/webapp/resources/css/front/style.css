@@ -157,8 +157,8 @@ ul li{list-style: none}
 .tuijian .right .lis li .ims{height: 182px}
 .tuijian .right .lis li.active{
 	box-shadow: 0px 3px 8px #808080;
-	-moz-box-shadow:0px 3px 8px #808080;/*firefox*/
 	-webkit-box-shadow:0px 3px 8px #808080;/*webkit*/
+	-moz-box-shadow:0px 3px 8px #808080;/*firefox*/
 }
 .tuijian .right .lis .rights{width: 618px;background: #fff;height: 182px;padding-left: 14px;padding-right: 26px;}
 .tuijian .right .lis .tits {margin-top: 8px}

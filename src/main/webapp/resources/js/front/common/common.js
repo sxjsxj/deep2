@@ -1108,17 +1108,17 @@ var FrontCommonFunction = {
 			}
 		}
 	 },
-	 limitTextLineNum: function(str, $el, maxLineNum, extraLabel) {
+	 limitTextLineNum: function($el, str, moreInfoId,id) {
 		 // $el 必须声明 lineheight 属性
-		 extraLabel = extraLabel || '<a href="#" style="color:blue;" onclick="doMoreInfo(\''+moreInfoUrl+'\')">' + '&gt;&gt;详细' + '</a>';
+		 var moreInfoUrl = $(moreInfoId).attr('url')+"?id="+id;
+		 var extraLabel = '<a href="#" style="color:blue;" onclick="doMoreInfo(\''+moreInfoUrl+'\')">' + '&gt;&gt;详细' + '</a>';
 
-		 var realHeight = $el.height();
-		 var limitHeight = $el.css('line-height') * maxLineNum;
-		 var $temp = $el.clone();
+		 var maxLineNum = 4;
+		 var limitHeight = parseInt($el.css('line-height')) * maxLineNum;
 		 var strTemp = '';
 		 var ti = str.length;
 		 var cutTail = function(str, $el) {
-			 str = str.substr(0, str.length - 2);
+			 str = str.substr(0, str.length - 1);
 			 var strTemp = str + extraLabel;
 			 $el.html(strTemp);
 			 if($el.height() > limitHeight) {
@@ -1128,9 +1128,9 @@ var FrontCommonFunction = {
 		 }
 		 for (i = 0; i < ti; i++) {
 			 strTemp += str[i];
-			 $temp.html(strTemp);
-			 if ($temp.height() > limitHeight) {
-				 strTemp = cutTail(strTemp, $temp);
+			 $el.html(strTemp);
+			 if ($el.height() > limitHeight) {
+				 strTemp = cutTail(strTemp, $el);
 				 break;
 			 }
 		 }

@@ -256,11 +256,13 @@ ul li{list-style: none}
 	-moz-box-shadow:0px 3px 8px #808080;/*firefox*/
 	-webkit-box-shadow:0px 3px 8px #808080;/*webkit*/
 }
+.listd .lis .list-no-img .rights, .listd .lis .list-no-img .f{ width: 860px;}
+.listd .lis .list-no-img .rights { padding-left: 20px; padding-right: 20px;}
 .listd .lis .rights{position: relative; width: 618px;background: #fff;height: 182px;padding-left: 14px;padding-right: 26px;}
 .listd .lis .tits {margin-top: 8px}
 .listd .lis .tits .fl{color: #626262;font-size: 24px;}
 .listd .lis .tits .fr{color: #254e77;font-size: 14px; }
-.listd .lis .cs{font-size: 14px;color: #535353;margin-top: 10px}
+.listd .lis .cs{font-size: 14px;line-height: 18px; color: #535353;margin-top: 7px}
 .listd .lis .cs a{color: #7ba6da}
 .listd .lis .f { height: 38px;
     position: absolute;

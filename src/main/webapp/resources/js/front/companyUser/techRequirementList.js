@@ -49,7 +49,7 @@ function initAmountDemandListManager() {
 		}).get().join(',');
 		$("#domainId").val(text);
 	});
-	
+
 	//研发类型
 	$("#checkBoxType [id^=typeCheckBox]").click(function() {
 		//typeCheckBox固定长度是12
@@ -65,8 +65,8 @@ function initAmountDemandListManager() {
 		}).get().join(',');
 		$("#typeId").val(text);
 	});
-	
-	
+
+
 	//投资额
 	$("#checkBoxAmount [id^=amountCheckBox]").click(function() {
 		//amountCheckBox固定长度是14
@@ -82,8 +82,8 @@ function initAmountDemandListManager() {
 		}).get().join(',');
 		$("#amountId").val(text);
 	});
-	
-	
+
+
 	//合作方式
 	$("#checkBoxCooperationType [id^=cooperationTypeCheckBox]").click(function() {
 		//cooperationTypeCheckBox固定长度是23
@@ -99,7 +99,7 @@ function initAmountDemandListManager() {
 		}).get().join(',');
 		$("#cooperationTypeId").val(text);
 	});
-	
+
 	//状态
 	$("#statusCheckBox").click(function() {
 		if($("#statusCheckBoxValue").hasClass("on")){
@@ -112,7 +112,7 @@ function initAmountDemandListManager() {
 			 $("#statusId").val("1,2");
 		}
 	});
-	
+
 	//页面加载查询
 	queryParam = getData();
 	query(queryParam);
@@ -137,16 +137,16 @@ function query(param) {
 	requestParamTemp['currentPage'] = $('#currentPage').val();
 	requestParamTemp['maxRecordPerPage'] = FrontCommonFunction.maxRecordPerPage;
 	FrontCommonFunction.baseOptions['data'] = requestParamTemp;
-	
+
 	FrontCommonFunction.baseOptions['success'] = function(datas) {
 		var queryReturnList = datas.queryReturnList;
 		if (queryReturnList === null || queryReturnList.length === 0) {
 			$('#noResult').html('<font color="red">未查询到符合条件的记录！</font>');
 			return;
-		} 
-		for(var i = 0; i < queryReturnList.length; i++) {	
+		}
+		for(var i = 0; i < queryReturnList.length; i++) {
 			var moreInfoUrl = $("#techRequirementMoreInfo").attr('url')+"?id="+queryReturnList[i].id;
-			var li = '<div id="shaDowShow'+i+'"  class="mydiv1" onmouseout="delShaDowClass('+i+')" onmouseover="addShaDowClass('+i+')"><li>'
+			var li = '<div id="shaDowShow'+i+'"  class="mydiv1 list-no-img" onmouseout="delShaDowClass('+i+')" onmouseover="addShaDowClass('+i+')"><li>'
 			var imgUrl="";
 			var temli='';
 			var logoUrl =queryReturnList[i].logoUrl;
@@ -157,20 +157,20 @@ function query(param) {
 				imgUrl="../resources/images/front/img/jishuxuqu.png";
 				temli='<a href="'+moreInfoUrl+'"><div class="fl ims">'+'<img style="width:240px;height:182px" src="'+imgUrl+'"/>'+"</div></a>"
 			}
+
 			li+='<input type="hidden" id="operateId'+i+'" value="'+queryReturnList[i].id+'"/>'
 			//li+=temli;
 			li+='<a href="'+moreInfoUrl+'"><div class="fl ims"><div class="fl rights">'
 			li+="<div class='tits'>"
 			li+="<div class='fl'>"+FrontCommonFunction.replaceNull(queryReturnList[i].name)+"</div>"
-			li+="<div class='fr'>"+FrontCommonFunction.setType(queryReturnList[i].type)+"</div>"	
+			li+="<div class='fr'>"+FrontCommonFunction.setType(queryReturnList[i].type)+"</div>"
 			li+="<div class='clear'></div>"
 			li+="</div></a>"
 			li+='<a href="'+moreInfoUrl+'"><div class="cs">'
-			li+=FrontCommonFunction.getResultMaitText(queryReturnList[i].detail,80,"#techRequirementMoreInfo",queryReturnList[i].id)
 			li+="</div></a>"
 			li+="<div class='f'>"
-			li+='<a href="'+moreInfoUrl+'"><div style="margin-top:58px" class="fl">'+FrontCommonFunction.setDomain(queryReturnList[i].domain)+"&nbsp;&nbsp;"+FrontCommonFunction.replaceNull(queryReturnList[i].companyUserResultModel.province)+"&nbsp;&nbsp;"+FrontCommonFunction.setAmount(queryReturnList[i].amount)+"&nbsp;&nbsp;"+FrontCommonFunction.setRequirementStatus(queryReturnList[i].status)+"</div></a>"
-			li+='<div class="fr" style="margin-top:55px"">'	
+			li+='<a href="'+moreInfoUrl+'"><div class="fl">'+FrontCommonFunction.setDomain(queryReturnList[i].domain)+"&nbsp;&nbsp;"+FrontCommonFunction.replaceNull(queryReturnList[i].companyUserResultModel.province)+"&nbsp;&nbsp;"+FrontCommonFunction.setAmount(queryReturnList[i].amount)+"&nbsp;&nbsp;"+FrontCommonFunction.setRequirementStatus(queryReturnList[i].status)+"</div></a>"
+			li+='<div class="fr">'
 			li+=cooperateCollectFlagDiv(queryReturnList[i], i)
 			li+="</div>"
 			li+="</div>"
@@ -178,6 +178,9 @@ function query(param) {
 			li+="<div class='clear'></div>"
 			li+='</li></div>';
 			$("#techRequirementListQuery").append(li);
+
+			var $el = $("#techRequirementListQuery").find(".cs:last-child");
+			FrontCommonFunction.limitTextLineNum($el, queryReturnList[i].detail,"#techRequirementMoreInfo",queryReturnList[i].id);
 		}
 		if (queryReturnList.length !== 0) {
 			FrontCommonFunction.pagination(datas.pagination.sumPage, '#currentPage', '#pagination', that, 'query');
@@ -191,7 +194,7 @@ function query(param) {
 
 function getData() {
 	var paramTemp = {};
-	
+
 	var companyUserQueryModel = {};
 	var techRequirementQueryModel={};
 	var searchHeaderName=$('#searchHeaderName').val();
@@ -249,22 +252,22 @@ function getData() {
 		if(haiwai!==""){
 			str+=haiwai+",";
 		}
-		
-		var ar2 = str.split(","); 
-		var array = new Array(); 
-		var j=0 
-		for(var i=0;i<ar2.length;i++){ 
-			if((array == "" || array.toString().match(new RegExp(ar2[i],"g")) == null)&&ar2[i]!=""){ 
-			array[j] =ar2[i]; 
-			array.sort(); 
-			j++; 
-			} 
-		} 
+
+		var ar2 = str.split(",");
+		var array = new Array();
+		var j=0
+		for(var i=0;i<ar2.length;i++){
+			if((array == "" || array.toString().match(new RegExp(ar2[i],"g")) == null)&&ar2[i]!=""){
+			array[j] =ar2[i];
+			array.sort();
+			j++;
+			}
+		}
 		companyUserQueryModel['province']=array.toString();
 	}
-	getDefaultQuery('companyUser', '1', companyUserQueryModel); 
+	getDefaultQuery('companyUser', '1', companyUserQueryModel);
 	paramTemp['companyUserQueryModel']=companyUserQueryModel;
-	getDefaultQuery('techRequirement', '1', techRequirementQueryModel); 
+	getDefaultQuery('techRequirement', '1', techRequirementQueryModel);
 	paramTemp['techRequirementQueryModel'] = techRequirementQueryModel;
 	if($('#statusId').val() !== '') {
 		techRequirementQueryModel['status']=$.trim($('#statusId').val());

@@ -160,9 +160,21 @@ function query(param) {
 				}
 			
 				li+="<div class='fl rights'>"
-				li+='<a href="'+moreInfoUrl+'"><div class="tits">'	
-				li+="<div class='fl'>"+FrontCommonFunction.replaceNull(queryReturnList[i].investorUserResultModel.name)+"</div>"
-				li+="<div class='fr'>"+FrontCommonFunction.setInbestorType(queryReturnList[i].investorUserResultModel.type)+"</div>"
+				li+='<a href="'+moreInfoUrl+'"><div class="tits">'	;
+				var userType=queryReturnList[i].investorUserResultModel.type;
+				//1是个人 显示contactName
+				var name="";
+				var introduction="";
+				if(userType=="1"){
+					name=FrontCommonFunction.replaceNull(queryReturnList[i].investorUserResultModel.contactName);
+					introduction=FrontCommonFunction.getResultMaitText(queryReturnList[i].investorUserResultModel.investExperience,80,"#investorUserMoreInfo",queryReturnList[i].id);
+				}else{
+					//0机构显示 name
+					name=FrontCommonFunction.replaceNull(queryReturnList[i].investorUserResultModel.name);
+					introduction=FrontCommonFunction.getResultMaitText(queryReturnList[i].investorUserResultModel.introduction,80,"#investorUserMoreInfo",queryReturnList[i].id);
+				}
+				li+="<div class='fl'>"+name+"</div>"
+				li+="<div class='fr'>"+FrontCommonFunction.setInbestorUserType(userType)+"</div>"
 				li+="<div class='clear'></div>"
 				li+="</div></a>"
 				li+="<div class='cs'>"	 
@@ -173,7 +185,7 @@ function query(param) {
 				li+="</div>"
 				li+="<div class='mod marginleft'>"
 				li+='<a href="'+moreInfoUrl+'"><div class="cs_tis">'+'简介:'+"</div></a>"
-				li+="<div class=''><a class='fl rems'></a><span class='fl'>"+'<a href="'+moreInfoUrl+'">'+FrontCommonFunction.getResultMaitText(queryReturnList[i].investorUserResultModel.introduction,80,"#investorUserMoreInfo",queryReturnList[i].investorUserResultModel.id)+"</a></span><div class='clear'></div></div>"
+				li+="<div class=''><a class='fl rems'></a><span class='fl'>"+'<a href="'+moreInfoUrl+'">'+introduction+"</a></span><div class='clear'></div></div>"
 				li+="</div>"
 				li+="<div class='clear'></div>"
 				li+="</div>"	 

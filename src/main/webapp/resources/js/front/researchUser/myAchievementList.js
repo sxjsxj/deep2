@@ -195,6 +195,7 @@ function query(param) {
 				li+="<div class='fl rights'>"
 				  li+='<a href="'+moreInfoUrl+'"><div class="tits">'
 			        li+="<div class='fl'>"+FrontCommonFunction.replaceNull(queryReturnList[i].name)+"</div>"
+					li+="<div class='fr'>"+FrontCommonFunction.setAchievementStatus(queryReturnList[i].status)+"</div>"
 			        li+="<div class='fr'>"+FrontCommonFunction.setInvestorPhase(queryReturnList[i].phase)+"</div>" 
 			        li+="<div class='clear'></div>"
 				  li+="</div></a>"

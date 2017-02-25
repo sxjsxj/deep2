@@ -18,7 +18,7 @@
 	<!-- 默认的注解映射的支持 -->  
 	<mvc:annotation-driven/>
 	<!-- Enables the Spring MVC @Controller programming model -->
-	<context:component-scan base-package="com.deep.two.*">
+	<context:component-scan base-package="com.deep.two.controller">
 	</context:component-scan>
 	<aop:aspectj-autoproxy proxy-target-class="true"/> 
 

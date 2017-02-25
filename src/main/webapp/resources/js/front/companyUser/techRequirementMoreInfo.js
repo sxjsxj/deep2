@@ -23,7 +23,7 @@ function getDeatil() {
 		$("#amount").html("研发经费："+FrontCommonFunction.setAmount(datas.amount));
 		$("#type").html("需求类型："+FrontCommonFunction.setType(datas.type));
 		$("#duration").html("研发周期："+FrontCommonFunction.setDuration(datas.duration));
-		$("#cooperationType").html("合作方式："+FrontCommonFunction.setMultiCooperationType(datas.cooperationType));
+		$("#cooperationType").html("合作方式："+setMultiCooperationType(datas.cooperationType));
 		$("#detail").html(FrontCommonFunction.replaceNull(datas.detail));
 		if(!datas.similarProduct) {
 			$("#similarProduct").html(FrontCommonFunction.replaceNull(datas.similarProduct));

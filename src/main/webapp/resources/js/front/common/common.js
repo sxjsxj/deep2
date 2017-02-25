@@ -495,6 +495,28 @@ var FrontCommonFunction = {
 		}
 		return result;
 	},
+	setUniversityType:function(dataObj){
+		var result = '';
+		if(dataObj === null || dataObj === 'null'||dataObj === undefined){
+			result = '';
+		} else {
+			var type = dataObj.type;
+			var project211 = dataObj.uniProject211;
+			var project985 = dataObj.uniProject985;
+			if(type==="0"){
+				if(project211 === '1') {
+					result ='211高校';
+				}
+				if(project985 === '1'){
+					result ='985高校';
+				}
+				if(project211 === '1' && project985 === '1') {
+					result ='211 985高校';
+				}
+			 }
+		}
+		return result;
+	},
 	setInbestorType:function(dataObj){
 		var result = '';
 		if(dataObj === null || dataObj === 'null'||dataObj === undefined){
@@ -958,7 +980,28 @@ var FrontCommonFunction = {
 			 }else if(dataObj==="1"){
 				 result = "审核通过";
 			 }else if(dataObj==="2"){
-				 result = "审核不通过";
+				 result = "未通过";
+			 }else{
+				 result= "其他";
+			 }
+		}
+		return result;
+	},
+	setAchievementStatus:function(dataObj){
+		var result = '';
+		if(dataObj === null || dataObj === 'null'||dataObj === undefined){
+			result = '';
+		} else {
+			if(dataObj==="0"){
+				result = "待审核";
+			 }else if(dataObj==="1"){
+				 result = "征集中";
+			 }else if(dataObj==="2"){
+				 result = "洽谈中";
+			 }else if(dataObj==="3"){
+				 result = "合作中";
+			 }else if(dataObj==="4"){
+				 result = "已完成";
 			 }else{
 				 result= "其他";
 			 }
@@ -1061,7 +1104,7 @@ var FrontCommonFunction = {
 					location.href = $('#exit').attr('href');
 				});
 			} else {
-				$.showTuiErrorDialog('发生通讯错误！');
+				alert('发生通讯错误！');
 			}
 		}
 	 },

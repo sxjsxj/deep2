@@ -67,6 +67,16 @@ function query(param) {
 			return;
 		} 
 		for(var i = 0; i < queryReturnList.length; i++) {	
+			var type=queryReturnList[i].researchUserResultModel.type;
+			var provinceName="";
+			if(type==="0"){
+				provinceName=FrontCommonFunction.replaceNull(queryReturnList[i].researchUserResultModel.uniProvince);
+			}else if(type==="1"){
+				provinceName=FrontCommonFunction.replaceNull(queryReturnList[i].researchUserResultModel.orgProvince);
+			}else if(type==="2"){
+				provinceName=FrontCommonFunction.replaceNull(queryReturnList[i].researchUserResultModel.orgProvince);
+			}
+			var universityType =  FrontCommonFunction.getUniversityType(queryReturnList[i].researchUserResultModel);
 			var moreInfoUrl = $("#researchGroupMoreInfo").attr('url')+"?id="+queryReturnList[i].id;
 			var li = '<div id="shaDowShow'+i+'"  class="mydiv1" onmouseout="delShaDowClass('+i+')" onmouseover="addShaDowClass('+i+')"><li>'
 				li+='<input type="hidden" id="operateId'+i+'" value="'+queryReturnList[i].id+'"/>'
@@ -80,7 +90,7 @@ function query(param) {
 				imgUrl="../resources/images/front/img/keyantuandui.png";
 				li+='<a href="'+moreInfoUrl+'"><div class="fl ims">'+'<img src="'+imgUrl+'" style="width:240px;height:182px;"/></div></a>'
 			}
-
+			
 			li+="<div class='fl rights'>"
 			li+='<a href="'+moreInfoUrl+'"><div class="tits">'	
 			li+="<div class='fl'>"+FrontCommonFunction.replaceNull(queryReturnList[i].name)+"</div>"
@@ -100,7 +110,7 @@ function query(param) {
 			li+="</div>"	 
 			li+="<div class='b'>"
 			li+='<a href="'+moreInfoUrl+'"><div style=" margin-top:35px" class="fl">'
-			li+="<span>"+FrontCommonFunction.setInvestorDomain(queryReturnList[i].domain)+"</span><span>"+FrontCommonFunction.replaceNull(queryReturnList[i].researchUserResultModel.uniCity)+"</span><span>"+FrontCommonFunction.setAmount(queryReturnList[i].amount)+"</span><span>"+FrontCommonFunction.setRequirementStatus(queryReturnList[i].status)+"</span>"
+			li+='<div style="margin-top:50px" class="fl"><a>'+'<a href="'+moreInfoUrl+'">'+FrontCommonFunction.setDomain(queryReturnList[i].domain) + "&nbsp;&nbsp;"+ universityType+ "&nbsp;&nbsp;"+provinceName+"</a></a></div>" 
 			li+="</div></a>"
 			li+='<div class="fr" style=" margin-top:25px">'	
 			li+='<div class="fl look">'

@@ -67,6 +67,7 @@ function query(param) {
 			}else if(type==="2"){
 				provinceName=FrontCommonFunction.replaceNull(queryReturnList[i].researchUserResultModel.orgProvince);
 			}
+			var universityType =  FrontCommonFunction.getUniversityType(queryReturnList[i].researchUserResultModel);
 			var moreInfoUrl = $("#researchGroupMoreInfo").attr('url')+"?id="+queryReturnList[i].id;
 			var li = '<div id="shaDowShow'+i+'"  class="mydiv1" onmouseout="delShaDowClass('+i+')" onmouseover="addShaDowClass('+i+')"><li>'
 				li+='<input type="hidden" id="operateId'+i+'" value="'+queryReturnList[i].id+'"/>'
@@ -97,7 +98,7 @@ function query(param) {
 				li+="<div class='clear'></div>"
 				li+="</div>"
 				li+="<div class='f'>"
-				li+='<div class="fl"><a>'+'<a href="'+moreInfoUrl+'">'+FrontCommonFunction.setDomain(queryReturnList[i].domain) + "&nbsp;&nbsp;" +provinceName+"</a></a></div>"
+				li+='<div class="fl"><a>'+'<a href="'+moreInfoUrl+'">'+FrontCommonFunction.setDomain(queryReturnList[i].domain) + "&nbsp;&nbsp;"+ universityType+ "&nbsp;&nbsp;"+provinceName+"</a></a></div>"
 				li+='<div class="fr">'
 				li+=cooperateCollectFlagDiv(queryReturnList[i], i)
 				li+="</div>"

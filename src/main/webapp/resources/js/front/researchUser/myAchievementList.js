@@ -195,6 +195,7 @@ function query(param) {
 				li+="<div class='fl rights'>"
 				  li+='<a href="'+moreInfoUrl+'"><div class="tits">'
 			        li+="<div class='fl'>"+FrontCommonFunction.setTextSize(queryReturnList[i].name, 20, '...')+"</div>"
+					li+="<div class='fr'>"+FrontCommonFunction.setAchievementStatus(queryReturnList[i].status)+"</div>"
 			        li+="<div class='fr'>"+FrontCommonFunction.setInvestorPhase(queryReturnList[i].phase)+"</div>"
 			        li+="<div class='clear'></div>"
 				  li+="</div></a>"

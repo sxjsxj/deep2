@@ -67,6 +67,16 @@ function query(param) {
 			return;
 		}
 		for(var i = 0; i < queryReturnList.length; i++) {
+			var type=queryReturnList[i].researchUserResultModel.type;
+			var provinceName="";
+			if(type==="0"){
+				provinceName=FrontCommonFunction.replaceNull(queryReturnList[i].researchUserResultModel.uniProvince);
+			}else if(type==="1"){
+				provinceName=FrontCommonFunction.replaceNull(queryReturnList[i].researchUserResultModel.orgProvince);
+			}else if(type==="2"){
+				provinceName=FrontCommonFunction.replaceNull(queryReturnList[i].researchUserResultModel.orgProvince);
+			}
+			var universityType =  FrontCommonFunction.getUniversityType(queryReturnList[i].researchUserResultModel);
 			var moreInfoUrl = $("#researchGroupMoreInfo").attr('url')+"?id="+queryReturnList[i].id;
 			var li = '<div id="shaDowShow'+i+'"  class="mydiv1" onmouseout="delShaDowClass('+i+')" onmouseover="addShaDowClass('+i+')"><li>'
 				li+='<input type="hidden" id="operateId'+i+'" value="'+queryReturnList[i].id+'"/>'
@@ -101,13 +111,11 @@ function query(param) {
 			li+="<div class='b'>"
 			li+='<a href="'+moreInfoUrl+'"><div class="fl">'
 			if(queryReturnList[i].domain)
-				li+="<span>"+FrontCommonFunction.setInvestorDomain(queryReturnList[i].domain)+"</span>"
-			if(queryReturnList[i].researchUserResultModel.uniCity)
-				li+="<span>"+FrontCommonFunction.replaceNull(queryReturnList[i].researchUserResultModel.uniCity)+"</span>"
-			if(queryReturnList[i].amount)
-				li+="<span>"+FrontCommonFunction.setAmount(queryReturnList[i].amount)+"</span>"
-			if(queryReturnList[i].status)
-				li+="<span>"+FrontCommonFunction.setRequirementStatus(queryReturnList[i].status)+"</span>"
+				li+="<span>"+FrontCommonFunction.setDomain(queryReturnList[i].domain)+"</span>"
+			if(universityType)
+				li+="<span>"+universityType+"</span>"
+			if(provinceName)
+				li+="<span>"+provinceName+"</span>"
 			li+="</div></a>"
 			li+='<div class="fr">'
 			li+='<div class="fl look">'

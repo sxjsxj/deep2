@@ -231,7 +231,7 @@ ul li{list-style: none}
 
 
 /*列表页*/
-.listd {margin-top: 0px}
+.listd {position:relative;margin-top: 0px}
 .listd .ts{color: #535353;font-size: 21px;margin-top: 18px;margin-bottom: 12px}
 .listd .ts2{color: #349fc4;font-size: 21px;margin-bottom: 10px}
 .listd .heads,.listlastmore .heads{width: 1200px;background: #fff;padding-top: 38px;margin-top: 24px;padding-bottom: 10px}

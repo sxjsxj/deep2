@@ -54,6 +54,7 @@ function query(param) {
 				+ '<td>'+ CommonFunction.setDetail(queryReturnList[i].content) +'</td>'
                 + '<td>'+ CommonFunction.setCommunicateStatus(queryReturnList[i].communicateStatus) +'</td>'
                 + '<td>'+ CommonFunction.setDetail(queryReturnList[i].remark) +'</td>'
+                + '<td>'+ CommonFunction.setRemoveFlag(queryReturnList[i].removeFlag) +'</td>'
                 + '</tr>';
 			$('#achievementFollowerQueryTBody').append(achievementFollowerQueryTBodyTr);
 		}

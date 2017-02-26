@@ -53,10 +53,9 @@ function query(param) {
 				+'<td>'+ CommonFunction.setRelationType(queryReturnList[i].id.relationType) +'</td>'
 				+'<td>'+CommonFunction.setStrInvestorFollowerType(queryReturnList[i].followerType)+'</td>'
 				+ '<td>'+ CommonFunction.setDetail(queryReturnList[i].content) +'</td>'
-				 +'<td name="communicateStatus" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].communicateStatus) +'</td>'
 				+ '<td>'+ CommonFunction.setCommunicateStatus(queryReturnList[i].communicateStatus) +'</td>'
-				+ '<td class="hidden" name="remark">'+ CommonFunction.replaceNull(queryReturnList[i].remark) +'</td>'
 	            + '<td>'+ CommonFunction.setDetail(queryReturnList[i].remark) +'</td>'
+                + '<td>'+ CommonFunction.setRemoveFlag(queryReturnList[i].removeFlag) +'</td>'
                 + '</tr>';
 			$('#investorFollowerQueryTBody').append(investorFollowerQueryTBodyTr);
 		}

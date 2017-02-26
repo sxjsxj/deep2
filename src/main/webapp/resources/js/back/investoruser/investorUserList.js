@@ -114,20 +114,12 @@ function query(param) {
 		for(var i = 0; i < queryReturnList.length; i++) {	
 			var investorUserQueryTBodyTr = '<tr class="gradeX">'
 				+ '<td><input type="checkbox" /></td>'
-				+'<td name="id" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].id) +'</td>'
+				+'<td name="id">'+CommonFunction.replaceNull(queryReturnList[i].id) +'</td>'
 				+'<td name="recommendFlag" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].recommendFlag) +'</td>'
 				+'<td name="seqNum" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].seqNum) +'</td>'
 				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].userModel.id) +'</td>'
 				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].userModel.email) +'</td>'
 				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].userModel.telno) +'</td>'
-				+'<td>'+CommonFunction.getDate(queryReturnList[i].userModel.whenCreate) +'</td>'
-				+'<td>'+CommonFunction.getDate(queryReturnList[i].userModel.whenLastLogin) +'</td>'
-				 +'<td name="status" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].status) +'</td>'
-				+'<td>'+CommonFunction.setStatus(queryReturnList[i].status) +'</td>'
-				 +'<td name="communicateStatus" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].communicateStatus) +'</td>'
-				+'<td>'+CommonFunction.setCommunicateStatus(queryReturnList[i].communicateStatus) +'</td>'
-				  + '<td class="hidden" name="remark">'+ CommonFunction.replaceNull(queryReturnList[i].userModel.remark) +'</td>'
-				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].userModel.remark) +'</td>'
 				+ '<td>'+ CommonFunction.replaceNull(queryReturnList[i].name) +'</td>'
 				+ '<td>'+ CommonFunction.replaceNull(queryReturnList[i].province) +'</td>'
 	            + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].city) +'</td>'
@@ -146,9 +138,15 @@ function query(param) {
 				+ '<td>'+ CommonFunction.setStrInvestType(queryReturnList[i].investType) +'</td>'
                 + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].fundType) +'</td>'
                 + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].investArea) +'</td>'
-                + '<td>'+ CommonFunction.setDetail(queryReturnList[i].investOutline) +'</td>';
-                investorUserQueryTBodyTr += CommonFunction.getAttach(queryReturnList[i]);
-				investorUserQueryTBodyTr += '</tr>';
+                + '<td>'+ CommonFunction.setDetail(queryReturnList[i].investOutline) +'</td>'
+                + CommonFunction.getAttach(queryReturnList[i])
+                +'<td>'+CommonFunction.getDate(queryReturnList[i].userModel.whenCreate) +'</td>'
+				+'<td>'+CommonFunction.getDate(queryReturnList[i].userModel.whenLastLogin) +'</td>'
+				+'<td>'+CommonFunction.setStatus(queryReturnList[i].status) +'</td>'
+				+'<td>'+CommonFunction.setCommunicateStatus(queryReturnList[i].communicateStatus) +'</td>'
+				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].userModel.remark) +'</td>'
+                + '<td>'+ CommonFunction.setRemoveFlag(queryReturnList[i].removeFlag) +'</td>'
+				+ '</tr>';
 			$('#investorUserQueryTBody').append(investorUserQueryTBodyTr);
 		}
 		if (queryReturnList.length !== 0) {

@@ -12,10 +12,10 @@
                 <column name="role_id" length="50" />
             </key-property>
         </composite-id>
-        <many-to-one name="user" class="com.deep.two.orm.User" update="false" insert="false" fetch="select">
+        <many-to-one name="user" class="com.deep.two.orm.User" update="false" insert="false" fetch="join">
             <column name="user_id" length="50" not-null="true" />
         </many-to-one>
-        <many-to-one name="role" class="com.deep.two.orm.Role" update="false" insert="false" fetch="select">
+        <many-to-one name="role" class="com.deep.two.orm.Role" update="false" insert="false" fetch="join">
             <column name="role_id" length="50" not-null="true" />
         </many-to-one>
         <property name="enabled" type="string">

@@ -14,6 +14,9 @@ $(document).ready(function() {
 		}else if(userType==="2"){
 			var url = $('#investorUserCenter').attr('url');
 			location.href=url;
+		}else if(userType==="3"){
+			var url = $('#adminUserCenter').attr('url');
+			location.href=url;
 		}
 	});
 });

@@ -45,68 +45,51 @@ function initMyAchievementManager() {
 
 	//审核状态页
 	$('#child0').click(function() {
-		$('#childtagValue').val("5");
+		$('#childtagValue').val("-1");
+		$('[id^=child]').removeClass("active");
 		$('#child0').addClass("active");
-		$('#child1').removeClass("active");
-		$('#child2').removeClass("active");
-		$('#child3').removeClass("active");
-		$('#child4').removeClass("active");
-		$('#child5').removeClass("active");
 		$('#currentPage').val('1');
 	    query(queryParam);
     });
 	$('#child1').click(function() {
 		$('#childtagValue').val("0");
+		$('[id^=child]').removeClass("active");
 		$('#child1').addClass("active");
-		$('#child0').removeClass("active");
-		$('#child2').removeClass("active");
-		$('#child3').removeClass("active");
-		$('#child4').removeClass("active");
-		$('#child5').removeClass("active");
 		$('#currentPage').val('1');
 	    query(queryParam);
     });
 	$('#child2').click(function() {
 		$('#childtagValue').val("1");
+		$('[id^=child]').removeClass("active");
 		$('#child2').addClass("active");
-		$('#child1').removeClass("active");
-		$('#child0').removeClass("active");
-		$('#child3').removeClass("active");
-		$('#child4').removeClass("active");
-		$('#child5').removeClass("active");
 		$('#currentPage').val('1');
 	    query(queryParam);
     });
 	$('#child3').click(function() {
 		$('#childtagValue').val("2");
+		$('[id^=child]').removeClass("active");
 		$('#child3').addClass("active");
-		$('#child1').removeClass("active");
-		$('#child2').removeClass("active");
-		$('#child0').removeClass("active");
-		$('#child4').removeClass("active");
-		$('#child5').removeClass("active");
 		$('#currentPage').val('1');
 	    query(queryParam);
     });
 	$('#child4').click(function() {
 		$('#childtagValue').val("3");
+		$('[id^=child]').removeClass("active");
 		$('#child4').addClass("active");
-		$('#child1').removeClass("active");
-		$('#child2').removeClass("active");
-		$('#child3').removeClass("active");
-		$('#child0').removeClass("active");
-		$('#child5').removeClass("active");
 		$('#currentPage').val('1');
 	    query(queryParam);
     });
 	$('#child5').click(function() {
 		$('#childtagValue').val("4");
+		$('[id^=child]').removeClass("active");
 		$('#child5').addClass("active");
-		$('#child1').removeClass("active");
-		$('#child2').removeClass("active");
-		$('#child3').removeClass("active");
-		$('#child4').removeClass("active");
-		$('#child0').removeClass("active");
+		$('#currentPage').val('1');
+	    query(queryParam);
+    });
+	$('#child6').click(function() {
+		$('#childtagValue').val("5");
+		$('[id^=child]').removeClass("active");
+		$('#child6').addClass("active");
 		$('#currentPage').val('1');
 	    query(queryParam);
     });
@@ -152,6 +135,7 @@ function query(param) {
 		var child3=0;
 		var child4=0;
 		var child5=0;
+		var child6=0;
 		for(var i = 0; i < queryReturnList.length; i++) {
 			var status=queryReturnList[i].status;
 			if(status=== '0'){
@@ -164,6 +148,8 @@ function query(param) {
 				child4++;
 			}else if(status=== '4'){
 				child5++;
+			}else if(status=== '5'){
+				child6++;
 			}
 
 			var type=queryReturnList[i].researchGroupResultModel.researchUserResultModel.type;
@@ -267,12 +253,13 @@ function query(param) {
 		var cf=$("#child0FlagFirst").val();
 		if(cf==="0"){
 			$("#child0FlagFirst").val("1");
-			$("#child0").html("所有项目（"+queryReturnList.length+"）");
-			$("#child1").html("待审核（"+child1+"）");
-			$("#child2").html("征集中（"+child2+"）");
-			$("#child3").html("洽谈中（"+child3+"）");
-			$("#child4").html("合作中（"+child4+"）");
-			$("#child5").html("已完成（"+child5+"）");
+			$("#child0").html("所有项目("+queryReturnList.length+")");
+			$("#child1").html("待审核("+child1+")");
+			$("#child2").html("征集中("+child2+")");
+			$("#child3").html("洽谈中("+child3+")");
+			$("#child4").html("合作中("+child4+")");
+			$("#child5").html("已完成("+child5+")");
+			$("#child6").html("已拒绝("+child6+")");
 		}
 
 		if (queryReturnList.length !== 0) {
@@ -307,7 +294,7 @@ function getData() {
 
 	var achievementQueryModel = {};
 	getDefaultQuery('achievement', '2', achievementQueryModel);
-	if(status!=="5"){
+	if(status!=="-1"){
 		achievementQueryModel['status']=status;
 	}
 	paramTemp['achievementQueryModel']=achievementQueryModel;

@@ -964,6 +964,8 @@ var FrontCommonFunction = {
 				 result = "合作中";
 			 }else if(dataObj==="4"){
 				 result = "已完成";
+			 }else if(dataObj==="5"){
+				 result = "已拒绝";
 			 }else{
 				 result= "其他";
 			 }
@@ -1002,6 +1004,8 @@ var FrontCommonFunction = {
 				 result = "合作中";
 			 }else if(dataObj==="4"){
 				 result = "已完成";
+			 }else if(dataObj==="5"){
+				 result = "已拒绝";
 			 }else{
 				 result= "其他";
 			 }

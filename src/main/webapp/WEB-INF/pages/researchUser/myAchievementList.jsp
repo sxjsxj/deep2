@@ -140,12 +140,13 @@
 				<ul class='nav2'>
 				    <input type="hidden" id="childtagValue" value="5"/>
 					&nbsp;&nbsp;&nbsp;
-					<li id="child0"></li>
-					<li id="child1"></li>
-					<li id="child2"></li>
-					<li id="child3"></li>
-					<li id="child4"></li>
-					<li id="child5"></li>
+					<li id="child0">所有项目(0)</li>
+					<li id="child1">待审核(0)</li>
+					<li id="child2">征集中(0)</li>
+					<li id="child3">洽谈中(0)</li>
+					<li id="child4">合作中(0)</li>
+					<li id="child5">已完成(0)</li>
+					<li id="child6">已拒绝(0)</li>
 				</ul>
 				<ul class='con lis' id="myAchievementQuery">
 

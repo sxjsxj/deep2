@@ -11,10 +11,8 @@
  */
 package com.deep.two.dao.util;
 
-import java.beans.PropertyDescriptor;
 import java.io.File;
 import java.lang.reflect.Method;
-
 import com.deep.two.util.ViewException;
 
 /**
@@ -51,6 +49,16 @@ public class UrlProcessUtil {
             Method m = t.getClass().getMethod("setAttachUrl", String.class);
             if (m != null) {
                 m.invoke(t, path+File.separator+id+File.separator+name);
+            }
+        } catch (Exception e) {
+            ViewException tmp = new ViewException();
+            tmp.initCause(e);
+            throw tmp;
+        }
+		try {
+            Method m = t.getClass().getMethod("setAttachName", String.class);
+            if (m != null) {
+                m.invoke(t, name);
             }
         } catch (Exception e) {
             ViewException tmp = new ViewException();

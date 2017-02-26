@@ -45,7 +45,7 @@ function getDefaultQuery(type, subType, queryParam) {
 			queryParam['status'] = '1,2,3,4';
 			queryParam['removeFlag'] = '0';
 		} else if(subType == '2') {
-			queryParam['status'] = '0,1,2,3,4';
+			queryParam['status'] = '0,1,2,3,4,5';
 			queryParam['removeFlag'] = '0';
 		}else if(subType == '3') {
 			queryParam['status'] = '1,2';
@@ -61,7 +61,7 @@ function getDefaultQuery(type, subType, queryParam) {
 			//queryParam['status'] = '1,2,3,4';
 			queryParam['removeFlag'] = '0';
 		} else if(subType == '2') {
-			//queryParam['status'] = '0,1,2,3,4';
+			//queryParam['status'] = '0,1,2,3,4,5';
 			queryParam['removeFlag'] = '0';
 		}else if(subType == '3') {
 			//queryParam['status'] = '1,2,3,4';
@@ -77,7 +77,7 @@ function getDefaultQuery(type, subType, queryParam) {
 			//queryParam['status'] = '1,2,3,4';
 			queryParam['removeFlag'] = '0';
 		} else if(subType == '2') {
-			//queryParam['status'] = '0,1,2,3,4';
+			//queryParam['status'] = '0,1,2,3,4,5';
 			queryParam['removeFlag'] = '0';
 		}else if(subType == '3') {
 			//queryParam['status'] = '1,2,3,4';
@@ -108,7 +108,7 @@ function getDefaultQuery(type, subType, queryParam) {
 			queryParam['status'] = '1,2,3,4';
 			queryParam['removeFlag'] = '0';
 		} else if(subType == '2') {
-			queryParam['status'] = '0,1,2,3,4';
+			queryParam['status'] = '0,1,2,3,4,5';
 			queryParam['removeFlag'] = '0';
 		}else if(subType == '3') {
 			queryParam['status'] = '1,2';
@@ -124,7 +124,7 @@ function getDefaultQuery(type, subType, queryParam) {
 			queryParam['status'] = '1,2,3,4';
 			queryParam['removeFlag'] = '0';
 		} else if(subType == '2') {
-			queryParam['status'] = '0,1,2,3,4';
+			queryParam['status'] = '0,1,2,3,4,5';
 			queryParam['removeFlag'] = '0';
 		}else if(subType == '3') {
 			queryParam['status'] = '1,2';
@@ -140,7 +140,7 @@ function getDefaultQuery(type, subType, queryParam) {
 			//queryParam['status'] = '1,2,3,4';
 			queryParam['removeFlag'] = '0';
 		} else if(subType == '2') {
-			//queryParam['status'] = '0,1,2,3,4';
+			//queryParam['status'] = '0,1,2,3,4,5';
 			queryParam['removeFlag'] = '0';
 		}else if(subType == '3') {
 			//queryParam['status'] = '1,2,3,4';
@@ -156,7 +156,7 @@ function getDefaultQuery(type, subType, queryParam) {
 			//queryParam['status'] = '1,2,3,4';
 			queryParam['removeFlag'] = '0';
 		} else if(subType == '2') {
-			//queryParam['status'] = '0,1,2,3,4';
+			//queryParam['status'] = '0,1,2,3,4,5';
 			queryParam['removeFlag'] = '0';
 		}else if(subType == '3') {
 			//queryParam['status'] = '1,2,3,4';
@@ -188,7 +188,7 @@ function getDefaultQuery(type, subType, queryParam) {
 			//queryParam['status'] = '1,2,3,4';
 			queryParam['removeFlag'] = '0';
 		} else if(subType == '2') {
-			//queryParam['status'] = '0,1,2,3,4';
+			//queryParam['status'] = '0,1,2,3,4,5';
 			queryParam['removeFlag'] = '0';
 		}else if(subType == '3') {
 			//queryParam['status'] = '1,2,3,4';

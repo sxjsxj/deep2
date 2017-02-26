@@ -203,6 +203,7 @@
 					<li id="child3">洽谈中(0)</li>
 					<li id="child4">合作中(0)</li>
 					<li id="child5">已完成(0)</li>
+					<li id="child6">已拒绝(0)</li>
 				</ul>
 				<ul class='con' id="requirementListQuery">
 

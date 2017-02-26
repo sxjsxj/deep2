@@ -14,12 +14,9 @@ package com.deep.two.dao;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
-
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
-
 import com.alibaba.fastjson.JSON;
 import com.deep.two.authority.model.CurrentUser;
 import com.deep.two.dao.util.CommonProcessUtil;

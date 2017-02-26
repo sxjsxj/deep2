@@ -1,4 +1,4 @@
- 
+
 /**
  * 寻求合作、收藏 图标
  * @param param
@@ -18,9 +18,9 @@ function cooperateCollectFlagDiv(param, i) {
 	}
 	return cooperli+collectli+cancelCollectli;
  }
- 
+
  /**
-  * listType: 列表类型- 
+  * listType: 列表类型-
   * research:科研成果或科研团
   * company:技术需求或资金需求
   * investor:投资方
@@ -50,7 +50,7 @@ function cooperateCollectFlagDiv(param, i) {
 		 $('[id^=cancelCollect]').hide();
 	 }
  };
- 
+
  /**
   * 收藏、取消合作、取消收藏
  * @param listType
@@ -67,7 +67,7 @@ function cooperateCollectActionControl(listType, addUrlId, cancelUrlId, ifRequer
 		$("#opeationIdIndex").val(idIndex);
 		$("#cooRemark").val("");
 	});
-	 
+
 	$('.anniu_submit-btn').unbind('click');
 	$('.anniu_submit-btn').click(function(){
 		if(!FrontCommonFunction.isLogin()){
@@ -82,7 +82,7 @@ function cooperateCollectActionControl(listType, addUrlId, cancelUrlId, ifRequer
 		setFollowerId(followerId, operateId, listType);
 		followerId['userId']=$("#commonUserLoginId").val();
 		followerId['relationType']='0';
-		
+
 		follower['id']=followerId;
 		follower['followerType']=getFollowerType();
 		follower['remark']=$("#cooRemark").val();
@@ -100,7 +100,7 @@ function cooperateCollectActionControl(listType, addUrlId, cancelUrlId, ifRequer
 			cooperation(reqParam,url);
 		}
 	});
-	 
+
 	$('[id^=collect]').click(function() {
 		if(!FrontCommonFunction.isLogin()){
 			FrontCommonFunction.loginProcess();
@@ -109,7 +109,7 @@ function cooperateCollectActionControl(listType, addUrlId, cancelUrlId, ifRequer
 		//collect固定长度7
 		var idIndex = $(this).attr('id').substring(7);
 		var operateId=$('#operateId'+idIndex).val();
-		
+
 		var follower = {};
 		var followerId = {};
 		setFollowerId(followerId, operateId, listType);
@@ -117,7 +117,7 @@ function cooperateCollectActionControl(listType, addUrlId, cancelUrlId, ifRequer
 		followerId['relationType']="1";
 		follower['id']=followerId;
 		follower['followerType']=getFollowerType();
-		
+
 		var reqParam={};
 		reqParam['str']=JSON.stringify(follower);
 		var url= '';
@@ -128,7 +128,7 @@ function cooperateCollectActionControl(listType, addUrlId, cancelUrlId, ifRequer
 		}
 		collect(reqParam,url,idIndex);
 	});
-		
+
 	//取消合作
 	$('[id^=cancelCooperate]').click(function() {
 		if(!FrontCommonFunction.isLogin()){
@@ -138,13 +138,13 @@ function cooperateCollectActionControl(listType, addUrlId, cancelUrlId, ifRequer
 		//collect固定长度7
 		var idIndex = $(this).attr('id').substring(15);
 		var operateId=$('#operateId'+idIndex).val();
-		
+
 		var followerIds = new Array();
 		var followerId = {};
 		setFollowerId(followerId, operateId,listType);
 		followerId['userId']=$("#commonUserLoginId").val();
 		followerId['relationType']="0";
-		
+
 		followerIds[0]=followerId;
 		var reqParam={};
 		reqParam['str']=JSON.stringify(followerIds);
@@ -156,7 +156,7 @@ function cooperateCollectActionControl(listType, addUrlId, cancelUrlId, ifRequer
 		}
 		cancel(reqParam, url, idIndex);
 	});
-	
+
 	//取消收藏
 	$('[id^=cancelCollect]').click(function() {
 		if(!FrontCommonFunction.isLogin()){
@@ -166,14 +166,14 @@ function cooperateCollectActionControl(listType, addUrlId, cancelUrlId, ifRequer
 		//collect固定长度13
 		var idIndex = $(this).attr('id').substring(13);
 		var operateId=$('#operateId'+idIndex).val();
-		
+
 		var followerIds = new Array();
 		var followerId = {};
-		
+
 		setFollowerId(followerId, operateId, listType);
 		followerId['userId']=$("#commonUserLoginId").val();
 		followerId['relationType']="1";
-		
+
 		followerIds[0] = followerId;
 		var reqParam={};
 		reqParam['str']=JSON.stringify(followerIds);
@@ -186,7 +186,7 @@ function cooperateCollectActionControl(listType, addUrlId, cancelUrlId, ifRequer
 		cancel(reqParam,url,idIndex,ifRequery, queryId);
 	});
  };
- 
+
  function cooperation(reqParam,url,idIndex){
 	FrontCommonFunction.baseOptions['url'] = url;
 	FrontCommonFunction.baseOptions['data'] = reqParam;
@@ -204,7 +204,7 @@ function cooperateCollectActionControl(listType, addUrlId, cancelUrlId, ifRequer
 	};
 	$.ajax(FrontCommonFunction.baseOptions);
 };
- 
+
  function collect(reqParam,url,idIndex){
 	FrontCommonFunction.baseOptions['url'] = url;
 	FrontCommonFunction.baseOptions['data'] = reqParam;
@@ -213,7 +213,7 @@ function cooperateCollectActionControl(listType, addUrlId, cancelUrlId, ifRequer
 			$('#altstwo').show();
 			setTimeout(function(){//5秒后隐藏
 				$('#altstwo').hide();
-			}, 1500);
+			}, 5000);
 			$('#collect'+idIndex).css('display','none');
 			$('#cancelCollect'+idIndex).css('display','');
 		}else{
@@ -252,7 +252,7 @@ function getFollowerType() {
 		return "0";
 	}
  };
- 
+
 function setFollowerId(followerId, operateId, listType) {
 	if(listType == 'researchGroup') {
 		followerId['researchId'] = operateId;

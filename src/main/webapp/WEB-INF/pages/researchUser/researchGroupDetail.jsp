@@ -6,9 +6,6 @@
 <body>
 	<%@ include file="/WEB-INF/pages/common/header.jsp" %>
 
-	<%-- <div class='banner'>
-		<img src='${pageContext.request.contextPath}/resources/images/front/img/banner.jpg' style="width:100%" height="100%" />
-	</div> --%>
 	<div class='cons'>
 		<div class='width1200'>
 		<%@ include file="/WEB-INF/pages/common/researchUserLeft.jsp" %>

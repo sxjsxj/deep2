@@ -51,6 +51,13 @@ ul li{list-style: none}
 .banner .bottombtxt img{margin-top: 4px}
 .banner .bottombtxt a{font-size: 14px;color:#fff;margin-top: 6px;margin-left: 4px;margin-right: 4px}
 .banner .bottombtxt span{font-size: 30px;color: #fff}
+.banner .list-text {text-align: center;
+    top: 66px;
+    width: 100%;
+    font-size: 22px;
+    text-shadow: 0px 3px 10px #ffffff;
+    color: #fff;
+    position: absolute;}
 .banner .hex{position: absolute;width: 720px;height: 109px;margin-left: 212px}
 .banner .hex .head_img{width: 109px;height: 109px;border-radius: 109px;margin-right: 10px}
 .banner .hex .hex_t{color: #254e77;font-size: 24px;margin-top: 15px}
@@ -459,7 +466,7 @@ ul li{list-style: none}
 .anniu_cancelguanzhu-btn:hover{background: #9d9d9d}
 
 .alert{min-height: 900px}
-#alts{height: 100%;width: 100%;background: rgba(83,83,83,0.6);left: 0px;top: 0px;z-index: 101;}
+#alts{position: relative; height: 100%;width: 100%;background: rgba(83,83,83,0.6);left: 0px;top: 0px;z-index: 101;}
 #alts .altsbg{width: 906px;height: 442px;border-radius: 8px;background: #fff;padding-top: 50px;
 	box-shadow: 0px 3px 8px #254e77;
 	-moz-box-shadow:0px 3px 8px #254e77;/*firefox*/
@@ -467,7 +474,14 @@ ul li{list-style: none}
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	margin: -246px 0 0 -453px
+	margin: -246px 0 0 -453px;
+	margin-left: -325px;
+	display: none;
+	margin-top: 100px;
+	width: 650px;
+	margin-left: -325px;
+	min-height: 260px;
+	height: auto;
 }
 #alts .altsbg .alts_ti{color: #535353;font-size: 20px;text-align: center;}
 #alts .altsbg .textarea{border: 1px solid #aac1d7;margin: 0 auto;margin-top: 10px;height: 292px;width: 707px;}
@@ -490,7 +504,8 @@ ul li{list-style: none}
 #alts .altsubmit .consa .txt{margin-left: 15px}
 #alts .altsubmit .consa p{color: #254e77;font-size: 24px}
 
-.xuqiualert{width: 900px;min-height: 560px;border-radius: 8px;background: #fff;
+.xuqiualert{
+	min-height: 560px;border-radius: 8px;background: #fff;
 	box-shadow: 0px 3px 8px #254e77;
 	-moz-box-shadow:0px 3px 8px #254e77;/*firefox*/
 	-webkit-box-shadow:0px 3px 8px #254e77;/*webkit*/
@@ -498,6 +513,7 @@ ul li{list-style: none}
 	left: 50%;
 	top: 50%;
 	margin: -280px 0 0 -450px;
+	margin-left: -370px; /* 行内宽度740 */
 }
 
 .xuqiualert .tits{font-size: 24px;color:#959595;text-align: center;height: 98px;line-height: 98px;position: relative;}
@@ -603,3 +619,5 @@ text-indent: 12px;
 .aboutus .cn .cn_ti{color: #434343;font-size: 24px;font-weight: bold;margin-top: 72px;padding-bottom: 26px;border-bottom: 1px solid #959595}
 .aboutus .cn .ims{margin-top: 32px;margin-bottom: 25px}
 .aboutus .cn .cn_t{color: #535353;font-size: 14px;margin-bottom: 15px;line-height: 30px}
+
+.dialog {position: relative;z-index: 1;}

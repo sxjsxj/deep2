@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-	    
+
 	  <div id='alts'>
-		<div style="display:none;margin-top:0px;width:650px;min-height:260px;height:auto" class='altsbg'>
+		<div class='altsbg'>
 			<div class='alts_ti'>合作意向说明</div>
 			<div class='' >
 				<textarea style="width:520px;height:120px;margin-left:65px;" id="cooRemark"></textarea>
@@ -43,9 +43,9 @@
 			<br />
 		</div>
 	</div> -->
-	
+
 		<!-- version4 点击发布需求弹框start -->
-			<div id="altsthree" style="display:none">
+			<div id="altsthree" class="dialog" style="display:none">
 				<div class='xuqiualert' style="width:740px;margin-top:15px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
 					<div class='tits'>
 						操作失败
@@ -65,9 +65,9 @@
 				</div>
 			</div>
 			<!-- version4 点击发布需求弹框end -->
-			
+
 			<!-- version3 点击发布需求弹框start -->
-			<div id="altstwo" style="display:none">
+			<div id="altstwo" class="dialog" style="display:none">
 				<div class='xuqiualert' style="width:740px;margin-top:15px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
 					<div class='tits'>
 						操作成功
@@ -88,7 +88,7 @@
 			</div>
 			<!-- version3 点击发布需求弹框end -->
 			<!-- nologin 点击发布需求弹框start -->
-			<div id="nologin" style="display:none">
+			<div id="nologin" class="dialog" style="display:none">
 				<div class='xuqiualert' style="width:740px;margin-top:15px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
 					<div class='tits'>
 						没有登录

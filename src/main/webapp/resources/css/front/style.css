@@ -467,21 +467,22 @@ ul li{list-style: none}
 
 .alert{min-height: 900px}
 #alts{position: relative; height: 100%;width: 100%;background: rgba(83,83,83,0.6);left: 0px;top: 0px;z-index: 101;}
-#alts .altsbg{width: 906px;height: 442px;border-radius: 8px;background: #fff;padding-top: 50px;
-	box-shadow: 0px 3px 8px #254e77;
-	-moz-box-shadow:0px 3px 8px #254e77;/*firefox*/
-	-webkit-box-shadow:0px 3px 8px #254e77;/*webkit*/
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	margin: -246px 0 0 -453px;
-	margin-left: -325px;
-	display: none;
-	margin-top: 100px;
-	width: 650px;
-	margin-left: -325px;
-	min-height: 260px;
-	height: auto;
+#alts .altsbg{
+    border-radius: 8px;
+    background: #fff;
+    padding-top: 50px;
+    box-shadow: 0px 3px 8px #254e77;
+    -moz-box-shadow: 0px 3px 8px #254e77;
+    -webkit-box-shadow: 0px 3px 8px #254e77;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -325px;
+    margin-top: -153px;
+    width: 650px;
+    margin-left: -325px;
+    min-height: 260px;
+    height: auto;
 }
 #alts .altsbg .alts_ti{color: #535353;font-size: 20px;text-align: center;}
 #alts .altsbg .textarea{border: 1px solid #aac1d7;margin: 0 auto;margin-top: 10px;height: 292px;width: 707px;}

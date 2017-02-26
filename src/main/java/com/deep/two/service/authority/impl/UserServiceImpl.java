@@ -273,4 +273,21 @@ public class UserServiceImpl implements UserService {
         user.setPassword(md5Password);
         return new DMLResultModel(DMLResultModel.SUCCESS);
 	}
+
+	@Override
+	public DMLResultModel insertAdminUser(UserModel model, CurrentUser userExtend) throws ViewException {
+		Assert.notNull(model, "model对象不能为空");
+        helper = new UserHelper(model, daoUtil);
+        helper.check();
+        RoleModel roleModel = new RoleModel();
+        if (model.getUserType() != null) {
+        	roleModel.setId(model.getUserType().trim());
+        }
+        model.getRoleModels().add(roleModel);
+        User orm = helper.modelToOrm(userExtend);
+        CommonProcessUtil.setCommon(orm, userExtend);
+        this.daoUtil.insert(orm);
+        this.insertRole(orm);
+        return new DMLResultModel(DMLResultModel.SUCCESS);
+	}
 }

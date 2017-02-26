@@ -372,7 +372,10 @@ var CommonFunction = {
 	},
 	getAttach:function(param) {
 		var attachUrl = param.attachUrl;
-		var attachName = param.attachName;
+		var attachName = '';
+		if(param.attachName) {
+			attachName = param.attachName;
+		}
 		if(!this.isNull(attachUrl)) {
 			return '<td>'+ '<a href="'+$('#downFile').attr('url')+'?path='+attachUrl+'">'+attachName+'</a>' +'</td>';
 		}else {

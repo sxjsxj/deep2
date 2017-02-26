@@ -105,6 +105,32 @@ body,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6,table,tr,th,td,p,input,dl,dt,dd,ul,ol,l
 				<font  style="font-size:12px";color="blue">只能选择一条审核数据！</font>
 			</div>
 			
+			<div align="center" id="addAdminDialog" title="新建管理员用户">
+				<div>
+					<div title="基本信息" style="height: 100%;">
+						<table>
+							<tr>
+								<td colspan="3">
+								<font size="3px" color="blue">邮箱:</font>
+								<input type="text" name="email" value="0" id="email" style="width: 12px" />
+								</td>
+							</tr>
+							<tr>
+								<td colspan="3">
+								<font size="3px" color="blue">密码:</font>
+								<input type="password" name="password" id="password" value="0" style="width: 12px" />
+								</td>
+							</tr>
+						    <tr>
+								<td colspan="3">
+								<font size="3px" color="blue">手机号:</font>
+								<input type="text" name="telno" id="telno" value="0" style="width: 12px" />
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+           </div>
             <!-- 审核弹框start -->
             <div id="review-open-dialog"></div>
             <div align="center" id="reviewDialog" title="审核信息">
@@ -179,10 +205,10 @@ body,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6,table,tr,th,td,p,input,dl,dt,dd,ul,ol,l
 									<input type="checkbox" name="communicateStatus" class="communicateStatus" value="4" id="cstMobile" style="width: 12px" />暂无合作意向
 									<input id="communicateStatusId" type="hidden" />
 									<br/>
+									<a id="addAdminBtn" url="../security/user/addAdmin" class="btn btn-info btn-mini">新建管理员用户</a>
 									<a id="searchBtn" url="../security/user/query" class="btn btn-info btn-mini">查询</a>
 									<a href="javascript:void(0)" url="../security/user/delete" id="removeBtn" class="btn btn-danger btn-mini"><i class="icon-remove icon-white"></i>删除</a>
 									<a href="javascript:void(0)" url="../security/user/approve" id="reviewBtn"   class="btn btn-success btn-mini">审核</a>
-									<a id="addAdminBtn" href="userAdd.html" class="btn btn-info btn-mini">新建管理员用户</a>
 						</div>
 					</div>
 				</div>

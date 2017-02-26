@@ -6,17 +6,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
-		<link rel="stylesheet" href="css/fullcalendar.css" />	
+        <link rel="stylesheet" href="css/jquery-ui.css" />
+        <link rel="stylesheet" href="css/jquery.gritter.css" />
+		<link rel="stylesheet" href="css/uniform.css" />
+		<link rel="stylesheet" href="css/select2.css" />		
 		<link rel="stylesheet" href="css/unicorn.main.css" />
 		<link rel="stylesheet" href="css/unicorn.grey.css" class="skin-color" />
-		<style>
+		<link rel="stylesheet" href="css/pagination.css" />
+		<input id="currentPage" type="hidden" value="1"></input>
+			<style>
 body,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6,table,tr,th,td,p,input,dl,dt,dd,ul,ol,li,input,textarea { font-family:"微软雅黑"!important;font-weight:bold;font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;word-break:keep-all;
 				white-space:nowrap;}
 		</style>
 	</head>
-	<body>
-	    <div>
-			<div id="header">
+	<body>	
+		<div id="header">
 			<h1><a href="./dashboard.html">Unicorn Admin</a></h1>		
 		</div>
 		
@@ -75,102 +79,64 @@ body,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6,table,tr,th,td,p,input,dl,dt,dd,ul,ol,l
 			<a href="#red" style="background-color: #673232;"></a>
             <a href="#red-green" style="background-image: url('img/demo/red-green.png');background-repeat: no-repeat;"></a>
 		</div>
-		</div>
+		
 		<div id="content">
 			<div id="content-header">
-				<h1>首页</h1>
-				<!-- <div class="btn-group">
-					<a class="btn btn-large tip-bottom" title="Manage Files"><i class="icon-file"></i></a>
-					<a class="btn btn-large tip-bottom" title="Manage Users"><i class="icon-user"></i></a>
-					<a class="btn btn-large tip-bottom" title="Manage Comments"><i class="icon-comment"></i><span class="label label-important">5</span></a>
-					<a class="btn btn-large tip-bottom" title="Manage Orders"><i class="icon-shopping-cart"></i></a>
-				</div> -->
+				<h1>用户管理</h1>
 			</div>
 			<div id="breadcrumb">
 				<a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 后台管理</a>
-				<a href="#" class="current">首页</a>
+				<a href="#" class="current">用户管理</a>
 			</div>
-			<div class="container-fluid">
-				<div class="row-fluid">
-					<div class="span12 center" style="text-align: center;">					
-						<ul class="stat-boxes">
-							<li class="popover-visits">
-								<div class="left peity_bar_good"><span>2,4,9,7,12,10,12</span>+10%</div>
-								<div class="right">
-									<strong>36094</strong>
-									Visits
-								</div>
-							</li>
-							<li class="popover-users">
-								<div class="left peity_bar_neutral"><span>20,15,18,14,10,9,9,9</span>0%</div>
-								<div class="right">
-									<strong>1433</strong>
-									Users
-								</div>
-							</li>
-							<li class="popover-orders">
-								<div class="left peity_bar_bad"><span>3,5,9,7,12,20,10</span>-50%</div>
-								<div class="right">
-									<strong>8650</strong>
-									Orders
-								</div>
-							</li>
-							<li class="popover-tickets">
-								<div class="left peity_line_good"><span>12,6,9,23,14,10,17</span>+70%</div>
-								<div class="right">
-									<strong>2968</strong>
-									Tickets
-								</div>
-							</li>
-						</ul>
-					</div>	
-				</div>
-				<div class="row-fluid">
-					<div class="span12">
-						<div class="alert alert-info">
-							欢迎登陆信息管理系统
-							<!-- <a href="#" data-dismiss="alert" class="close">×</a> -->
+			
+		<form id="userListForm">
+			<div class="row-fluid">
+				<div class="span12">
+					<div class="widget-box">
+						<div class="widget-content">
+							<br>&nbsp&nbsp邮箱：<input type="text" id="email" name="email" style="width: 180px" /></br>
+							<br>&nbsp&nbsp密码：<input type="password" name="password" id="password" style="width: 180px" /></br>
+							<br>&nbsp&nbsp类型：<span>管理员</span></br>
+							<br>手机号：<input type="text" id="telno" name="telno" style="width: 180px" /></br>
+							<a align="center" id="adminUserAdd" url="../security/user/addAdmin" class="btn btn-info btn-mini">新建管理员</a>
 						</div>
-						<div class="widget-box">
-							<div class="widget-title"><span class="icon"><i class="icon-signal"></i></span><h5>Site Statistics</h5><div class="buttons"><a href="#" class="btn btn-mini"><i class="icon-refresh"></i> Update stats</a></div></div>
-							<div class="widget-content">
-								<div class="row-fluid">
-								<div class="span4">
-									<ul class="site-stats">
-										<li><i class="icon-user"></i> <strong>1433</strong> <small>Total Users</small></li>
-										<li><i class="icon-arrow-right"></i> <strong>16</strong> <small>New Users (last week)</small></li>
-										<li class="divider"></li>
-										<li><i class="icon-shopping-cart"></i> <strong>259</strong> <small>Total Shop Items</small></li>
-										<li><i class="icon-tag"></i> <strong>8650</strong> <small>Total Orders</small></li>
-										<li><i class="icon-repeat"></i> <strong>29</strong> <small>Pending Orders</small></li>
-									</ul>
-								</div>
-								<div class="span8">
-									<div class="chart"></div>
-								</div>	
-								</div>							
-							</div>
-						</div>					
-					</div>
-				</div>
-				<div class="row-fluid">
-					<div id="footer" class="span12">
-						2012 - 2013 &copy; Unicorn Admin. Brought to you by <a href="#">diablo9983</a>
 					</div>
 				</div>
 			</div>
-		</div>
-		
-
-            <script src="js/excanvas.min.js"></script>
-            <script src="js/jquery.min.js"></script>
-            <script src="js/jquery.ui.custom.js"></script>
-            <script src="js/bootstrap.min.js"></script>
-            <script src="js/jquery.flot.min.js"></script>
-            <script src="js/jquery.flot.resize.min.js"></script>
-            <script src="js/jquery.peity.min.js"></script>
-            <script src="js/fullcalendar.min.js"></script>
-            <script src="js/unicorn.js"></script>
-            <script src="js/unicorn.dashboard.js"></script>
+	   </form>
+	 </div>
+	        
+      <script src="js/jquery.min.js"></script>
+      <script src="js/jquery-ui.custom.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/jquery.uniform.js"></script>
+       <script src="js/jquery.gritter.min.js"></script>
+      <script src="js/jquery.peity.min.js"></script>
+      <script src="js/jquery.dataTables.min.js"></script>
+      <script src="js/unicorn.js"></script>
+      <script src="js/unicorn.interface.js"></script>
+     <script src="../resources/js/back/usermanager/userAdd.js"></script>
+      <script src="../resources/js/back/common/common.js"></script>
+            
 	</body>
 </html>
+<script>
+   //查询条件
+	$('.userType').change(function(){
+		$('#userTypeId').val($('.userType:checked').map(function(){return this.value}).get().join(','))
+	})
+	$('.status').change(function(){
+		$('#statusId').val($('.status:checked').map(function(){return this.value}).get().join(','))
+	})
+	$('.communicateStatus').change(function(){
+		$('#communicateStatusId').val($('.communicateStatus:checked').map(function(){return this.value}).get().join(','))
+	})
+	//审核
+	$('.reviwCommunicateStatus').change(function(){
+		$('#reviewCommunicateStatusId').val($('.reviwCommunicateStatus:checked').map(function(){return this.value}).get().join(','))
+	})
+		
+	$('.reviewStatus').change(function(){
+		$('#reviewStatusId').val($('.reviewStatus:checked').map(function(){return this.value}).get().join(','))
+	})
+</script>

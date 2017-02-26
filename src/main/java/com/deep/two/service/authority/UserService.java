@@ -1,11 +1,6 @@
 package com.deep.two.service.authority;
 
 import java.util.List;
-
-import org.springframework.transaction.annotation.Isolation;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
-
 import com.deep.two.authority.model.CurrentUser;
 import com.deep.two.authority.model.PasswordModel;
 import com.deep.two.authority.model.UserModel;
@@ -49,4 +44,6 @@ public interface UserService {
 	DMLResultModel insertInvestorUser(InvestorUserModel model, CurrentUser user) throws ViewException;
 
 	DMLResultModel insertCompanyUser(CompanyUserModel model, CurrentUser currentUser) throws ViewException;
+
+	DMLResultModel insertAdminUser(UserModel model, CurrentUser currentUser)  throws ViewException;
 }

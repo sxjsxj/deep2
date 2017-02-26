@@ -88,6 +88,21 @@ public class UserController extends BaseController<UserModel> implements Templat
         return dmlResultModel;
     }
     
+    @RequestMapping("addAdmin")
+    @ResponseBody
+    public DMLResultModel addAdmin(@RequestParam("str")String str) {
+        DMLResultModel dmlResultModel = new DMLResultModel();
+        UserModel model = null;
+        try {
+        	model = JSONUtil.jsonToModel(str, UserModel.class, null);
+        	dmlResultModel = userService.insertAdminUser(model, getCurrentUser());
+        } catch (ViewException e) {
+            LOGGER.error(e.getMessage(), e);
+            dmlResultModel = e.getResultModel();
+        } 
+        return dmlResultModel;
+    }
+    
     @RequestMapping("addCompanyUser")
     @ResponseBody
     public DMLResultModel addCompanyUser(@RequestParam(value="file", required=false) MultipartFile[] files, @RequestParam("str")String str) {

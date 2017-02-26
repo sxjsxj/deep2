@@ -130,6 +130,7 @@ function initMyRequirementManager() {
 	    query(queryParam);
     });
 	//页面加载查询
+	$('#childtagValue').val("-1");
 	queryParam = getData();
 	query(queryParam);
 };

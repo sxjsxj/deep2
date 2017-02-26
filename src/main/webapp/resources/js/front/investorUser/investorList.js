@@ -182,7 +182,7 @@ function getData() {
 	var investorUserQueryModel={};
 	var searchHeaderName=$('#searchHeaderName').val();
 	if(searchHeaderName!==""){
-		investorQueryModel['name']=searchHeaderName;
+		investorUserQueryModel['name']=searchHeaderName;
 	}
 	investorUserQueryModel['investDomain']=$.trim($("#domainId").val());
 	investorUserQueryModel['investAmount']=$.trim($('#amountId').val());

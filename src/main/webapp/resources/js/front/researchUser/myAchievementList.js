@@ -94,6 +94,7 @@ function initMyAchievementManager() {
 	    query(queryParam);
     });
 	//页面加载查询
+	$('#childtagValue').val("-1");
 	query(queryParam);
 };
 

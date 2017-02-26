@@ -17,18 +17,18 @@ function getDeatil() {
 		}
 		var type = $('#commonInvestorUserType').val();
 		if(type == '0') {
-			$("#name").html(FrontCommonFunction.replaceNull(datas.name)); 
+			$("#name").html(FrontCommonFunction.replaceNull(datas.name));
 		}
 		if(type == '1') {
-			$("#name").html(FrontCommonFunction.replaceNull(datas.contactName)); 
+			$("#name").html(FrontCommonFunction.replaceNull(datas.contactName));
 		}
-		$("#investDomain").html("投资领域："+FrontCommonFunction.setInvestorDomain(datas.investDomain)); 
-		$("#investPhase").html("投资阶段："+FrontCommonFunction.setInvestorPhase(datas.investPhase)); 
-		$("#investOutline").html(FrontCommonFunction.replaceNull(datas.investOutline)); 
-		$("#investProvince").html(FrontCommonFunction.replaceNull(datas.province)); 
-		$("#investAmount").html("投资额："+FrontCommonFunction.setAmount(datas.investAmount)); 
+		$("#investDomain").html("投资领域："+FrontCommonFunction.setInvestorDomain(datas.investDomain));
+		$("#investPhase").html("投资阶段："+FrontCommonFunction.setInvestorPhase(datas.investPhase));
+		$("#investOutline").html(FrontCommonFunction.replaceNull(datas.investOutline));
+		$("#investProvince").html(FrontCommonFunction.replaceNull(datas.province));
+		$("#investAmount").html("投资额："+FrontCommonFunction.setAmount(datas.investAmount));
 		if(datas.introduction){
-			$("#introduction").html(FrontCommonFunction.replaceNull(datas.introduction)); 
+			$("#introduction").html(FrontCommonFunction.replaceNull(datas.introduction));
 		} else {
 			$("#introduction").hide();
 			$("#introductionTitle").hide();

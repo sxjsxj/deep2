@@ -27,14 +27,14 @@
 				<div class='stils'>
 					<a id="sequenceNumber"></a><a id="domain"></a><a id="status"></a><a id="scanNumber"></a><img src='${pageContext.request.contextPath}/resources/images/front/img/address.png'/>&nbsp;<a>山东</a>
 				</div> --%>
-				<div class='mortis'><span></span></div>
-				<div class='btns' style='margin-left:350px;' >
+				<%-- <div class='mortis'><span></span></div> --%>
+				<div class='btns' style='text-align:center;' >
 					<div style='margin-right: 20px;font-size:15px;'  id="collect">收藏</div>
 					<div style='margin-right:20px;font-size:15px;' id="cancelCollect">取消收藏</div>
 					<div id="cooperate" style="font-size:15px;" class="detail">寻求合作</div>
 				</div>
 				<!-- 分享控件start -->
-				<div style="margin-left:390px;margin-top:-40px;" class="bdsharebuttonbox">
+				<div style="margin: 0 auto;margin-top: -40px;width: 140px;padding-left: 8px;" class="bdsharebuttonbox">
 					<a href="#" class="bds_more" data-cmd="more"></a><a href="#"
 						class="bds_qzone" data-cmd="qzone"></a><a href="#"
 						class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq"

@@ -29,12 +29,12 @@
 						<div class='txts' id="sequenceNumber"></div>
 						<div class='txts' id="phase"></div>
 						<div class='txts'></div>
-						<div class='stils' style='margin-top:30px'>
+						<div class='stils' style='margin-top:17px'>
 							<a id="domain"></a><img src='${pageContext.request.contextPath}/resources/images/front/img/address.png'/>&nbsp;
 							<a id="provinceName"></a><a id="amount"></a><a id="status"></a><a id="scanNumber"></a>
 						</div>
-						<div class='mortis'><span></span></div>
-						<div style="margin-top:20px;margin-left:-2px;" class='btns' >
+						<%-- <div class='mortis'><span></span></div> --%>
+						<div style="margin-top:17px;margin-left:-2px;" class='btns' >
 							<div style='margin-right:20px;font-size:15px;' id="collect" >收藏</div>
 							<div style='margin-right:20px;font-size:15px;' id="cancelCollect">取消收藏</div>
 							<div  style="font-size:15px;" id="cooperate" class="detail">寻求合作</div>

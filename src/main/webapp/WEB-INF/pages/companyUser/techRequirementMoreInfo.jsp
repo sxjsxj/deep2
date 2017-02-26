@@ -32,12 +32,12 @@
 					<a id="scanNumber"></a><img src='${pageContext.request.contextPath}/resources/images/front/img/address.png'/>&nbsp;<a id="province"></a>
 				</div>
 				<!-- <div class='mortis'><span></span></div> -->
-				<div style="margin-left:342px;" class='btns'>
+				<div style="text-align: center;" class='btns'>
 					<div style='margin-right: 20px;font-size:15px;'  id="collect">收藏</div>
 					<div style='margin-right:20px;font-size:15px;' id="cancelCollect">取消收藏</div>
 					<div style="font-size:15px;" id="cooperate" class="detail">寻求合作</div>
 				</div>
-				<div style="margin-left:382px;margin-top:-40px;" class="bdsharebuttonbox">
+				<div style="margin: 0 auto;margin-top: -40px;width: 140px;padding-left: 8px;" class="bdsharebuttonbox">
 					<a href="#" class="bds_more" data-cmd="more"></a><a href="#"
 						class="bds_qzone" data-cmd="qzone"></a><a href="#"
 						class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq"
@@ -55,7 +55,7 @@
 				<div class='txt' id="duration"></div>
 				<div class='txt' id="cooperationType"></div>
 
-				
+
 				<div class='title' style='margin-top:30px'>需求描述</div>
 				<div class='txt' id="detail"></div>
 

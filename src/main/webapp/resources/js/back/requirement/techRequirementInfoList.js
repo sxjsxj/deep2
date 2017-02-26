@@ -119,10 +119,11 @@ function query(param) {
 				+'<td name="id" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].id) +'</td>'
 				+'<td name="recommendFlag" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].recommendFlag) +'</td>'
 				+'<td name="seqNum" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].seqNum) +'</td>'
+				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].id) +'</td>'
+				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].name) +'</td>'
 				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].companyUserResultModel.id) +'</td>'
 				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].companyUserResultModel.name) +'</td>'
 				+ '<td>'+ CommonFunction.replaceNull(queryReturnList[i].companyUserResultModel.province)+'/'+CommonFunction.replaceNull(queryReturnList[i].companyUserResultModel.city) +'</td>'
-				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].name) +'</td>'
 				+ '<td>'+ CommonFunction.setStrDomain(queryReturnList[i].domain) +'</td>'
 				+ '<td>'+ CommonFunction.replaceNull(queryReturnList[i].contactName) +'</td>'
 	            + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].contactTel) +'</td>'
@@ -134,15 +135,13 @@ function query(param) {
                 + '<td>'+ CommonFunction.setStrCooperationType(queryReturnList[i].cooperationType) +'</td>'
                 + '<td>'+ CommonFunction.setDetail(queryReturnList[i].similarProduct) +'</td>'
                 + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].sequenceNumber) +'</td>'
-                +'<td name="status" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].status) +'</td>'
+                + CommonFunction.getAttach(queryReturnList[i])
                 + '<td>'+ CommonFunction.setRequirementStatus(queryReturnList[i].status) +'</td>'
-                +'<td name="communicateStatus" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].communicateStatus) +'</td>'
                 + '<td>'+ CommonFunction.setCommunicateStatus(queryReturnList[i].communicateStatus) +'</td>'
-                + '<td class="hidden" name="remark">'+ CommonFunction.replaceNull(queryReturnList[i].remark) +'</td>'
                 + '<td>'+ CommonFunction.setDetail(queryReturnList[i].remark) +'</td>'
                 + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].concernNumber) +'</td>'
-                + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].scanNumber) +'</td>';
-				requirementQueryTBodyTr += CommonFunction.getAttach(queryReturnList[i]);
+                + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].scanNumber) +'</td>'
+                + '<td>'+ CommonFunction.setRemoveFlag(queryReturnList[i].removeFlag) +'</td>'
 				requirementQueryTBodyTr += '</tr>';
 			$('#requirementQueryTBody').append(requirementQueryTBodyTr);
 		}

@@ -49,15 +49,13 @@ function query(param) {
 				+ '<td><input type="checkbox" /></td>'
 				+'<td name="requirementId">'+CommonFunction.replaceNull(queryReturnList[i].id.requirementId) +'</td>'
 				+'<td name="userId">'+CommonFunction.replaceNull(queryReturnList[i].id.userId) +'</td>'
-				+'<td name="relationType" class="hidden">'+ queryReturnList[i].id.relationType +'</td>'
-				+ '<td>'+ CommonFunction.setRelationType(queryReturnList[i].id.relationType) +'</td>'
+				+ '<td name="relationType">'+ CommonFunction.setRelationType(queryReturnList[i].id.relationType) +'</td>'
 				+ '<td>'+ CommonFunction.setRequirementFollowerType(queryReturnList[i].followerType) +'</td>'
 				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].content) +'</td>'
-				+'<td name="communicateStatus" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].communicateStatus) +'</td>'
 				+ '<td>'+ CommonFunction.setCommunicateStatus(queryReturnList[i].communicateStatus) +'</td>'
-				+ '<td class="hidden" name="remark">'+ CommonFunction.replaceNull(queryReturnList[i].remark) +'</td>'
 				+ '<td>'+ CommonFunction.replaceNull(queryReturnList[i].remark) +'</td>'
-                + '</tr>';
+				+ '<td>'+ CommonFunction.setRemoveFlag(queryReturnList[i].removeFlag) +'</td>'
+				+ '</tr>';
 			$('#requirementFollowerQueryTBody').append(requirementFollowerQueryTBodyTr);
 		}
 		if (queryReturnList.length !== 0) {

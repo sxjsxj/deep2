@@ -2,7 +2,6 @@ package com.deep.two.controller.companyUser;
 
 import java.io.Serializable;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -12,14 +11,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.alibaba.fastjson.JSON;
 import com.deep.two.authority.model.CurrentUser;
 import com.deep.two.controller.BaseController;
 import com.deep.two.controller.TemplateController;
 import com.deep.two.controller.authority.SecurityController;
 import com.deep.two.dao.util.Pagination;
-import com.deep.two.model.query.QueryModel;
 import com.deep.two.model.query.companyUser.CompanyUserCombineQueryModel;
 import com.deep.two.model.result.DMLResultModel;
 import com.deep.two.model.result.QueryListReturnVo;

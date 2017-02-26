@@ -1,9 +1,7 @@
 package com.deep.two.controller.authority;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,9 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.alibaba.fastjson.JSON;
-import com.deep.two.authority.model.CurrentUser;
 import com.deep.two.authority.model.PasswordModel;
 import com.deep.two.authority.model.UserModel;
 import com.deep.two.controller.BaseController;
@@ -159,7 +155,7 @@ public class UserController extends BaseController<UserModel> implements Templat
         DMLResultModel dmlResultModel = new DMLResultModel();
         List<String> list = null;
         try {
-            list = JSONUtil.jsonToModel(str, List.class, null);
+            list = JSON.parseArray(str, String.class);
             dmlResultModel = userService.delete(list);
         } catch (ViewException e) {
             LOGGER.error(e.getMessage());
@@ -233,7 +229,7 @@ public class UserController extends BaseController<UserModel> implements Templat
         DMLResultModel dmlResultModel = new DMLResultModel();
         List<String> list = null;
         try {
-            list = JSONUtil.jsonToModel(str, List.class, null);
+            list = JSON.parseArray(str, String.class);
             dmlResultModel = userService.recoveryPassword(list, getCurrentUser());
         } catch (ViewException e) {
             LOGGER.error(e.getMessage());

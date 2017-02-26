@@ -22,6 +22,10 @@ public class CompanyUserResultModel implements ResultModel {
 	private String contactEmail;
 	private String contactTitle;
 	private String attachUrl;
+	private String status;
+	private String communicateStatus;
+	private String removeFlag;
+	private String attachName;
 	
 	public String getId() {
 		return id;
@@ -130,5 +134,29 @@ public class CompanyUserResultModel implements ResultModel {
 	}
 	public void setAttachUrl(String attachUrl) {
 		this.attachUrl = attachUrl;
+	}
+	public String getStatus() {
+		return this.status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public String getCommunicateStatus() {
+		return this.communicateStatus;
+	}
+	public void setCommunicateStatus(String communicateStatus) {
+		this.communicateStatus = communicateStatus;
+	}
+	public String getRemoveFlag() {
+		return this.removeFlag;
+	}
+	public void setRemoveFlag(String removeFlag) {
+		this.removeFlag = removeFlag;
+	}
+	public String getAttachName() {
+		return this.attachName;
+	}
+	public void setAttachName(String attachName) {
+		this.attachName = attachName;
 	}
 }

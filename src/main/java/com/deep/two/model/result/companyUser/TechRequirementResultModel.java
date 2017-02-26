@@ -24,6 +24,7 @@ public class TechRequirementResultModel extends FollowerModel implements ResultM
 	private String remark;
 	private Integer concernNumber;
 	private Integer scanNumber;
+	
 	public String getId() {
 		return id;
 	}

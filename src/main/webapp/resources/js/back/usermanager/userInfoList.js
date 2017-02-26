@@ -5,6 +5,7 @@ $(document).ready(function() {
 var queryParam = {};
 
 function initUserManager() {
+	//公共逻辑注册
 	commonAction();
 	query(queryParam);
 	$('#searchBtn').click(function() {
@@ -59,6 +60,7 @@ function query(param) {
                 + '<td>'+ CommonFunction.setCommunicateStatus(queryReturnList[i].communicateStatus) +'</td>'
                 + '<td class="hidden" name="remark">'+ CommonFunction.replaceNull(queryReturnList[i].remark) +'</td>'
                 + '<td>'+ CommonFunction.setRemark(queryReturnList[i].remark) +'</td>'
+                + '<td>'+ CommonFunction.setRemoveFlag(queryReturnList[i].removeFlag) +'</td>'
                 + '</tr>';
 			$('#userQueryTBody').append(userQueryTr);
 		}

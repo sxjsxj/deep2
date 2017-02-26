@@ -22,6 +22,10 @@ public class ResearchUserResultModel implements ResultModel {
 	private String orgCounty;
 	private String address;
 	private String introduction;
+	private String status;
+	private String communicateStatus;
+	private String removeFlag;
+	
 	public String getId() {
 		return id;
 	}
@@ -130,5 +134,23 @@ public class ResearchUserResultModel implements ResultModel {
 	}
 	public void setIntroduction(String introduction) {
 		this.introduction = introduction;
+	}
+	public String getStatus() {
+		return this.status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public String getCommunicateStatus() {
+		return this.communicateStatus;
+	}
+	public void setCommunicateStatus(String communicateStatus) {
+		this.communicateStatus = communicateStatus;
+	}
+	public String getRemoveFlag() {
+		return this.removeFlag;
+	}
+	public void setRemoveFlag(String removeFlag) {
+		this.removeFlag = removeFlag;
 	}
 }

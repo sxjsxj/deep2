@@ -92,13 +92,15 @@ public abstract class AbstractDAO<T> implements BaseDAO<T> {
     @Override
     public void delete(List<Serializable> list, CurrentUser user) throws ViewException {
     	for(Serializable id : list) {
+    		if(id == null || id.toString().equals("")) continue;
     		this.delete(id, user);
     	}
     }
     
     @Override
     public void delete(Serializable id, CurrentUser user) throws ViewException {
-    	daoUtil.deleteById(id, getCurrentClass());
+    	T t = this.daoUtil.queryById(this.getCurrentClass(), id);
+    	CommonProcessUtil.setRemoveFlag(t);
     }
     
     @Override

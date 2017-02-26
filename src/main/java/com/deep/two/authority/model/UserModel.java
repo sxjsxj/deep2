@@ -24,6 +24,7 @@ public class UserModel {
 	private String status;
 	private String communicateStatus;
 	private String remark;
+	private String removeFlag;
     private Set<RoleModel> roleModels = new HashSet<RoleModel>(0);
 
     public String getId() {
@@ -136,5 +137,13 @@ public class UserModel {
 
 	public void setValidateCode(String validateCode) {
 		this.validateCode = validateCode;
+	}
+
+	public String getRemoveFlag() {
+		return this.removeFlag;
+	}
+
+	public void setRemoveFlag(String removeFlag) {
+		this.removeFlag = removeFlag;
 	}
 }

@@ -14,12 +14,9 @@ package com.deep.two.dao.companyUser;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Criterion;
 import org.springframework.stereotype.Repository;
-
 import com.deep.two.authority.model.CurrentUser;
 import com.deep.two.authority.model.UserModel;
 import com.deep.two.dao.AbstractDAO;
@@ -35,11 +32,6 @@ import com.deep.two.model.query.companyUser.CompanyUserCombineQueryModel;
 import com.deep.two.model.result.QueryListReturnVo;
 import com.deep.two.model.result.ResultModel;
 import com.deep.two.model.result.companyUser.CompanyUserResultModel;
-import com.deep.two.model.result.researchUser.AchievementResultModel;
-import com.deep.two.model.result.researchUser.ResearchGroupResultModel;
-import com.deep.two.model.result.researchUser.ResearchUserResultModel;
-import com.deep.two.orm.Achievement;
-import com.deep.two.orm.AchievementFollower;
 import com.deep.two.orm.CompanyUser;
 import com.deep.two.util.CopyUtil;
 import com.deep.two.util.ViewException;

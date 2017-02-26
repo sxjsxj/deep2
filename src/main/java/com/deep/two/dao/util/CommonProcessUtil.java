@@ -143,4 +143,15 @@ public class CommonProcessUtil {
         	logger.error(e.getMessage(), e);
         }
     }
+    
+    public static <T> void setRemoveFlag(T t) throws ViewException {
+        try {
+            Method m1 = t.getClass().getMethod("setRemoveFlag", String.class);
+            if (m1 != null) {
+            	m1.invoke(t, "1");
+            }
+        } catch (Exception e) {
+        	logger.error(e.getMessage(), e);
+        }
+    }
 }

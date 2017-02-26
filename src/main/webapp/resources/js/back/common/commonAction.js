@@ -99,7 +99,7 @@ function commonFollowerAction(type) {
  				 });
  				var url = $('#removeBtn').attr('url');
  				var deleteParam = {};
- 				deleteParam['str']=idArray.join(",").replace(",,","");
+ 				deleteParam['str']=JSON.stringify(idList);
  				CommonFunction.baseOptions['url'] = url;
  				CommonFunction.baseOptions['data'] = deleteParam;
  				CommonFunction.baseOptions['success'] = function(datas) {
@@ -205,7 +205,7 @@ function commonAction() {
  				 });
  				var url = $('#removeBtn').attr('url');
  				var deleteParam = {};
- 				deleteParam['str']=idArray.join(",").replace(",,","");
+ 				deleteParam['str']=JSON.stringify(idArray);
  				CommonFunction.baseOptions['url'] = url;
  				CommonFunction.baseOptions['data'] = deleteParam;
  				CommonFunction.baseOptions['success'] = function(datas) {

@@ -434,13 +434,13 @@ var CommonFunction = {
 		if(uniNationalPriority === null || uniNationalPriority === 'null' || uniNationalPriority === undefined || uniNationalPriority ==="undefined"){
 			uniNationalPriority = '';
 		} 
-		if(uniProject211 === 0){
+		if(uniProject211 === '1'){
 			uniProject211 = '211高校';
 		} 
-		if(uniProject985 === 0){
+		if(uniProject985 === '1'){
 			uniProject985 = '985高校';
 		} 
-		if(uniNationalPriority === 0){
+		if(uniNationalPriority === '0'){
 			uniNationalPriority = '全国重点大学';
 		} 
 		result=uniProject211+uniProject985+uniNationalPriority;
@@ -613,6 +613,20 @@ var CommonFunction = {
 			result = '';
 		} else {
 			result=getResultMaitText(dataObj,15);
+		}
+		return result;
+	},
+	setRemoveFlag:function(dataObj){
+		var result = '';
+		if(dataObj === null || dataObj === 'null' || dataObj === undefined || dataObj ==="undefined"){
+			result = '';
+		} else {
+			if(dataObj === '0') {
+				result = '正常';
+			}
+			if(dataObj === '1') {
+				result= '已删除';
+			}
 		}
 		return result;
 	},

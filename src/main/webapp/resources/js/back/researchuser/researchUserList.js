@@ -85,14 +85,12 @@ function query(param) {
                 + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].userModel.id) +'</td>'
                 + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].userModel.email) +'</td>'
                 + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].userModel.telno) +'</td>'
+				+ '<td>'+ CommonFunction.setStatus(queryReturnList[i].status) +'</td>'
+                + '<td>'+ CommonFunction.setCommunicateStatus(queryReturnList[i].communicateStatus) +'</td>'
+                + '<td>'+ CommonFunction.setRemark(queryReturnList[i].userModel.remark) +'</td>'
                 + '<td>'+ CommonFunction.getDate(queryReturnList[i].userModel.whenCreate) +'</td>'
                 + '<td>'+ CommonFunction.getDate(queryReturnList[i].userModel.whenLastLogin) +'</td>'
-				+'<td name="status" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].status) +'</td>'
-				+ '<td>'+ CommonFunction.setStatus(queryReturnList[i].status) +'</td>'
-				+'<td name="communicateStatus" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].communicateStatus) +'</td>'
-                + '<td>'+ CommonFunction.setCommunicateStatus(queryReturnList[i].communicateStatus) +'</td>'
-                + '<td class="hidden" name="remark">'+ CommonFunction.replaceNull(queryReturnList[i].userModel.remark) +'</td>'
-                + '<td>'+ CommonFunction.setRemark(queryReturnList[i].userModel.remark) +'</td>'
+                + '<td>'+ CommonFunction.setRemoveFlag(queryReturnList[i].removeFlag) +'</td>'
                 + '</tr>';
 			$('#researchUserQueryTBody').append(researchUserQueryTBodyTr);
 		}

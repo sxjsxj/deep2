@@ -12,6 +12,14 @@ public class ResearchGroupFollowerResultModel implements ResultModel {
 	private String content;
 	private String communicateStatus;
 	private String remark;
+	private String removeFlag;
+	
+	public String getRemoveFlag() {
+		return this.removeFlag;
+	}
+	public void setRemoveFlag(String removeFlag) {
+		this.removeFlag = removeFlag;
+	}
 	
 	public ResearchGroupFollowerId getId() {
 		return id;

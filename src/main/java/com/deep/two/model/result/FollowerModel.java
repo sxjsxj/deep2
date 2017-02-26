@@ -19,7 +19,9 @@ public class FollowerModel {
 	 * 是否被逻辑删除
 	 */
 	private String removeFlag = "0";
-	
+	private String status;
+	private String communicateStatus;
+	private String attachName;
 	private String whoLastUpdate;
 	private Date whenCreate;
 	private String whoCreate;
@@ -84,5 +86,23 @@ public class FollowerModel {
 	}
 	public void setLogoUrl(String logoUrl) {
 		this.logoUrl = logoUrl;
+	}
+	public String getStatus() {
+		return this.status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public String getCommunicateStatus() {
+		return this.communicateStatus;
+	}
+	public void setCommunicateStatus(String communicateStatus) {
+		this.communicateStatus = communicateStatus;
+	}
+	public String getAttachName() {
+		return this.attachName;
+	}
+	public void setAttachName(String attachName) {
+		this.attachName = attachName;
 	}
 }

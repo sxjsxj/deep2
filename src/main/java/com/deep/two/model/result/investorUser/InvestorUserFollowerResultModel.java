@@ -12,6 +12,14 @@ public class InvestorUserFollowerResultModel  implements ResultModel {
 	private String content;
 	private String communicateStatus;
 	private String remark;
+	private String removeFlag;
+	
+	public String getRemoveFlag() {
+		return this.removeFlag;
+	}
+	public void setRemoveFlag(String removeFlag) {
+		this.removeFlag = removeFlag;
+	}
 	
 	public InvestorFollowerId getId() {
 		return id;

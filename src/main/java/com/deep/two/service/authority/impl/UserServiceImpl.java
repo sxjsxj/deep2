@@ -124,14 +124,17 @@ public class UserServiceImpl implements UserService {
     @Override
     public DMLResultModel delete(List<String> idList) throws ViewException {
         for (String id : idList) {
+        	if(StringUtil.isEmpty(id)) continue;
             User user = this.daoUtil.queryById(User.class, id);
             if (user == null) {
                 continue;
             }
-            for (UserRole cur : user.getUserRoles()) {
+            /*for (UserRole cur : user.getUserRoles()) {
                 cur.getRole().setUserRoles(null);
             }
-            this.daoUtil.delete(user);
+            this.daoUtil.delete(user);*/
+            user.setRemoveFlag("1");
+            this.daoUtil.update(user);
         }
         return new DMLResultModel(DMLResultModel.SUCCESS);
     }
@@ -233,6 +236,7 @@ public class UserServiceImpl implements UserService {
 	@Override
     public void approve(ApproveModel am, CurrentUser currentUser) throws ViewException{
 		for (Serializable id : am.getIdList()) {
+			if(id==null || id.toString().equals("")) continue;
     		User t = daoUtil.queryById(User.class, id);
     		StatusProcessUtil.setStatus(t, am.getStatus());
     		StatusProcessUtil.setCommunicateStatus(t, am.getCommunicateStatus());

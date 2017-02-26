@@ -5,23 +5,6 @@
 </head>
 <body>
 	<%@ include file="/WEB-INF/pages/common/header.jsp" %>
-	<!-- <div class='banner'>
-		<img src='${pageContext.request.contextPath}/resources/images/front/img/banner2.png' style="width:100%" height="100%" />
-		<div class='width1200'>
-			<div class='hex'>
-				<div class='head_img fl'><img src='${pageContext.request.contextPath}/resources/images/front/img/head_img.png'/></div>
-				<div class='fl'>
-					<div class='hex_t'>中国科学院</div>
-					<div class='hex_tx'>备注资料备注资料，备注资料备注资料备注资料备注资料，备注资料备注资料备注资料备注资料备注资料备注资料备注资料备注资料</div>
-				</div>
-				<div class='clear'></div>
-			</div>
-			<div class='right'>
-				<div class='btn'><a href=''>修改资料</a></div>
-				<div class='btn'><a href=''>退出</a></div>
-			</div>
-		</div>
-	</div> -->
 	<div class='cons info'>
 		<div class='width1200'>
 			<div class='fl left'>

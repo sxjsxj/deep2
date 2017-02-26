@@ -19,14 +19,7 @@
 
 	<div class='banner' style="margin-bottom:-135px;">
 		<img style="height:131px;width: 100%;" src='${pageContext.request.contextPath}/resources/images/front/img/banner.jpg' style="width:100%" height="100%" />
-		<%-- <div class='width1200'>
-			<div class='topbtxt'>唯有合作&nbsp;&nbsp;&nbsp;引领未来</div>
-			<div class='bottombtxt'>
-				<img src='${pageContext.request.contextPath}/resources/images/front/img/tel.png' class='fl'/>
-				<a class='fl'>专业服务热线：</a>
-				<span class='fl'>400-800-8989</span>
-			</div>
-		</div> --%>
+		<p class="list-text">让科技、资本和产业联合起来</p>
 	</div>
 	<input id="currentPage" type="hidden" value="1"></input>
     <input type="hidden" id="searchHeaderName" value="${headerName}"/>

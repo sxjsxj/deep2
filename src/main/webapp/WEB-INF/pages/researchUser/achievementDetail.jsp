@@ -6,17 +6,6 @@
 <body>
 	<%@ include file="/WEB-INF/pages/common/header.jsp" %>
 
-	<%-- <div class='banner'>
-		<img src='${pageContext.request.contextPath}/resources/images/front/img/banner.jpg' style="width:100%" height="100%" />
-		<div class='width1200'>
-			<div class='topbtxt'>唯有合作&nbsp;&nbsp;&nbsp;引领未来</div>
-			<div class='bottombtxt'>
-				<img src='${pageContext.request.contextPath}/resources/images/front/img/tel.png' class='fl'/>
-				<a class='fl'>专业服务热线：</a>
-				<span class='fl'>400-800-8989</span>
-			</div>
-		</div>
-	</div> --%>
 	<div class='cons'>
 		<div class='width1200'>
 		<jsp:include page="/WEB-INF/pages/common/researchUserLeft.jsp"></jsp:include>

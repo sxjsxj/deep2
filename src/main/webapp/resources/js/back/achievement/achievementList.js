@@ -70,11 +70,11 @@ function query(param) {
 		for(var i = 0; i < queryReturnList.length; i++) {	
 			var achievementQueryTBodyTr = '<tr class="gradeX">'
 				+ '<td><input type="checkbox" /></td>'
-				+'<td name="id" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].id) +'</td>'
+				+'<td name="id">'+CommonFunction.replaceNull(queryReturnList[i].id) +'</td>'
 				+'<td name="recommendFlag" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].recommendFlag) +'</td>'
 				+'<td name="seqNum" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].seqNum) +'</td>'
+				+ '<td>'+ CommonFunction.replaceNull(queryReturnList[i].researchGroupResultModel.id) +'</td>'
 				+ '<td>'+ CommonFunction.replaceNull(queryReturnList[i].researchGroupResultModel.name) +'</td>'
-				+ '<td>'+ CommonFunction.replaceNull(queryReturnList[i].logoUrl) +'</td>'
 				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].name) +'</td>'
 	            + '<td>'+ CommonFunction.setStrDomain(queryReturnList[i].domain) +'</td>'
 	            + '<td>'+ CommonFunction.setStrType(queryReturnList[i].type) +'</td>'
@@ -87,10 +87,9 @@ function query(param) {
                 + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].expectedEffect) +'</td>'
                 + '<td>'+ CommonFunction.setCaseNum(queryReturnList[i].caseNum) +'</td>'
                 + '<td>'+ CommonFunction.setDetail(queryReturnList[i].caseDetail) +'</td>'
-                + '<td>'+ CommonFunction.setStrCooperationType(queryReturnList[i].cooperationType) +'</td>';
-                achievementQueryTBodyTr += CommonFunction.getAttach(queryReturnList[i]);
-                achievementQueryTBodyTr = achievementQueryTBodyTr
+                + '<td>'+ CommonFunction.setStrCooperationType(queryReturnList[i].cooperationType) +'</td>'
                 + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].sequenceNumber) +'</td>'
+                + CommonFunction.getAttach(queryReturnList[i])
                 +'<td name="status" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].status) +'</td>'
                 + '<td>'+ CommonFunction.setRequirementStatus(queryReturnList[i].status) +'</td>'
                 +'<td name="communicateStatus" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].communicateStatus) +'</td>'
@@ -99,6 +98,7 @@ function query(param) {
                 + '<td>'+ CommonFunction.setDetail(queryReturnList[i].remark) +'</td>'
                 + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].concernNumber) +'</td>'
                 + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].scanNumber) +'</td>'
+                + '<td>'+ CommonFunction.setRemoveFlag(queryReturnList[i].removeFlag) +'</td>'
                 + '</tr>';
 			$('#achievementQueryTBody').append(achievementQueryTBodyTr);
 		}

@@ -108,22 +108,25 @@ function query(param) {
 				 name=queryReturnList[i].researchUserResultModel.uniName;
 				 provinceName=queryReturnList[i].researchUserResultModel.uniProvince;
 				 cityName=queryReturnList[i].researchUserResultModel.uniCity;
-				}else if(type==="1"){
-					 name=queryReturnList[i].researchUserResultModel.orgName;
-					 provinceName=queryReturnList[i].researchUserResultModel.orgProvince;
-					 cityName=queryReturnList[i].researchUserResultModel.orgCity;
-				}else if(type==="2"){
-					name=queryReturnList[i].researchUserResultModel.orgName;
-					 provinceName=queryReturnList[i].researchUserResultModel.orgProvince;
-					 cityName=queryReturnList[i].researchUserResultModel.orgCity;
-				}
+			}else if(type==="1"){
+				 name=queryReturnList[i].researchUserResultModel.orgName;
+				 provinceName=queryReturnList[i].researchUserResultModel.orgProvince;
+				 cityName=queryReturnList[i].researchUserResultModel.orgCity;
+			}else if(type==="2"){
+				name=queryReturnList[i].researchUserResultModel.orgName;
+				 provinceName=queryReturnList[i].researchUserResultModel.orgProvince;
+				 cityName=queryReturnList[i].researchUserResultModel.orgCity;
+			}
 			
 			var researchGroupQueryTBodyTr = '<tr class="gradeX">'
 				+ '<td><input type="checkbox" /></td>'
-				+'<td name="id" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].id) +'</td>'
+				+'<td name="id">'+CommonFunction.replaceNull(queryReturnList[i].id) +'</td>'
 				+'<td name="recommendFlag" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].recommendFlag) +'</td>'
 				+'<td name="seqNum" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].seqNum) +'</td>'
+				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].researchUserResultModel.id) +'</td>'
 				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].name) +'</td>'
+				+ '<td>'+ provinceName +'</td>'
+				+ '<td>'+ cityName +'</td>'
 				+ '<td>'+ CommonFunction.setStrDomain(queryReturnList[i].domain) +'</td>'
 				+ '<td>'+ CommonFunction.setDetail(queryReturnList[i].introduction) +'</td>'
 				+ '<td>'+ CommonFunction.replaceNull(queryReturnList[i].teamSize) +'</td>'
@@ -146,12 +149,10 @@ function query(param) {
 				+'<td name="status" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].status) +'</td>'
 				+ '<td>'+ CommonFunction.setStatus(queryReturnList[i].status) +'</td>'
 				 +'<td name="communicateStatus" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].communicateStatus) +'</td>'
-				+ '<td>'+ CommonFunction.setCommunicateStatus(queryReturnList[i].domain) +'</td>'
+				+ '<td>'+ CommonFunction.setCommunicateStatus(queryReturnList[i].communicateStatus) +'</td>'
 				+ '<td class="hidden" name="remark">'+ CommonFunction.replaceNull(queryReturnList[i].remark) +'</td>'
 				+ '<td>'+ CommonFunction.setDetail(queryReturnList[i].remark) +'</td>'
-				+ '<td>'+ name +'</td>'
-				+ '<td>'+ provinceName +'</td>'
-				+ '<td>'+ cityName +'</td>'
+                + '<td>'+ CommonFunction.setRemoveFlag(queryReturnList[i].removeFlag) +'</td>'
                 + '</tr>';
 			$('#researchGroupQueryTBody').append(researchGroupQueryTBodyTr);
 		}

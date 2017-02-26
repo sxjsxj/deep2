@@ -73,6 +73,8 @@ function commonFollowerAction(type) {
 	//调后台返回
 	$('#returnInfo-open-modal').click(function() {
 	});
+	$('#reviewstatus0').click();
+	$('#reviewCommunicateStatus0').click();
 	
 	$('#removeBtn').click(function() {
 		deleteinvestorUser();
@@ -181,7 +183,9 @@ function commonAction() {
 	//调后台返回
 	$('#returnInfo-open-modal').click(function() {
 	});
-	
+	$('#reviewstatus0').click();
+	$('#reviewCommunicateStatus0').click();
+		
 	$('#removeBtn').click(function() {
 		deleteinvestorUser();
 	});

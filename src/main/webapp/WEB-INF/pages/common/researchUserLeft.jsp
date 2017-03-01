@@ -15,7 +15,7 @@
 
 </head>
 <body>
-<div class="cons info" style="margin-top:10px;margin-bottom:0px;">
+<div class="cons info" style="margin-top:10px;margin-bottom:0px;width:220px;float:left">
 	<div class="width1200" >
 	<div class='fl left'>
 		<ul id="leftBtns">

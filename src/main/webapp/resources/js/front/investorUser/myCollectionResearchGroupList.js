@@ -146,7 +146,7 @@ function query(param) {
 				 li+="</div></a>"
 				li+="<div class='cs'>"
 				li+='<div class="mod borderright">'
-				li+='<a href="'+moreInfoUrl+'"><div class="cs_tis">'+"研究方向："+FrontCommonFunction.setInvestorDomain(queryReturnList[i].researchGroupResultModel.domain)+"</div></a>"
+				li+='<a href="'+moreInfoUrl+'"><div class="cs_tis">'+"研究方向："+queryReturnList[i].researchGroupResultModel.field+"</div></a>"
 				li+="<div class=''><a class='fl rems'></a>"+'<a href="'+moreInfoUrl+'"><span class="fl">'+"简介&nbsp;:&nbsp;"+FrontCommonFunction.getResultMaitText(queryReturnList[i].researchGroupResultModel.introduction,100,"#researchGroupMoreInfo",queryReturnList[i].researchGroupResultModel.id)+"</span></a><div class='clear'></div></div>"
 				li+="</div>"
 				li+='<div class="mod marginleft">'

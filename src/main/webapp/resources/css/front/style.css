@@ -103,6 +103,8 @@ ul li{list-style: none}
 	box-shadow: 0px 0px 5px #99cfe1;
 	-moz-box-shadow:0px 0px 5px #99cfe1;/*firefox*/
 	-webkit-box-shadow:0px 0px 5px #99cfe1;/*webkit*/
+	max-height: 200px;
+	overflow: auto;
 }
 .cons .right .xuqiu4 .input dl dd{height: 33px;line-height: 33px;color: #1b1b1b;font-size: 14px;}
 .cons .right .xuqiu4 .input dl dd:hover{background: #99cfe1;cursor: pointer;}
@@ -146,7 +148,7 @@ ul li{list-style: none}
 .footer .txt{font-size: 16px;color: #fff;line-height: 26px}
 
 .tuijian .right .title{color: #313131;font-size: 20px;margin-left: 82px}
-.tuijian .right .heads{width: 902px;background: #fff;padding-top: 38px;margin-left: 82px;margin-top: 24px;padding-bottom: 10px}
+.tuijian .right .heads{width: 902px;background: #fff;padding-top: 22px;margin-left: 82px;margin-top: 24px;padding-bottom: 10px}
 .tuijian .right .heads li{margin-bottom: 10px}
 .tuijian .right .heads .ti2{color: #254e77;font-size: 18px;width: 98px;text-align: right;margin-right: 20px;height: 24px;line-height: 24px}
 .tuijian .right .heads .list{margin-right: 24px;font-size: 14px;line-height: 24px}
@@ -332,7 +334,7 @@ ul li{list-style: none}
 .loginbg .loginkuang .reg{color: #fff;font-size: 16px;margin-top: 40px;margin-right:36px }
 .loginbg .loginkuang .username{margin-top: 50px;height: 50px}
 .loginbg .loginkuang .nams{font-size: 16px;color: #fff;line-height: 44px;margin-right: 2px;margin-left: 60px;width: 50px}
-.loginbg .loginkuang .input input{background: #fff;height: 44px;line-height: 44px;color: #959595;font-size: 14px;width: 304px;border-radius: 4px;text-indent: 12px;-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);outline: 0px;margin-right: 0px;}
+.loginbg .loginkuang .input input{background: #fff;height: 44px;line-height: 44px;color: #333;font-size: 14px;width: 304px;border-radius: 4px;text-indent: 12px;-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);outline: 0px;margin-right: 0px;}
 .loginbg .loginkuang .list .input input:focus{
 	border:1px solid #99cfe1;
 	box-shadow: 0px 0px 5px #99cfe1;
@@ -360,7 +362,7 @@ ul li{list-style: none}
 .loginbg2 .keyankuang ul.cons{margin-top: 0px;margin-left: 162px;margin-bottom: 0px}
 .loginbg2 .keyankuang ul.cons .names{width: 80px;color: 16px;color: #fff;text-align: right;margin-right: 8px}
 .loginbg2 .keyankuang ul.cons li{height: 40px;line-height: 40px;margin-bottom: 20px}
-.loginbg2 .keyankuang ul.cons input{background: #fff;height: 34px;line-height: 34px;color: #959595;font-size: 14px;width: 300px;border-radius: 4px;text-indent: 12px;-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);outline: 0px;margin-right: 0px;border-radius: 5px}
+.loginbg2 .keyankuang ul.cons input{background: #fff;height: 34px;line-height: 34px;color: #333;font-size: 14px;width: 300px;border-radius: 4px;text-indent: 12px;-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);outline: 0px;margin-right: 0px;border-radius: 5px}
 .loginbg2 .keyankuang ul.cons .list input:focus{
 	border:1px solid #99cfe1;
 	box-shadow: 0px 0px 5px #99cfe1;
@@ -379,12 +381,12 @@ ul li{list-style: none}
 .loginbg2 .keyankuang ul.cons .lis .input dl dd:hover{background: #99cfe1;cursor: pointer;}
 .loginbg2 .keyankuang ul.cons .lis .input dl dd:hover{background: #99cfe1;cursor: pointer;}
 .loginbg2 .keyankuang ul.cons .lis .input img{position: absolute;right: 4px;top: 5px;cursor: pointer;}
-.loginbg2 .keyankuang ul.cons .lis input{background: #fff;height: 36px;line-height: 36px;color: #1b1b1b;font-size: 14px;width: 120px;border-radius: 4px;text-indent: 12px;-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);outline: 0px}
+.loginbg2 .keyankuang ul.cons .lis input{background: #fff;height: 36px;line-height: 36px;color: #333;font-size: 14px;width: 120px;border-radius: 4px;text-indent: 12px;-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);outline: 0px}
 .loginbg2 .keyankuang .rem{margin-left: 140px;margin-top: -10px}
 .loginbg2 .keyankuang .btns{margin-top: 20px}
 .loginbg2 .keyankuang .moss{color: #ffffff;font-size: 16px;text-align: center;margin-top: 15px}
 .loginbg2 .keyankuang ul.cons .lis .input dl {max-height: 300px;overflow: auto;}
-.loginbg2 .keyankuang ul.cons .lis .input dl dd {color: #959595;}
+.loginbg2 .keyankuang ul.cons .lis .input dl dd {color: #333;}
 
 .loginbg3 .loginkuang{width: 538px;height: 580px}
 .loginbg3 .keyankuang ul.cons{margin-top: 30px;margin-left: 42px;margin-bottom: 0px}

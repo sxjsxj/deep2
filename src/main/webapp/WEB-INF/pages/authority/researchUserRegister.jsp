@@ -185,7 +185,7 @@
 							<div style="font-size:15px;" class='fl names'>所在地址</div>
 							<input type='hidden' id="uniProvince" name="uniProvince" value='' />
 							<div class='fl input'>
-								<input type='text' style="width:135px;color: #959595;" value='请选择省份' id="showUniProvince" readonly/>
+								<input type='text' style="width:135px;" placeholder='请选择省份' id="showUniProvince" readonly/>
 								 <img src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png' />
 								<dl id="selectUniProvince"  url="${pageContext.request.contextPath}/basicProvince/queryProvinceCity">
 								</dl>
@@ -193,7 +193,7 @@
 							<div id="uniProvinceFlag"></div>
 							<input type='hidden' id="uniCity" name="uniCity" value="" />
 							<div style="float:left;margin-left:16px;" class='fl input'>
-								<input type='text' style="width:135px;color: #959595;" value='请选择市' id="showUniCity" readonly/> <img
+								<input type='text' style="width:135px;" placeholder='请选择市' id="showUniCity" readonly/> <img
 									src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png' />
 								<dl id="selectUniCity" url="${pageContext.request.contextPath}/basicProvince/queryCityCounty">
 								</dl>
@@ -206,7 +206,7 @@
 							<div style="font-size:15px;" class='fl names'>高校名称</div>
 							<input type='hidden' id="uniName" name="uniName" value='' />
 							<div class='fl input'>
-								<input type='text' style="width:300px;color: #959595;" value='请选择高校' id="showUniName" readonly/>
+								<input type='text' style="width:300px;" placeholder='请选择高校' id="showUniName" readonly/>
 								 <img src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png' />
 								<dl id="selectUniName" url="${pageContext.request.contextPath}/basicUniversity/queryUniversity">
 								</dl>
@@ -230,21 +230,21 @@
 						<div style="font-size:15px;" class='fl names'>所在地址</div>
 						<input type='hidden' id="orgProvince" name="orgProvince" value='' />
 						<div class='fl input'>
-							<input type='text' style="width:91px;color: #959595;" value='请选择' id="showOrgProvince" readonly />
+							<input type='text' style="width:91px;" placeholder='请选择' id="showOrgProvince" readonly />
 							<img src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png'/>
 							<dl id="selectOrgProvince" url="${pageContext.request.contextPath}/basicProvince/queryProvinceCity">
 							</dl>
 						</div>
 						<input type='hidden' id="orgCity" name="orgCity" value='' />
 						<div class='fl input'>
-							<input type='text' style="width:91px;color: #959595;" value="请选择" id="showOrgCity" readonly />
+							<input type='text' style="width:91px;" placeholder="请选择" id="showOrgCity" readonly />
 							<img src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png'/>
 							<dl id="selectOrgCity" url="${pageContext.request.contextPath}/basicProvince/queryCityCounty">
 							</dl>
 						</div>
 						<input type='hidden' id="orgCounty" name="orgCounty" value='' />
 						<div class='fl input'>
-							<input type='text' style="width:91px;color: #959595;" value='请选择' id="showOrgCounty" readonly />
+							<input type='text' style="width:91px;" placeholder='请选择' id="showOrgCounty" readonly />
 							<img src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png'/>
 							<dl id="selectOrgCounty">
 							</dl>
@@ -276,21 +276,21 @@
 						<div style="font-size:15px;" class='fl names'>所在地址</div>
 						<input type='hidden' id="personalProvince" name="personalProvince" value='' />
 						<div class='fl input'>
-							<input type='text' style="width:91px;color: #959595;" value='请选择' id="showPersonalProvince" readonly />
+							<input type='text' style="width:91px;" placeholder='请选择' id="showPersonalProvince" readonly />
 							<img src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png'/>
 							<dl id="selectPersonalProvince" url="${pageContext.request.contextPath}/basicProvince/queryProvinceCity">
 							</dl>
 						</div>
 						<input type='hidden' id="personalCity" name="personalCity" value='' />
 						<div class='fl input'>
-							<input type='text' style="width:91px;color: #959595;" value='请选择' id="showPersonalCity" readonly />
+							<input type='text' style="width:91px;" placeholder='请选择' id="showPersonalCity" readonly />
 							<img src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png'/>
 							<dl id="selectPersonalCity" url="${pageContext.request.contextPath}/basicProvince/queryCityCounty">
 							</dl>
 						</div>
 						<input type='hidden' id="personalCounty" name="personalCounty" value='' />
 						<div class='fl input'>
-							<input type='text' style="width:91px;color: #959595;" value='请选择' id="showPersonalCounty" readonly />
+							<input type='text' style="width:91px;" placeholder='请选择' id="showPersonalCounty" readonly />
 							<img src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png'/>
 							<dl id="selectPersonalCounty">
 							</dl>

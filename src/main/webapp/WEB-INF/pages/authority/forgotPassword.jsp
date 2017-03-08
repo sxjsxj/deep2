@@ -6,7 +6,7 @@
 <meta charset='utf-8'/>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta name="renderer" content="webkit|ie-comp|ie-stand">
-<title>忘记密码</title>
+<title>忘记密码2</title>
 <% request.setCharacterEncoding("UTF-8");%>
 <% response.setCharacterEncoding("UTF-8");%>
 <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/images/front/img/homepage.png" media="screen" />
@@ -32,7 +32,7 @@
 				</div>
 			</div>
 	<!-- 注册成功弹框 end -->
-	
+
 	<!-- 注册弹框 statr -->
 	<div class="registSuccess" id="alertClick"></div>
 	<!-- <div class="city" align="center" style="margin-top: 370px;">
@@ -47,7 +47,7 @@
 			<br />
 		</div>
 	</div> -->
-	
+
 		<!-- version4 点击发布需求弹框start -->
 			<div id="altsthree">
 				<div class='xuqiualert' style="width:740px;margin-top:15px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
@@ -69,7 +69,7 @@
 				</div>
 			</div>
 			<!-- version4 点击发布需求弹框end -->
-	
+
 	<!-- version3 点击发布需求弹框start -->
 			<div id="altstwo">
 				<div class='xuqiualert' style="width:740px;margin-top:15px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
@@ -95,7 +95,7 @@
    <!-- 发送成功后跳转url  start -->
   <div id="toSubmitPasswordPageUrl" url="${pageContext.request.contextPath}/security/submitPasswordPage"></div>
    <!-- 发送成功后跳转url  end -->
-   
+
 	<div class='loginbg'>
 		<div class='width1200'>
 			<div class='topLogo'>
@@ -109,14 +109,14 @@
 				<div class='clear'></div>
 				<form id="findPasswordForm">
 				<div class='username list'>
-					<div class='nams fl'>邮箱</div>	
+					<div class='nams fl'>邮箱</div>
 					<div class='input fl'>
 						<input type='text' id="email" name="email" placeholder='请输入邮箱'/>
 					</div>
 					<div class='clear'></div>
 				</div>
 				<!-- <div class='username userpass list'>
-					<div class='nams fl'>新密码</div>	
+					<div class='nams fl'>新密码</div>
 					<div class='input fl'>
 						<input type='password' id="password" name="password" placeholder='6-20个大小写英文字母、符号或数字'/>
 					</div>

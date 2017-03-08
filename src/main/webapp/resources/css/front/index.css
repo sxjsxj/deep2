@@ -4,11 +4,15 @@
 .banner .width1200{bottom: 0px;height: 365px;top: 0px}
 .banner .width1200 .txt{   position: absolute;
     width: 100%;
-    top: 143px;
+    top: 132px;
     text-shadow: 0px 2px #000;
     color: #fff;
-    font-size: 47px;
+    font-size: 66px;
     text-align: center;}
+.banner .width1200 .txt.blue{
+  color: #254177;
+  text-shadow: 0px 2px #a0a6b2;
+}
 .banner .width1200 .leftbutton{position: absolute;top: 50%;height: 94px;width: 54px;left: 0px;margin-top: -110px;cursor: pointer;display: none}
 .banner .width1200 .rightbutton{position: absolute;top: 50%;height: 94px;width: 54px;right: 0px;margin-top: -110px;cursor: pointer;display: none}
 .banner .btns{position: absolute;right: 0px;bottom: 30px}
@@ -65,8 +69,8 @@
 .cs ul li .f{color: #7d7d7d;font-size: 16px}
 
 
-.abt{background: #f4f4f4;height: 372px;width: 100%;position: relative;margin-top: }
-.abt .abt_t{height: 3px;width: 588px;margin: 0 auto;background: #1faece;margin-top: 98px;position: relative;margin-bottom:80px}
+.abt{background: #f4f4f4;height: 372px;width: 100%;position: relative;}
+.abt .abt_t{height: 3px;width: 588px;margin: 0 auto;background: #1faece;margin-top: 60px;position: relative;margin-bottom:80px}
 .abt .abt_t div{color: #1faece;font-size: 40px;width: 240px;text-align: center;position: absolute;left: 50%;margin-left:-120px;top: 50%;margin-top: -30px;background: #f4f4f4}
 .abt .abt_s{color: #525d64;font-size: 18px;text-align: center;}
 .abt .more{color: #ffffff;font-size: 18px;background: #349fc4;width: 198px;height: 36px;line-height: 3px;text-align: center;margin:0 auto;line-height: 36px;border-radius: 5px;margin-top: 60px}

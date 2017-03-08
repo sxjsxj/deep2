@@ -28,7 +28,7 @@
 			<li>
 				<img src='${pageContext.request.contextPath}/resources/images/front/img/banner32.jpg' width="100%" height="100%" />
 				<div class='width1200'>
-					<div class='txt'>
+					<div class='txt blue'>
 						让资本、科技和产业联合起来
 					</div>
 				</div>

@@ -73,11 +73,11 @@
 				<div class='title' id="caseDetailTitle" style='margin-top:30px'>案例详述</div>
 				<div class='txt' id="caseDetail"></div>
 
-				<div id='mores'>
+				<%-- <div id='mores'> --%>
 					<div class='title' style='margin-top:30px'>成果简述</div>
 					<div class='txt2' id="solution"></div>
-				</div>
-				<div class='more'>查看更多信息>></div>
+				<%-- </div> --%>
+				<%-- <div class='more'>查看更多信息>></div> --%>
 			</div>
 			<div class='fr'>
 				<img src='${pageContext.request.contextPath}/resources/images/front/img/fr_bg3.png'/>

@@ -68,11 +68,11 @@
 				<div class='title' id="leaderInfoTitle" style='margin-top:30px'>负责人信息</div>
 				<div class='txt' id="leaderInfo"></div>
 
-				<div id='mores'>
+				<%-- <div id='mores'> --%>
 					<div class='title' id="leaderAchieveTitle" style='margin-top:30px'>主要成就</div>
 					<div class='txt2' id="leaderAchieve"></div>
-				</div>
-				<div class='more'>查看更多信息>></div>
+				<%-- </div> --%>
+				<%-- <div class='more'>查看更多信息>></div> --%>
 			</div>
 			<div class='fr'>
 				<img src='${pageContext.request.contextPath}/resources/images/front/img/fr_bg3.png'/>

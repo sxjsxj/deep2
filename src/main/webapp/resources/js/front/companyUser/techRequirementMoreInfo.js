@@ -25,7 +25,7 @@ function getDeatil() {
 		$("#duration").html("研发周期："+FrontCommonFunction.setDuration(datas.duration));
 		$("#cooperationType").html("合作方式："+setMultiCooperationType(datas.cooperationType));
 		$("#detail").html(FrontCommonFunction.replaceNull(datas.detail));
-		if(!datas.similarProduct) {
+		if(datas.similarProduct) {
 			$("#similarProduct").html(FrontCommonFunction.replaceNull(datas.similarProduct));
 		}else {
 			$('#similarProductTitle').hide();

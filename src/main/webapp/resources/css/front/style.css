@@ -94,9 +94,9 @@ ul li{list-style: none}
 	-webkit-box-shadow:0px 0px 5px #99cfe1;/*webkit*/
 }
 .cons .right .xuqiu3{margin-top: 24px}
-.cons .right .xuqiu3 textarea{color: #1b1b1b;font-size: 14px;border-radius: 4px;-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);width: 785px;height: 150px;resize: none;padding-top: 6px;text-indent: 12px;border:1px solid #ccc;}
+.cons .right .xuqiu3 textarea{color: #1b1b1b;font-size: 14px;border-radius: 4px;-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);width: 785px;height: 150px;resize: none;padding-top: 6px;border:1px solid #ccc;}
 .cons .right .xuqiu4{margin-top: 24px}
-.cons .right .xuqiu4 .lis{width: 48%;float:left;}
+.cons .right .xuqiu4 .lis{width: 50%;float:left;}
 .cons .right .xuqiu4 .input{position: relative;}
 .cons .right .xuqiu4 .input dl{border:1px solid #99cfe1;width: 100%;position: absolute;background: #fff;text-indent: 12px;display: none;z-index: 50;
 	box-shadow: 0px 0px 5px #99cfe1;
@@ -122,6 +122,8 @@ ul li{list-style: none}
 
 
 .cons .right .xuqiu5 .txt{font-size: 12px;color: #434343;line-height: 38px;margin-left: 10px}
+#fileTypeCheckResult{line-height: 38px;color: green;}
+#fileTypeCheckResult font{color: green;}
 .cons .right .xuqiu6{margin-top: 24px}
 .cons .right .xuqiu6 .ris .btn{width: 18px;height: 18px;border-radius: 4px;background: #fff;border:1px solid #99cfe1;outline: 0px;
 	box-shadow: 0px 0px 5px #99cfe1;
@@ -320,7 +322,7 @@ ul li{list-style: none}
 .listd li.other .f{margin-top: 18px}
 
 /*登录页*/
-.loginbg{background: url(../../images/front/img/loginbg.jpg);height: 1068px;width: 100%;}
+.loginbg{background: url(../../images/front/img/loginbg.jpg) no-repeat;background-size: 100% 100%;height: 1068px;width: 100%;}
 .loginbg .topLogo{width: 223px;height: 58px;margin: 0 auto;padding-top: 58px;margin-bottom: 135px}
 .loginbg .loginkuang{height: 445px;width: 536px;background: rgba(255,255,255,0.1);border-radius: 10px;
 	box-shadow: 0px 3px 8px #254e77;
@@ -349,7 +351,7 @@ ul li{list-style: none}
 .loginbg .loginkuang .loginbtns{width: 230px;height: 50px;line-height: 50px;border-radius: 6px;background: #f2961c;color:#fff;font-size: 20px;text-align: center;margin: 0 auto;margin-top: 30px}
 .loginbg .loginkuang .loginbtns:hover{background: #f9963c}
 
-.loginbg2{background: url(../../images/front/img/loginbg3.jpg);height: 1000px;width: 100%;}
+.loginbg2{background: url(../../images/front/img/loginbg3.jpg) no-repeat;background-size: 100% 100%;height: 1000px;width: 100%;}
 .loginbg2 .topLogo{margin-bottom: 58px;}
 .loginbg2 .loginkuang{width: 780px;height: 800px}
 .loginbg2 .keyankuang .tit{color: #ffffff;font-size: 28px;text-align: center;height: 86px;line-height: 86px;}
@@ -394,7 +396,7 @@ ul li{list-style: none}
 .loginbg3 .hes li:nth-child(2){margin-right: 0px}
 .loginbg3 .keyankuang .rem{margin-left: 20px;margin-top: 0px}
 
-.regchoose{background: url(../../images/front/img/loginbg3.jpg);height: 1000px;width: 100%;}
+.regchoose{background: url(../../images/front/img/loginbg3.jpg) no-repeat;background-size: 100% 100%;height: 1000px;width: 100%;}
 .regchoose .topLogo{width: 223px;height: 58px;margin: 0 auto;padding-top: 58px;margin-bottom: 60px}
 .regchoose .topTxt{text-align: center;color: #ffffff;font-size: 30px;}
 .regchoose ul {margin-top: 46px}
@@ -516,6 +518,7 @@ ul li{list-style: none}
 	top: 50%;
 	margin: -280px 0 0 -450px;
 	margin-left: -370px; /* 行内宽度740 */
+	z-index: 99;
 }
 
 .xuqiualert .tits{font-size: 24px;color:#959595;text-align: center;height: 98px;line-height: 98px;position: relative;}
@@ -550,6 +553,7 @@ ul li{list-style: none}
 .info .right .nav li:hover{background: #349fc4;color: #fff}
 .info .right .conul{width: 902px;height: 302px;background: #fff;margin-left: 78px;padding-top: 60px}
 .info .right .conul li .list{margin-bottom: 20px}
+.info .right .conul li .list label.error{line-height: 40px;}
 .info .right .conul li .anniu{width: 168px;height: 36px;line-height: 36px;text-align: center;border-radius: 4px;background: #f2961c;color: #fff;font-size: 18px;margin:0 auto;margin-top: 20px}
 /*修改账号信息移向*/
 .info .right .conul li .updateInfoanniu{width: 168px;height: 36px;line-height: 36px;text-align: center;border-radius: 4px;background: #e19c40;color: #fff;font-size: 18px;margin:0 auto;margin-top: 20px}
@@ -576,7 +580,7 @@ ul li{list-style: none}
 .change2 .nav li{width: 161px;text-align: center;height: 40px;color: #349fc4;float:left;background: #fff;font-size: 20px;cursor: pointer;}
 .change2 .nav li.active{background: #349fc4;color: #fff}
 .change2 .nav2{margin-left: 80px;width: 900px;background: #fff;height: 48px;line-height: 48px; }
-.change2 .nav2 li{font-size: 14px;color: #434343;display: inline-block;padding: 0 15px;cursor: pointer;}
+.change2 .nav2 li{font-size: 14px;color: #434343;display: inline-block;padding: 0 15px;cursor: pointer;text-indent: 8px;}
 .change2 .nav2 li.active{border-bottom: 3px solid #349fc4;height: 45px}
 .change2 .con {margin-top: 20px;margin-left: 80px}
 .change2 .con li{height: 176px;background: #fff;width: 900px;margin-bottom: 20px}

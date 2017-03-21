@@ -63,11 +63,11 @@
 				<div class='title' style='margin-top:30px'>项目前景</div>
 				<div class='txt' id="projectProspect"></div>
 
-				<div id='mores'>
+				<%-- <div id='mores'> --%>
 					<div class='title' style='margin-top:30px'>项目简述</div>
 					<div class='txt2' id="projectIntro"></div>
-				</div>
-				<div class='more'>查看更多信息>></div>
+				<%-- </div> --%>
+				<%-- <div class='more'>查看更多信息>></div> --%>
 			</div>
 			<div class='fr'>
 				<img src='${pageContext.request.contextPath}/resources/images/front/img/fr_bg3.png'/>

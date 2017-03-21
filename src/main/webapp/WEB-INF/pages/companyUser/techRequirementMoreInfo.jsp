@@ -59,11 +59,11 @@
 				<div class='title' style='margin-top:30px'>需求描述</div>
 				<div class='txt' id="detail"></div>
 
-				<div id='mores'>
+				<%-- <div id='mores'> --%>
 					<div class='title' style='margin-top:30px' id="similarProductTitle">市场类似产品情况</div>
 					<div class='txt' id="similarProduct"></div>
-				</div>
-				<div class='more'>查看更多信息>></div>
+				<%-- </div> --%>
+				<%-- <div class='more'>查看更多信息>></div> --%>
 			</div>
 			<div class='fr'>
 				<img src='${pageContext.request.contextPath}/resources/images/front/img/fr_bg3.png'/>

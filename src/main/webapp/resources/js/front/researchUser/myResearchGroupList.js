@@ -85,31 +85,31 @@ function query(param) {
 			var img=queryReturnList[i].logoUrl;
 			if(img!==null && img!=="" && img!==undefined){
 				imgUrl=img;
-				li+='<a href="'+moreInfoUrl+'"><div class="fl ims">'+'<img src="'+$('#downFile').attr('url')+'?path='+imgUrl+'" style="width:240px;height:182px;"/></div></a>'
+				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="fl ims">'+'<img src="'+$('#downFile').attr('url')+'?path='+imgUrl+'" style="width:240px;height:182px;"/></div></a>'
 			}else{
 				imgUrl="../resources/images/front/img/keyantuandui.png";
-				li+='<a href="'+moreInfoUrl+'"><div class="fl ims">'+'<img src="'+imgUrl+'" style="width:240px;height:182px;"/></div></a>'
+				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="fl ims">'+'<img src="'+imgUrl+'" style="width:240px;height:182px;"/></div></a>'
 			}
 
 			li+="<div class='fl rights'>"
-			li+='<a href="'+moreInfoUrl+'"><div class="tits">'
+			li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="tits">'
 			li+="<div class='fl'>"+FrontCommonFunction.replaceNull(queryReturnList[i].name)+"</div>"
 			li+="<div class='fr'>"+FrontCommonFunction.setResearchGroupStatus(queryReturnList[i].status)+"</div>"
 			li+="<div class='clear'></div>"
 			li+="</div></a>"
 			li+="<div class='cs'>"
 			li+="<div class='mod borderright'>"
-			li+='<a href="'+moreInfoUrl+'"><div class="cs_tis">'+"研究方向："+queryReturnList[i].field+"</div></a>"
-			//li+="<div class=''><a class='fl rems'></a><span class='fl'>"+'<a href="'+moreInfoUrl+'">'+"简介&nbsp;:&nbsp;"+FrontCommonFunction.getResultMaitText(queryReturnList[i].introduction,30,"#researchGroupMoreInfo",queryReturnList[i].id)+"</a></span><div class='clear'></div></div>"
+			li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="cs_tis">'+"研究方向："+queryReturnList[i].field+"</div></a>"
+			//li+="<div class=''><a class='fl rems'></a><span class='fl'>"+'<a href="'+moreInfoUrl+'" target="_blank">'+"简介&nbsp;:&nbsp;"+FrontCommonFunction.getResultMaitText(queryReturnList[i].introduction,30,"#researchGroupMoreInfo",queryReturnList[i].id)+"</a></span><div class='clear'></div></div>"
 			li+="</div>"
 			li+="<div class='mod marginleft'>"
-			li+='<a href="'+moreInfoUrl+'"><div class="cs_tis">'+'研究成果:'+"</div></a>"
-			li+="<div class=''><a class='fl rems'></a><span class='fl'>"+'<a href="'+moreInfoUrl+'">'+FrontCommonFunction.getResultMaitText(queryReturnList[i].achievement,30,"#researchGroupMoreInfo",queryReturnList[i].id)+"</a></span><div class='clear'></div></div>"
+			li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="cs_tis">'+'研究成果:'+"</div></a>"
+			li+="<div class=''><a class='fl rems'></a><span class='fl'>"+'<a href="'+moreInfoUrl+'" target="_blank">'+FrontCommonFunction.getResultMaitText(queryReturnList[i].achievement,30,"#researchGroupMoreInfo",queryReturnList[i].id)+"</a></span><div class='clear'></div></div>"
 			li+="</div>"
 			li+="<div class='clear'></div>"
 			li+="</div>"
 			li+="<div class='b'>"
-			li+='<a href="'+moreInfoUrl+'"><div class="fl">'
+			li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="fl">'
 			if(queryReturnList[i].domain)
 				li+="<span>"+FrontCommonFunction.setDomain(queryReturnList[i].domain)+"</span>"
 			if(universityType)

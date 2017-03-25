@@ -84,8 +84,13 @@ function initLoginUser() {
 			for(var i = 0; i < researches.length; i++) {
 				$('#commonResearchUserId').val(researches[i].id);
 				$('#commonResearchUserType').val(researches[i].type);
-				$('#commonMySelfProvince').val(researches[i].province);
-				$('#commonMySelfCity').val(researches[i].city);
+				if(researches[i].type == '0') {
+					$('#commonMySelfProvince').val(researches[i].uniProvince);
+					$('#commonMySelfCity').val(researches[i].uniCity);	
+				} else {
+					$('#commonMySelfProvince').val(researches[i].orgProvince);
+					$('#commonMySelfCity').val(researches[i].orgCity);	
+				}
 			}
 			var investors = data.investorUserModels;
 			for(var i = 0; i < investors.length; i++) {

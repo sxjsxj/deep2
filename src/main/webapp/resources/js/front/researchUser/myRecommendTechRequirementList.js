@@ -26,13 +26,18 @@ $(document).ready(function() {
 	//设置左侧导航
 	setLeftNav('#researchGroupMyRecommend');
 
-	//点击发布科研成果
+	//发布科研成果
 	$('#publishMyAchievement').click(function() {
-		alert(myDomains.length);
-		if(myDomains.length == 0){
+		// 此处应该先查询 当前用户是否维护了 科研团队信息。
+		//科研团队id 为空则没有维护,否则维护
+		//根据科研用户id查出researchgroup查到代表维护，没查到代表为维护
+		getReserachGroup();
+		//getReserachGroup此方法调用后查到会设置id
+		var  hasResearchGroup=$("#hasResearchGroup").val();
+		if(hasResearchGroup===""){
 			$('#altsone').show();
 		}else{
-			var url = $('#publishAchievement').attr('url');
+			var url =$('#addAchieveMentPageUrl').attr('url');
 			location.href=url;
 		}
     });
@@ -309,23 +314,23 @@ function display(that, datas, queryReturnList) {
 		    var img=queryReturnList[i].logoUrl;
 		    if(img!==null && img!=="" && img!==undefined){
 		    	imgUrl=img;
-		    	li+='<a href="'+moreInfoUrl+'"><div class="fl ims">'+'<img src="'+$('#downFile').attr('url')+'?path='+imgUrl+'"/>'+"</div></a>"
+		    	li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="fl ims">'+'<img src="'+$('#downFile').attr('url')+'?path='+imgUrl+'"/>'+"</div></a>"
 			}else{
 				imgUrl="../resources/images/front/img/jishuxuqu.png";
-				li+='<a href="'+moreInfoUrl+'"><div class="fl ims">'+'<img src="'+imgUrl+'"/>'+"</div></a>"
+				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="fl ims">'+'<img src="'+imgUrl+'"/>'+"</div></a>"
 			}
 
 			li+="<div class='fl rights'>"
-			li+='<a href="'+moreInfoUrl+'"><div class="tits">'
+			li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="tits">'
 			li+="<div class='fl'>"+FrontCommonFunction.replaceNull(queryReturnList[i].name)+"</div>"
 			li+="<div class='fr'>"+FrontCommonFunction.setType(queryReturnList[i].type)+"</div>"
 			li+="<div class='clear'></div>"
 			li+="</div></a>"
-			li+='<a href="'+moreInfoUrl+'"><div class="cs">'
-			li+=FrontCommonFunction.limitTextLineNum(1, queryReturnList[i].detail ,"#techRequirementMoreInfo",queryReturnList[i].id)
+			li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="cs">'
+			li+=FrontCommonFunction.limitTextLineNum($("#techRequirementListQuery").find(".cs:last-child"), queryReturnList[i].detail ,"#techRequirementMoreInfo",queryReturnList[i].id)
 			li+="</div></a>"
 			li+="<div class='f'>"
-			li+='<a href="'+moreInfoUrl+'"><div style=" margin-top:50px" class="fl">'+FrontCommonFunction.setDomain(queryReturnList[i].domain)+"&nbsp;&nbsp;"+FrontCommonFunction.replaceNull(queryReturnList[i].companyUserResultModel.province)+"&nbsp;&nbsp;"+FrontCommonFunction.setAmount(queryReturnList[i].amount)+"&nbsp;&nbsp;"+FrontCommonFunction.setRequirementStatus(queryReturnList[i].status)+"</div></a>"
+			li+='<a href="'+moreInfoUrl+'" target="_blank"><div style=" margin-top:50px" class="fl">'+FrontCommonFunction.setDomain(queryReturnList[i].domain)+"&nbsp;&nbsp;"+FrontCommonFunction.replaceNull(queryReturnList[i].companyUserResultModel.province)+"&nbsp;&nbsp;"+FrontCommonFunction.setAmount(queryReturnList[i].amount)+"&nbsp;&nbsp;"+FrontCommonFunction.setRequirementStatus(queryReturnList[i].status)+"</div></a>"
 			li+='<div class="fr" style=" margin-top:60px">'
 			li+=cooperateCollectFlagDiv(queryReturnList[i], i)
 			li+="</div>"
@@ -340,4 +345,34 @@ function display(that, datas, queryReturnList) {
 		//控制登录用户
 		cooperateCollectActionControl('techRequirement');
 	}
+};
+
+function getReserachGroup() {
+	var url = $('#getResearchGroup').attr('url');
+	//从header获取科研用户id
+	var commonResearchUsrId= $('#commonResearchUserId').val();
+	var queryParam={};
+	var researchGroupQueryModel = {};
+	getDefaultQuery('researchGroup', '2', researchGroupQueryModel);
+	queryParam['researchGroupQueryModel'] = researchGroupQueryModel;
+	var universityUserQueryModel={};
+	universityUserQueryModel['id']=commonResearchUsrId;
+	var organizationUserQueryModel = {};
+	organizationUserQueryModel['id']=commonResearchUsrId;
+	queryParam['universityUserQueryModel']=universityUserQueryModel;
+	queryParam['organizationUserQueryModel'] = organizationUserQueryModel;
+	var jsonStr=JSON.stringify(queryParam);
+	var data = {};
+	data['str']=jsonStr;
+	FrontCommonFunction.baseOptions['url'] = url;
+	FrontCommonFunction.baseOptions['data'] = data;
+	FrontCommonFunction.baseOptions['success'] = function(datas) {
+		if(datas.queryReturnList.length > 0){
+			//表示已经维护设置researchGroupId
+			$("#hasResearchGroup").val("true");
+		}else{
+			$("#hasResearchGroup").val("");
+		}
+	};
+	$.ajax(FrontCommonFunction.baseOptions);
 };

@@ -268,6 +268,9 @@ function getDetail(id) {
 		$('#detail').val(datas.detail);
 		$('#similarProduct').val(datas.similarProduct);
 		$('#filePath').val(datas.attachUrl);
+		if(datas.attachName) {
+			$('#fileTypeCheckResult').html('已上传文件:'+datas.attachName);
+		}
 		//合作方式
 		var cooperType=datas.cooperationType;
 		$('#cooperationTypeId').val(cooperType);

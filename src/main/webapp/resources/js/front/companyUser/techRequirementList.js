@@ -152,24 +152,24 @@ function query(param) {
 			var logoUrl =queryReturnList[i].logoUrl;
 			if(logoUrl!==null && logoUrl!=="" && logoUrl!==undefined){
 				imgUrl=logoUrl;
-				temli='<a href="'+moreInfoUrl+'"><div class="fl ims">'+'<img style="width:240px;height:182px" src="'+$('#downFile').attr('url')+'?path='+imgUrl+'"/>'+"</div></a>"
+				temli='<a href="'+moreInfoUrl+'" target="_blank"><div class="fl ims">'+'<img style="width:240px;height:182px" src="'+$('#downFile').attr('url')+'?path='+imgUrl+'"/>'+"</div></a>"
 			}else{
 				imgUrl="../resources/images/front/img/jishuxuqu.png";
-				temli='<a href="'+moreInfoUrl+'"><div class="fl ims">'+'<img style="width:240px;height:182px" src="'+imgUrl+'"/>'+"</div></a>"
+				temli='<a href="'+moreInfoUrl+'" target="_blank"><div class="fl ims">'+'<img style="width:240px;height:182px" src="'+imgUrl+'"/>'+"</div></a>"
 			}
 
 			li+='<input type="hidden" id="operateId'+i+'" value="'+queryReturnList[i].id+'"/>'
 			//li+=temli;
-			li+='<a href="'+moreInfoUrl+'"><div class="fl ims"><div class="fl rights">'
+			li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="fl ims"><div class="fl rights">'
 			li+="<div class='tits'>"
 			li+="<div class='fl'>"+FrontCommonFunction.replaceNull(queryReturnList[i].name)+"</div>"
 			li+="<div class='fr'>"+FrontCommonFunction.setType(queryReturnList[i].type)+"</div>"
 			li+="<div class='clear'></div>"
 			li+="</div></a>"
-			li+='<a href="'+moreInfoUrl+'"><div class="cs">'
+			li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="cs">'
 			li+="</div></a>"
 			li+="<div class='f'>"
-			li+='<a href="'+moreInfoUrl+'"><div class="fl">'+FrontCommonFunction.setDomain(queryReturnList[i].domain)+"&nbsp;&nbsp;"+FrontCommonFunction.replaceNull(queryReturnList[i].companyUserResultModel.province)+"&nbsp;&nbsp;"+FrontCommonFunction.setAmount(queryReturnList[i].amount)+"&nbsp;&nbsp;"+FrontCommonFunction.setRequirementStatus(queryReturnList[i].status)+"</div></a>"
+			li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="fl">'+FrontCommonFunction.setDomain(queryReturnList[i].domain)+"&nbsp;&nbsp;"+FrontCommonFunction.replaceNull(queryReturnList[i].companyUserResultModel.province)+"&nbsp;&nbsp;"+FrontCommonFunction.setAmount(queryReturnList[i].amount)+"&nbsp;&nbsp;"+FrontCommonFunction.setRequirementStatus(queryReturnList[i].status)+"</div></a>"
 			li+='<div class="fr">'
 			li+=cooperateCollectFlagDiv(queryReturnList[i], i)
 			li+="</div>"

@@ -120,13 +120,13 @@ function query(param) {
 				var logoUrl =queryReturnList[i].logoUrl;
 				if(logoUrl!==null && logoUrl!=="" && logoUrl!==undefined){
 					imgUrl=logoUrl;
-					li+='<a href="'+moreInfoUrl+'"><div class="fl ims"><img style="width:240px;height:182px" src="'+$('#downFile').attr('url')+'?path='+imgUrl+'"/></div></a>'
+					li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="fl ims"><img style="width:240px;height:182px" src="'+$('#downFile').attr('url')+'?path='+imgUrl+'"/></div></a>'
 				}else{
 					imgUrl="../resources/images/front/img/touzifang.png";
-					li+='<a href="'+moreInfoUrl+'"><div class="fl ims"><img style="width:240px;height:182px" src="'+imgUrl+'"/></div></a>'
+					li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="fl ims"><img style="width:240px;height:182px" src="'+imgUrl+'"/></div></a>'
 				}
 				li+="<div class='fl rights'>"
-				li+='<a href="'+moreInfoUrl+'"><div class="tits">'
+				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="tits">'
 				var userType=queryReturnList[i].type;
 				//1是个人 显示contactName
 				var name="";
@@ -145,18 +145,18 @@ function query(param) {
 				li+="</div></a>"
 				li+="<div class='cs'>"
 				li+="<div class='mod borderright'>"
-				li+='<a href="'+moreInfoUrl+'"><div class="cs_tis">'+"投资领域："+FrontCommonFunction.setStrInvestorDomain(queryReturnList[i].investDomain)+"</div></a>"
-				li+='<a href="'+moreInfoUrl+'"><div class="cs_tis">'+"投资阶段："+FrontCommonFunction.setStrInvestorPhase(queryReturnList[i].investPhase)+"</div></a>"
-				li+="<div class=''><a class='fl rems'></a><span class='fl'>"+'<a href="'+moreInfoUrl+'">'+"投资概述&nbsp;:&nbsp;"+FrontCommonFunction.getResultMaitText(queryReturnList[i].investOutline,70,"#investorUserMoreInfo",queryReturnList[i].id)+"</a></span><div class='clear'></div></div>"
+				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="cs_tis">'+"投资领域："+FrontCommonFunction.setStrInvestorDomain(queryReturnList[i].investDomain)+"</div></a>"
+				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="cs_tis">'+"投资阶段："+FrontCommonFunction.setStrInvestorPhase(queryReturnList[i].investPhase)+"</div></a>"
+				li+="<div class=''><a class='fl rems'></a><span class='fl'>"+'<a href="'+moreInfoUrl+'" target="_blank">'+"投资概述&nbsp;:&nbsp;"+FrontCommonFunction.getResultMaitText(queryReturnList[i].investOutline,70,"#investorUserMoreInfo",queryReturnList[i].id)+"</a></span><div class='clear'></div></div>"
 				li+="</div>"
 				li+="<div class='mod marginleft'>"
-				li+='<a href="'+moreInfoUrl+'"><div class="cs_tis">'+'简介:'+"</div></a>"
-				li+="<div class=''><a class='fl rems'></a><span class='fl'>"+'<a href="'+moreInfoUrl+'">'+introduction+"</a></span><div class='clear'></div></div>"
+				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="cs_tis">'+'简介:'+"</div></a>"
+				li+="<div class=''><a class='fl rems'></a><span class='fl'>"+'<a href="'+moreInfoUrl+'" target="_blank">'+introduction+"</a></span><div class='clear'></div></div>"
 				li+="</div>"
 				li+="<div class='clear'></div>"
 				li+="</div>"
 				li+="<div class='f'>"
-				li+='<a href="'+moreInfoUrl+'"><div style=" margin-top:10px" class="fl">'+FrontCommonFunction.replaceNull(queryReturnList[i].province)+"</div></a>"
+				li+='<a href="'+moreInfoUrl+'" target="_blank"><div style=" margin-top:10px" class="fl">'+FrontCommonFunction.replaceNull(queryReturnList[i].province)+"</div></a>"
 				li+='<div class="fr" style=" margin-top:0px">'
 				li+=cooperateCollectFlagDiv(queryReturnList[i], i)
 				li+="</div>"

@@ -85,6 +85,7 @@ function initRequirementManager() {
 };
 
 function query(param) {
+	param = getData();
 	var that=this;
 	// 清空列表
 	$('#requirementQueryTBody').html("");

@@ -194,22 +194,22 @@ function query(param) {
 				var logoUrl=queryReturnList[i].achievementResultModel.logoUrl;
 				if(logoUrl!==null && logoUrl!=="" && logoUrl!==undefined){
 					imgUrl=logoUrl;
-					li+='<a href="'+moreInfoUrl+'"><div class="fl ims">'+'<img style="width:240px;height:186px" src="'+$('#downFile').attr('url')+'?path='+imgUrl+'"/>'+"</div></a>"
+					li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="fl ims">'+'<img style="width:240px;height:186px" src="'+$('#downFile').attr('url')+'?path='+imgUrl+'"/>'+"</div></a>"
 				}else{
 					imgUrl="../resources/images/front/img/keyanchengguo.png";
-					li+='<a href="'+moreInfoUrl+'"><div class="fl ims">'+'<img style="width:240px;height:186px" src="'+imgUrl+'"/>'+"</div></a>"
+					li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="fl ims">'+'<img style="width:240px;height:186px" src="'+imgUrl+'"/>'+"</div></a>"
 				}
 				li+="<div class='fl rights'>"
-				li+='<a href="'+moreInfoUrl+'"><div class="tits">'
+				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="tits">'
 				li+="<div class='fl'>"+FrontCommonFunction.replaceNull(queryReturnList[i].achievementResultModel.name)+"</div>"
-				li+="<div class='fr'>"+FrontCommonFunction.setInvestorPhase(queryReturnList[i].achievementResultModel.phase)+"</div>"	
+				li+="<div class='fr'>"+FrontCommonFunction.setStrInvestorPhase(queryReturnList[i].achievementResultModel.phase)+"</div>"	
 				li+="<div class='clear'></div>"
 				li+="</div></a>"
-				li+='<a href="'+moreInfoUrl+'"><div class="cs">'
+				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="cs">'
 				li+=FrontCommonFunction.getResultMaitText(queryReturnList[i].achievementResultModel.solution,300,"#achievementMoreInfo",queryReturnList[i].achievementResultModel.id)
 				li+="</div></a>"
 				li+="<div class='f'>"
-				li+='<a href="'+moreInfoUrl+'"><div style=" margin-top:60px" class="fl">'+FrontCommonFunction.setInvestorDomain(queryReturnList[i].achievementResultModel.domain)+"&nbsp;&nbsp;"+provinceName+"&nbsp;&nbsp;"+FrontCommonFunction.setAmount(queryReturnList[i].achievementResultModel.amount)+"&nbsp;&nbsp;"+FrontCommonFunction.setRequirementStatus(queryReturnList[i].achievementResultModel.status)+"</div></a>"
+				li+='<a href="'+moreInfoUrl+'" target="_blank"><div style=" margin-top:60px" class="fl">'+FrontCommonFunction.setInvestorDomain(queryReturnList[i].achievementResultModel.domain)+"&nbsp;&nbsp;"+provinceName+"&nbsp;&nbsp;"+FrontCommonFunction.setAmount(queryReturnList[i].achievementResultModel.amount)+"&nbsp;&nbsp;"+FrontCommonFunction.setRequirementStatus(queryReturnList[i].achievementResultModel.status)+"</div></a>"
 				li+='<div class="fr" style=" margin-top:60px">'	
 				li+=cooperateCollectFlagDiv(queryReturnList[i].achievementResultModel, i)
 				li+="</div>"

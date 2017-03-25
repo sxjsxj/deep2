@@ -1,3 +1,24 @@
+$(function() {
+	$(".more").click(function(){
+		if(!FrontCommonFunction.isLogin()){
+			$('#nologin').show();
+			setTimeout(function(){//5秒后隐藏
+				$('#nologin').hide();
+			}, 1500);
+		}else{
+			if($(this).hasClass('on')){
+				$(this).removeClass("on");
+				$("#mores").slideUp(100);
+				$(this).text('查看更多信息>>');
+			}else{
+				$(this).addClass("on");
+				$(this).text('收起');
+				$("#mores").slideDown(100);
+			}
+		}
+	});
+});
+
 	function setMultiCooperationType(dataObj){
 		var result = '';
 		if(dataObj === null || dataObj === 'null'||dataObj === undefined){

@@ -277,6 +277,9 @@ function getDetail(id) {
 		$('#companyLogo').attr('src',path);
 		$('#imgPath').val(imgUrl);
 		$('#filePath').val(datas.attachUrl);
+		if(datas.attachName) {
+			$('#fileTypeCheckResult').html('已上传文件:'+datas.attachName);
+		}
 	};
 	$.ajax(FrontCommonFunction.baseOptions);
 };

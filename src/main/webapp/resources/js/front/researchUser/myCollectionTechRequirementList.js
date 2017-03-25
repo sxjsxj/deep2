@@ -152,22 +152,22 @@ function query(param) {
 			    var img=queryReturnList[i].techRequirementResultModel.attachUrl;
 			    if(img!==null && img!=="" && img!==undefined){
 			    	imgUrl=img;
-			    	li+='<a href="'+moreInfoUrl+'"><div class="fl ims">'+'<img style="width:240px;height:182px;" src="'+$('#downFile').attr('url')+'?path='+imgUrl+'"/>'+"</div></a>"
+			    	li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="fl ims">'+'<img style="width:240px;height:182px;" src="'+$('#downFile').attr('url')+'?path='+imgUrl+'"/>'+"</div></a>"
 				}else{
 					imgUrl="../resources/images/front/img/jishuxuqu.png";
-					li+='<a href="'+moreInfoUrl+'"><div class="fl ims">'+'<img style="width:240px;height:182px;" src="'+imgUrl+'"/>'+"</div></a>"
+					li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="fl ims">'+'<img style="width:240px;height:182px;" src="'+imgUrl+'"/>'+"</div></a>"
 				}
 				li+="<div class='fl rights'>"
-				li+='<a href="'+moreInfoUrl+'"><div class="tits">'
+				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="tits">'
 				li+="<div class='fl'>"+FrontCommonFunction.replaceNull(queryReturnList[i].techRequirementResultModel.name)+"</div>"
 				li+="<div class='fr'>"+FrontCommonFunction.setType(queryReturnList[i].techRequirementResultModel.type)+"</div>"	
 				li+="<div class='clear'></div>"
 				li+="</div></a>"
-				li+='<a href="'+moreInfoUrl+'"><div class="cs">'
+				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="cs">'
 				li+=FrontCommonFunction.getResultMaitText(queryReturnList[i].techRequirementResultModel.detail,300,"#techRequirementMoreInfo",queryReturnList[i].id.requirementId)
 				li+="</div></a>"
 				li+="<div class='f'>"
-				li+='<a href="'+moreInfoUrl+'"><div style=" margin-top:60px" class="fl">'+FrontCommonFunction.setDomain(queryReturnList[i].techRequirementResultModel.domain)+"&nbsp;&nbsp;"+FrontCommonFunction.replaceNull(queryReturnList[i].techRequirementResultModel.companyUserResultModel.province)+"&nbsp;&nbsp;"+FrontCommonFunction.setAmount(queryReturnList[i].techRequirementResultModel.amount)+"&nbsp;&nbsp;"+FrontCommonFunction.setRequirementStatus(queryReturnList[i].techRequirementResultModel.status)+"</div></a>"
+				li+='<a href="'+moreInfoUrl+'" target="_blank"><div style=" margin-top:60px" class="fl">'+FrontCommonFunction.setDomain(queryReturnList[i].techRequirementResultModel.domain)+"&nbsp;&nbsp;"+FrontCommonFunction.replaceNull(queryReturnList[i].techRequirementResultModel.companyUserResultModel.province)+"&nbsp;&nbsp;"+FrontCommonFunction.setAmount(queryReturnList[i].techRequirementResultModel.amount)+"&nbsp;&nbsp;"+FrontCommonFunction.setRequirementStatus(queryReturnList[i].techRequirementResultModel.status)+"</div></a>"
 				li+='<div class="fr" style=" margin-top:60px">'	
 				li+=cooperateCollectFlagDiv(queryReturnList[i].techRequirementResultModel, i)
 				li+="</div>"

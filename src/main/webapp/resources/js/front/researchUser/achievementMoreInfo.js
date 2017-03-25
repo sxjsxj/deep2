@@ -40,7 +40,7 @@ function getDeatil() {
 		$("#name").html(FrontCommonFunction.replaceNull(datas.name));
 		$('head title').html(datas.name);
 		$("#sequenceNumber").html("编号："+FrontCommonFunction.replaceNull(datas.sequenceNumber)); 
-		$("#phase").html("阶段："+FrontCommonFunction.setInvestorPhase(datas.phase)); 
+		$("#phase").html("阶段："+FrontCommonFunction.setStrInvestorPhase(datas.phase)); 
 		$("#domain").html(FrontCommonFunction.setInvestorDomain(datas.domain));
 		$("#scanNumber").html("访问量："+FrontCommonFunction.replaceNull(datas.scanNumber));
 		$("#type").html(setMultiAchievementType(datas.type));

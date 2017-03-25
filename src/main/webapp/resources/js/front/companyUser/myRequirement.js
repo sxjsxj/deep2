@@ -197,54 +197,12 @@ function query(param) {
 			}else if(status==="5"){
 				child6++;
 			}
-			var type="";
-			var amount="";
-			if(tagValue==="0"){
-				type=FrontCommonFunction.setInbestorType(queryReturnList[i].type);
-				amount=FrontCommonFunction.setStrAmount(queryReturnList[i].amount);
-			}else{
-				type=FrontCommonFunction.setInvestorPhase(queryReturnList[i].projectPhase);
-				amount=FrontCommonFunction.setStrAmount(queryReturnList[i].amountNeeded);
+			var li = "";
+			if(tagValue === "0"){
+				li = getTechLi(queryReturnList[i], i);
+			} else {
+				li = getFundLi(queryReturnList[i], i);
 			}
-			var moreInfoUrl = "";
-			var styleCss="";
-			if(tagValue==="0"){
-				moreInfoUrl = $("#techRequirementMoreInfo").attr('url')+"?id="+queryReturnList[i].id;
-				styleCss="margin-top:35px;margin-right:10px;";
-			}else{
-				moreInfoUrl = $("#fundRequirementMoreInfo").attr('url')+"?id="+queryReturnList[i].id;
-				styleCss="margin-top:60px;margin-right:10px;";
-			}
-
-			var li = '<div id="shaDowShow'+i+'" class="mydiv1" onmouseout="delShaDowClass('+i+')" onmouseover="addShaDowClass('+i+')"><li>'
-				li+='<input type="hidden" id="operateId'+i+'" value="'+queryReturnList[i].id+'"/>'
-				li+='<input type="hidden" id="status'+i+'" value="'+queryReturnList[i].status+'"/>'
-				li+='<a href="'+moreInfoUrl+'"><div class="titl">'
-					li+="<div class='fl les'>"+FrontCommonFunction.replaceNull(queryReturnList[i].name)+"</div>"
-					li+="<div class='fr'>"
-					 li+="<div class='fl'>"+FrontCommonFunction.setRequirementStatus(queryReturnList[i].status)+"</div>"
-					 li+="<div class='fl ge'>"+type+"</div>"
-					 li+="<div class='clear'></div>"
-					li+="</div>"
-					li+="<div class='clear'></div>"
-				li+="</div></a>"
-				li+='<a href="'+moreInfoUrl+'"><div class="txt">'
-					li+=FrontCommonFunction.getResultMaitText(queryReturnList[i].detail,100,"#techRequirementMoreInfo",queryReturnList[i].id)
-				li+="</div></a>"
-				li+="<div class='b'>"
-				li+='<a href="'+moreInfoUrl+'"><div style=" margin-top:60px" class="fl">'+"<span>"+FrontCommonFunction.setInvestorDomain(queryReturnList[i].domain)+"</span><span>"+FrontCommonFunction.replaceNull(queryReturnList[i].companyUserResultModel.province)+"</span><span>"+amount+"</span><span>"+FrontCommonFunction.setRequirementStatus(queryReturnList[i].status)+"</span></div></a>"
-				li+='<div class="fr" style='+styleCss+'>'
-					 li+="<div class='fl look' style='margin-top:5px;'>"
-					  li+="<div class='coll'>收藏量："+FrontCommonFunction.replaceNull(queryReturnList[i].concernNumber)+"</div>"
-					  li+="<div class='find'>访问量："+FrontCommonFunction.replaceNull(queryReturnList[i].scanNumber)+"</div>"
-					 li+="</div>"
-				    li+='<div id="edit'+i+'" style="margin-top:10px;" class="fl bianji">编辑</div>'
-				    li+='<div id="delete'+i+'" style="margin-top:10px;" class="fl del">删除</div>'
-					li+="<div class='clear'></div>"
-					li+="</div>"
-				li+="<div class='clear'></div>"
-				li+="</div>"
-				li+='</li></div>';
 			$("#requirementListQuery").append(li);
 
 			$('[id^=edit]').click(function() {
@@ -362,4 +320,108 @@ function getData() {
 		paramTemp['userQueryModel'] =getMyInfo();
 	}
 	return paramTemp;
+};
+
+function getTechLi(param, i) {
+	var type="";
+	var amount="";
+	type=FrontCommonFunction.setInbestorType(param.type);
+	amount=FrontCommonFunction.setStrAmount(param.amount);
+	var moreInfoUrl = "";
+	var styleCss="";
+	moreInfoUrl = $("#techRequirementMoreInfo").attr('url')+"?id="+param.id;
+	styleCss="margin-top:35px;margin-right:10px;";
+
+	var li = '<div id="shaDowShow'+i+'" class="mydiv1" onmouseout="delShaDowClass('+i+')" onmouseover="addShaDowClass('+i+')"><li>'
+		li+='<input type="hidden" id="operateId'+i+'" value="'+param.id+'"/>'
+		li+='<input type="hidden" id="status'+i+'" value="'+param.status+'"/>'
+		li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="titl">'
+			li+="<div class='fl les'>"+FrontCommonFunction.replaceNull(param.name)+"</div>"
+			li+="<div class='fr'>"
+			 li+="<div class='fl'>"+FrontCommonFunction.setRequirementStatus(param.status)+"</div>"
+			 li+="<div class='fl ge'>"+type+"</div>"
+			 li+="<div class='clear'></div>"
+			li+="</div>"
+			li+="<div class='clear'></div>"
+		li+="</div></a>"
+		li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="txt">'
+			li+=FrontCommonFunction.getResultMaitText(param.detail,100,"#techRequirementMoreInfo",param.id)
+		li+="</div></a>"
+		li+="<div class='b'>"
+		li+='<a href="'+moreInfoUrl+'" target="_blank"><div style=" margin-top:60px" class="fl">'+"<span>"+FrontCommonFunction.setInvestorDomain(param.domain)+"</span><span>"+FrontCommonFunction.replaceNull(param.companyUserResultModel.province)+"</span><span>"+amount+"</span><span>"+FrontCommonFunction.setRequirementStatus(param.status)+"</span></div></a>"
+		li+='<div class="fr" style='+styleCss+'>'
+			 li+="<div class='fl look' style='margin-top:5px;'>"
+			  li+="<div class='coll'>收藏量："+FrontCommonFunction.replaceNull(param.concernNumber)+"</div>"
+			  li+="<div class='find'>访问量："+FrontCommonFunction.replaceNull(param.scanNumber)+"</div>"
+			 li+="</div>"
+		    li+='<div id="edit'+i+'" style="margin-top:10px;" class="fl bianji">编辑</div>'
+		    li+='<div id="delete'+i+'" style="margin-top:10px;" class="fl del">删除</div>'
+			li+="<div class='clear'></div>"
+			li+="</div>"
+		li+="<div class='clear'></div>"
+		li+="</div>"
+		li+='</li></div>';
+	return li;
+};
+
+function getFundLi(param, i) {
+	var type = FrontCommonFunction.setStrInvestorPhase(param.projectPhase);
+	var amount = FrontCommonFunction.setStrAmount(param.amountNeeded);
+	var moreInfoUrl = $("#fundRequirementMoreInfo").attr('url')+"?id="+param.id;
+	var templi='';
+	var imgUrl="";
+	var img=param.logoUrl;
+	if(img!==null && img!=="" && img!==undefined){
+		imgUrl=img;
+		templi+='<img src="'+$('#downFile').attr('url')+'?path='+imgUrl+'" style="width:240px;height:182px"/>'
+	}else{
+		imgUrl="../resources/images/front/img/zijinxuqiu.png";
+		templi+='<img src="'+imgUrl+'" style="width:240px;height:182px"/>'
+	}
+	
+	var li='<div id="shaDowShow'+i+'"  class="mydiv1" onmouseout="delShaDowClass('+i+')" onmouseover="addShaDowClass('+i+')"><li>'
+	li+='<input type="hidden" id="operateId'+i+'" value="'+param.id+'"/>'
+	li+='<input type="hidden" id="status'+i+'" value="'+param.status+'"/>'
+	li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="fl ims">'
+	li+=templi;
+    li+="</div><a>"
+	li+="<div class='fl rights'>"
+	  li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="titl">'
+        li+="<div class='fl les'>"+FrontCommonFunction.setTextSize(param.name, 20, '...')+"</div>"
+		li+="<div class='fr'>"
+		 li+="<div class='fl'>"+FrontCommonFunction.setRequirementStatus(param.status)+"</div>"
+		 li+="<div class='fl ge'>"+type+"</div>"
+		 li+="<div class='clear'></div>"
+		li+="</div>"
+		li+="<div class='clear'></div>"
+	  li+="</div></a>"
+
+	  li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="cs">'
+		  li+=FrontCommonFunction.getResultMaitText(param.projectIntro,100,"#fundRequirementMoreInfo",param.id)
+	  li+="</div></a>"
+
+	li+="<div class='b'>"
+		  li+='<div class="fl">'
+		   	li+="<span>"+'<a href="'+moreInfoUrl+'" target="_blank">'+FrontCommonFunction.setInvestorDomain(param.domain)+"</span>"
+			li+="<span>"+FrontCommonFunction.replaceNull(param.companyUserResultModel.province)+"</span>"
+			li+="<span>"+amount+"</span>"
+			li+="<span>"+FrontCommonFunction.setRequirementStatus(param.status)+"</a></span>"
+		  li+="</div>"
+		  li+='<div class="fr">'
+			  li+='<div class="fl look">'
+			    li+="<div class='coll'>收藏量："+FrontCommonFunction.replaceNull(param.concernNumber)+"</div>"
+			    li+="<div class='find'>访问量："+FrontCommonFunction.replaceNull(param.scanNumber)+"</div>"
+			  li+="</div>"
+				  li+='<div id="edit'+i+'" class="fl bianji">编辑</div>'
+				  li+='<div id="delete'+i+'" class="fl del">删除</div>'
+			  li+="<div class='clear'></div>"
+		 li+="</div>"
+
+	  li+="<div class='clear'></div>"
+	li+="</div>"
+
+	li+="</div>"
+	li+="<div class='clear'></div>"
+	li+='</li></div>';
+	return li;
 };

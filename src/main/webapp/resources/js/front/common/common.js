@@ -727,11 +727,7 @@ var FrontCommonFunction = {
 		if(dataObj === null || dataObj === 'null'||dataObj === undefined){
 			result = '不限';
 		} else {
-
-			if(dataObj.length>5){
-				dataObj=dataObj.substring(0,5);
-			}
-			result =dataObj.replace('0','信息技术').replace('1','机械电子').replace('2','生物工程').replace('3','能源环保').replace('4','化学化工').replace('5','材料科学').replace('6','其他')+"...";
+			result =dataObj.replace('0','信息技术').replace('1','机械电子').replace('2','生物工程').replace('3','能源环保').replace('4','化学化工').replace('5','材料科学').replace('6','其他');
 		}
 		return result;
 	},
@@ -857,10 +853,7 @@ var FrontCommonFunction = {
 		if(dataObj === null || dataObj === 'null'||dataObj === undefined){
 			result = '不限';
 		} else {
-			if(dataObj.length>5){
-				dataObj=dataObj.substring(0,5);
-			}
-			result =dataObj.replace('0','研发阶段').replace('1','实验室阶段').replace('2','概念阶段').replace('3','小批量生产').replace('4','规模化生产阶段').replace('5','市场推广阶段').replace('6','其他')+"...";
+			result =dataObj.replace('0','研发阶段').replace('1','实验室阶段').replace('2','概念阶段').replace('3','小批量生产').replace('4','规模化生产阶段').replace('5','市场推广阶段').replace('6','其他');
 		}
 		return result;
 	},
@@ -895,17 +888,7 @@ var FrontCommonFunction = {
 		if(dataObj === null || dataObj === 'null'||dataObj === undefined){
 			result = '';
 		} else {
-			if(dataObj==="0"){
-				result =  "100万以下";
-			 }else if(dataObj==="1"){
-				 result =  "100-500万";
-			 }else if(dataObj==="2"){
-				 result =  "500万-1000万";
-			 }else if(dataObj==="3"){
-				 result =  "1000万以上";
-			 }else{
-				 result =  "面议";
-			 }
+			result =dataObj.replace('0','100万以下').replace('1','100-500万').replace('2','500万-1000万').replace('3','1000万以上').replace('4','面议');
 		}
 		return result;
 	},

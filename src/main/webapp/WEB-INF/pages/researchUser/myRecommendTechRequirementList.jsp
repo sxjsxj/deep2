@@ -173,9 +173,11 @@
 			<div id="addFollowerUrl" url="${pageContext.request.contextPath}/techRequirementFollower/add"></div>
         	<div id="cancelFollowerUrl" url="${pageContext.request.contextPath}/techRequirementFollower/delete"></div>
 			<div id="loginUrl" url="${pageContext.request.contextPath}/security/loginPage"></div>
+			
 			<!-- 查询科研团队 -->
-		<div id="getResearchGroup" url="${pageContext.request.contextPath}/researchGroup/query"></div>
-
+			<div id="getResearchGroup" url="${pageContext.request.contextPath}/researchGroup/query"></div>
+			<!-- 科研成果新增界面 -->
+			<div id="addAchieveMentPageUrl" url="${pageContext.request.contextPath}/achievement/getDetailPageForAdd"></div>
 			<div class='title2'>
 				<%-- <div class='checkbox fl'>
 					<img src='${pageContext.request.contextPath}/resources/images/front/img/checkbox.png'/>

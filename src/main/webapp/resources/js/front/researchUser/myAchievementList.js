@@ -176,27 +176,27 @@ function query(param) {
 			var li='<div id="shaDowShow'+i+'"  class="mydiv1" onmouseout="delShaDowClass('+i+')" onmouseover="addShaDowClass('+i+')"><li>'
 				li+='<input type="hidden" id="operateId'+i+'" value="'+queryReturnList[i].id+'"/>'
 				li+='<input type="hidden" id="status'+i+'" value="'+queryReturnList[i].status+'"/>'
-				li+='<a href="'+moreInfoUrl+'"><div class="fl ims">'
+				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="fl ims">'
 				li+=templi;
 			    li+="</div><a>"
 				li+="<div class='fl rights'>"
-				  li+='<a href="'+moreInfoUrl+'"><div class="titl">'
+				  li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="titl">'
 			        li+="<div class='fl les'>"+FrontCommonFunction.setTextSize(queryReturnList[i].name, 20, '...')+"</div>"
 					li+="<div class='fr'>"
 					 li+="<div class='fl'>"+FrontCommonFunction.setAchievementStatus(queryReturnList[i].status)+"</div>"
-					 li+="<div class='fl ge'>"+FrontCommonFunction.setInvestorPhase(queryReturnList[i].phase)+"</div>"
+					 li+="<div class='fl ge'>"+FrontCommonFunction.setStrInvestorPhase(queryReturnList[i].phase)+"</div>"
 					 li+="<div class='clear'></div>"
 					li+="</div>"
 					li+="<div class='clear'></div>"
 				  li+="</div></a>"
 
-				  li+='<a href="'+moreInfoUrl+'"><div class="cs">'
+				  li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="cs">'
 					  li+=FrontCommonFunction.getResultMaitText(queryReturnList[i].solution,200,"#achievementMoreInfo",queryReturnList[i].id)
 				  li+="</div></a>"
 
 				li+="<div class='b'>"
 					  li+='<div class="fl">'
-					   	li+="<span>"+'<a href="'+moreInfoUrl+'">'+FrontCommonFunction.setInvestorDomain(queryReturnList[i].domain)+"</span>"
+					   	li+="<span>"+'<a href="'+moreInfoUrl+'" target="_blank">'+FrontCommonFunction.setInvestorDomain(queryReturnList[i].domain)+"</span>"
 						  li+="<span>"+provinceName+"</span>"
 						 	li+="<span>"+FrontCommonFunction.setAmount(queryReturnList[i].amount)+"</span>"
 						  li+="<span>"+FrontCommonFunction.setRequirementStatus(queryReturnList[i].status)+"</a></span>"

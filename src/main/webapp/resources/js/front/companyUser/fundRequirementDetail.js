@@ -134,12 +134,15 @@ function getDetail(id) {
 		$('#projectTeam').val(datas.projectTeam);
 		$('#projectIntro').val(datas.projectIntro);
 		$('#projectPhase').val(datas.projectPhase);
-		$('#showProjectPhase').val(FrontCommonFunction.setInvestorPhase(datas.projectPhase));
+		$('#showProjectPhase').val(FrontCommonFunction.setStrInvestorPhase(datas.projectPhase));
 		$('#projectProspect').val(datas.projectProspect);
 		$('#amountNeeded').val(datas.amountNeeded);
 		$("#showAmountNeeded").val(FrontCommonFunction.setStrAmount(datas.amountNeeded));
 //		$('#imgPath').val(datas.logoUrl);
 		$('#filePath').val(datas.attachUrl);
+		if(datas.attachName) {
+			$('#fileTypeCheckResult').html('已上传文件:'+datas.attachName);
+		}
 	};
 	$.ajax(FrontCommonFunction.baseOptions);
 };

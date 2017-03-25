@@ -445,6 +445,9 @@ function getDetail() {
 			$('#imgPath').val(imgUrl);
 		}
 		$('#filePath').val(datas.attachUrl);
+		if(datas.attachName) {
+			$('#fileTypeCheckResult').html('已上传文件:'+datas.attachName);
+		}
 	};
 	$.ajax(FrontCommonFunction.baseOptions);
 };
@@ -548,6 +551,7 @@ function getData() {
 	paramTemp['investAmount']=investAmountTemp;
 	paramTemp['investPhase']=investPhaseTemp;
 	paramTemp['investOutline']=$('#investOutline').val();
+	paramTemp['introduction']=$('#introduction').val();
 	paramTemp['logoUrl']=$('#imgPath').val();
 	paramTemp['attachUrl']=$('#filePath').val();
 	return paramTemp;

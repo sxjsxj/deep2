@@ -15,6 +15,7 @@ function initUserManager() {
 };
 
 function query(param) {
+	param = getData();
 	var that=this;
 	// 清空列表
 	$('#userQueryTBody').html("");

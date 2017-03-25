@@ -39,6 +39,7 @@ function initachievementManager() {
 };
 
 function query(param) {
+	param = getData();
 	var that=this;
 	// 清空列表
 	$('#achievementQueryTBody').html("");

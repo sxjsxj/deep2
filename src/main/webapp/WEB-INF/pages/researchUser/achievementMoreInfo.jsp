@@ -118,17 +118,6 @@ $(function(){
 	$('.headbg .input .button dd').click(function(){
 		$(this).parents(".button").find("span").text($(this).text());
 	})
-	$(".more").click(function(){
-		if($(this).hasClass('on')){
-			$(this).removeClass("on");
-			$("#mores").slideUp(100);
-			$(this).text('查看更多信息>>');
-		}else{
-			$(this).addClass("on");
-			$(this).text('收起');
-			$("#mores").slideDown(100);
-		}
-	})
 	$(".tuijian .right .heads .list .checkbox").click(function(){
 		if($(this).hasClass('on')){
 			$(this).removeClass("on");

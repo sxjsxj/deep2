@@ -132,31 +132,31 @@ function query(param) {
 				var logoUrl=queryReturnList[i].researchGroupResultModel.logoUrl;
 				if(logoUrl!==null && logoUrl!=="" && logoUrl!==undefined){
 					imgUrl=logoUrl;
-					li+='<a href="'+moreInfoUrl+'"><div class="fl ims">'+'<img style="width:240px;height:182px" src="'+$('#downFile').attr('url')+'?path='+imgUrl+'"/></div></a>'
+					li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="fl ims">'+'<img style="width:240px;height:182px" src="'+$('#downFile').attr('url')+'?path='+imgUrl+'"/></div></a>'
 				}else{
 					imgUrl="../resources/images/front/img/keyantuandui.png";
-					li+='<a href="'+moreInfoUrl+'"><div class="fl ims">'+'<img style="width:240px;height:182px" src="'+imgUrl+'"/></div></a>'
+					li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="fl ims">'+'<img style="width:240px;height:182px" src="'+imgUrl+'"/></div></a>'
 				}
 
 				li+="<div class='fl rights'>"
-				 li+='<a href="'+moreInfoUrl+'"><div class="tits">'
+				 li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="tits">'
 				li+="<div class='fl'>"+FrontCommonFunction.setTextSize(queryReturnList[i].researchGroupResultModel.name, 20, '...')+"</div>"
 				li+="<div class='fr'>"+FrontCommonFunction.setResearchUserType(queryReturnList[i].researchGroupResultModel.researchUserResultModel.type)+"</div>"
 				li+="<div class='clear'></div>"
 				 li+="</div></a>"
 				li+="<div class='cs'>"
 				li+='<div class="mod borderright">'
-				li+='<a href="'+moreInfoUrl+'"><div class="cs_tis">'+"研究方向："+queryReturnList[i].researchGroupResultModel.field+"</div></a>"
-				li+="<div class=''><a class='fl rems'></a>"+'<a href="'+moreInfoUrl+'"><span class="fl">'+"简介&nbsp;:&nbsp;"+FrontCommonFunction.getResultMaitText(queryReturnList[i].researchGroupResultModel.introduction,100,"#researchGroupMoreInfo",queryReturnList[i].researchGroupResultModel.id)+"</span></a><div class='clear'></div></div>"
+				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="cs_tis">'+"研究方向："+queryReturnList[i].researchGroupResultModel.field+"</div></a>"
+				li+="<div class=''><a class='fl rems'></a>"+'<a href="'+moreInfoUrl+'" target="_blank"><span class="fl">'+"简介&nbsp;:&nbsp;"+FrontCommonFunction.getResultMaitText(queryReturnList[i].researchGroupResultModel.introduction,100,"#researchGroupMoreInfo",queryReturnList[i].researchGroupResultModel.id)+"</span></a><div class='clear'></div></div>"
 				li+="</div>"
 				li+='<div class="mod marginleft">'
-				li+='<a href="'+moreInfoUrl+'"><div class="cs_tis">'+'研究成果:'+"</div></a>"
-				li+='<div class="">'+"<a class='fl rems'></a><span class='fl'>"+'<a href="'+moreInfoUrl+'">'+FrontCommonFunction.getResultMaitText(queryReturnList[i].researchGroupResultModel.achievement,90,"#researchGroupMoreInfo",queryReturnList[i].researchGroupResultModel.id)+"</a></span><div class='clear'></div></div>"
+				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="cs_tis">'+'研究成果:'+"</div></a>"
+				li+='<div class="">'+"<a class='fl rems'></a><span class='fl'>"+'<a href="'+moreInfoUrl+'" target="_blank">'+FrontCommonFunction.getResultMaitText(queryReturnList[i].researchGroupResultModel.achievement,90,"#researchGroupMoreInfo",queryReturnList[i].researchGroupResultModel.id)+"</a></span><div class='clear'></div></div>"
 				li+="</div>"
 				li+="<div class='clear'></div>"
 				li+="</div>"
 				li+="<div class='f'>"
-				li+='<div class="fl"><a>'+'<a href="'+moreInfoUrl+'">'+FrontCommonFunction.setDomain(queryReturnList[i].researchGroupResultModel.domain) + "&nbsp;&nbsp;"+ universityType+ "&nbsp;&nbsp;"+provinceName+"</a></a></div>"
+				li+='<div class="fl"><a>'+'<a href="'+moreInfoUrl+'" target="_blank">'+FrontCommonFunction.setDomain(queryReturnList[i].researchGroupResultModel.domain) + "&nbsp;&nbsp;"+ universityType+ "&nbsp;&nbsp;"+provinceName+"</a></a></div>"
 				li+='<div class="fr" >'
 				li+=cooperateCollectFlagDiv(queryReturnList[i].researchGroupResultModel, i)
 				li+="</div>"

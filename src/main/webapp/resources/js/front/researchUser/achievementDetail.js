@@ -177,7 +177,7 @@ function getDetail(id) {
 		$('#amount').val(datas.amount);
 		$('#showAmount').val(FrontCommonFunction.setStrAmount(datas.amount));
 		$('#phase').val(datas.phase);
-		$('#showPhase').val(FrontCommonFunction.setInvestorPhase(datas.phase));
+		$('#showPhase').val(FrontCommonFunction.setStrInvestorPhase(datas.phase));
 		$('#patenter').val(datas.patenter);
 		$('#solution').val(datas.solution);
 		$('#applyTo').val(datas.applyTo);
@@ -233,6 +233,9 @@ function getDetail(id) {
 		$('#companyLogo').attr('height',"120px");
 		$('#companyLogo').attr('src',imgUrl);
 		$('#imgPath').val(imgUrl);
+		if(datas.attachName) {
+			$('#fileTypeCheckResult').html('已上传文件:'+datas.attachName);
+		}
 	};
 	$.ajax(FrontCommonFunction.baseOptions);
 };

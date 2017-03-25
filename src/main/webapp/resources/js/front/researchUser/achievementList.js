@@ -141,21 +141,21 @@ function query(param) {
 			var logoUrl =queryReturnList[i].logoUrl;
 			if(logoUrl!==null && logoUrl!=="" && logoUrl!==undefined){
 				imgUrl=logoUrl;
-				li+='<a href="'+moreInfoUrl+'"><div class="fl ims">'+'<img style="width:240px;height:182px" src="'+$('#downFile').attr('url')+'?path='+imgUrl+'"/>'+"</div></a>"
+				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="fl ims">'+'<img style="width:240px;height:182px" src="'+$('#downFile').attr('url')+'?path='+imgUrl+'"/>'+"</div></a>"
 			}else{
 				imgUrl="../resources/images/front/img/keyanchengguo.png";
-				li+='<a href="'+moreInfoUrl+'"><div class="fl ims">'+'<img style="width:240px;height:182px" src="'+imgUrl+'"/>'+"</div></a>"
+				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="fl ims">'+'<img style="width:240px;height:182px" src="'+imgUrl+'"/>'+"</div></a>"
 			}
 			li+="<div class='fl rights'>"
-			li+='<a href="'+moreInfoUrl+'"><div class="tits">'
+			li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="tits">'
 			li+="<div class='fl'>"+FrontCommonFunction.setTextSize(queryReturnList[i].name, 20, '...')+"</div>"
-			li+="<div class='fr'>"+FrontCommonFunction.setInvestorPhase(queryReturnList[i].phase)+"</div>"
+			li+="<div class='fr'>"+FrontCommonFunction.setStrInvestorPhase(queryReturnList[i].phase)+"</div>"
 			li+="<div class='clear'></div>"
 			li+="</div></a>"
-			li+='<a href="'+moreInfoUrl+'"><div class="cs">'
+			li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="cs">'
 			li+="</div></a>"
 			li+="<div class='f'>"
-			li+='<a href="'+moreInfoUrl+'"><div class="fl">'+FrontCommonFunction.setInvestorDomain(queryReturnList[i].domain)+"&nbsp;&nbsp;"+provinceName+"&nbsp;&nbsp;"+FrontCommonFunction.setAmount(queryReturnList[i].amount)+"&nbsp;&nbsp;"+FrontCommonFunction.setRequirementStatus(queryReturnList[i].status)+"</div></a>"
+			li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="fl">'+FrontCommonFunction.setInvestorDomain(queryReturnList[i].domain)+"&nbsp;&nbsp;"+provinceName+"&nbsp;&nbsp;"+FrontCommonFunction.setAmount(queryReturnList[i].amount)+"&nbsp;&nbsp;"+FrontCommonFunction.setRequirementStatus(queryReturnList[i].status)+"</div></a>"
 			li+='<div class="fr">'
 			li+=cooperateCollectFlagDiv(queryReturnList[i], i)
 			li+="</div>"

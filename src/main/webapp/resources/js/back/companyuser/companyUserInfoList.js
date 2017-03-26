@@ -9,7 +9,7 @@ $(document).ready(function() {
 	
 	CommonFunction.selectAll('selectAll', 'companyUserQueryTBody');
 	$(".domain").click(function() {
-		text = $("input:checkbox[name='domain']:checked").map(function(index,elem) {
+		text = $("input:checkbox[name=domain]:checked").map(function(index,elem) {
 			return $(elem).val();
 		}).get().join(',');
 		$("#domainId").val(text);
@@ -36,22 +36,22 @@ function setSelect(){
 				$("#city").html("");
 				$("#city").append(dd);
 				$("#city").click(function(){
-					 $("#city").val($(this).attr("value")); 
-					 var city=$(this).attr("value");
-						$("#county").html("");
-						//根据市查县
-						var cityCountyMap=CommonFunction.tempCityCounty();
-						var listCounty=cityCountyMap[city];
-						var dd = '<option value=" " selecetd="selected">请选择县</option>';
-						for(var i = 0; i < listCounty.length; i++) {	
-							dd += '<option value="'+listCounty[i]+'">' + listCounty[i] + '</option>';
-						}
-						$("#county").html("");
-						$("#county").append(dd);
-						$("#county").click(function(){
-							 $("#county").val($(this).attr("value")); 
-						});
-				});
+					$("#city").val($(this).attr("value")); 
+					var city=$(this).attr("value");
+					$("#county").html("");
+					//根据市查县
+					var cityCountyMap=CommonFunction.tempCityCounty();
+					var listCounty=cityCountyMap[city];
+					var dd = '<option value=" " selecetd="selected">请选择县</option>';
+					for(var i = 0; i < listCounty.length; i++) {	
+						dd += '<option value="'+listCounty[i]+'">' + listCounty[i] + '</option>';
+					}
+					$("#county").html("");
+					$("#county").append(dd);
+					$("#county").click(function(){
+						 $("#county").val($(this).attr("value")); 
+					});
+			 });
 	});
 }
 
@@ -68,7 +68,7 @@ function initBasicResearchField(){
 			var domainShow = '';
 			for(var i = 0; i < basicRearchFieldList.length; i++) {	
 				idIndex="domain"+i
-				domainShow+='<input type="checkbox"  name="domain" class="domain" id='+idIndex+' value="'+basicRearchFieldList[i].name+'"  style="width:12px"/>'
+				domainShow+='<input type="checkbox"  name="domain" class="domain" id='+idIndex+' value="'+basicRearchFieldList[i].id+'"  style="width:12px"/>'
 				+basicRearchFieldList[i].name+'';
 			}
 			$("#domainDiv").append(domainShow);
@@ -121,13 +121,13 @@ function query(param) {
 		} 
 		for(var i = 0; i < queryReturnList.length; i++) {	
 			var companyUserQueryTBodyTr = '<tr class="gradeX">'
-				+ '<td><input type="checkbox" /></td>'
+				+ '<td><input type="checkbox" name="listCheckbox" /></td>'
 				+'<td name="id">'+CommonFunction.replaceNull(queryReturnList[i].id) +'</td>'
 				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].userModel.id) +'</td>'
 				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].userModel.email) +'</td>'
 				+ '<td>'+ CommonFunction.replaceNull(queryReturnList[i].userModel.telno) +'</td>'
                 + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].name) +'</td>'
-                + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].domain) +'</td>'
+                + '<td>'+ CommonFunction.setDomain(queryReturnList[i].domain) +'</td>'
                 + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].province) +'</td>'
                 + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].city) +'</td>'
                 + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].county) +'</td>'
@@ -140,6 +140,8 @@ function query(param) {
                 + CommonFunction.getAttach(queryReturnList[i])
                 + '<td>'+ CommonFunction.getDate(queryReturnList[i].userModel.whenCreate) +'</td>'
 				+ '<td>'+ CommonFunction.getDate(queryReturnList[i].userModel.whenLastLogin) +'</td>'
+				+'<td name="status" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].status) +'</td>'
+				+'<td name="communicateStatus" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].communicateStatus) +'</td>'
 				+ '<td>'+ CommonFunction.setStatus(queryReturnList[i].status) +'</td>'
                 + '<td>'+ CommonFunction.setCommunicateStatus(queryReturnList[i].communicateStatus) +'</td>'
                 + '<td>'+ CommonFunction.setRemark(queryReturnList[i].userModel.remark) +'</td>'
@@ -157,14 +159,14 @@ function query(param) {
 function getData() {
 	var paramTemp = {};
 	var userQueryModel={};
+	getDefaultQuery('user', '5', userQueryModel);
 	userQueryModel['id']=$.trim($("#id").val());
 	userQueryModel['email']=$.trim($("#email").val());
 	userQueryModel['telno']=$.trim($("#telno").val());
 	userQueryModel['remark']=$.trim($("#remark").val());
-	userQueryModel['status']=$.trim($("#statusId").val());
-	userQueryModel['communicateStatus']=$.trim($("#communicateStatusId").val());
 	
 	var companyUserQueryModel={};
+	getDefaultQuery('companyUser', '5', companyUserQueryModel);
 	companyUserQueryModel['domain']=$.trim($("#domainId").val());
 	companyUserQueryModel['name']=$.trim($("#name").val());
 	companyUserQueryModel['contactName']=$.trim($("#contactName").val());
@@ -173,6 +175,9 @@ function getData() {
 	companyUserQueryModel['county']=$.trim($("#county").val());
 	companyUserQueryModel['scale']=$.trim($("#scale").val());
 	companyUserQueryModel['nature']=$.trim($("#nature").val());
+	companyUserQueryModel['status']=$.trim($("#statusId").val());
+	companyUserQueryModel['communicateStatus']=$.trim($("#communicateStatusId").val());
+	
 	paramTemp['userQueryModel']=userQueryModel;
 	paramTemp['companyUserQueryModel']=companyUserQueryModel;
 	return paramTemp;

@@ -171,7 +171,7 @@ body,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6,table,tr,th,td,p,input,dl,dt,dd,ul,ol,l
 								</td>
 							</tr>
 							<tr>
-								<td>排序：</td>
+								<td>优先级序号：</td>
 								<td>
 								<input id="recommendSeq" data-color="#000000" name="recommendSeq"></input>
 								</td>
@@ -236,17 +236,14 @@ body,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6,table,tr,th,td,p,input,dl,dt,dd,ul,ol,l
 											</tr>
 											
 											<tr>
-											 <td>研发经费</td>
-											 <td>
-											 <input type="checkbox" name="amount" value="0" class="amount"  style="width: 12px" />10万以下
-											 <input type="checkbox" name="amount" value="1" class="amount"  style="width: 12px" />10-30万
-											 <input type="checkbox" name="amount" value="2" class="amount"  style="width: 12px" />30-50万
-											 <input type="checkbox" name="amount" value="3" class="amount"  style="width: 12px" />50-100万
-											 <input type="checkbox" name="amount" value="4" class="amount"  style="width: 12px" />100-500万
-											 <input type="checkbox" name="amount" value="5" class="amount"  style="width: 12px" />500万以上
-											 <input type="checkbox" name="amount" value="6" class="amount"  style="width: 12px" />面议
-											 <input id="amountId" type="hidden" />
-											 </td>
+											  <td>研发经费</td>
+												 <td>
+										 		 <input type="checkbox" name="amount" value="0" class="amount"  style="width: 12px" />100万以下
+												 <input type="checkbox" name="amount" value="1" class="amount"  style="width: 12px" />100-500万
+												 <input type="checkbox" name="amount" value="2" class="amount"  style="width: 12px" />500-1000万
+												 <input type="checkbox" name="amount" value="3" class="amount"  style="width: 12px" />1000万以上
+												 <input type="checkbox" name="amount" value="4" class="amount"  style="width: 12px" />面议
+												 <input id="amountId" type="hidden" />
 											</tr>
 											
 											<tr>
@@ -286,12 +283,12 @@ body,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6,table,tr,th,td,p,input,dl,dt,dd,ul,ol,l
 											 </td>
 											</tr>
 											
-											<tr>
+											<!-- <tr>
 											   <td>备注</td>
 												<td>
 												 <input id="remark" name="remark" type="text" style="width: 180px"  value="" class="input-small"/>
 												</td>
-											</tr>
+											</tr> -->
 										</table>
 									</div>
 								</div>
@@ -320,6 +317,7 @@ body,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6,table,tr,th,td,p,input,dl,dt,dd,ul,ol,l
 									<th class="checkAll"><input type="checkbox" id="selectAll" />全选</th>
 									<th>需求ID</th>
 									<th>需求名称</th>
+									<th>优先级序号</th>
 									<th>企业用户ID</th>
 									<th>企业名称</th>
 									<th>省/直辖市</th>

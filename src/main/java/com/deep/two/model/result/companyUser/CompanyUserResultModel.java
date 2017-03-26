@@ -12,7 +12,7 @@ public class CompanyUserResultModel implements ResultModel {
 	private String province;
 	private String city;
 	private String county;
-	private Integer scale;
+	private String scale;
 	private String productValue;
 	private String nature;
 	private String address;
@@ -75,10 +75,10 @@ public class CompanyUserResultModel implements ResultModel {
 	public void setCounty(String county) {
 		this.county = county;
 	}
-	public Integer getScale() {
+	public String getScale() {
 		return scale;
 	}
-	public void setScale(Integer scale) {
+	public void setScale(String scale) {
 		this.scale = scale;
 	}
 	public String getProductValue() {

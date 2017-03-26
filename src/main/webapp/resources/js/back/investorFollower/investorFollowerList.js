@@ -46,13 +46,14 @@ function query(param) {
 		} 
 		for(var i = 0; i < queryReturnList.length; i++) {	
 			var investorFollowerQueryTBodyTr = '<tr class="gradeX">'
-				+ '<td><input type="checkbox" /></td>'
+				+ '<td><input type="checkbox" name="listCheckbox" /></td>'
 				+'<td name="investorId">'+CommonFunction.replaceNull(queryReturnList[i].id.investorId) +'</td>'
 				+'<td name="userId">'+CommonFunction.replaceNull(queryReturnList[i].id.userId) +'</td>'
 				+'<td name="relationType" class="hidden">'+ queryReturnList[i].id.relationType +'</td>'
 				+'<td>'+ CommonFunction.setRelationType(queryReturnList[i].id.relationType) +'</td>'
 				+'<td>'+CommonFunction.setStrInvestorFollowerType(queryReturnList[i].followerType)+'</td>'
 				+ '<td>'+ CommonFunction.setDetail(queryReturnList[i].content) +'</td>'
+				+ '<td class="hidden" name="communicateStatus">'+ queryReturnList[i].communicateStatus +'</td>'
 				+ '<td>'+ CommonFunction.setCommunicateStatus(queryReturnList[i].communicateStatus) +'</td>'
 	            + '<td>'+ CommonFunction.setDetail(queryReturnList[i].remark) +'</td>'
                 + '<td>'+ CommonFunction.setRemoveFlag(queryReturnList[i].removeFlag) +'</td>'
@@ -69,14 +70,17 @@ function query(param) {
 function getData() {
 	var paramTemp = {};
 	var investorUserQueryModel={};
+	getDefaultQuery('investorUser', '5', investorUserQueryModel);
 	investorUserQueryModel['id']=$.trim($("#investorUserId").val());
 	paramTemp['investorUserQueryModel']=investorUserQueryModel;
 	
 	var userQueryModel={};
+	getDefaultQuery('user', '5', userQueryModel);
 	userQueryModel['id']=$.trim($("#companyUserId").val());
 	paramTemp['userQueryModel']=userQueryModel;
 	
 	var investorFollowerQueryModel={};
+	getDefaultQuery('investorFollower', '5', investorFollowerQueryModel);
 	setFollowerQueryModel('investorFollower', investorFollowerQueryModel);
 	investorFollowerQueryModel['remark']=$.trim($("#remark").val());
 	investorFollowerQueryModel['communicateStatus']=$.trim($("#communicateStatusId").val());

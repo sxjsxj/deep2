@@ -152,7 +152,7 @@ public class CompanyUserController  extends BaseController<CompanyUser> implemen
             model = JSONUtil.jsonToModel(str, CompanyUserCombineQueryModel.class, null);
             //model.getCompanyUserQueryModel().setRemoveFlag("0");
             list = companyUserService.combineQueryList(model, pagination, getCurrentUser());
-        } catch (ViewException e) {
+        } catch (Exception e) {
             LOGGER.error(e.getMessage());
         }
         return JSON.toJSONString(list);

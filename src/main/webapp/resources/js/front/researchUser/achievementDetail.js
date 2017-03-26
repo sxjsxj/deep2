@@ -359,10 +359,16 @@ function uploadImg(fileId){
 	if (ext != ".PNG" && ext != ".GIF" && ext != ".JPG" && ext != ".JPEG") {
 		$("#imgTypeCheckResult").html('<font color="red">图像格式只能是:GIF,JPG,JPEG,PNG</font>');
 		$("#imgCheckFlag").val("0");
-		var imgUrl="../resources/images/front/img/fengmian_img.png";
+		var path='';
+		var imgUrl=datas.logoUrl;
+		if(imgUrl==="" || imgUrl===undefined || imgUrl==="undefined"){
+			path="../resources/images/front/img/fengmian_img.png";
+		}else{
+			path=$('#downFile').attr('url')+'?path='+imgUrl;
+		}
 		$('#companyLogo').attr('width',"160px");
 		$('#companyLogo').attr('height',"120px");
-		$('#companyLogo').attr('src',imgUrl);
+		$('#companyLogo').attr('src',path);
 		$('#imgPath').val("");
 		return false;
 	}else{

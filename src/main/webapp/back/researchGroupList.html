@@ -167,7 +167,7 @@ body,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6,table,tr,th,td,p,input,dl,dt,dd,ul,ol,l
 								</td>
 							</tr>
 							<tr>
-								<td>排序：</td>
+								<td>优先级序号：</td>
 								<td>
 								<input id="recommendSeq" data-color="#000000" name="recommendSeq"></input>
 								</td>
@@ -195,23 +195,14 @@ body,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6,table,tr,th,td,p,input,dl,dt,dd,ul,ol,l
 									<div title="查询" style="height: 100%;">
 										<table id="updateOrgTranRuleTable" cellpadding="8">
 											<tr>
-											   <td>邮箱</td>
-												<td>
-												   <input type="text" id="email" name="email" style="width: 180px" value="" class="input-small"/>
-												机构/其他名称
-												   <input type="text" id="orgName" name="orgName" style="width: 180px"  value="" class="input-small"/>
-												高校名称
-												<input id="uniName" name="uniName" type="text" style="width: 180px" value="" class="input-small"/>
-												</td>
-											</tr>
-											<tr>
-											   <td>负责人姓名</td>
+											   <td>科研团队名称</td>
 											   <td>
-											   <input id="leaderName" name="leaderName" type="text" style="width: 180px"  value="" class="input-small"/>
+											    <input id="teamName" name="name" type="text" style="width: 180px"  value="" class="input-small"/>        
 											            用户ID
 											   <input id="id" name="id" type="text" style="width: 180px"  value="" class="input-small"/>
-											        科研团队名称
-											    <input id="teamName" name="name" type="text" style="width: 180px"  value="" class="input-small"/>
+											         负责人姓名
+											    <input id="leaderName" name="leaderName" type="text" style="width: 180px"  value="" class="input-small"/>
+											       
 											   </td>
 											</tr>
 											
@@ -234,17 +225,6 @@ body,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6,table,tr,th,td,p,input,dl,dt,dd,ul,ol,l
 												</select> 
 												</td>
 											</tr>
-											
-											<tr>
-											   <td>用户类型</td>
-												<td>
-												<input type="checkbox" name="type" class="type"  value="0"  style="width: 12px" />高校
-												<input type="checkbox" name="type" class="type"  value="1"  style="width: 12px" />科研机构
-												<input type="checkbox" name="type" class="type"  value="2"  style="width: 12px" />个人
-												<input  id="typeId" type="hidden"/>
-												</td>
-											</tr>
-											
 											<tr>
 											 <td>学科领域</td>
 											 <td id="domainDiv">
@@ -328,6 +308,7 @@ body,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6,table,tr,th,td,p,input,dl,dt,dd,ul,ol,l
 									<th>科研团队ID</th>
 									<th>科研用户ID</th>
 									<th>名称</th>
+									<th>优先级序号</th>
 									<th>省</th>
 									<th>市</th>
 									<th>领域</th>

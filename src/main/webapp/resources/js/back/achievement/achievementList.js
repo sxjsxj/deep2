@@ -21,7 +21,7 @@ function initBasicResearchField(){
 			var domainShow = '';
 			for(var i = 0; i < basicRearchFieldList.length; i++) {	
 				idIndex="domain"+i
-				domainShow+='<input type="checkbox"  name="domain" class="domain" id='+idIndex+' value="'+basicRearchFieldList[i].name+'"  style="width:12px"/>'
+				domainShow+='<input type="checkbox"  name="domain" class="domain" id='+idIndex+' value="'+basicRearchFieldList[i].id+'"  style="width:12px"/>'
 				+basicRearchFieldList[i].name+'';
 			}
 			$("#domainDiv").append(domainShow);
@@ -70,13 +70,14 @@ function query(param) {
 		} 
 		for(var i = 0; i < queryReturnList.length; i++) {	
 			var achievementQueryTBodyTr = '<tr class="gradeX">'
-				+ '<td><input type="checkbox" /></td>'
+				+ '<td><input type="checkbox" name="listCheckbox" /></td>'
 				+'<td name="id">'+CommonFunction.replaceNull(queryReturnList[i].id) +'</td>'
 				+'<td name="recommendFlag" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].recommendFlag) +'</td>'
 				+'<td name="seqNum" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].seqNum) +'</td>'
 				+ '<td>'+ CommonFunction.replaceNull(queryReturnList[i].researchGroupResultModel.id) +'</td>'
 				+ '<td>'+ CommonFunction.replaceNull(queryReturnList[i].researchGroupResultModel.name) +'</td>'
 				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].name) +'</td>'
+				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].seqNum) +'</td>'
 	            + '<td>'+ CommonFunction.setStrDomain(queryReturnList[i].domain) +'</td>'
 	            + '<td>'+ CommonFunction.setStrType(queryReturnList[i].type) +'</td>'
 				+ '<td>'+ CommonFunction.setPatent(queryReturnList[i].duration) +'</td>'
@@ -113,11 +114,13 @@ function query(param) {
 function getData() {
 	var paramTemp = {};
 	var researchGroupQueryModel={};
+	getDefaultQuery('researchGroup', '5', researchGroupQueryModel);
 	researchGroupQueryModel['name']=$.trim($("#groupName").val());
 	researchGroupQueryModel['leaderName']=$.trim($("#leaderName").val());
 	paramTemp['researchGroupQueryModel']=researchGroupQueryModel;
 	
 	var achievementQueryModel={};
+	getDefaultQuery('achievement', '5', achievementQueryModel);
 	achievementQueryModel['sequenceNumber']=$.trim($("#sequenceNumber").val());
 	achievementQueryModel['name']=$.trim($("#name").val());
 	achievementQueryModel['remark']=$.trim($("#remark").val());

@@ -19,7 +19,7 @@ public class CompanyUser implements java.io.Serializable {
 	private String province;
 	private String city;
 	private String county;
-	private Integer scale;
+	private String scale;
 	private String productValue;
 	private String nature;
 	private String address;
@@ -52,7 +52,7 @@ public class CompanyUser implements java.io.Serializable {
 
 	public CompanyUser(String id, User user, String logoUrl, String name,
 			String domain, String province, String city, String county,
-			Integer scale, String productValue, String nature, String address,
+			String scale, String productValue, String nature, String address,
 			String introduction, String contactName, String contactTel,
 			String contactEmail, String contactTitle, String attachUrl,
 			Date whenCreate, String whoCreate, Date whenLastUpdate,
@@ -154,11 +154,11 @@ public class CompanyUser implements java.io.Serializable {
 		this.county = county;
 	}
 
-	public Integer getScale() {
+	public String getScale() {
 		return this.scale;
 	}
 
-	public void setScale(Integer scale) {
+	public void setScale(String scale) {
 		this.scale = scale;
 	}
 

@@ -190,7 +190,7 @@ function initBasicResearchField(){
 			var domainShow = '';
 			for(var i = 0; i < basicRearchFieldList.length; i++) {	
 				idIndex="domain"+i
-				domainShow+='<input type="checkbox"  name="domain" class="domain" id='+idIndex+' value="'+basicRearchFieldList[i].name+'"  style="width:12px"/>'
+				domainShow+='<input type="checkbox"  name="domain" class="domain" id='+idIndex+' value="'+basicRearchFieldList[i].id+'"  style="width:12px"/>'
 				+basicRearchFieldList[i].name+'';
 			}
 			$("#domainDiv").append(domainShow);

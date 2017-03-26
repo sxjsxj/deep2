@@ -6,6 +6,7 @@
  * 2 -- 自己查询，查询所有状态的。
  * 3 -- 我的推荐，推荐标识为推荐，状态都是审核通过的。
  * 4 -- 我的收藏/关注，查询审核通过的。。。
+ * 5 -- 所有
  * @param queryParam
  */
 function getDefaultQuery(type, subType, queryParam) {
@@ -22,8 +23,29 @@ function getDefaultQuery(type, subType, queryParam) {
 		} else if(subType == '4') {
 			queryParam['status'] = '1';
 			queryParam['removeFlag'] = '0';
+		}else if(subType == '5') {
+			queryParam['status'] = '0,1,2';
+			queryParam['removeFlag'] = '0,1';
 		}
 	}
+	if(type == 'researchUser'){
+		if(subType == '1') {
+			queryParam['status'] = '1';
+			queryParam['removeFlag'] = '0';
+		} else if(subType == '2') {
+			queryParam['status'] = '0,1,2';
+			queryParam['removeFlag'] = '0';
+		}else if(subType == '3') {
+			queryParam['status'] = '1';
+			queryParam['removeFlag'] = '0';
+		} else if(subType == '4') {
+			queryParam['status'] = '1';
+			queryParam['removeFlag'] = '0';
+		}else if(subType == '5') {
+			queryParam['status'] = '0,1,2';
+			queryParam['removeFlag'] = '0,1';
+		}
+	} 
 	if(type == 'researchGroup'){
 		if(subType == '1') {
 			queryParam['status'] = '1';
@@ -38,6 +60,9 @@ function getDefaultQuery(type, subType, queryParam) {
 		} else if(subType == '4') {
 			queryParam['status'] = '1';
 			queryParam['removeFlag'] = '0';
+		}else if(subType == '5') {
+			queryParam['status'] = '0,1,2';
+			queryParam['removeFlag'] = '0,1';
 		}
 	} 
 	if(type == 'achievement'){
@@ -54,6 +79,9 @@ function getDefaultQuery(type, subType, queryParam) {
 		} else if(subType == '4') {
 			queryParam['status'] = '1,2,3,4';
 			queryParam['removeFlag'] = '0';
+		}else if(subType == '5') {
+			queryParam['status'] = '0,1,2,3,4,5';
+			queryParam['removeFlag'] = '0,1';
 		}
 	} 
 	if(type == 'researchGroupFollower'){
@@ -70,6 +98,8 @@ function getDefaultQuery(type, subType, queryParam) {
 			//queryParam['status'] = '1,2,3,4';
 			queryParam['removeFlag'] = '0';
 			queryParam['researchGroupFollowerIdQueryModel']=getFollowerId('1');
+		}else if(subType == '5') {
+			queryParam['removeFlag'] = '0,1';
 		}
 	} 
 	if(type == 'achievementFollower'){
@@ -86,6 +116,8 @@ function getDefaultQuery(type, subType, queryParam) {
 			//queryParam['status'] = '1,2,3,4';
 			queryParam['removeFlag'] = '0';
 			queryParam['achievementFollowerIdQueryModel']=getFollowerId('1');
+		}else if(subType == '5') {
+			queryParam['removeFlag'] = '0,1';
 		}
 	} 
 	if(type == 'companyUser'){
@@ -101,6 +133,9 @@ function getDefaultQuery(type, subType, queryParam) {
 		} else if(subType == '4') {
 			queryParam['status'] = '1';
 			queryParam['removeFlag'] = '0';
+		}else if(subType == '5') {
+			queryParam['status'] = '0,1,2';
+			queryParam['removeFlag'] = '0,1';
 		}
 	} 
 	if(type == 'techRequirement'){
@@ -117,6 +152,9 @@ function getDefaultQuery(type, subType, queryParam) {
 		} else if(subType == '4') {
 			queryParam['status'] = '1,2,3,4';
 			queryParam['removeFlag'] = '0';
+		}else if(subType == '5') {
+			queryParam['status'] = '0,1,2,3,4,5';
+			queryParam['removeFlag'] = '0,1';
 		}
 	} 
 	if(type == 'fundRequirement'){
@@ -133,6 +171,9 @@ function getDefaultQuery(type, subType, queryParam) {
 		} else if(subType == '4') {
 			queryParam['status'] = '1,2,3,4';
 			queryParam['removeFlag'] = '0';
+		}else if(subType == '5') {
+			queryParam['status'] = '0,1,2,3,4,5';
+			queryParam['removeFlag'] = '0,1';
 		}
 	} 
 	if(type == 'techRequirementFollower'){
@@ -149,6 +190,8 @@ function getDefaultQuery(type, subType, queryParam) {
 			//queryParam['status'] = '1,2,3,4';
 			queryParam['removeFlag'] = '0';
 			queryParam['techRequirementFollowerIdQueryModel']=getFollowerId('1');
+		}else if(subType == '5') {
+			queryParam['removeFlag'] = '0,1';
 		}
 	} 
 	if(type == 'fundRequirementFollower'){
@@ -165,6 +208,8 @@ function getDefaultQuery(type, subType, queryParam) {
 			//queryParam['status'] = '1,2,3,4';
 			queryParam['removeFlag'] = '0';
 			queryParam['fundRequirementFollowerIdQueryModel']=getFollowerId('1');
+		}else if(subType == '5') {
+			queryParam['removeFlag'] = '0,1';
 		}
 	} 
 	if(type == 'investorUser'){
@@ -181,6 +226,9 @@ function getDefaultQuery(type, subType, queryParam) {
 		} else if(subType == '4') {
 			queryParam['status'] = '1';
 			queryParam['removeFlag'] = '0';
+		}else if(subType == '5') {
+			queryParam['status'] = '0,1,2';
+			queryParam['removeFlag'] = '0,1';
 		}
 	} 
 	if(type == 'investorUserFollower'){
@@ -197,6 +245,8 @@ function getDefaultQuery(type, subType, queryParam) {
 			//queryParam['status'] = '1,2,3,4';
 			queryParam['removeFlag'] = '0';
 			queryParam['investorUserFollowerIdQueryModel']=getFollowerId('1');
+		}else if(subType == '5') {
+			queryParam['removeFlag'] = '0,1';
 		}
 	} 
 };

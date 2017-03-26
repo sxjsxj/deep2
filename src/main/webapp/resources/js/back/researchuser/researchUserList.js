@@ -71,7 +71,7 @@ function query(param) {
 		} 
 		for(var i = 0; i < queryReturnList.length; i++) {	
 			var researchUserQueryTBodyTr = '<tr class="gradeX">'
-				+ '<td><input type="checkbox" /></td>'
+				+ '<td><input type="checkbox" name="listCheckbox" /></td>'
 				+'<td name="id">'+CommonFunction.replaceNull(queryReturnList[i].id) +'</td>'
 				+ '<td>'+ CommonFunction.replaceNull(queryReturnList[i].userModel.id) +'</td>'
 	            + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].userModel.email) +'</td>'
@@ -87,6 +87,8 @@ function query(param) {
 				+ '<td>'+ CommonFunction.replaceNull(queryReturnList[i].introduction) +'</td>'
                 + '<td>'+ CommonFunction.getDate(queryReturnList[i].userModel.whenCreate) +'</td>'
                 + '<td>'+ CommonFunction.getDate(queryReturnList[i].userModel.whenLastLogin) +'</td>'
+				+'<td name="status" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].status) +'</td>'
+				+'<td name="communicateStatus" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].communicateStatus) +'</td>'
 				+ '<td>'+ CommonFunction.setStatus(queryReturnList[i].status) +'</td>'
                 + '<td>'+ CommonFunction.setCommunicateStatus(queryReturnList[i].communicateStatus) +'</td>'
                 + '<td>'+ CommonFunction.setRemark(queryReturnList[i].userModel.remark) +'</td>'
@@ -106,6 +108,7 @@ function query(param) {
 function getData() {
 	var paramTemp = {};
 	var userQueryModel={};
+	getDefaultQuery('user', '5', userQueryModel);
 	userQueryModel['id']=$.trim($("#id").val());
 	userQueryModel['email']=$.trim($("#email").val());
 	userQueryModel['telno']=$.trim($("#telno").val());
@@ -115,6 +118,7 @@ function getData() {
 	paramTemp['userQueryModel']=userQueryModel;
 	
 	var universityUserQueryModel={};
+	getDefaultQuery('researchUser', '5', universityUserQueryModel);
 	universityUserQueryModel['uniName']=$.trim($("#name").val());
 	universityUserQueryModel['uniProject211']=$.trim($("#project211Id").val());
 	universityUserQueryModel['uniProject985']=$.trim($("#project985Id").val());
@@ -123,6 +127,7 @@ function getData() {
 	paramTemp['universityUserQueryModel']=universityUserQueryModel;
 	
 	var organizationUserQueryModel={};
+	getDefaultQuery('researchUser', '5', organizationUserQueryModel);
 	organizationUserQueryModel['orgName']=$.trim($("#name").val());
 	organizationUserQueryModel['orgProvince']=$.trim($("#province").val());
 	organizationUserQueryModel['orgCity']=$.trim($("#city").val());

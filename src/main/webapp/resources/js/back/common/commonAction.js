@@ -73,8 +73,6 @@ function commonFollowerAction(type) {
 	//调后台返回
 	$('#returnInfo-open-modal').click(function() {
 	});
-	$('#reviewstatus0').click();
-	$('#reviewCommunicateStatus0').click();
 	
 	$('#removeBtn').click(function() {
 		deleteinvestorUser();
@@ -183,8 +181,6 @@ function commonAction() {
 	//调后台返回
 	$('#returnInfo-open-modal').click(function() {
 	});
-	$('#reviewstatus0').click();
-	$('#reviewCommunicateStatus0').click();
 		
 	$('#removeBtn').click(function() {
 		deleteinvestorUser();
@@ -325,17 +321,48 @@ function deleteinvestorUser() {
 };
 
 function toRecommendBtn(){
-	if ($('tbody input:checked').length === 0) {
+	if ($('tbody input[name=listCheckbox]:checked').length === 0) {
 		$('#noselect-open-modal').click();
 		return;
     }
+	if ($('tbody input[name=listCheckbox]:checked').length === 1) {
+		var tr = $('tbody input[name=listCheckbox]:checked').parent().parent();
+		var recommendFlag = tr.find('td[name=recommendFlag]').html();
+		var seqNum = tr.find('td[name=seqNum]').html();
+		$('input[name=recommendstatus]').each(function() {
+			if($(this).val() == recommendFlag) {
+				this.checked=true;
+			}
+		});
+		$('#recommendSeq').val(seqNum);
+	} else {
+		$('#recommendstatus0').click();
+	}
 	$('#recommend-open-dialog').click();
 };
 
 function toReviewinvestorUser(){
-	if ($('tbody input:checked').length === 0) {
+	if ($('tbody input[name=listCheckbox]:checked').length === 0) {
 		$('#noselect-open-modal').click();
 		return;
     }
+	if ($('tbody input[name=listCheckbox]:checked').length === 1) {
+		var tr = $('tbody input[name=listCheckbox]:checked').parent().parent();
+		var status = tr.find('td[name=status]').html();
+		var communicateStatus = tr.find('td[name=communicateStatus]').html();
+		$('input[name=reviewstatus]').each(function() {
+			if($(this).val() == status) {
+				this.checked=true;
+			}
+		});
+		$('input[name=reviewcommunicateStatus]').each(function() {
+			if($(this).val() == communicateStatus) {
+				this.checked=true;
+			}
+		});
+	} else {
+		$('#reviewstatus0').click();
+		$('#reviewCommunicateStatus0').click();
+	}
 	$('#review-open-dialog').click();
 };

@@ -47,7 +47,7 @@ function query(param) {
 		} 
 		for(var i = 0; i < queryReturnList.length; i++) {	
 			var userQueryTr = '<tr class="gradeX">'
-				+ '<td><input type="checkbox" /></td>'
+				+ '<td><input type="checkbox" name="listCheckbox"/></td>'
 				+'<td name="id">'+CommonFunction.replaceNull(queryReturnList[i].id) +'</td>'
 				+'<td name="username">'+CommonFunction.replaceNull(queryReturnList[i].username) +'</td>'
 				+ '<td>'+ CommonFunction.replaceNull(queryReturnList[i].email) +'</td>'

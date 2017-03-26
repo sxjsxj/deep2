@@ -29,7 +29,7 @@
         <property name="county" type="string">
             <column name="county" length="45" />
         </property>
-        <property name="scale" type="java.lang.Integer">
+        <property name="scale" type="string">
             <column name="scale" />
         </property>
         <property name="productValue" type="string">

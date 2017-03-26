@@ -48,7 +48,7 @@ function initBasicResearchField(){
 			var domainShow = '';
 			for(var i = 0; i < basicRearchFieldList.length; i++) {	
 				idIndex="domain"+i
-				domainShow+='<input type="checkbox"  name="domain" class="domain" id='+idIndex+' value="'+basicRearchFieldList[i].name+'"  style="width:12px"/>'
+				domainShow+='<input type="checkbox"  name="domain" class="domain" id='+idIndex+' value="'+basicRearchFieldList[i].id+'"  style="width:12px"/>'
 				+basicRearchFieldList[i].name+'';
 			}
 			$("#domainDiv").append(domainShow);
@@ -119,12 +119,13 @@ function query(param) {
 			}
 			
 			var researchGroupQueryTBodyTr = '<tr class="gradeX">'
-				+ '<td><input type="checkbox" /></td>'
+				+ '<td><input type="checkbox" name="listCheckbox" /></td>'
 				+'<td name="id">'+CommonFunction.replaceNull(queryReturnList[i].id) +'</td>'
 				+'<td name="recommendFlag" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].recommendFlag) +'</td>'
 				+'<td name="seqNum" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].seqNum) +'</td>'
 				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].researchUserResultModel.id) +'</td>'
 				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].name) +'</td>'
+				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].seqNum) +'</td>'
 				+ '<td>'+ provinceName +'</td>'
 				+ '<td>'+ cityName +'</td>'
 				+ '<td>'+ CommonFunction.setStrDomain(queryReturnList[i].domain) +'</td>'
@@ -168,11 +169,13 @@ function query(param) {
 function getData() {
 	var paramTemp = {};
 	var userQueryModel={};
+	getDefaultQuery('user', '5', userQueryModel);
 	userQueryModel['id']=$.trim($("#companyId").val());
 	userQueryModel['email']=$.trim($("#email").val());
 	paramTemp['userQueryModel']=userQueryModel;
 	
 	var organizationUserQueryModel={};
+	getDefaultQuery('researchUser', '5', organizationUserQueryModel);
 	organizationUserQueryModel['orgProvince']=$.trim($("#province").val());
 	organizationUserQueryModel['orgCity']=$.trim($("#city").val());
 	organizationUserQueryModel['orgName']=$.trim($("#orgName").val());
@@ -180,12 +183,14 @@ function getData() {
 	
 	
 	var universityUserQueryModel={};
+	getDefaultQuery('researchUser', '5', universityUserQueryModel);
 	universityUserQueryModel['uniProvince']=$.trim($("#province").val());
 	universityUserQueryModel['uniCity']=$.trim($("#city").val());
 	universityUserQueryModel['uniName']=$.trim($("#uniName").val());
 	paramTemp['universityUserQueryModel']=universityUserQueryModel;
 	
 	var researchGroupQueryModel={};
+	getDefaultQuery('researchGroup', '5', researchGroupQueryModel);
 	researchGroupQueryModel['name']=$.trim($("#teamName").val());
 	researchGroupQueryModel['field']=$.trim($("#field").val());
 	researchGroupQueryModel['remark']=$.trim($("#remark").val());

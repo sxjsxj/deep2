@@ -57,7 +57,7 @@ function initBasicResearchField(){
 		var domainShow = '';
 		for(var i = 0; i < basicRearchFieldList.length; i++) {	
 			idIndex="domain"+i
-			domainShow+='<input type="checkbox"  name="domain" class="domain" id='+idIndex+' value="'+basicRearchFieldList[i].name+'"  style="width:12px"/>'
+			domainShow+='<input type="checkbox"  name="domain" class="domain" id='+idIndex+' value="'+basicRearchFieldList[i].id+'"  style="width:12px"/>'
 			+basicRearchFieldList[i].name+'';
 		}
 		$("#domainDiv").append(domainShow);
@@ -114,11 +114,12 @@ function query(param) {
 		} 
 		for(var i = 0; i < queryReturnList.length; i++) {	
 			var investorUserQueryTBodyTr = '<tr class="gradeX">'
-				+ '<td><input type="checkbox" /></td>'
+				+ '<td><input type="checkbox" name="listCheckbox" /></td>'
 				+'<td name="id">'+CommonFunction.replaceNull(queryReturnList[i].id) +'</td>'
 				+'<td name="recommendFlag" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].recommendFlag) +'</td>'
 				+'<td name="seqNum" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].seqNum) +'</td>'
 				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].userModel.id) +'</td>'
+				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].seqNum) +'</td>'
 				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].userModel.email) +'</td>'
 				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].userModel.telno) +'</td>'
 				+ '<td>'+ CommonFunction.replaceNull(queryReturnList[i].name) +'</td>'
@@ -143,6 +144,8 @@ function query(param) {
                 + CommonFunction.getAttach(queryReturnList[i])
                 +'<td>'+CommonFunction.getDate(queryReturnList[i].userModel.whenCreate) +'</td>'
 				+'<td>'+CommonFunction.getDate(queryReturnList[i].userModel.whenLastLogin) +'</td>'
+				+'<td name="status" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].status) +'</td>'
+				+'<td name="communicateStatus" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].communicateStatus) +'</td>'
 				+'<td>'+CommonFunction.setStatus(queryReturnList[i].status) +'</td>'
 				+'<td>'+CommonFunction.setCommunicateStatus(queryReturnList[i].communicateStatus) +'</td>'
 				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].userModel.remark) +'</td>'
@@ -160,6 +163,7 @@ function query(param) {
 function getData() {
 	var paramTemp = {};
 	var userQueryModel={};
+	getDefaultQuery('user', '5', userQueryModel);
 	userQueryModel['id']=$.trim($("#userId").val());
 	userQueryModel['email']=$.trim($("#userEmail").val());
 	userQueryModel['telno']=$.trim($("#userTelno").val());
@@ -169,6 +173,7 @@ function getData() {
 	paramTemp['userQueryModel']=userQueryModel;
 	
 	var investorUserQueryModel={};
+	getDefaultQuery('investorUser', '5', investorUserQueryModel);
 	investorUserQueryModel['type']=$.trim($("#typeId").val());
 	investorUserQueryModel['name']=$.trim($("#name").val());
 	investorUserQueryModel['contactName']=$.trim($("#contactName").val());

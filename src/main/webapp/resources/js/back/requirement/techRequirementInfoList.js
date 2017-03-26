@@ -67,7 +67,7 @@ function initBasicResearchField(){
 			var domainShow = '';
 			for(var i = 0; i < basicRearchFieldList.length; i++) {	
 				idIndex="domain"+i
-				domainShow+='<input type="checkbox"  name="domain" class="domain" id='+idIndex+' value="'+basicRearchFieldList[i].name+'"  style="width:12px"/>'
+				domainShow+='<input type="checkbox"  name="domain" class="domain" id='+idIndex+' value="'+basicRearchFieldList[i].id+'"  style="width:12px"/>'
 				+basicRearchFieldList[i].name+'';
 			}
 			$("#domainDiv").append(domainShow);
@@ -116,12 +116,13 @@ function query(param) {
 		} 
 		for(var i = 0; i < queryReturnList.length; i++) {	
 			var requirementQueryTBodyTr = '<tr class="gradeX">'
-				+ '<td><input type="checkbox" /></td>'
+				+ '<td><input type="checkbox" name="listCheckbox" /></td>'
 				+'<td name="id" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].id) +'</td>'
 				+'<td name="recommendFlag" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].recommendFlag) +'</td>'
 				+'<td name="seqNum" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].seqNum) +'</td>'
 				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].id) +'</td>'
 				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].name) +'</td>'
+				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].seqNum) +'</td>'
 				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].companyUserResultModel.id) +'</td>'
 				+'<td>'+CommonFunction.replaceNull(queryReturnList[i].companyUserResultModel.name) +'</td>'
 				+ '<td>'+ CommonFunction.replaceNull(queryReturnList[i].companyUserResultModel.province)+'/'+CommonFunction.replaceNull(queryReturnList[i].companyUserResultModel.city) +'</td>'
@@ -137,6 +138,8 @@ function query(param) {
                 + '<td>'+ CommonFunction.setDetail(queryReturnList[i].similarProduct) +'</td>'
                 + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].sequenceNumber) +'</td>'
                 + CommonFunction.getAttach(queryReturnList[i])
+                +'<td name="status" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].status) +'</td>'
+				+'<td name="communicateStatus" class="hidden">'+CommonFunction.replaceNull(queryReturnList[i].communicateStatus) +'</td>'
                 + '<td>'+ CommonFunction.setRequirementStatus(queryReturnList[i].status) +'</td>'
                 + '<td>'+ CommonFunction.setCommunicateStatus(queryReturnList[i].communicateStatus) +'</td>'
                 + '<td>'+ CommonFunction.setDetail(queryReturnList[i].remark) +'</td>'
@@ -159,6 +162,7 @@ function getData() {
 	
 	var paramTemp = {};
 	var companyUserQueryModel={};
+	getDefaultQuery('companyUser', '5', companyUserQueryModel);
 	companyUserQueryModel['id']=$.trim($("#companyId").val());
 	companyUserQueryModel['name']=$.trim($("#companyName").val());
 	companyUserQueryModel['province']=$.trim($("#province").val());
@@ -167,6 +171,8 @@ function getData() {
 	paramTemp['companyUserQueryModel']=companyUserQueryModel;
 	
 	var techRequirementQueryModel={};
+	getDefaultQuery('techRequirement', '5', techRequirementQueryModel);
+	techRequirementQueryModel['id']=$.trim($("#techRequireId").val());
 	techRequirementQueryModel['sequenceNumber']=$.trim($("#sequenceNumber").val());
 	techRequirementQueryModel['name']=$.trim($("#name").val());
 	techRequirementQueryModel['contactName']=$.trim($("#contactName").val());

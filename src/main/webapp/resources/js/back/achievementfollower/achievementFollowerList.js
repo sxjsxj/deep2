@@ -45,14 +45,15 @@ function query(param) {
 		} 
 		for(var i = 0; i < queryReturnList.length; i++) {	
 			var achievementFollowerQueryTBodyTr = '<tr class="gradeX">'
-				+ '<td><input type="checkbox" /></td>'
-				+'<td name="userId">'+CommonFunction.replaceNull(queryReturnList[i].id.userId) +'</td>'
+				+ '<td><input type="checkbox" name="listCheckbox" /></td>'
 				+'<td name="achievementId">'+CommonFunction.replaceNull(queryReturnList[i].id.achievementId) +'</td>'
+				+'<td name="userId">'+CommonFunction.replaceNull(queryReturnList[i].id.userId) +'</td>'
 				+'<td name="relationType" class="hidden">'+ queryReturnList[i].id.relationType +'</td>'
 				+'<td>'+ CommonFunction.setRelationType(queryReturnList[i].id.relationType) +'</td>'
 				+ '<td>'+ CommonFunction.setFollowerType(queryReturnList[i].followerType) +'</td>'
 				+ '<td>'+ CommonFunction.setDetail(queryReturnList[i].content) +'</td>'
-                + '<td>'+ CommonFunction.setCommunicateStatus(queryReturnList[i].communicateStatus) +'</td>'
+				+ '<td class="hidden" name="communicateStatus">'+ queryReturnList[i].communicateStatus +'</td>'
+				+ '<td>'+ CommonFunction.setCommunicateStatus(queryReturnList[i].communicateStatus) +'</td>'
                 + '<td>'+ CommonFunction.setDetail(queryReturnList[i].remark) +'</td>'
                 + '<td>'+ CommonFunction.setRemoveFlag(queryReturnList[i].removeFlag) +'</td>'
                 + '</tr>';
@@ -71,14 +72,17 @@ function getData() {
 	
 	var paramTemp = {};
 	var achievementQueryModel={};
+	getDefaultQuery('achievement', '5', achievementQueryModel);
 	achievementQueryModel['id']=$.trim($("#achievementId").val());
 	paramTemp['achievementQueryModel']=achievementQueryModel;
 	
 	var userQueryModel={};
+	getDefaultQuery('user', '5', userQueryModel);
 	userQueryModel['id']=$.trim($("#companyUserId").val());
 	paramTemp['userQueryModel']=userQueryModel;
 	
 	var achievementFollowerQueryModel={};
+	getDefaultQuery('achievementFollower', '5', achievementFollowerQueryModel);
 	setFollowerQueryModel('achievementFollower', achievementFollowerQueryModel);
 	achievementFollowerQueryModel['followerType']=$.trim($("#followerTypeId").val());
 	achievementFollowerQueryModel['communicateStatus']=$.trim($("#communicateStatusId").val());

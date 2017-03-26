@@ -16,6 +16,23 @@ public class OrganizationUserQueryModel extends QueryModel {
 
     private String orgCity;
     private String orgCityOperator = Operator.IN;
+    
+    private String type;
+	private String typeOperator = Operator.IN;
+
+    public String getType() {
+		return this.type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+
+    public String getTypeOperator() {
+		return this.typeOperator;
+	}
+	public void setTypeOperator(String typeOperator) {
+		this.typeOperator = typeOperator;
+	}
 
     public String getId() {
         return id;

@@ -32,13 +32,13 @@
         <property name="uniNature" type="string">
             <column name="uni_nature" length="20" />
         </property>
-        <property name="uniProject211" type="java.lang.Integer">
+        <property name="uniProject211" type="string">
             <column name="uni_project211" />
         </property>
-        <property name="uniProject985" type="java.lang.Integer">
+        <property name="uniProject985" type="string">
             <column name="uni_project985" />
         </property>
-        <property name="uniNationalPriority" type="java.lang.Integer">
+        <property name="uniNationalPriority" type="string">
             <column name="uni_national_priority" />
         </property>
         <property name="orgName" type="string">

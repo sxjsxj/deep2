@@ -115,12 +115,14 @@ function getData() {
 	var paramTemp = {};
 	var researchGroupQueryModel={};
 	getDefaultQuery('researchGroup', '5', researchGroupQueryModel);
+	researchGroupQueryModel['id']=$.trim($("#researchGroupId").val());
 	researchGroupQueryModel['name']=$.trim($("#groupName").val());
 	researchGroupQueryModel['leaderName']=$.trim($("#leaderName").val());
 	paramTemp['researchGroupQueryModel']=researchGroupQueryModel;
 	
 	var achievementQueryModel={};
 	getDefaultQuery('achievement', '5', achievementQueryModel);
+	achievementQueryModel['id']=$.trim($("#achievementId").val());
 	achievementQueryModel['sequenceNumber']=$.trim($("#sequenceNumber").val());
 	achievementQueryModel['name']=$.trim($("#name").val());
 	achievementQueryModel['remark']=$.trim($("#remark").val());

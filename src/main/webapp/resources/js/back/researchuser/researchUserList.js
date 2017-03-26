@@ -73,6 +73,7 @@ function query(param) {
 			var researchUserQueryTBodyTr = '<tr class="gradeX">'
 				+ '<td><input type="checkbox" name="listCheckbox" /></td>'
 				+'<td name="id">'+CommonFunction.replaceNull(queryReturnList[i].id) +'</td>'
+				+ '<td>'+ CommonFunction.setResearchUserType(queryReturnList[i].type) +'</td>'
 				+ '<td>'+ CommonFunction.replaceNull(queryReturnList[i].userModel.id) +'</td>'
 	            + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].userModel.email) +'</td>'
 	            + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].userModel.telno) +'</td>'
@@ -83,7 +84,10 @@ function query(param) {
                 + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].uniLevel) +'</td>'
                 + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].uniNature) +'</td>'
                 + '<td>'+ CommonFunction.setDeclare(queryReturnList[i].uniProject211,queryReturnList[i].uniProject985,queryReturnList[i].uniNationalPriority) +'</td>'
-				+ '<td>'+ CommonFunction.replaceNull(queryReturnList[i].address) +'</td>'
+                +'<td>'+CommonFunction.replaceNull(queryReturnList[i].orgName) +'</td>'
+				+ '<td>'+ CommonFunction.replaceNull(queryReturnList[i].orgProvince) +'</td>'
+				+ '<td>'+ CommonFunction.replaceNull(queryReturnList[i].orgCity) +'</td>'
+                + '<td>'+ CommonFunction.replaceNull(queryReturnList[i].address) +'</td>'
 				+ '<td>'+ CommonFunction.replaceNull(queryReturnList[i].introduction) +'</td>'
                 + '<td>'+ CommonFunction.getDate(queryReturnList[i].userModel.whenCreate) +'</td>'
                 + '<td>'+ CommonFunction.getDate(queryReturnList[i].userModel.whenLastLogin) +'</td>'
@@ -119,18 +123,22 @@ function getData() {
 	
 	var universityUserQueryModel={};
 	getDefaultQuery('researchUser', '5', universityUserQueryModel);
-	universityUserQueryModel['uniName']=$.trim($("#name").val());
+	universityUserQueryModel['uniName']=$.trim($("#uniName").val());
+	universityUserQueryModel['uniProvince']=$.trim($("#province").val());
+	universityUserQueryModel['uniCity']=$.trim($("#city").val());
 	universityUserQueryModel['uniProject211']=$.trim($("#project211Id").val());
 	universityUserQueryModel['uniProject985']=$.trim($("#project985Id").val());
 	universityUserQueryModel['uniLevel']=$.trim($("#levelId").val());
+	universityUserQueryModel['type']=$.trim($("#typeId").val());
 	
 	paramTemp['universityUserQueryModel']=universityUserQueryModel;
 	
 	var organizationUserQueryModel={};
 	getDefaultQuery('researchUser', '5', organizationUserQueryModel);
-	organizationUserQueryModel['orgName']=$.trim($("#name").val());
+	organizationUserQueryModel['orgName']=$.trim($("#otherName").val());
 	organizationUserQueryModel['orgProvince']=$.trim($("#province").val());
 	organizationUserQueryModel['orgCity']=$.trim($("#city").val());
+	organizationUserQueryModel['type']=$.trim($("#typeId").val());
 	paramTemp['organizationUserQueryModel']=organizationUserQueryModel;
 	//这个查询model里没有
 	//paramTemp['type']=$("#typeId").val();

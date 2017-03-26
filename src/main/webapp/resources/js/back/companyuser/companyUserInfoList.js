@@ -167,6 +167,7 @@ function getData() {
 	
 	var companyUserQueryModel={};
 	getDefaultQuery('companyUser', '5', companyUserQueryModel);
+	companyUserQueryModel['id']=$.trim($("#companyUserId").val());
 	companyUserQueryModel['domain']=$.trim($("#domainId").val());
 	companyUserQueryModel['name']=$.trim($("#name").val());
 	companyUserQueryModel['contactName']=$.trim($("#contactName").val());

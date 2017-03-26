@@ -58,9 +58,9 @@ body,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6,table,tr,th,td,p,input,dl,dt,dd,ul,ol,l
 					<ul>
 						<li><a href="researchUserList.html">科研用户管理</a></li>
 						<li><a href="researchGroupList.html">科研团队管理</a></li>
-						<li><a href="achievementList.html">技术成果管理</a></li>
+						<li><a href="achievementList.html">科研成果管理</a></li>
 						<li><a href="researchGroupFollowerList.html">寻求合作&收藏-科研团队</a></li>
-						<li><a href="achievementFollowerList.html">寻求合作&收藏-技术成果</a></li>
+						<li><a href="achievementFollowerList.html">寻求合作&收藏-科研成果</a></li>
 					</ul>
 				</li>
 				<li class="submenu">
@@ -195,23 +195,28 @@ body,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6,table,tr,th,td,p,input,dl,dt,dd,ul,ol,l
 									<div title="查询" style="height: 100%;">
 										<table id="updateOrgTranRuleTable" cellpadding="8">
 											<tr>
-											   <td>科研团队名称</td>
+											   <td>科研团队ID</td>
 											   <td>
-											    <input id="teamName" name="name" type="text" style="width: 180px"  value="" class="input-small"/>        
-											            用户ID
+											   <input id="researchGroupId" name="researchGroupId" type="text" style="width: 180px"  value="" class="input-small"/>
+											            科研用户ID
 											   <input id="id" name="id" type="text" style="width: 180px"  value="" class="input-small"/>
-											         负责人姓名
-											    <input id="leaderName" name="leaderName" type="text" style="width: 180px"  value="" class="input-small"/>
-											       
 											   </td>
 											</tr>
 											
 											<tr>
-											<td>备注</td>
+											 <td>科研团队名称</td>
 											 <td>
-											  <input id="remark" name="remark" type="text" style="width: 180px" value="" class="input-small"/>
+											  <input id="teamName" name="name" type="text" style="width: 180px"  value="" class="input-small"/>        
 											      研究方向
 											  <input id="field" name="field" type="text" style="width: 180px"  value="" class="input-small"/>
+											 </td>
+											</tr> 
+											<tr>
+											<td>负责人姓名</td>
+											<td> 
+											  <input id="leaderName" name="leaderName" type="text" style="width: 180px"  value="" class="input-small"/>
+											   备注
+											  <input id="remark" name="remark" type="text" style="width: 180px" value="" class="input-small"/>
 											 </td>
 											</tr>
 											

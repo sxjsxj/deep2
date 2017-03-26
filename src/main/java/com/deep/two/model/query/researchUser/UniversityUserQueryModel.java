@@ -6,8 +6,8 @@ import com.deep.two.model.query.QueryModel;
 public class UniversityUserQueryModel extends QueryModel {
     private String id;
     private String idOperator = Operator.IN;
-
-    private String uniName;
+    
+	private String uniName;
     private String uniNameOperator = Operator.LK;
 
     private String uniProvince;
@@ -24,6 +24,23 @@ public class UniversityUserQueryModel extends QueryModel {
 
     private String uniProject985;
     private String uniProject985Operator = Operator.EQ;
+    
+    private String type;
+	private String typeOperator = Operator.IN;
+
+    public String getType() {
+		return this.type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+
+    public String getTypeOperator() {
+		return this.typeOperator;
+	}
+	public void setTypeOperator(String typeOperator) {
+		this.typeOperator = typeOperator;
+	}
     
 	public String getId() {
 		return this.id;

@@ -191,6 +191,7 @@ function getData() {
 	
 	var researchGroupQueryModel={};
 	getDefaultQuery('researchGroup', '5', researchGroupQueryModel);
+	researchGroupQueryModel['name']=$.trim($("#researchGroupId").val());
 	researchGroupQueryModel['name']=$.trim($("#teamName").val());
 	researchGroupQueryModel['field']=$.trim($("#field").val());
 	researchGroupQueryModel['remark']=$.trim($("#remark").val());

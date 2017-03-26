@@ -30,7 +30,7 @@ import com.deep.two.dao.util.Operator;
 
 public class QueryModel {
 	private String removeFlag;
-	private String removeFlagOperator = Operator.EQ;
+	private String removeFlagOperator = Operator.IN;
 	
 	private String status;
 	private String statusOperator = Operator.IN;

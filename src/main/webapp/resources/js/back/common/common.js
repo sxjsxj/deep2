@@ -449,6 +449,21 @@ var CommonFunction = {
 		result=uniProject211+uniProject985+uniNationalPriority;
 		return result;
 	},
+	setResearchUserType:function(dataObj){
+		var result = '';
+		if(dataObj === null || dataObj === 'null' || dataObj === undefined || dataObj ==="undefined"){
+			result = '';
+		} else {
+			if(dataObj==="0"){
+				result= "高校";
+			 }else if(dataObj==="1"){
+				 result= "科研机构";
+			 }else if(dataObj==="2"){
+				 result= "个人";
+			 }
+		}
+		return result;
+	},
 	setStatus:function(dataObj){
 		var result = '';
 		if(dataObj === null || dataObj === 'null' || dataObj === undefined || dataObj ==="undefined"){

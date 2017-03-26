@@ -57,9 +57,9 @@ body,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6,table,tr,th,td,p,input,dl,dt,dd,ul,ol,l
 					<ul>
 						<li><a href="researchUserList.html">科研用户管理</a></li>
 						<li><a href="researchGroupList.html">科研团队管理</a></li>
-						<li><a href="achievementList.html">技术成果管理</a></li>
+						<li><a href="achievementList.html">科研成果管理</a></li>
 						<li><a href="researchGroupFollowerList.html">寻求合作&收藏-科研团队</a></li>
-						<li><a href="achievementFollowerList.html">寻求合作&收藏-技术成果</a></li>
+						<li><a href="achievementFollowerList.html">寻求合作&收藏-科研成果</a></li>
 					</ul>
 				</li>
 				<li class="submenu">
@@ -164,23 +164,24 @@ body,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6,table,tr,th,td,p,input,dl,dt,dd,ul,ol,l
 									<div title="查询" style="height: 100%;">
 										<table id="updateOrgTranRuleTable" cellpadding="8">
 											<tr>
-											   <td>邮箱</td>
+											   <td> 用户ID</td>
 												<td>
+												   <input type="text" id="id" name="id" style="width: 180px"  value="" class="input-small"/>
+												 邮箱 
 												   <input type="text" id="email" name="email" style="width: 180px" value="" class="input-small"/>
 												手机号
 												   <input type="text" id="telno" name="telno" style="width: 180px"  value="" class="input-small"/>
-												  用户ID
-												   <input type="text" id="id" name="id" style="width: 180px"  value="" class="input-small"/>
+												
 												</td>
 											</tr>
-											<tr>
+											<!-- <tr>
 											   <td>机构/其他名称</td>
 												<td>
 												<input id="otherName" name="otherName" type="text" style="width: 180px" value="" class="input-small"/>
 												高校名称
 												 <input id="uniName" name="uniName" type="text" style="width: 180px"  value="" class="input-small"/>
 												 </td>
-											</tr>
+											</tr> -->
 											
 											<tr>
 											 <td>所在省市</td>
@@ -202,7 +203,7 @@ body,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6,table,tr,th,td,p,input,dl,dt,dd,ul,ol,l
 											 </td>
 											</tr>
 											
-											<tr>
+											<!-- <tr>
 											 <td>211高校</td>
 											 <td>
 											 <input type="checkbox"  value="0" class="project211"    style="width: 12px" />是
@@ -217,7 +218,7 @@ body,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6,table,tr,th,td,p,input,dl,dt,dd,ul,ol,l
 											 <input type="checkbox"  value="1" class="level"  style="width: 12px" />专科
 											 <input  id="levelId" type="hidden"/>
 											 </td>
-											</tr>
+											</tr> -->
 											
 											<tr>
 											 <td>审核状态</td>
@@ -265,6 +266,7 @@ body,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6,table,tr,th,td,p,input,dl,dt,dd,ul,ol,l
 									<tr>
 									<th class="checkAll"><input type="checkbox" id="selectAll" />全选</th>
 									<th>科研用户ID</th>
+									<th>科研用户类型</th>
 									<th>用户ID</th>
 									<th>邮箱</th>
 									<th>手机号</th>
@@ -275,6 +277,9 @@ body,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6,table,tr,th,td,p,input,dl,dt,dd,ul,ol,l
 									<th>办学层次</th>
 									<th>性质</th>
 									<th>说明</th>
+									<th>科研机构名称</th>
+									<th>科研机构所在省</th>
+									<th>科研机构所在市</th>
 									<th>详细地址</th>
 									<th>简介</th>
 									<th>注册时间</th>

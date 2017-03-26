@@ -20,9 +20,9 @@ public class ResearchUser implements java.io.Serializable {
 	private String uniCity;
 	private String uniLevel;
 	private String uniNature;
-	private Integer uniProject211;
-	private Integer uniProject985;
-	private Integer uniNationalPriority;
+	private String uniProject211;
+	private String uniProject985;
+	private String uniNationalPriority;
 	private String orgName;
 	private String orgProvince;
 	private String orgCity;
@@ -48,8 +48,8 @@ public class ResearchUser implements java.io.Serializable {
 
 	public ResearchUser(String id, User user, String type, String uniName,
 			String uniDepartment, String uniProvince, String uniCity,
-			String uniLevel, String uniNature, Integer uniProject211,
-			Integer uniProject985, Integer uniNationalPriority, String orgName,
+			String uniLevel, String uniNature, String uniProject211,
+			String uniProject985, String uniNationalPriority, String orgName,
 			String orgProvince, String orgCity, String orgCounty,
 			String address, String introduction, String status,
 			String communicateStatus, Date whenCreate, String whoCreate,
@@ -155,27 +155,27 @@ public class ResearchUser implements java.io.Serializable {
 		this.uniNature = uniNature;
 	}
 
-	public Integer getUniProject211() {
+	public String getUniProject211() {
 		return this.uniProject211;
 	}
 
-	public void setUniProject211(Integer uniProject211) {
+	public void setUniProject211(String uniProject211) {
 		this.uniProject211 = uniProject211;
 	}
 
-	public Integer getUniProject985() {
+	public String getUniProject985() {
 		return this.uniProject985;
 	}
 
-	public void setUniProject985(Integer uniProject985) {
+	public void setUniProject985(String uniProject985) {
 		this.uniProject985 = uniProject985;
 	}
 
-	public Integer getUniNationalPriority() {
+	public String getUniNationalPriority() {
 		return this.uniNationalPriority;
 	}
 
-	public void setUniNationalPriority(Integer uniNationalPriority) {
+	public void setUniNationalPriority(String uniNationalPriority) {
 		this.uniNationalPriority = uniNationalPriority;
 	}
 

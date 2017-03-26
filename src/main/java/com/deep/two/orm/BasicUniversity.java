@@ -16,9 +16,9 @@ public class BasicUniversity implements java.io.Serializable {
 	private String city;
 	private String level;
 	private String nature;
-	private Integer project211;
-	private Integer project985;
-	private Integer nationalPriority;
+	private String project211;
+	private String project985;
+	private String nationalPriority;
 	private String address;
 	private String introduction;
 	private Date whenCreate;
@@ -35,7 +35,7 @@ public class BasicUniversity implements java.io.Serializable {
 
 	public BasicUniversity(String id, String name, String department,
 			String province, String city, String level, String nature,
-			Integer project211, Integer project985, Integer nationalPriority,
+			String project211, String project985, String nationalPriority,
 			String address, String introduction, Date whenCreate,
 			String whoCreate, Date whenLastUpdate, String whoLastUpdate) {
 		this.id = id;
@@ -112,27 +112,27 @@ public class BasicUniversity implements java.io.Serializable {
 		this.nature = nature;
 	}
 
-	public Integer getProject211() {
+	public String getProject211() {
 		return this.project211;
 	}
 
-	public void setProject211(Integer project211) {
+	public void setProject211(String project211) {
 		this.project211 = project211;
 	}
 
-	public Integer getProject985() {
+	public String getProject985() {
 		return this.project985;
 	}
 
-	public void setProject985(Integer project985) {
+	public void setProject985(String project985) {
 		this.project985 = project985;
 	}
 
-	public Integer getNationalPriority() {
+	public String getNationalPriority() {
 		return this.nationalPriority;
 	}
 
-	public void setNationalPriority(Integer nationalPriority) {
+	public void setNationalPriority(String nationalPriority) {
 		this.nationalPriority = nationalPriority;
 	}
 

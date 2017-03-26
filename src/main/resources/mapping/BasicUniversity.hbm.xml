@@ -26,13 +26,13 @@
         <property name="nature" type="string">
             <column name="nature" length="20" />
         </property>
-        <property name="project211" type="java.lang.Integer">
+        <property name="project211" type="string">
             <column name="project211" />
         </property>
-        <property name="project985" type="java.lang.Integer">
+        <property name="project985" type="string">
             <column name="project985" />
         </property>
-        <property name="nationalPriority" type="java.lang.Integer">
+        <property name="nationalPriority" type="string">
             <column name="national_priority" />
         </property>
         <property name="address" type="string">

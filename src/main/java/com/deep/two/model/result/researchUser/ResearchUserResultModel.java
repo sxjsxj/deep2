@@ -13,9 +13,9 @@ public class ResearchUserResultModel implements ResultModel {
 	private String uniCity;
 	private String uniLevel;
 	private String uniNature;
-	private Integer uniProject211;
-	private Integer uniProject985;
-	private Integer uniNationalPriority;
+	private String uniProject211;
+	private String uniProject985;
+	private String uniNationalPriority;
 	private String orgName;
 	private String orgProvince;
 	private String orgCity;
@@ -81,22 +81,22 @@ public class ResearchUserResultModel implements ResultModel {
 	public void setUniNature(String uniNature) {
 		this.uniNature = uniNature;
 	}
-	public Integer getUniProject211() {
+	public String getUniProject211() {
 		return uniProject211;
 	}
-	public void setUniProject211(Integer uniProject211) {
+	public void setUniProject211(String uniProject211) {
 		this.uniProject211 = uniProject211;
 	}
-	public Integer getUniProject985() {
+	public String getUniProject985() {
 		return uniProject985;
 	}
-	public void setUniProject985(Integer uniProject985) {
+	public void setUniProject985(String uniProject985) {
 		this.uniProject985 = uniProject985;
 	}
-	public Integer getUniNationalPriority() {
+	public String getUniNationalPriority() {
 		return uniNationalPriority;
 	}
-	public void setUniNationalPriority(Integer uniNationalPriority) {
+	public void setUniNationalPriority(String uniNationalPriority) {
 		this.uniNationalPriority = uniNationalPriority;
 	}
 	public String getOrgName() {

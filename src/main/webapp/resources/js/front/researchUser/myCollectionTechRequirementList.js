@@ -30,7 +30,7 @@ $(document).ready(function() {
 
 var queryParam = {};
 function initAmountDemandListManager() {
-	
+
 	//查询条件初始化大区
 	FrontCommonFunction.initCheckBoxRegion("#region");
 	//设置大区
@@ -51,7 +51,7 @@ function initAmountDemandListManager() {
 			}
 		}
 	});
-	
+
 	//研发类型
 	$("#checkBoxType [id^=typeCheckBox]").click(function() {
 		//typeCheckBox固定长度是12
@@ -67,7 +67,7 @@ function initAmountDemandListManager() {
 		}).get().join(',');
 		$("#typeId").val(text);
 	});
-	
+
 	//投资额
 	$("#checkBoxAmount [id^=amountCheckBox]").click(function() {
 		//amountCheckBox固定长度是14
@@ -95,7 +95,7 @@ function initAmountDemandListManager() {
 			 $("#statusId").val("1,2");
 		}
 	});
-	
+
 	//页面加载查询
 	queryParam = getData();
 	query(queryParam);
@@ -121,33 +121,33 @@ function query(param) {
 	requestParamTemp['currentPage'] = $('#currentPage').val();
 	requestParamTemp['maxRecordPerPage'] = FrontCommonFunction.maxRecordPerPage;
 	FrontCommonFunction.baseOptions['data'] = requestParamTemp;
-	
+
 	FrontCommonFunction.baseOptions['success'] = function(datas) {
 		var queryReturnList = datas.queryReturnList;
 		if (queryReturnList === null || queryReturnList.length === 0) {
 			var noresult="";
 			noresult+="<div align='center' class='fl right'>";
 			noresult+="<div class='title'></div>"
-			noresult+="<div style='width:900px;margin-top:2px;' class='my_tuijian_con'>"	
-				noresult+="<div class='my_tuijian_con_title'>"	
-				noresult+="<font style='align:center;color:#333333;'>您还未收藏任何企业需求</font>"
+			noresult+="<div style='width:900px;margin-top:2px;' class='my_tuijian_con'>"
+				noresult+="<div class='my_tuijian_con_title'>"
+				noresult+="<font style='align:center;color:#333333;'>未查询到任何记录</font>"
 				noresult+='<div style="align:center;color:#349fc4;margin-top:-5px;" ><a href="../techRequirement/getBrowsePage">现在就查看企业需求>></a></div>'
 				noresult+="</div>"
 					noresult+="<div class='my_tuijian_con_txt'>"
-					noresult+="</div>"	
-			noresult+="</div>"	
+					noresult+="</div>"
+			noresult+="</div>"
 			noresult+="</div>"
 			$('#noResult').html(noresult);
 			return;
-		} 
-		for(var i = 0; i < queryReturnList.length; i++) {	
+		}
+		for(var i = 0; i < queryReturnList.length; i++) {
 			var moreInfoUrl = $("#techRequirementMoreInfo").attr('url')+"?id="+queryReturnList[i].id.requirementId;
 			var li = '<div id="shaDowShow'+i+'"  class="mydiv1" onmouseout="delShaDowClass('+i+')" onmouseover="addShaDowClass('+i+')"><li>'
 				li+='<input type="hidden" id="operateId'+i+'" value="'+queryReturnList[i].id.requirementId+'"/>'
 				li+='<input type="hidden" id="operateIdUserId'+i+'" value="'+queryReturnList[i].id.userId+'"/>'
 				li+='<input type="hidden" id="operateFollowerType'+i+'" value="'+queryReturnList[i].followerType+'"/>'
 				li+='<input type="hidden" id="operateRelationType'+i+'" value="'+queryReturnList[i].id.relationType+'"/>'
-			
+
 				var imgUrl="";
 			    var img=queryReturnList[i].techRequirementResultModel.attachUrl;
 			    if(img!==null && img!=="" && img!==undefined){
@@ -160,7 +160,7 @@ function query(param) {
 				li+="<div class='fl rights'>"
 				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="tits">'
 				li+="<div class='fl'>"+FrontCommonFunction.replaceNull(queryReturnList[i].techRequirementResultModel.name)+"</div>"
-				li+="<div class='fr'>"+FrontCommonFunction.setType(queryReturnList[i].techRequirementResultModel.type)+"</div>"	
+				li+="<div class='fr'>"+FrontCommonFunction.setType(queryReturnList[i].techRequirementResultModel.type)+"</div>"
 				li+="<div class='clear'></div>"
 				li+="</div></a>"
 				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="cs">'
@@ -168,7 +168,7 @@ function query(param) {
 				li+="</div></a>"
 				li+="<div class='f'>"
 				li+='<a href="'+moreInfoUrl+'" target="_blank"><div style=" margin-top:60px" class="fl">'+FrontCommonFunction.setDomain(queryReturnList[i].techRequirementResultModel.domain)+"&nbsp;&nbsp;"+FrontCommonFunction.replaceNull(queryReturnList[i].techRequirementResultModel.companyUserResultModel.province)+"&nbsp;&nbsp;"+FrontCommonFunction.setAmount(queryReturnList[i].techRequirementResultModel.amount)+"&nbsp;&nbsp;"+FrontCommonFunction.setRequirementStatus(queryReturnList[i].techRequirementResultModel.status)+"</div></a>"
-				li+='<div class="fr" style=" margin-top:60px">'	
+				li+='<div class="fr" style=" margin-top:60px">'
 				li+=cooperateCollectFlagDiv(queryReturnList[i].techRequirementResultModel, i)
 				li+="</div>"
 				li+="</div>"
@@ -188,7 +188,7 @@ function query(param) {
 
 function getData() {
 	var paramTemp = {};
-	
+
 	var companyUserQueryModel = {};
 	var techRequirementQueryModel = {};
 	techRequirementQueryModel['domain']=$.trim($("#domainId").val());
@@ -241,25 +241,25 @@ function getData() {
 		if(haiwai!==""){
 			str+=haiwai+",";
 		}
-		
-		var ar2 = str.split(","); 
-		var array = new Array(); 
-		var j=0 
-		for(var i=0;i<ar2.length;i++){ 
-			if((array == "" || array.toString().match(new RegExp(ar2[i],"g")) == null)&&ar2[i]!=""){ 
-			array[j] =ar2[i]; 
-			array.sort(); 
-			j++; 
-			} 
-		} 
+
+		var ar2 = str.split(",");
+		var array = new Array();
+		var j=0
+		for(var i=0;i<ar2.length;i++){
+			if((array == "" || array.toString().match(new RegExp(ar2[i],"g")) == null)&&ar2[i]!=""){
+			array[j] =ar2[i];
+			array.sort();
+			j++;
+			}
+		}
 		companyUserQueryModel['province']=array.toString();
 	}
-	getDefaultQuery('companyUser', '4', companyUserQueryModel); 
+	getDefaultQuery('companyUser', '4', companyUserQueryModel);
 	paramTemp['companyUserQueryModel']=companyUserQueryModel;
-	getDefaultQuery('techRequirement', '4', techRequirementQueryModel); 
+	getDefaultQuery('techRequirement', '4', techRequirementQueryModel);
 	paramTemp['techRequirementQueryModel'] = techRequirementQueryModel;
 	var techRequirementFollowerQueryModel = {};
-	getDefaultQuery('techRequirementFollower', '4', techRequirementFollowerQueryModel); 
+	getDefaultQuery('techRequirementFollower', '4', techRequirementFollowerQueryModel);
 	paramTemp['techRequirementFollowerQueryModel']=techRequirementFollowerQueryModel;
 	paramTemp['userQueryModel'] =getMyInfo();
 	return paramTemp;

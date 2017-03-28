@@ -109,7 +109,7 @@ function query(param) {
 			noresult+="<div class='title'></div>"
 			noresult+="<div style='width:900px;margin-top:0px;' class='my_tuijian_con'>"
 				noresult+="<div class='my_tuijian_con_title'>"
-				noresult+="<font style='color:#333333;'>您还未收藏任何科研团队</font>"
+				noresult+="<font style='color:#333333;'>未查询到任何记录</font>"
 				noresult+='<div style="color:#349fc4;margin-top:-5px;" ><a href="../researchGroup/getBrowsePage">现在就查看科研团队>></a></div>'
 				noresult+="</div>"
 					noresult+="<div class='my_tuijian_con_txt'>"
@@ -166,7 +166,7 @@ function query(param) {
 				li+="</div>"
 				li+="<div class='f'>"
 				li+='<div class="fl"><a>'+'<a href="'+moreInfoUrl+'" target="_blank">'+FrontCommonFunction.setDomain(queryReturnList[i].researchGroupResultModel.domain) + "&nbsp;&nbsp;"+ universityType+ "&nbsp;&nbsp;"+provinceName+"</a></a></div>"
-				li+='<div class="fr">' 
+				li+='<div class="fr">'
 				li+=cooperateCollectFlagDiv(queryReturnList[i].researchGroupResultModel, i)
 				li+="</div>"
 				li+="<div class='clear'></div>"

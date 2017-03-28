@@ -546,7 +546,7 @@ ul li{list-style: none}
 .xuqiualert ul li .tx .f{color: #959595;font-size: 18px;text-align: center;}
 
 /*个人中心*/
-.info {margin-top: 162px}
+.info {margin-top: 90px}
 .info .right .nav {margin-left: 78px;border-radius: 5px;overflow: hidden;width: 389px;border-bottom: 1px solid #e7e7e7}
 .info .right .nav li{padding: 0 40px;background: #fff;height: 48px;line-height: 48px;font-size: 20px;color: #349fc4;float:left;}
 .info .right .nav li.active{background: #349fc4;color: #fff}

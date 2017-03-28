@@ -8,7 +8,7 @@ $(document).ready(function() {
 		$(".altsbg").hide();
 	})
 	//寻求合作end
-	
+
 	$('#altstwo').hide();
 	$('#altsthree').hide();
 	$('.img2').click(function(){
@@ -65,7 +65,7 @@ function initAchievementListManager() {
 		}).get().join(',');
 		$("#domainId").val(text);
 	});
-	
+
 	//阶段
 	$("#checkBoxPhase [id^=phaseCheckBox]").click(function() {
 		//phaseCheckBox固定长度是13
@@ -81,8 +81,8 @@ function initAchievementListManager() {
 		}).get().join(',');
 		$("#phaseId").val(text);
 	});
-	
-	
+
+
 	//投资额
 	$("#checkBoxAmount [id^=amountCheckBox]").click(function() {
 		//amountCheckBox固定长度是14
@@ -98,8 +98,8 @@ function initAchievementListManager() {
 		}).get().join(',');
 		$("#amountId").val(text);
 	});
-	
-	
+
+
 	//合作方式
 	$("#checkBoxCooperationType [id^=cooperationTypeCheckBox]").click(function() {
 		//cooperationTypeCheckBox固定长度是23
@@ -115,7 +115,7 @@ function initAchievementListManager() {
 		}).get().join(',');
 		$("#cooperationTypeId").val(text);
 	});
-	
+
 	//状态
 	$("#statusCheckBox").click(function() {
 		if($("#statusCheckBoxValue").hasClass("on")){
@@ -128,7 +128,7 @@ function initAchievementListManager() {
 			 $("#statusId").val("1,2");
 		}
 	});
-	
+
 	//页面加载查询
 	queryParam = getData();
 	query(queryParam);
@@ -153,26 +153,26 @@ function query(param) {
 	requestParamTemp['currentPage'] = $('#currentPage').val();
 	requestParamTemp['maxRecordPerPage'] = FrontCommonFunction.maxRecordPerPage;
 	FrontCommonFunction.baseOptions['data'] = requestParamTemp;
-	
+
 	FrontCommonFunction.baseOptions['success'] = function(datas) {
 		var queryReturnList = datas.queryReturnList;
 		if (queryReturnList === null || queryReturnList.length === 0) {
 			var noresult="";
 			noresult+="<div style='width:938px;margin-left:-50px;margin-top:20px;' align='center' class='fl right'>";
 			noresult+="<div class='title'></div>"
-			noresult+="<div style='width:900px;margin-top:-20px;' class='my_tuijian_con'>"	
-				noresult+="<div  class='my_tuijian_con_title'>"	
-				noresult+="<font style='color:#333333;'>您还未收藏任何科研成果</font>"
+			noresult+="<div style='width:900px;margin-top:-20px;' class='my_tuijian_con'>"
+				noresult+="<div  class='my_tuijian_con_title'>"
+				noresult+="<font style='color:#333333;'>未查询到任何记录</font>"
 				noresult+='<div style="color:#349fc4;margin-top:-5px;" ><a href="../achievement/getBrowsePage">现在就查看科研成果>></a></div>'
 				noresult+="</div>"
 					noresult+="<div class='my_tuijian_con_txt'>"
-					noresult+="</div>"	
-			noresult+="</div>"	
+					noresult+="</div>"
+			noresult+="</div>"
 			noresult+="</div>"
 			$('#noResult').html(noresult);
 			return;
-		} 
-		for(var i = 0; i < queryReturnList.length; i++) {	
+		}
+		for(var i = 0; i < queryReturnList.length; i++) {
 			//下面取值有问题取不到
 			var type=queryReturnList[i].achievementResultModel.researchGroupResultModel.researchUserResultModel.type;
 			var provinceName="";
@@ -189,7 +189,7 @@ function query(param) {
 				li+='<input type="hidden" id="operateIdUserId'+i+'" value="'+queryReturnList[i].id.userId+'"/>'
 				li+='<input type="hidden" id="operateFollowerType'+i+'" value="'+queryReturnList[i].followerType+'"/>'
 				li+='<input type="hidden" id="operateRelationType'+i+'" value="'+queryReturnList[i].id.relationType+'"/>'
-				
+
 				var imgUrl="";
 				var logoUrl=queryReturnList[i].achievementResultModel.logoUrl;
 				if(logoUrl!==null && logoUrl!=="" && logoUrl!==undefined){
@@ -202,7 +202,7 @@ function query(param) {
 				li+="<div class='fl rights'>"
 				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="tits">'
 				li+="<div class='fl'>"+FrontCommonFunction.replaceNull(queryReturnList[i].achievementResultModel.name)+"</div>"
-				li+="<div class='fr'>"+FrontCommonFunction.setStrInvestorPhase(queryReturnList[i].achievementResultModel.phase)+"</div>"	
+				li+="<div class='fr'>"+FrontCommonFunction.setStrInvestorPhase(queryReturnList[i].achievementResultModel.phase)+"</div>"
 				li+="<div class='clear'></div>"
 				li+="</div></a>"
 				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="cs">'
@@ -210,7 +210,7 @@ function query(param) {
 				li+="</div></a>"
 				li+="<div class='f'>"
 				li+='<a href="'+moreInfoUrl+'" target="_blank"><div style=" margin-top:60px" class="fl">'+FrontCommonFunction.setInvestorDomain(queryReturnList[i].achievementResultModel.domain)+"&nbsp;&nbsp;"+provinceName+"&nbsp;&nbsp;"+FrontCommonFunction.setAmount(queryReturnList[i].achievementResultModel.amount)+"&nbsp;&nbsp;"+FrontCommonFunction.setRequirementStatus(queryReturnList[i].achievementResultModel.status)+"</div></a>"
-				li+='<div class="fr" style=" margin-top:60px">'	
+				li+='<div class="fr" style=" margin-top:60px">'
 				li+=cooperateCollectFlagDiv(queryReturnList[i].achievementResultModel, i)
 				li+="</div>"
 				li+="</div>"
@@ -285,30 +285,30 @@ function getData() {
 		if(haiwai!==""){
 			str+=haiwai+",";
 		}
-		
-		var ar2 = str.split(","); 
-		var array = new Array(); 
-		var j=0 
-		for(var i=0;i<ar2.length;i++){ 
-			if((array == "" || array.toString().match(new RegExp(ar2[i],"g")) == null)&&ar2[i]!=""){ 
-				array[j] =ar2[i]; 
-				array.sort(); 
-				j++; 
-			} 
-		} 
+
+		var ar2 = str.split(",");
+		var array = new Array();
+		var j=0
+		for(var i=0;i<ar2.length;i++){
+			if((array == "" || array.toString().match(new RegExp(ar2[i],"g")) == null)&&ar2[i]!=""){
+				array[j] =ar2[i];
+				array.sort();
+				j++;
+			}
+		}
 		universityUserQueryModel['uniProvince']=array.toString();
 		organizationUserQueryModel['orgProvince']=array.toString();
 	}
 	var achievementFollowerQueryModel = {};
-	getDefaultQuery('achievementFollower', '4', achievementFollowerQueryModel); 
+	getDefaultQuery('achievementFollower', '4', achievementFollowerQueryModel);
 	paramTemp['achievementFollowerQueryModel']=achievementFollowerQueryModel;
-	getDefaultQuery('achievement', '4', achievementQueryModel); 
+	getDefaultQuery('achievement', '4', achievementQueryModel);
 	paramTemp['achievementQueryModel']=achievementQueryModel;
 	var researchGroupQueryModel = {};
 	getDefaultQuery('researchGroup', '4', researchGroupQueryModel);
 	paramTemp['researchGroupQueryModel'] = researchGroupQueryModel;
 	paramTemp['universityUserQueryModel'] = universityUserQueryModel;
-	paramTemp['organizationUserQueryModel'] = organizationUserQueryModel;	
+	paramTemp['organizationUserQueryModel'] = organizationUserQueryModel;
 	paramTemp['userQueryModel'] =getMyInfo();
 	return paramTemp;
 };

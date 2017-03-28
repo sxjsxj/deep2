@@ -80,7 +80,7 @@ function initAmountDemandListManager() {
 		}).get().join(',');
 		$("#amountId").val(text);
 	});
-	
+
 	//阶段
 	$("#checkBoxProjectPhase [id^=projectPhaseCheckBox]").click(function() {
 		//projectPhaseCheckBox固定长度是20
@@ -96,7 +96,7 @@ function initAmountDemandListManager() {
 		}).get().join(',');
 		$("#projectPhaseId").val(text);
 	});
-	
+
 	//状态
 	$("#statusCheckBox").click(function() {
 		if($("#statusCheckBoxValue").hasClass("on")){
@@ -109,7 +109,7 @@ function initAmountDemandListManager() {
 			 $("#statusId").val("1,2");
 		}
 	});
-	
+
 	//页面加载查询
 	queryParam = getData();
 	query(queryParam);
@@ -143,33 +143,33 @@ function query(param) {
 		requestParamTemp['maxRecordPerPage'] = FrontCommonFunction.maxRecordPerPage;
 		FrontCommonFunction.baseOptions['data'] = requestParamTemp;
 	}
-	
+
 	FrontCommonFunction.baseOptions['success'] = function(datas) {
 		var queryReturnList = datas.queryReturnList;
 		if (queryReturnList === null || queryReturnList.length === 0) {
 			var noresult="";
 			noresult+="<div align='center' class='fl right'>";
 			noresult+="<div class='title'></div>"
-			noresult+="<div style='width:900px;margin-top:2px;' class='my_tuijian_con'>"	
-				noresult+="<div class='my_tuijian_con_title'>"	
-				noresult+="<font style='color:#333333;'>您还未收藏任何企业资金需求</font>"
+			noresult+="<div style='width:900px;margin-top:2px;' class='my_tuijian_con'>"
+				noresult+="<div class='my_tuijian_con_title'>"
+				noresult+="<font style='color:#333333;'>未查询到任何记录</font>"
 				noresult+='<div style="color:#349fc4;margin-top:-5px;" ><a href="../fundRequirement/getBrowsePage">现在就查看企业资金需求>></a></div>'
 				noresult+="</div>"
 					noresult+="<div class='my_tuijian_con_txt'>"
-					noresult+="</div>"	
-			noresult+="</div>"	
+					noresult+="</div>"
+			noresult+="</div>"
 			noresult+="</div>"
 			$('#noResult').html(noresult);
 			return;
-		} 
-		for(var i = 0; i < queryReturnList.length; i++) {	
+		}
+		for(var i = 0; i < queryReturnList.length; i++) {
 			var moreInfoUrl = $("#fundRequirementMoreInfo").attr('url')+"?id="+queryReturnList[i].id.requirementId;
 			var li = '<div id="shaDowShow'+i+'"  class="mydiv1" onmouseout="delShaDowClass('+i+')" onmouseover="addShaDowClass('+i+')"><li>'
 				li+='<input type="hidden" id="operateId'+i+'" value="'+queryReturnList[i].id.requirementId+'"/>'
 				li+='<input type="hidden" id="operateIdUserId'+i+'" value="'+queryReturnList[i].id.userId+'"/>'
 				li+='<input type="hidden" id="operateFollowerType'+i+'" value="'+queryReturnList[i].followerType+'"/>'
 				li+='<input type="hidden" id="operateRelationType'+i+'" value="'+queryReturnList[i].id.relationType+'"/>'
-			
+
 			var logochUrl =queryReturnList[i].fundRequirementResultModel.logochUrl;
 			var imgUrl="";
 			if(logochUrl!==null && logochUrl!=="" && logochUrl!==undefined){
@@ -182,7 +182,7 @@ function query(param) {
 				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="fl rights">'
 				li+="<div class='tits'>"
 				li+="<div class='fl'>"+FrontCommonFunction.replaceNull(queryReturnList[i].fundRequirementResultModel.name)+"</div>"
-				li+="<div class='fr'>"+FrontCommonFunction.setPhase(queryReturnList[i].fundRequirementResultModel.projectPhase)+"</div>"	
+				li+="<div class='fr'>"+FrontCommonFunction.setPhase(queryReturnList[i].fundRequirementResultModel.projectPhase)+"</div>"
 				li+="<div class='clear'></div>"
 				li+="</div></a>"
 				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="cs">'
@@ -190,7 +190,7 @@ function query(param) {
 				li+="</div></a>"
 				li+="<div class='f'>"
 				li+='<a href="'+moreInfoUrl+'" target="_blank"><div style=" margin-top:60px" class="fl">'+FrontCommonFunction.setDomain(queryReturnList[i].fundRequirementResultModel.domain)+"&nbsp;&nbsp;"+FrontCommonFunction.replaceNull(queryReturnList[i].fundRequirementResultModel.companyUserResultModel.province)+"&nbsp;&nbsp;"+FrontCommonFunction.setStrAmount(queryReturnList[i].fundRequirementResultModel.amountNeeded)+"&nbsp;&nbsp;"+FrontCommonFunction.setRequirementStatus(queryReturnList[i].fundRequirementResultModel.status)+"</div></a>"
-				li+='<div class="fr" style=" margin-top:60px">'	
+				li+='<div class="fr" style=" margin-top:60px">'
 				li+=cooperateCollectFlagDiv(queryReturnList[i].fundRequirementResultModel, i)
 				li+="</div>"
 				li+="</div>"
@@ -261,25 +261,25 @@ function getData() {
 		if(haiwai!==""){
 			str+=haiwai+",";
 		}
-		
-		var ar2 = str.split(","); 
-		var array = new Array(); 
-		var j=0 
-		for(var i=0;i<ar2.length;i++){ 
-			if((array == "" || array.toString().match(new RegExp(ar2[i],"g")) == null)&&ar2[i]!=""){ 
-				array[j] =ar2[i]; 
-				array.sort(); 
-				j++; 
-			} 
-		} 
+
+		var ar2 = str.split(",");
+		var array = new Array();
+		var j=0
+		for(var i=0;i<ar2.length;i++){
+			if((array == "" || array.toString().match(new RegExp(ar2[i],"g")) == null)&&ar2[i]!=""){
+				array[j] =ar2[i];
+				array.sort();
+				j++;
+			}
+		}
 		companyUserQueryModel['province']=array.toString();
 	}
-	getDefaultQuery('companyUser', '4', companyUserQueryModel); 
+	getDefaultQuery('companyUser', '4', companyUserQueryModel);
 	paramTemp['companyUserQueryModel']=companyUserQueryModel;
-	getDefaultQuery('fundRequirement', '4', fundRequirementQueryModel); 
+	getDefaultQuery('fundRequirement', '4', fundRequirementQueryModel);
 	paramTemp['fundRequirementQueryModel'] = fundRequirementQueryModel;
 	var fundRequirementFollowerQueryModel = {};
-	getDefaultQuery('fundRequirementFollower', '4', fundRequirementFollowerQueryModel); 
+	getDefaultQuery('fundRequirementFollower', '4', fundRequirementFollowerQueryModel);
 	paramTemp['fundRequirementFollowerQueryModel']=fundRequirementFollowerQueryModel;
 	paramTemp['userQueryModel'] =getMyInfo();
 	return paramTemp;

@@ -81,7 +81,7 @@ function initInvestorListManager() {
 		}).get().join(',');
 		$("#amountId").val(text);
 	});
-	
+
 	//阶段
 	$("#checkBoxInvestPhase [id^=investPhaseCheckBox]").click(function() {
 		//investPhaseCheckBox固定长度是19
@@ -97,7 +97,7 @@ function initInvestorListManager() {
 		}).get().join(',');
 		$("#investPhaseId").val(text);
 	});
-	
+
 	//页面加载查询
 	queryParam = getData();
 	query(queryParam);
@@ -122,25 +122,25 @@ function query(param) {
 	requestParamTemp['currentPage'] = $('#currentPage').val();
 	requestParamTemp['maxRecordPerPage'] = FrontCommonFunction.maxRecordPerPage;
 	FrontCommonFunction.baseOptions['data'] = requestParamTemp;
-	
+
 	FrontCommonFunction.baseOptions['success'] = function(datas) {
 		var queryReturnList = datas.queryReturnList;
 		if (queryReturnList === null || queryReturnList.length === 0) {
 			var noresult="";
 			noresult+="<div align='center' class='fl right'>";
 			noresult+="<div class='title'></div>"
-			noresult+="<div style='width:900px;margin-top:0px;' class='my_tuijian_con'>"	
-				noresult+="<div class='my_tuijian_con_title'>"	
-				noresult+="<font style='color:#333333;'>您还未收藏任何投资方</font>"
+			noresult+="<div style='width:900px;margin-top:0px;' class='my_tuijian_con'>"
+				noresult+="<div class='my_tuijian_con_title'>"
+				noresult+="<font style='color:#333333;'>未查询到任何记录</font>"
 				noresult+='<div style="color:#349fc4;margin-top:-5px;" ><a href="../investorUser/getBrowsePage">现在就查看投资方>></a></div>'
 				noresult+="</div>"
 					noresult+="<div class='my_tuijian_con_txt'>"
-					noresult+="</div>"	
-			noresult+="</div>"	
+					noresult+="</div>"
+			noresult+="</div>"
 			noresult+="</div>"
 			$('#noResult').html(noresult);
 			return;
-		} 
+		}
 		for(var i = 0; i < queryReturnList.length; i++) {
 			var moreInfoUrl = $("#investorUserMoreInfo").attr('url')+"?id="+queryReturnList[i].id.investorId;
 			var li = '<div id="shaDowShow'+i+'"  class="mydiv1" onmouseout="delShaDowClass('+i+')" onmouseover="addShaDowClass('+i+')"><li>'
@@ -148,7 +148,7 @@ function query(param) {
 				li+='<input type="hidden" id="operateIdUserId'+i+'" value="'+queryReturnList[i].id.userId+'"/>'
 				li+='<input type="hidden" id="operateFollowerType'+i+'" value="'+queryReturnList[i].followerType+'"/>'
 				li+='<input type="hidden" id="operateRelationType'+i+'" value="'+queryReturnList[i].id.relationType+'"/>'
-				
+
 			   var logoUrl=queryReturnList[i].investorUserResultModel.logoUrl;
 			   var imgUrl="";
 				if(logoUrl!==null && logoUrl!=="" && logoUrl!==undefined){
@@ -158,7 +158,7 @@ function query(param) {
 					imgUrl="../resources/images/front/img/touzifang.png";
 					li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="fl ims">'+'<img style="width:240px;height:182px" src="'+imgUrl+'"/></div></a>';
 				}
-			
+
 				li+="<div class='fl rights'>"
 				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="tits">'	;
 				var userType=queryReturnList[i].investorUserResultModel.type;
@@ -177,8 +177,8 @@ function query(param) {
 				li+="<div class='fr'>"+FrontCommonFunction.setInbestorUserType(userType)+"</div>"
 				li+="<div class='clear'></div>"
 				li+="</div></a>"
-				li+="<div class='cs'>"	 
-				li+="<div class='mod borderright'>" 
+				li+="<div class='cs'>"
+				li+="<div class='mod borderright'>"
 				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="cs_tis">'+"投资领域："+FrontCommonFunction.setStrInvestorDomain(queryReturnList[i].investorUserResultModel.investDomain)+"</div></a>"
 				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="cs_tis">'+"投资阶段："+FrontCommonFunction.setStrInvestorPhase(queryReturnList[i].investorUserResultModel.investPhase)+"</div></a>"
 				li+="<div class=''><a class='fl rems'></a><span class='fl'>"+'<a href="'+moreInfoUrl+'" target="_blank">'+"投资概述&nbsp;:&nbsp;"+FrontCommonFunction.getResultMaitText(queryReturnList[i].investorUserResultModel.investOutline,10,"#investorUserMoreInfo",queryReturnList[i].investorUserResultModel.id)+"</a></span><div class='clear'></div></div>"
@@ -188,13 +188,13 @@ function query(param) {
 				li+="<div class=''><a class='fl rems'></a><span class='fl'>"+'<a href="'+moreInfoUrl+'" target="_blank">'+introduction+"</a></span><div class='clear'></div></div>"
 				li+="</div>"
 				li+="<div class='clear'></div>"
-				li+="</div>"	 
+				li+="</div>"
 				li+="<div class='f'>"
-				li+='<a href="'+moreInfoUrl+'" target="_blank"><div style=" margin-top:40px" class="fl">'+FrontCommonFunction.replaceNull(queryReturnList[i].investorUserResultModel.province)+"</div></a>" 
-				li+='<div class="fr" style=" margin-top:40px">'	
+				li+='<a href="'+moreInfoUrl+'" target="_blank"><div style=" margin-top:40px" class="fl">'+FrontCommonFunction.replaceNull(queryReturnList[i].investorUserResultModel.province)+"</div></a>"
+				li+='<div class="fr" style=" margin-top:40px">'
 				li+=cooperateCollectFlagDiv(queryReturnList[i].investorUserResultModel, i)
 				li+="</div>"
-				li+="</div>"	 
+				li+="</div>"
 				li+="</div>"
 				li+="<div class='clear'></div>"
 				li+='</li></div>';
@@ -262,24 +262,24 @@ function getData() {
 		if(haiwai!==""){
 			str+=haiwai+",";
 		}
-		
-		var ar2 = str.split(","); 
-		var array = new Array(); 
-		var j=0 
-		for(var i=0;i<ar2.length;i++){ 
-			if((array == "" || array.toString().match(new RegExp(ar2[i],"g")) == null)&&ar2[i]!=""){ 
-			array[j] =ar2[i]; 
-			array.sort(); 
-			j++; 
-			} 
-		} 
+
+		var ar2 = str.split(",");
+		var array = new Array();
+		var j=0
+		for(var i=0;i<ar2.length;i++){
+			if((array == "" || array.toString().match(new RegExp(ar2[i],"g")) == null)&&ar2[i]!=""){
+			array[j] =ar2[i];
+			array.sort();
+			j++;
+			}
+		}
 		investorUserQueryModel['province']=array.toString();
 	}
 	var investorUserFollowerQueryModel = {};
-	getDefaultQuery('investorUserFollower', '4', investorUserFollowerQueryModel); 
+	getDefaultQuery('investorUserFollower', '4', investorUserFollowerQueryModel);
 	paramTemp['investorUserFollowerQueryModel']=investorUserFollowerQueryModel;
 	paramTemp['investorUserQueryModel']=investorUserQueryModel;
-	getDefaultQuery('investorUser', '4', investorUserQueryModel); 
+	getDefaultQuery('investorUser', '4', investorUserQueryModel);
 	paramTemp['userQueryModel'] =getMyInfo();
 	return paramTemp;
 };

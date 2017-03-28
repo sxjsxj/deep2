@@ -59,8 +59,8 @@
 			<!-- version3 点击发布需求弹框end -->
 			<div style="margin-left:-50px;" class='fl right'>
 				<ul class='nav'>
-					<li style="font-size:17px;" class='active' id="editPassword"><a href="#">修改密码</a></li>
-					<li style="font-size:17px;"><a href="#" id="editEmail">修改邮箱/手机号</a></li>
+					<li style="font-size:16px;" class='active' id="editPassword"><a href="#">修改密码</a></li>
+					<li style="font-size:16px;"><a href="#" id="editEmail">修改邮箱/手机号</a></li>
 					<div class='clear'></div>
 				</ul>
 				<ul class='conul'>

@@ -254,13 +254,13 @@ function query(param) {
 		var cf=$("#child0FlagFirst").val();
 		if(cf==="0"){
 			$("#child0FlagFirst").val("1");
-			$("#child0").html("所有项目("+queryReturnList.length+")");
-			$("#child1").html("待审核("+child1+")");
-			$("#child2").html("征集中("+child2+")");
-			$("#child3").html("洽谈中("+child3+")");
-			$("#child4").html("合作中("+child4+")");
-			$("#child5").html("已完成("+child5+")");
-			$("#child6").html("已拒绝("+child6+")");
+			$("#child0").html("所有项目（"+queryReturnList.length+"）");
+			$("#child1").html("待审核（"+child1+"）");
+			$("#child2").html("征集中（"+child2+"）");
+			$("#child3").html("洽谈中（"+child3+"）");
+			$("#child4").html("合作中（"+child4+"）");
+			$("#child5").html("已完成（"+child5+"）");
+			$("#child6").html("已拒绝（"+child6+"）");
 		}
 
 		if (queryReturnList.length !== 0) {

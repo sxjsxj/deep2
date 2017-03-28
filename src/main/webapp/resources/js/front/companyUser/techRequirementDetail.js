@@ -16,7 +16,7 @@ $(document).ready(function() {
 		$('.city').hide();
 	})
 	//弹框end
-	
+
 	$('#Button1').click(function(){
 	});
 	var updateId=$("#updateId").val();
@@ -39,7 +39,7 @@ function initCompanyTechnicalDemand() {
 			$("#contactNameResult").html("");
 		}
 	});
-	
+
 	$("#contactTel").keyup(function(){
 		var contactTel=$("#contactTel").val();
 		if(contactTel!==""){
@@ -52,12 +52,12 @@ function initCompanyTechnicalDemand() {
 		if(flag){
 			$("#contactEmailResult").html("");
 		}
-		
+
 	});
 	//设置行业
 	FrontCommonFunction.initSelectBaseResearchField("#selectDomain");
 	$("#selectDomain").find("dd").click(function(){
-	    $("#domain").val($(this).attr("value")); 
+	    $("#domain").val($(this).attr("value"));
 	    var domain=$("#domain").val();
 		if(domain!=="" ){
 			$("#domainCheckResult").html('');
@@ -76,26 +76,26 @@ function initCompanyTechnicalDemand() {
 		text = $("#checkBoxCooperationType [id^=cooperationTypeCheckBoxValue]input[class=on]").map(function(index,elem) {
 			return $(elem).val();
 		}).get().join(',');
-		
+
 		if(text!==""){
 			$("#cooperationTypeCheckResult").html('');
 		}else{
 			$("#cooperationTypeCheckResult").html('<font color="red">合作方式至少选一种</font>');
 		}
-		
+
 		$("#cooperationTypeId").val(text);
 	});
-  
+
 	$('#saveBtn').click(function() {
 		var fileCheckFlag=$("#fileCheckFlag").val();//为空代表成功,0代表失败
         if(fileCheckFlag==="0"){
         	$("#fileTypeCheckResult").html('<font color="red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;附件大小不能超过5M</font>');
 		}
-		
+
 		var contactName=$("#contactName").val();
 		var contactTel=$("#contactTel").val();
 		var contactEmail=$("#contactEmail").val();
-		
+
 		var domain=$("#domain").val();
 		var amount=$("#amount").val();
 		if(amount===""){
@@ -104,7 +104,7 @@ function initCompanyTechnicalDemand() {
 		if(domain===""){
 			$("#domainCheckResult").html('<font color="red">必填</font>');
 		}
-		
+
 		var duration=$("#duration").val();
 		var type=$("#type").val();
 		if(duration===""){
@@ -113,13 +113,13 @@ function initCompanyTechnicalDemand() {
 		if(type===""){
 			$("#typeCheckResult").html('<font color="red">必填</font>');
 		}
-		
+
 		var cooperationType=$('#cooperationTypeId').val();
-		
+
 		if(cooperationType===""){
 			$("#cooperationTypeCheckResult").html('<font color="red">合作方式至少选一种</font>');
 		}
-		
+
 		var emailCheck=true;
 		var contactEmail=$('#contactEmail').val();
 		if(contactEmail!==""){
@@ -128,7 +128,7 @@ function initCompanyTechnicalDemand() {
 				$("#contactEmailResult").html('<font color="red">格式错误</font>');
 			}
 		}
-		
+
 		if(fromValidate() && emailCheck===true && contactName!=="" && fileCheckFlag==="" && cooperationType!=="" && contactTel!=="" && domain!=="" && amount!==""&& duration!=="" && type!==""){
 			if($("#agree").is(":checked")){
 				save();
@@ -172,14 +172,14 @@ function fromValidate() {
 			detail : {
 				required : '<font color="red">必填</font>'
 			}
-			
+
 		}
 	}).form();
 };
 
 function setSelectValue(){
 	$("#selectAmount").find("dd").click(function(){
-	    $("#amount").val($(this).attr("value")); 
+	    $("#amount").val($(this).attr("value"));
 	    var domain=$("#domain").val();
 		var amount=$("#amount").val();
 		if(amount!==""){
@@ -187,14 +187,14 @@ function setSelectValue(){
 		}
 	});
 	$("#selectDuration").find("dd").click(function(){
-	    $("#duration").val($(this).attr("value")); 
+	    $("#duration").val($(this).attr("value"));
 	    var duration=$("#duration").val();
 		if(duration!==""){
 			$("#durationCheckResult").html('');
 		}
 	});
 	$("#selectType").find("dd").click(function(){
-	    $("#type").val($(this).attr("value")); 
+	    $("#type").val($(this).attr("value"));
 		var type=$("#type").val();
 		if(type!==""){
 			$("#typeCheckResult").html('');
@@ -260,7 +260,7 @@ function getDetail(id) {
 		$("#showDomain").val(FrontCommonFunction.setInvestorDomain(datas.domain));
 		$('#amount').val(datas.amount);
 		$('#showAmount').val(FrontCommonFunction.setStrAmount(datas.amount));
-		
+
 		$('#duration').val(datas.duration);
 		$('#showDuration').val(FrontCommonFunction.setDuration(datas.duration));
 		$('#type').val(datas.type);

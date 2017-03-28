@@ -8,7 +8,7 @@
 
 	<div class='cons info'>
 		<div class='width1200'>
-		<div style="margin-top:-79px;">
+		<div>
 		<jsp:include page="/WEB-INF/pages/common/companyUserLeft.jsp"></jsp:include>
 		</div>
 		<!-- 保存失败start -->

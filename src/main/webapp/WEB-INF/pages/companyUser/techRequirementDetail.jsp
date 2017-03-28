@@ -97,7 +97,7 @@
 						<div id="contactNameResult" style="display:inline"></div>
 						<div class='clear'></div>
 					</div>
-					<div class='lis' style="margin-left:-28px;">
+					<div class='lis' style="margin-left:15px;">
 						<div class='name fl'>*联系方式</div>
 						<div class='fl input'>
 							<input type='text' maxlength="15" style="width:155px;" id="contactTel" name="contactTel" value='${companyUser.contactTel}' />
@@ -105,7 +105,7 @@
 						<div id="contactTelResult" style="display:inline"></div>
 						<div class='clear'></div>
 					</div>
-					<div class='lis' style="margin-left:-2px;">
+					<div class='lis' style="margin-left:-8px;">
 						<div class='name fl'>邮箱</div>
 						<div class='fl input'>
 							<input type='text' maxlength="20" style="width:155px;" id="contactEmail" name="contactEmail" value='${companyUser.userModel.email}'/>

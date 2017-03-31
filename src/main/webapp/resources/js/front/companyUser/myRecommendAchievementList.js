@@ -17,13 +17,13 @@ $(document).ready(function() {
 	$('.img2').click(function(){
 		$('#altsone').hide();
 	});
-	
+
 	//已经维护企业信息弹框发布需求类型弹框
 	$('#companyAlts').hide();
 	$('.img2').click(function(){
 		$('#companyAlts').hide();
 	});
-	
+
 	//寻求合作start
 	$(".altsbg").hide();
 	$(".altsubmit").hide();
@@ -43,13 +43,13 @@ $(document).ready(function() {
 		var url = $('#fundRequire').attr('url');
 		location.href=url;
 	});
-	
+
 	//点击发布需求
 	$('#publishRequirement').click(function() {
 		//企业用户id 为空则没有维护企业信息,否则维护
 		var commonCompanyUserId=$('#commonCompanyUserId').val();
 		var commonMySelfDomain=$('#commonMySelfDomain').val();
-		
+
 		if(commonCompanyUserId != '' && commonMySelfDomain != ''){
 			$('#companyAlts').show();
 		}else{
@@ -117,7 +117,7 @@ function initAchievementListManager() {
 		}).get().join(',');
 		$("#amountId").val(text);
 	});
-	
+
 	//合作方式
 	$("#checkBoxCooperationType [id^=cooperationTypeCheckBox]").click(function() {
 		//cooperationTypeCheckBox固定长度是23
@@ -133,7 +133,7 @@ function initAchievementListManager() {
 		}).get().join(',');
 		$("#cooperationTypeId").val(text);
 	});
-	
+
 	//页面加载查询
 	queryParam = getData();
 	query(queryParam);
@@ -149,15 +149,15 @@ function query(param) {
 		var noresult="";
 		noresult+="<div align='center' class='fl right'>";
 		noresult+="<div class='title'></div>"
-		noresult+="<div style='width:900px;margin-top:-18px;' class='my_tuijian_con'>"	
-			noresult+="<div style='font-size:17px;' class='my_tuijian_con_title'>"	
-			noresult+="<font style='margin-left:-90px;color:#333333;'>您还未维护企业信息，维护后。</font>"
-				noresult+="<div style='margin-left:-90px;color:#333333;'>我们将根据您的所在领域，为您推荐优质科研成果。</div>"
+		noresult+="<div style='width:900px;margin-top:10px;' class='my_tuijian_con'>"
+			noresult+="<div style='font-size:17px;' class='my_tuijian_con_title'>"
+			noresult+="<font style='margin-left:-90px;color:#333333;'>您还未维护企业信息。</font>"
+				noresult+="<div style='margin-left:-90px;color:#333333;'>维护后，我们将根据您的所在领域，为您推荐优质科研成果。</div>"
 			noresult+='<div style="color:#349fc4;margin-top:-5px;" ><a href="../companyUser/getDetailPageForAdd">现在完善企业信息>></a></div>'
 			noresult+="</div>"
 				noresult+="<div class='my_tuijian_con_txt'>"
-				noresult+="</div>"	
-		noresult+="</div>"	
+				noresult+="</div>"
+		noresult+="</div>"
 		noresult+="</div>"
 		$('#noResult').html(noresult);
 		return;
@@ -175,24 +175,24 @@ function query(param) {
 	requestParamTemp['currentPage'] = $('#currentPage').val();
 	requestParamTemp['maxRecordPerPage'] = FrontCommonFunction.maxRecordPerPage;
 	FrontCommonFunction.baseOptions['data'] = requestParamTemp;
-	
+
 	FrontCommonFunction.baseOptions['success'] = function(datas) {
 		var queryReturnList = datas.queryReturnList;
 		if (queryReturnList === null || queryReturnList.length === 0) {
 			var noresult="";
 			noresult+="<div align='center' class='fl right'>";
 			noresult+="<div class='title'></div>"
-			noresult+="<div style='width:900px;margin-top:-18px;' class='my_tuijian_con'>"	
-			noresult+="<div style='font-size:17px;' class='my_tuijian_con_title'>"	
+			noresult+="<div style='width:900px;margin-top:-18px;' class='my_tuijian_con'>"
+			noresult+="<div style='font-size:17px;' class='my_tuijian_con_title'>"
 			noresult+="<font style='margin-left:-90px;color:#333333;'>" +
 						"暂未找到您所需领域的科研成果，现在为您推荐几个优质科研成果。您所需的科研成果，我们会持续为您关注。</font>"
 			noresult+="</div>"
 			noresult+="<div class='my_tuijian_con_txt'>"
-			noresult+="</div>"	
-			noresult+="</div>"	
+			noresult+="</div>"
+			noresult+="</div>"
 			noresult+="</div>"
 			$('#noResult').html(noresult);
-			
+
 			//不考虑领域
 			param['achievementQueryModel'].domain = '';
 			var url = $('#queryAchievement').attr('url');
@@ -203,13 +203,13 @@ function query(param) {
 			requestParamTemp['currentPage'] = $('#currentPage').val();
 			requestParamTemp['maxRecordPerPage'] = FrontCommonFunction.maxRecordPerPage;
 			FrontCommonFunction.baseOptions['data'] = requestParamTemp;
-			
+
 			FrontCommonFunction.baseOptions['success'] = function(datas) {
-				display(that, datas, datas.queryReturnList);		
+				display(that, datas, datas.queryReturnList);
 			}
 			$.ajax(FrontCommonFunction.baseOptions);
-		} 
-		display(that, datas, datas.queryReturnList);		
+		}
+		display(that, datas, datas.queryReturnList);
 	};
 	$.ajax(FrontCommonFunction.baseOptions);
 };
@@ -270,17 +270,17 @@ function getData() {
 		if(haiwai!==""){
 			str+=haiwai+",";
 		}
-		
-		var ar2 = str.split(","); 
-		var array = new Array(); 
-		var j=0 
-		for(var i=0;i<ar2.length;i++){ 
-			if((array == "" || array.toString().match(new RegExp(ar2[i],"g")) == null)&&ar2[i]!=""){ 
-				array[j] =ar2[i]; 
-				array.sort(); 
-				j++; 
-			} 
-		} 
+
+		var ar2 = str.split(",");
+		var array = new Array();
+		var j=0
+		for(var i=0;i<ar2.length;i++){
+			if((array == "" || array.toString().match(new RegExp(ar2[i],"g")) == null)&&ar2[i]!=""){
+				array[j] =ar2[i];
+				array.sort();
+				j++;
+			}
+		}
 		universityUserQueryModel['uniProvince']=array.toString();
 		organizationUserQueryModel['orgProvince']=array.toString();
 	}
@@ -302,18 +302,18 @@ function display(that, datas, queryReturnList) {
 		var noresult="";
 		/*noresult+="<div align='center' style='margin-top:-5px;' class='fl right'>";
 		noresult+="<div class='title'></div>"
-		noresult+="<div style='width:900px;margin-top:-18px;' class='my_tuijian_con'>"	
-		noresult+="<div style='font-size:17px;' class='my_tuijian_con_title'>"	
+		noresult+="<div style='width:900px;margin-top:-18px;' class='my_tuijian_con'>"
+		noresult+="<div style='font-size:17px;' class='my_tuijian_con_title'>"
 		noresult+="<font style='margin-left:-90px;color:#333333;'>" +
 					"暂未找到您所需领域的科研成果，现在为您推荐几个优质科研成果。您所需的科研成果，我们会持续为您关注。</font>"
 		noresult+="</div>"
 		noresult+="<div class='my_tuijian_con_txt'>"
-		noresult+="</div>"	
-		noresult+="</div>"	
+		noresult+="</div>"
+		noresult+="</div>"
 		noresult+="</div>"*/
 		$('#noResult').html(noresult);
 		return;
-	} 
+	}
 	for(var i = 0; i < queryReturnList.length; i++) {
 		//取不到
 		var type=queryReturnList[i].researchGroupResultModel.researchUserResultModel.type;
@@ -325,7 +325,7 @@ function display(that, datas, queryReturnList) {
 		}else if(type==="2"){
 			provinceName=FrontCommonFunction.replaceNull(queryReturnList[i].researchGroupResultModel.researchUserResultModel.orgProvince);
 		}
-		
+
 		var moreInfoUrl = $("#achievementMoreInfo").attr('url')+"?id="+queryReturnList[i].id;
 		var li = '<div id="shaDowShow'+i+'"  class="mydiv1" onmouseout="delShaDowClass('+i+')" onmouseover="addShaDowClass('+i+')"><li>'
 			li+='<input type="hidden" id="operateId'+i+'" value="'+queryReturnList[i].id+'"/>'
@@ -338,11 +338,11 @@ function display(that, datas, queryReturnList) {
 				imgUrl="../resources/images/front/img/keyanchengguo.png";
 				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="fl ims">'+'<img style="width:240px;height:182px" src="'+imgUrl+'"/>'+"</div></a>"
 			}
-		
+
 			li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="fl rights">'
 			li+="<div class='tits'>"
 			li+="<div class='fl'>"+FrontCommonFunction.replaceNull(queryReturnList[i].name)+"</div>"
-			li+="<div class='fr'>"+FrontCommonFunction.setStrInvestorPhase(queryReturnList[i].phase)+"</div>"	
+			li+="<div class='fr'>"+FrontCommonFunction.setStrInvestorPhase(queryReturnList[i].phase)+"</div>"
 			li+="<div class='clear'></div>"
 			li+="</div></a>"
 			li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="cs">'
@@ -350,7 +350,7 @@ function display(that, datas, queryReturnList) {
 			li+="</div></a>"
 			li+='<div class="f">'
 			li+='<a href="'+moreInfoUrl+'" target="_blank"><div style=" margin-top:60px" class="fl">'+FrontCommonFunction.setInvestorDomain(queryReturnList[i].domain)+"&nbsp;&nbsp;"+provinceName+"&nbsp;&nbsp;"+FrontCommonFunction.setAmount(queryReturnList[i].amount)+"&nbsp;&nbsp;"+FrontCommonFunction.setRequirementStatus(queryReturnList[i].status)+"</div></a>"
-			li+='<div class="fr" style=" margin-top:60px">'	
+			li+='<div class="fr" style=" margin-top:60px">'
 			li+=cooperateCollectFlagDiv(queryReturnList[i], i)
 			li+="</div>"
 			li+="</div>"

@@ -52,7 +52,7 @@
 							</div>
 							<div class='fl'>
 								<div class='titlena'>企业LOGO</div>
-								<div class='remtxt'>图像格式:GIF,JPG,JPEG,PNG 尺寸要求:200*200像素。</div>
+								<div class='remtxt'>请上传GIF/JPG/JPEG/PNG格式文件，文件小于2MB</div>
 								<div style="float:left" class='uploadbtn' onclick="$(this).children()[0].click()">上传图片
 									<input type='file' name="file" onchange="showPreview(this);" id="companyImgLogo" style='display:none'/>
 								</div>
@@ -85,7 +85,7 @@
 							<div class='lis'>
 								<div class='name fl'>*公司性质</div>
 								<div class='fl input'>
-									<input type='text' style="width:300px;" value='请选择公司性质' id="showNature" readonly/>
+									<input type='text' style="width:313px;" value='请选择公司性质' id="showNature" readonly/>
 									<img src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png'/>
 									<dl id="selectNature">
 										<dd value="0">国有企业</dd>
@@ -125,7 +125,7 @@
 							<div class='lis'>
 								<div class='name fl'>*产值</div>
 								<div class='fl input'>
-									<input type='text' style="width:300px;" value='请选择产值' id="showProductValue" readonly/>
+									<input type='text' style="width:313px;" value='请选择产值' id="showProductValue" readonly/>
 									<img src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png'/>
 									<dl id="selectProductValue">
 										<dd value="0">0-100万</dd>
@@ -147,7 +147,7 @@
 							<div class='lis'>
 								<div class='name fl'>*所在省/市</div>
 								<div class='fl input'>
-									<input type='text' style="width:130px;" value='请选择省份' id="showProvince" readonly/>
+									<input type='text' style="width:167px;" value='请选择省份' id="showProvince" readonly/>
 									<img src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png'/>
 									<dl id="selectProvince" url="${pageContext.request.contextPath}/basicProvince/queryProvinceCity">
 									</dl>
@@ -159,7 +159,7 @@
 							<div class='lis'>
 								<div class='name fl'>*所在市</div>
 								<div class='fl input'>
-									<input type='text' style="width:130px;" value='请选择市' id="showCity" readonly/>
+									<input type='text' style="width:167px;" value='请选择市' id="showCity" readonly/>
 									<img src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png'/>
 									<dl id="selectCity" url="${pageContext.request.contextPath}/basicProvince/queryCityCounty">
 									</dl>
@@ -171,7 +171,7 @@
 							<div class='lis'>
 								<div class='name fl'>*区级</div>
 								<div class='fl input'>
-									<input type='text' style="width:130px;" value='请选择县' id="showCounty" readonly/>
+									<input type='text' style="width:167px;" value='请选择县' id="showCounty" readonly/>
 									<img src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png'/>
 									<dl id="selectCounty">
 									</dl>
@@ -200,7 +200,7 @@
 							<div class='lis'>
 								<div class='name fl'>*联系方式</div>
 								<div class='fl input'>
-									<input type='text' style="width:300px;"  maxlength="25"  id="contactTel" name="contactTel" value=''/>
+									<input type='text' style="width:313px;"  maxlength="25"  id="contactTel" name="contactTel" value=''/>
 								</div>
 								<div id="contactTelResult" style="display:inline"></div>
 								<div class='clear'></div>
@@ -283,7 +283,7 @@
 							</div>
 							<div class='tx'>
 								<div class='t'>我要发布资金需求</div>
-								<div class='f'>我有项目寻求资金</div>
+								<div class='f'>我有项目&nbsp;&nbsp;&nbsp;寻求资金</div>
 							</div>
 						</li>
 					</ul>

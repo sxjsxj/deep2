@@ -79,7 +79,7 @@ ul li{list-style: none}
 .cons .right .fengmian .uploadbtn{width: 120px;height: 30px;line-height: 30px;text-align: center;background: #e19c40;color: #fff;font-size: 15px;border-radius: 4px;cursor: pointer;margin-top: 20px}
 .cons .right .fengmian .uploadbtn:hover{background: #f2961c}
 
-.cons .right .xuqiu {margin-left: 32px;margin-top: 36px;color: #ff0000;font-size: 15px}
+.cons .right .xuqiu {margin-left: 32px;margin-top: 36px;color: #ff0000;font-size: 15px;}
 .cons .right .xuqiu .name{color: #434343;font-size: 14px;line-height: 36px;width: 114px;text-align: right;margin-right: 7px}
 .cons .right .xuqiu input{background: #fff;height: 36px;line-height: 36px;color: #1b1b1b;font-size: 14px;width: 780px;border-radius: 4px;text-indent: 12px;-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);margin-right: 5px}
 .cons .right .xuqiu .checkbox{height: 18px;width: 18px;border: 1px solid #434343;border-radius: 3px;margin-right: 0px;margin-top: 9px;}
@@ -93,10 +93,15 @@ ul li{list-style: none}
 	-moz-box-shadow:0px 0px 5px #99cfe1;/*firefox*/
 	-webkit-box-shadow:0px 0px 5px #99cfe1;/*webkit*/
 }
-.cons .right .xuqiu3{margin-top: 24px}
+.cons .right .xuqiu3{margin-top: 24px;position: relative;}
 .cons .right .xuqiu3 textarea{color: #1b1b1b;font-size: 14px;border-radius: 4px;-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);width: 785px;height: 150px;resize: none;padding-top: 6px;border:1px solid #ccc;}
+.cons .right .xuqiu3 label.error{position: absolute;line-height: 158px;right: -30px;}
 .cons .right .xuqiu4{margin-top: 24px}
-.cons .right .xuqiu4 .lis{width: 50%;float:left;}
+.cons .right .xuqiu4 .lis{width: 50%;float:left;position: relative;}
+.cons .right .xuqiu4 .lis font{position: absolute;line-height: 40px;right: -30px;}
+#contactEmailResult font{right: -63px;}
+#productValueCheckResult font,#natureCheckResult font{right: -14px;}
+#domainCheckResult font,#scaleCheckResult font{right: 44px;}
 .cons .right .xuqiu4 .input{position: relative;}
 .cons .right .xuqiu4 .input dl{border:1px solid #99cfe1;width: 100%;position: absolute;background: #fff;text-indent: 12px;display: none;z-index: 50;
 	box-shadow: 0px 0px 5px #99cfe1;
@@ -131,10 +136,17 @@ ul li{list-style: none}
 	-webkit-box-shadow:0px 0px 5px #99cfe1;/*webkit*/
 }
 .cons .right .xuqiu6 .txt{color: #434343;font-size: 14px;margin-left: 10px}
-.cons .right .xuqiu7 .lis{width:33%}
+#cooperationTypeCheckResult font{line-height: 35px;}
+.cons .right .xuqiu7 .lis{width:33%;position: relative;}
+.cons .right .xuqiu7 .lis label.error font{right: -35px;}
 .cons .right .xuqiu7 input{width:157px}
 .cons .right .xuqiu8 .lis{width:100%}
 .cons .right .xuqiu8 input{width:783px}
+.cons .right .xuqiu9{position: relative;}
+.cons .right .xuqiu9 label.error{position: absolute;line-height: 40px;right: -30px;}
+.cons .right .xuqiu10 label.error{right: -1px;}
+.cons .right .xuqiu11 .lis font{right: -1px;}
+
 .cons .right .btns{width: 200px;height: 50px;background: #f2961c;color: #fff;font-size: 20px;text-align: center;line-height: 50px;border-radius: 5px;margin-top: 36px;margin-left: 148px;cursor: pointer;}
 .cons .right .commitbtns{width: 150px;height: 40px;background: #e19c40;color: #fff;font-size: 16px;text-align: center;line-height: 40px;border-radius: 5px;margin-top: 36px;margin-left: 152px;cursor: pointer;}
 .cons .right .commitbtns:hover{background: #f2961c}
@@ -546,7 +558,7 @@ ul li{list-style: none}
 .xuqiualert ul li .tx .f{color: #959595;font-size: 18px;text-align: center;}
 
 /*个人中心*/
-.info {margin-top: 90px}
+.info {margin-top: 162px}
 .info .right .nav {margin-left: 78px;border-radius: 5px;overflow: hidden;width: 389px;border-bottom: 1px solid #e7e7e7}
 .info .right .nav li{padding: 0 40px;background: #fff;height: 48px;line-height: 48px;font-size: 20px;color: #349fc4;float:left;}
 .info .right .nav li.active{background: #349fc4;color: #fff}
@@ -573,7 +585,7 @@ ul li{list-style: none}
 .change2 .createResearchBtn_top{width: 197px;height: 41px;text-align: center;line-height: 42px;color: #fff;font-size: 18px;border-radius: 4px;background: #e19c40;cursor: pointer;margin-left: 80px;}
 .change2 .createResearchBtn_top:hover{background: #f2961c}
 
-.change2 .publishmyrequire{width: 197px;height: 41px;text-align: center;line-height: 41px;color: #fff;font-size: 18px;border-radius: 4px;background: #f2961c;cursor: pointer;margin-left: 80px;}
+.change2 .publishmyrequire{float:left;width: 197px;height: 41px;text-align: center;line-height: 41px;color: #fff;font-size: 18px;border-radius: 4px;background: #f2961c;cursor: pointer;margin-left: 80px;}
 .change2 .publishmyrequire:hover{background: #f9963c}
 
 .change2 .nav{width: 322px;height: 40px;line-height: 40px;border-bottom: 1px solid #e7e7e7;margin-top: 18px;margin-left: 80px;border-radius: 5px;overflow: hidden;}

@@ -105,7 +105,7 @@
 					<div class='fl'><input type='text' id="name" maxlength="30" name="name" value=''/></div>
 					<div class='clear'></div>
 				</div>
-				<div class='xuqiu xuqiu4 xuqiu8'>
+				<div class='xuqiu xuqiu4 xuqiu8 xuqiu11'>
 				    <input name="domain" id="domain" type='hidden' value=''/>
 					<div class='lis'>
 						<div class='name fl'><span>*</span>所属领域</div>
@@ -122,7 +122,7 @@
 				</div>
 
 
-				<div class='xuqiu xuqiu3'>
+				<div class='xuqiu xuqiu3 xuqiu10'>
 					<div class='name fl'><span>*</span>团队介绍</div>
 					<div class='fl'>
 						<textarea name="projectTeam" maxlength="500" id="projectTeam"></textarea>
@@ -130,7 +130,7 @@
 					<div class='clear'></div>
 				</div>
 
-				<div class='xuqiu xuqiu3'>
+				<div class='xuqiu xuqiu3 xuqiu10'>
 					<div class='name fl'><span>*</span>项目简述</div>
 					<div class='fl'>
 						<textarea name="projectIntro" maxlength="500" id="projectIntro"></textarea>
@@ -138,7 +138,7 @@
 					<div class='clear'></div>
 				</div>
 
-				<div class='xuqiu xuqiu4 xuqiu8'>
+				<div class='xuqiu xuqiu4 xuqiu8 xuqiu11'>
 				    <input id="projectPhase" name="projectPhase" type='hidden' value=''/>
 					<div class='lis'>
 						<div class='name fl'>*项目阶段</div>
@@ -159,7 +159,7 @@
 					</div>
 					<div class='clear'></div>
 				</div>
-				<div class='xuqiu xuqiu3'>
+				<div class='xuqiu xuqiu3 xuqiu10'>
 					<div class='name fl'><span>*</span>项目前景</div>
 					<div class='fl'>
 						<textarea name="projectProspect" maxlength="500" id="projectProspect"></textarea>
@@ -167,7 +167,7 @@
 					<div class='clear'></div>
 				</div>
 
-				<div class='xuqiu xuqiu4 xuqiu8'>
+				<div class='xuqiu xuqiu4 xuqiu8 xuqiu11'>
 				    <input id="amountNeeded" name="amountNeeded" type='hidden' value=''/>
 					<div class='lis'>
 						<div class='name fl'>*所需投资金额</div>

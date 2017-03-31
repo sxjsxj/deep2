@@ -16,7 +16,7 @@ $(document).ready(function() {
 		$('.city').hide();
 	})
 	//弹框end
-	
+
 	//设置左侧导航
 	setLeftNav('#companyMyRequirement');
 	initCompanyAmountManager();
@@ -35,13 +35,13 @@ function initCompanyAmountManager() {
 	//设置行业
 	FrontCommonFunction.initSelectBaseResearchField("#selectDomain");
 	$("#selectDomain").find("dd").click(function(){
-	    $("#domain").val($(this).attr("value")); 
+	    $("#domain").val($(this).attr("value"));
 	    var domain=$("#domain").val();
 		if(domain!==""){
 			$("#checkResult1").html('');
 		}
 	});
-	
+
 	$('#saveBtn').click(function() {
 		var imgCheckFlag=$("#imgCheckFlag").val();//为空代表成功,0代表失败
 		var fileCheckFlag=$("#fileCheckFlag").val();//为空代表成功,0代表失败
@@ -59,13 +59,13 @@ function initCompanyAmountManager() {
 		if(projectPhase===""){
 			$("#checkResult2").html('<font color="red">必填</font>');
 		}
-		
+
 		var amountNeeded=$("#amountNeeded").val();
 		if(amountNeeded===""){
 			$("#checkResult3").html('<font color="red">必填</font>');
 		}
 		var fileTypeCheckResult=$('#fileTypeCheckResult').html();
-		
+
 		if(fromValidate() && imgCheckFlag==="" && fileCheckFlag==="" && domain!=="" && projectPhase!=="" && amountNeeded!==""){
 			if($("#agree").is(":checked")){
 				save();
@@ -182,14 +182,14 @@ function fromValidate() {
 
 function setSelectValue(){
 	$("#selectPhase").find("dd").click(function(){
-	    $("#projectPhase").val($(this).attr("value")); 
+	    $("#projectPhase").val($(this).attr("value"));
 	    var projectPhase=$("#projectPhase").val();
 		if(projectPhase!==""){
 			$("#checkResult2").html('');
 		}
 	});
 	$("#selectAmount").find("dd").click(function(){
-	    $("#amountNeeded").val($(this).attr("value")); 
+	    $("#amountNeeded").val($(this).attr("value"));
 	    var amountNeeded=$("#amountNeeded").val();
 		if(amountNeeded!==""){
 			$("#checkResult3").html('');

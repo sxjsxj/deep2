@@ -187,6 +187,7 @@
 			<input id="currentPage" type="hidden" value="1"></input>
 			<div class='fl right change2' style="margin-left:-50px;">
 				<div class='publishmyrequire' id="publishMyRequirement">发布需求</div>
+				<div class="clear"></div>
 				<ul class='nav'>
 				   <input type="hidden" id="tagValue" value="0"/>
 					<li class='active' id="techRequire"><div style="font-size:16px;">技术需求</div></li>

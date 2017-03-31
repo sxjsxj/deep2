@@ -83,7 +83,7 @@
 			<form id="techRequirementFrom" method="post" enctype="multipart/form-data">
 		     <input id="str" name="str" type="hidden" value="" />
 			<div class='fl right'>
-				<div class='xuqiu'>
+				<div class='xuqiu xuqiu9'>
 					<div class='name fl'><span>*</span>需求名称</div>
 					<div class='fl'><input type='text' maxlength="30" style="width:755px;" id="name" name="name" value=''/></div>
 					<div class='clear'></div>
@@ -92,15 +92,15 @@
 					<div class='lis'>
 						<div class='name fl'>*联系人</div>
 						<div class='fl input'>
-							<input type='text' maxlength="10" style="width:155px;" id="contactName" name="contactName" value='${companyUser.contactName}' />
+							<input type='text' maxlength="10" style="width:165px;" id="contactName" name="contactName" value='${companyUser.contactName}' />
 						</div>
 						<div id="contactNameResult" style="display:inline"></div>
 						<div class='clear'></div>
 					</div>
-					<div class='lis' style="margin-left:15px;">
+					<div class='lis' style="margin-left:14px;">
 						<div class='name fl'>*联系方式</div>
 						<div class='fl input'>
-							<input type='text' maxlength="15" style="width:155px;" id="contactTel" name="contactTel" value='${companyUser.contactTel}' />
+							<input type='text' maxlength="15" style="width:165px;" id="contactTel" name="contactTel" value='${companyUser.contactTel}' />
 						</div>
 						<div id="contactTelResult" style="display:inline"></div>
 						<div class='clear'></div>
@@ -108,7 +108,7 @@
 					<div class='lis' style="margin-left:-8px;">
 						<div class='name fl'>邮箱</div>
 						<div class='fl input'>
-							<input type='text' maxlength="20" style="width:155px;" id="contactEmail" name="contactEmail" value='${companyUser.userModel.email}'/>
+							<input type='text' maxlength="20" style="width:165px;" id="contactEmail" name="contactEmail" value='${companyUser.userModel.email}'/>
 						</div>
 						<div id="contactEmailResult" style="display:inline"></div>
 						<div class='clear'></div>
@@ -121,19 +121,19 @@
 					<div class='lis'>
 						<div class='name fl'><span>*</span>所属领域</div>
 						<div class='fl input'>
-							<input type='text' style="width:300px;" value='请选择领域' id="showDomain" readonly/>
+							<input type='text' style="width:314px;" value='请选择领域' id="showDomain" readonly/>
 							<img src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png'/>
 							<dl id="selectDomain" url="${pageContext.request.contextPath}/basicResearchField/query" >
 							</dl>
 						</div>
-						<div id="domainCheckResult" style="display:inline"></div>
+						<div id="domainCheckResult" class="xuqiu4required" style="display:inline"></div>
 						<div class='clear'></div>
 					</div>
 					<input id="amount" name="amount" type='hidden' value=''/>
 					<div class='lis'>
 						<div class='name fl'>*研发经费</div>
 						<div class='fl input'>
-							<input type='text' style="width:300px;" value='请选择研发经费' id="showAmount" readonly/>
+							<input type='text' style="width:314px;" value='请选择研发经费' id="showAmount" readonly/>
 							<img src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png'/>
 							<dl id="selectAmount">
 								<dd value="0">100万以下</dd>
@@ -143,7 +143,7 @@
 								<dd value="4">面议</dd>
 							</dl>
 						</div>
-						<div id="amountCheckResult" style="display:inline"></div>
+						<div id="amountCheckResult" class="xuqiu4required" style="display:inline"></div>
 						<div class='clear'></div>
 					</div>
 					<div id="checkResult1"></div>
@@ -155,7 +155,7 @@
 					<div class='lis'>
 						<div class='name fl'>*研发周期</div>
 						<div class='fl input'>
-							<input type='text' style="width:300px;" value='请选择周期' id="showDuration" readonly/>
+							<input type='text' style="width:314px;" value='请选择周期' id="showDuration" readonly/>
 							<img src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png'/>
 							<dl id="selectDuration">
 								<dd value="0">1个月</dd>
@@ -166,22 +166,22 @@
 								<dd value="5">24个月以上</dd>
 							</dl>
 						</div>
-						<div id="durationCheckResult" style="display:inline"></div>
+						<div id="durationCheckResult" class="xuqiu4required" style="display:inline"></div>
 						<div class='clear'></div>
 					</div>
 					<input id="type" name="type" type='hidden' value=''/>
 					<div class='lis'>
 						<div class='name fl'>*需求类型</div>
 						<div class='fl input'>
-							<input type='text' style="width:300px;" value='请选择需求类型' id="showType" readonly/>
+							<input type='text' style="width:314px;" value='请选择需求类型' id="showType" readonly/>
 							<img src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png'/>
 							<dl id="selectType">
-								<dd value="0">新产品研发&nbsp;<font color="CFCFCF">全新技术研发</font></dd>
-							    <dd value="1">产品技术升级&nbsp;<font color="CFCFCF">现有产品、技术的升级完善</font></dd>
-							    <dd value="2">技术服务&nbsp;<font color="CFCFCF">租赁设备,咨询,协助做实验等服务</font></dd>
+								<dd value="0">新产品研发&nbsp;<span style="color:#CFCFCF">全新技术研发</span></dd>
+							    <dd value="1">产品技术升级&nbsp;<span style="color:#CFCFCF">现有产品、技术的升级完善</span></dd>
+							    <dd value="2">技术服务&nbsp;<span style="color:#CFCFCF">租赁设备,咨询,协助做实验等服务</span></dd>
 							</dl>
 						</div>
-						<div id="typeCheckResult" style="display:inline"></div>
+						<div id="typeCheckResult" class="xuqiu4required" style="display:inline"></div>
 						<div class='clear'></div>
 					</div>
 					<div class='clear'></div>

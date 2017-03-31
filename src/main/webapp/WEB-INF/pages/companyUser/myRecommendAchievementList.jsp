@@ -108,7 +108,7 @@
 			<!-- version2 点击发布需求弹框end -->
 			<div style="margin-left:-50px;" class='fl right change2' style="margin-bottom:25px;">
 				<div class='publishmyrequire' id="publishRequirement">发布需求</div>
-				<div style="margin-top:-35px;margin-right:100px;color:#999999;font-size:13px;float:right">
+				<div style="margin-top: 4px;margin-left: 19px;color: #999999;font-size: 13px;float: left;">
 				 为您的企业做大做强插上腾飞的翅膀！技术问题怎么解决？新产品如何研发？发展资金哪里获得？
 				 <br/>
                                          现在填写企业信息、发布您的需求。专业的科研团队、可靠的投资方，将与您携手成功！

@@ -35,7 +35,7 @@ var CommonFunction = {
 		$("[class*='date-pick']").each(function(){
 			$(this).datepicker({ dateFormat: 'yy-mm-dd' });
 		});
-		
+
 	},
 	processResult:function(actionCode,datas,returnInfoModal,returnInfo) {
 		var status = datas.status;
@@ -93,14 +93,14 @@ var CommonFunction = {
 		this.baseOptions['success'] = function(datas) {
 			var queryReturnList = datas;
 			var option = '<option value="">请选择行业</option>';
-			for(var i = 0; i < queryReturnList.length; i++) {	
+			for(var i = 0; i < queryReturnList.length; i++) {
 				option += '<option value="'+i+'">' + queryReturnList[i].name + '</option>';
 			}
 			$(id).append(option);
 		};
 		$.ajax(this.baseOptions);
 	},
-	
+
 	/**
 	 * 初始化行业复选框领域
 	 */
@@ -112,7 +112,7 @@ var CommonFunction = {
 		this.baseOptions['success'] = function(datas) {
 			var queryReturnList = datas;
 			var option = ''
-				for(var i = 0; i < queryReturnList.length; i++) {	
+				for(var i = 0; i < queryReturnList.length; i++) {
 					if(i ==0){
 						option += '<div id="domainCheckBox"+'+i+' class="checkbox-inline"><label>'
 						option += '<input type="checkbox" name="domaincheckbox[]" value="+'+i+'+" data-bv-message="请至少选择一种投资领域" />'+queryReturnList[i].name
@@ -141,7 +141,7 @@ var CommonFunction = {
 			for(var i = 0; i < queryReturnList.length; i++){
 				var list=queryReturnList[i];
 				var areaDesc='';
-				for(var j = 0; j < list.length; j++) {	
+				for(var j = 0; j < list.length; j++) {
 					areaDesc=list[j].areaDec;
 					option += '<div class="checkbox-inline"><label>'
 					option += '<input type="checkbox" name="basicProvinceAreaCheckbox[]" value="+'+i+j+'+" />'+list[j].province
@@ -152,7 +152,7 @@ var CommonFunction = {
 			$(id).append(option);
 		};
 		$.ajax(this.baseOptions);
-	},	
+	},
 	/* 对于页面上面的form进行reset */
 	resetForm : function(formId) {
 		// clear all input for new add operation
@@ -200,7 +200,7 @@ var CommonFunction = {
 			}
 		});
 	},
-	
+
 	/* 保存form中的input的value值 */
 	formValue : function(formId) {
 		var result = [];
@@ -212,7 +212,7 @@ var CommonFunction = {
 		});
 		return result;
 	},
-	
+
 	hiddenDiv : function(clickId, hiddenId, showId) {
 		$('#' + clickId).live('click', function() {
 			$(this).hide();
@@ -300,7 +300,7 @@ var CommonFunction = {
 			  $(titleInputedWord).html(inputNum + "字节");
 			  $(titleInputingWord).html((maxlenth - inputNum)+ "字母," + (Math.round(((maxlenth -inputNum) / 2) - 0.5)) + "汉字");
 		}
-		 
+
 		 //取得被*替换掉的字符串
 	     var replaceText=$(id).val().replace(/[^\x00-\xff]/g, "**");
 	     var maxStr=replaceText.substring(0,maxlenth);
@@ -430,22 +430,22 @@ var CommonFunction = {
 		var uniNationalPriority="";
 		if(uniProject211 === null || uniProject211 === 'null' || uniProject211 === undefined || uniProject211 ==="undefined"){
 			uniProject211 = '';
-		} 
+		}
 		if(uniProject985 === null || uniProject985 === 'null' || uniProject985 === undefined || uniProject985 ==="undefined"){
 			uniProject985 = '';
-		} 
+		}
 		if(uniNationalPriority === null || uniNationalPriority === 'null' || uniNationalPriority === undefined || uniNationalPriority ==="undefined"){
 			uniNationalPriority = '';
-		} 
+		}
 		if(uniProject211 === '1'){
 			uniProject211 = '211高校';
-		} 
+		}
 		if(uniProject985 === '1'){
 			uniProject985 = '985高校';
-		} 
+		}
 		if(uniNationalPriority === '0'){
 			uniNationalPriority = '全国重点大学';
-		} 
+		}
 		result=uniProject211+uniProject985+uniNationalPriority;
 		return result;
 	},
@@ -566,7 +566,7 @@ var CommonFunction = {
 			if(dataObj==="0"){
 				result = "待审核";
 			 }else if(dataObj==="1"){
-				 result = "征集中";
+				 result = "";  // 原来征集中
 			 }else if(dataObj==="2"){
 				 result = "洽谈中";
 			 }else if(dataObj==="3"){
@@ -681,7 +681,7 @@ var CommonFunction = {
 			 }else{
 				 result ="其他";
 			 }
-			
+
 		}
 		return result;
 	},
@@ -915,7 +915,7 @@ var CommonFunction = {
 		if(dataObj === null || dataObj === 'null' || dataObj === undefined || dataObj ==="undefined"){
 			result = '';
 		} else {
-			
+
 			if(dataObj===0){
 				result =  "股权投资";
 			 }else if(dataObj===1){
@@ -927,7 +927,7 @@ var CommonFunction = {
 			 }else{
 				 result =  "其他投资";
 			 }
-			
+
 		}
 		return result;
 	},
@@ -936,7 +936,7 @@ var CommonFunction = {
 		if(dataObj === null || dataObj === 'null' || dataObj === undefined || dataObj ==="undefined"){
 			result = '';
 		} else {
-			
+
 			if(dataObj==="0"){
 				result =  "股权投资";
 			 }else if(dataObj==="1"){
@@ -950,7 +950,7 @@ var CommonFunction = {
 			 }else{
 				 result =  "其他";
 			 }
-			
+
 		}
 		return result;
 	},
@@ -993,7 +993,7 @@ var CommonFunction = {
 			 }else{
 				 result =  "其他";
 			 }
-			
+
 		}
 		return result;
 	},
@@ -1010,7 +1010,7 @@ var CommonFunction = {
 			 '<div class="pageControlLayout">' +
 			 	'<div class="pageControl">' +
 		        	'<div id="paginationInfo" class="left pagesButtonLayout">' +
-		        		initPaginationBar(sumPage, currentPage) + 
+		        		initPaginationBar(sumPage, currentPage) +
 		                '<div class="clear"></div>' +
 		            '</div>' +
 		            '<div class="left toPageLayout">' +
@@ -1048,7 +1048,7 @@ var CommonFunction = {
 			}
 			obj[methodName](null);
 		});
-	},	
+	},
 	maxRecordPerPage:function() {
 		//每页显示几条
 		var maxRecordPerPage = 10;
@@ -1073,14 +1073,14 @@ var CommonFunction = {
 				$(tBodySelector).find('tr').addClass('trbgBlue');
 				$(tBodySelector).find('input:checkbox').each(function() {
 					this.checked=true;
-				});    
+				});
 			} else {
 				$(tBodySelector).find('tr').removeClass('trbgBlue');
 				$(tBodySelector).find('tr').addClass('trbgWhite');
 				$(tBodySelector).find('input:checkbox').removeAttr('checked');
 			}
 		});
-		
+
 		$(document).delegate(tBodySelector +' tr input:checkbox', 'change', function(event){
 			var flag = $(this).is(':checked');
 			if (!flag) {
@@ -1092,7 +1092,7 @@ var CommonFunction = {
 				$(this).parents('tr').addClass('trbgBlue');
 				this.checked=true;
 			}
-			event.stopPropagation();  
+			event.stopPropagation();
 		});
 	}
 };
@@ -1168,8 +1168,8 @@ function initPaginationBar(sumPage, currentPage) {
 			} else {
 				paginationBar = paginationBar + '<a>'+ i +'</a>';
 			}
-		} 
-	} 
+		}
+	}
 	// 如果总页数大于5页，并且当前页小于等于5，显示 '12345...下一页'
 	if (sumPage > 5 && currentPage <= 5) {
 		for(var j = 1; j <= currentPage; j++) {
@@ -1178,14 +1178,14 @@ function initPaginationBar(sumPage, currentPage) {
 			} else {
 				paginationBar = paginationBar + '<a>'+ j +'</a>';
 			}
-		} 
-		
+		}
+
 		if (currentPage === sumPage-1) {
-			paginationBar = paginationBar + '<a>'+ (currentPage+1) +'</a>'; 
+			paginationBar = paginationBar + '<a>'+ (currentPage+1) +'</a>';
 		}
 		if (currentPage === sumPage-2) {
-			paginationBar = paginationBar + '<a>'+ (currentPage+1) +'</a>' + 
-							 '<a>'+ (currentPage+2) +' </a>'; 
+			paginationBar = paginationBar + '<a>'+ (currentPage+1) +'</a>' +
+							 '<a>'+ (currentPage+2) +' </a>';
 		}
 		if (currentPage < sumPage-2) {
 			paginationBar = paginationBar + '<a>'+ (currentPage+1) +'</a>' +
@@ -1193,7 +1193,7 @@ function initPaginationBar(sumPage, currentPage) {
 							 '<b class="pageBreak">...</b>';
 		}
 	}
-	
+
 	// 如果总页数大于5页，并且当前页大于5，显示 '123..下一页'
 	if (sumPage > 5 && currentPage > 5) {
 		paginationBar = paginationBar + '<a>1</a>' +
@@ -1201,13 +1201,13 @@ function initPaginationBar(sumPage, currentPage) {
 						'<b class="pageBreak">...</b>' +
 						'<a>'+ (currentPage-2) +'</a>' +
 						'<a>'+ (currentPage-1) +'</a>' +
-						'<b class="pageCur">'+ currentPage +'</b>'; 
+						'<b class="pageCur">'+ currentPage +'</b>';
 		if (currentPage === sumPage-1) {
-			paginationBar = paginationBar + '<a>'+ (currentPage+1) +'</a>'; 
+			paginationBar = paginationBar + '<a>'+ (currentPage+1) +'</a>';
 		}
 		if (currentPage === sumPage-2) {
-			paginationBar = paginationBar + '<a>'+ (currentPage+1) +'</a>' + 
-							 '<a>'+ (currentPage+2) +' </a>'; 
+			paginationBar = paginationBar + '<a>'+ (currentPage+1) +'</a>' +
+							 '<a>'+ (currentPage+2) +' </a>';
 		}
 		if (currentPage < sumPage-2) {
 			paginationBar = paginationBar + '<a>'+ (currentPage+1) +'</a>' +
@@ -1227,6 +1227,3 @@ function initPaginationBar(sumPage, currentPage) {
 $(document).ready(function() {
 	CommonFunction.toUpperCase();
 });
-
-
-

@@ -256,7 +256,7 @@ ul li{list-style: none}
 .listd {position:relative;margin-top: 0px}
 .listd .ts{color: #535353;font-size: 21px;margin-top: 18px;margin-bottom: 12px}
 .listd .ts2{color: #349fc4;font-size: 21px;margin-bottom: 10px}
-.listd .heads,.listlastmore .heads{width: 1200px;background: #fff;padding-top: 38px;margin-top: 24px;padding-bottom: 10px}
+.listd .heads,.listlastmore .heads{width: 1200px;background: #fff;padding-top: 22px;margin-top: 24px;padding-bottom: 10px}
 .listd .heads li,.listlastmore .heads li{margin-bottom: 10px}
 .listd .heads .ti2,.listlastmore .heads .ti2{color: #254e77;font-size: 18px;width: 98px;text-align: right;margin-right: 20px;height: 24px;line-height: 24px}
 .listd .heads .list,.listlastmore .heads .list{margin-right: 24px;font-size: 14px;line-height: 24px}
@@ -491,9 +491,8 @@ ul li{list-style: none}
     -webkit-box-shadow: 0px 3px 8px #254e77;
     position: fixed;
     left: 50%;
-    top: 50%;
+    top: 38.2%;
     margin-left: -325px;
-    margin-top: -153px;
     width: 650px;
     margin-left: -325px;
     min-height: 260px;
@@ -521,19 +520,23 @@ ul li{list-style: none}
 #alts .altsubmit .consa p{color: #254e77;font-size: 24px}
 
 .xuqiualert{
-	min-height: 560px;border-radius: 8px;background: #fff;
-	box-shadow: 0px 3px 8px #254e77;
-	-moz-box-shadow:0px 3px 8px #254e77;/*firefox*/
-	-webkit-box-shadow:0px 3px 8px #254e77;/*webkit*/
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	margin: -280px 0 0 -450px;
-	margin-left: -370px; /* 行内宽度740 */
-	z-index: 99;
+	    border-radius: 8px;
+	    background: #fff;
+	    box-shadow: 0px 3px 8px #254e77;
+	    -moz-box-shadow: 0px 3px 8px #254e77;
+	    -webkit-box-shadow: 0px 3px 8px #254e77;
+	    position: fixed;
+	    top: 38.2%;
+	    left: 50%;
+	    margin-left: -154px;
+	    z-index: 99;
 }
 
-.xuqiualert .tits{font-size: 24px;color:#959595;text-align: center;height: 98px;line-height: 98px;position: relative;}
+.xuqiualert .tits{    font-size: 15px;
+    color: #349fc4;
+    text-align: center;
+    line-height: 91px;
+    position: relative;}
 .xuqiualert .tits img{position: absolute;right: 10px;top: 15px;cursor: pointer;height: 24px;width: 24px}
 .xuqiualert .tits .imgs .img2{display: none}
 .xuqiualert .tits .imgs:hover .img2{display: inline-block;}

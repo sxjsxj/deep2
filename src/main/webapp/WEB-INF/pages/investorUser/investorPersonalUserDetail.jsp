@@ -38,7 +38,7 @@ a:hover { text-decoration:underline;}
 			<!-- version4 点击发布需求弹框end -->
 			<!-- version3 点击发布需求弹框start -->
 			<div id="altstwo" style="display:none">
-				<div class='xuqiualert' style="margin-top:1050px;width:740px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
+				<div class='xuqiualert' style="width:309px;margin-top:15px;">
 					<div class='tits'>
 						保存成功
 						<div class='imgs'>
@@ -48,11 +48,6 @@ a:hover { text-decoration:underline;}
 								src='${pageContext.request.contextPath}/resources/images/front/img/close2.png'
 								class='img2' />
 						</div>
-					</div>
-					<div>
-					     <div>
-								<font size="5" color="#349fc4">恭喜您,保存成功</font>
-						  </div>
 					</div>
 				</div>
 			</div>

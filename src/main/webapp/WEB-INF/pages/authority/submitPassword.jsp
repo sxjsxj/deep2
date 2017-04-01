@@ -32,7 +32,7 @@
 				</div>
 			</div>
 	<!-- 注册成功弹框 end -->
-	
+
 	<!-- 注册弹框 statr -->
 	<div class="registSuccess" id="alertClick"></div>
 	<!-- <div class="city" align="center" style="margin-top: 370px;">
@@ -47,10 +47,10 @@
 			<br />
 		</div>
 	</div> -->
-	
+
 		<!-- version4 点击发布需求弹框start -->
 			<div id="altsthree">
-				<div class='xuqiualert' style="width:740px;margin-top:15px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
+				<div class='xuqiualert' style="width:740px;margin-left:-370px;margin-top:15px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
 					<div class='tits'>
 						密码修改失败!
 						<div class='imgs'>
@@ -69,10 +69,10 @@
 				</div>
 			</div>
 			<!-- version4 点击发布需求弹框end -->
-	
+
 	<!-- version3 点击发布需求弹框start -->
 			<div id="altstwo">
-				<div class='xuqiualert' style="width:740px;margin-top:15px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
+				<div class='xuqiualert' style="width:740px;margin-left:-370px;margin-top:15px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
 					<div class='tits'>
 						修改成功!
 						<div class='imgs'>
@@ -95,7 +95,7 @@
    <!-- 发送成功后跳转url  start -->
   <div id="toLoginPageUrl" url="${pageContext.request.contextPath}/security/loginPage"></div>
    <!-- 发送成功后跳转url  end -->
-   
+
 	<div class='loginbg'>
 		<div class='width1200'>
 			<div class='topLogo'>
@@ -109,28 +109,28 @@
 				<div class='clear'></div>
 				<form id="findPasswordForm">
 				<div class='username list' style="margin-top:15px;">
-					<div class='nams fl'>邮箱</div>	
+					<div class='nams fl'>邮箱</div>
 					<div class='input fl'>
 						<input type='text'  id="email" name="email" placeholder='请输入邮箱'/>
 					</div>
 					<div class='clear'></div>
 				</div>
 				<div class='username userpass list' style="margin-top:15px;">
-					<div class='nams fl'>验证码</div>	
+					<div class='nams fl'>验证码</div>
 					<div class='input fl'>
 						<input type='text' id="code" name="code" placeholder='请输入验证码'/>
 					</div>
 					<div class='clear'></div>
-				</div> 
+				</div>
 				<div class='username userpass list' style="margin-top:15px;">
-					<div class='nams fl'>密码</div>	
+					<div class='nams fl'>密码</div>
 					<div class='input fl'>
 						<input type='password'  id="passwordOne" name="passwordOne" placeholder='6-20个大小写英文字母、符号或数字'/>
 					</div>
 					<div class='clear'></div>
 				</div>
 				<div class='username userpass list' style="margin-top:15px;">
-					<div class='nams fl' style="margin-left:38px;width: 70px">确认密码</div>	
+					<div class='nams fl' style="margin-left:38px;width: 70px">确认密码</div>
 					<div class='input fl'>
 						<input type='password' id="passwordTwo" name="passwordTwo" placeholder='6-20个大小写英文字母、符号或数字'/>
 					</div>

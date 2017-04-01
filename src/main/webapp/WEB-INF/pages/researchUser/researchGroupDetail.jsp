@@ -30,7 +30,7 @@
 	<div class="registSuccess" id="alertClick"></div>
 		<!-- version4 点击发布需求弹框start -->
 			<div id="altsthree" style="display:none">
-				<div class='xuqiualert' style="margin-top:1800px;width:740px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
+				<div class='xuqiualert' style="width:740px;margin-left:-370px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
 					<div class='tits'>
 						保存失败
 						<div class='imgs'>
@@ -52,7 +52,7 @@
 
 			<!-- version3 点击发布需求弹框start -->
 			<div id="altstwo" style="display:none">
-				<div class='xuqiualert' style="margin-top:1810px;width:740px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
+				<div class='xuqiualert' style="width:740px;margin-left:-370px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
 					<div class='tits'>
 						恭喜您,保存成功
 						<div class='imgs'>

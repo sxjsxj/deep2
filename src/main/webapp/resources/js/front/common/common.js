@@ -704,21 +704,14 @@ var FrontCommonFunction = {
 		if(dataObj === null || dataObj === 'null'||dataObj === undefined){
 			result = '';
 		} else {
-			if(dataObj==="0"){
-				result = "信息技术";
-			 }else if(dataObj==="1"){
-				 result = "机械电子";
-			 }else if(dataObj=="2"){
-				 result = "生物工程";
-			 }else if(dataObj=="3"){
-				 result = "能源环保";
-			 }else if(dataObj=="4"){
-				 result = "化学化工";
-			 }else if(dataObj=="5"){
-				 result = "材料科学";
-			 }else{
-				 result = '其他';
-			 }
+			result = dataObj
+			.replace('0','信息技术')
+			.replace('1','机械电子')
+			.replace('2','生物工程')
+			.replace('3','能源环保')
+			.replace('4','化学化工')
+			.replace('5','材料科学')
+			.replace('6','其他');
 		}
 		return result;
 	},
@@ -830,21 +823,14 @@ var FrontCommonFunction = {
 		if(dataObj === null || dataObj === 'null'||dataObj === undefined){
 			result = '';
 		} else {
-			if(dataObj==="0"){
-				result =  "研发阶段";
-			 }else if(dataObj==="1"){
-				 result =  "实验室阶段";
-			 }else if(dataObj==="2"){
-				 result =  "概念阶段";
-			 }else if(dataObj==="3"){
-				 result =  "小批量生产";
-			 }else if(dataObj==="4"){
-				 result =  "规模化生产阶段";
-			 }else if(dataObj==="5"){
-				 result =  "市场推广阶段";
-			 }else{
-				 result =  "其他";
-			 }
+			result =dataObj
+			.replace('0','研发阶段')
+			.replace('1','实验室阶段')
+			.replace('2','概念阶段')
+			.replace('3','小批量生产')
+			.replace('4','规模化生产阶段')
+			.replace('5','市场推广阶段')
+			.replace('6','其他');
 		}
 		return result;
 	},
@@ -853,7 +839,14 @@ var FrontCommonFunction = {
 		if(dataObj === null || dataObj === 'null'||dataObj === undefined){
 			result = '不限';
 		} else {
-			result =dataObj.replace('0','研发阶段').replace('1','实验室阶段').replace('2','概念阶段').replace('3','小批量生产').replace('4','规模化生产阶段').replace('5','市场推广阶段').replace('6','其他');
+			result =dataObj
+			.replace('0','研发阶段')
+			.replace('1','实验室阶段')
+			.replace('2','概念阶段')
+			.replace('3','小批量生产')
+			.replace('4','规模化生产阶段')
+			.replace('5','市场推广阶段')
+			.replace('6','其他');
 		}
 		return result;
 	},
@@ -897,17 +890,28 @@ var FrontCommonFunction = {
 		if(dataObj === null || dataObj === 'null'||dataObj === undefined){
 			result = '';
 		} else {
-			if(dataObj==='0'){
-				result =  "100万以下";
-			 }else if(dataObj==='1'){
-				 result =  "100-500万";
-			 }else if(dataObj==='2'){
-				 result =  "500万-1000万";
-			 }else if(dataObj==='3'){
-				 result =  "1000万以上";
-			 }else{
-				 result =  "面议";
-			 }
+			var tmps = dataObj.split(',');
+			var tmpsStr = [];
+			for(var i in tmps) {
+				var tmpStr = tmps[i];
+				if(tmps[i] == '0') {
+					tmpStr = '100万以下';
+				}
+				if(tmps[i] == '1') {
+					tmpStr = '100-500万';
+				}
+				if(tmps[i] == '2') {
+					tmpStr = '500万-1000万';
+				}
+				if(tmps[i] == '3') {
+					tmpStr = '1000万以上';
+				}
+				if(tmps[i] == '4') {
+					tmpStr = '面议';
+				}
+				tmpsStr.push(tmpStr);
+			}
+			result = tmpsStr.join(',');
 		}
 		return result;
 	},

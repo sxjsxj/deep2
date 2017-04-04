@@ -6,14 +6,13 @@
 <body>
 <%@ include file="/WEB-INF/pages/common/header.jsp" %>
 <%@ include file="/WEB-INF/pages/common/dialog.jsp" %>
-
 	<div class='cons'>
 	<input type="hidden" id="detailId" value="${id}"/>
 	<input type="hidden" id="cooperateFlag" value=""/>
 	<input type="hidden" id="collectFlag" value=""/>
 	<input type="hidden" id="requireId" value=""/>
 	<input type="hidden" id="userId" value=""/>
-	  <!-- 寻求合作弹框start -->
+	<!-- 寻求合作弹框start -->
 	<input id="opeationIdIndex" type="hidden" value=""></input>
 	    <div id="techRequirementDetail" url="${pageContext.request.contextPath}/techRequirement/getDetail"></div>
 		<div id="addFollowerUrl" url="${pageContext.request.contextPath}/techRequirementFollower/add"></div>
@@ -31,7 +30,6 @@
 				<div class='stils'>
 					<a id="scanNumber"></a><img src='${pageContext.request.contextPath}/resources/images/front/img/address.png'/>&nbsp;<a id="province"></a>
 				</div>
-				<!-- <div class='mortis'><span></span></div> -->
 				<div style="text-align: center;" class='btns'>
 					<div style='margin-right: 20px;font-size:15px;'  id="collect">收藏</div>
 					<div style='margin-right:20px;font-size:15px;' id="cancelCollect">取消收藏</div>
@@ -55,10 +53,8 @@
 				<div class='txt' id="duration"></div>
 				<div class='txt' id="cooperationType"></div>
 
-
 				<div class='title' style='margin-top:30px'>需求描述</div>
 				<div class='txt' id="detail"></div>
-
 				<div id='mores'>
 					<div class='title' style='margin-top:30px' id="similarProductTitle">市场类似产品情况</div>
 					<div class='txt' id="similarProduct"></div>

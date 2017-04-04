@@ -25,7 +25,7 @@ function getDeatil() {
 		$("#investDomain").html("投资领域："+FrontCommonFunction.setInvestorDomain(datas.investDomain));
 		$("#investPhase").html("投资阶段："+FrontCommonFunction.setStrInvestorPhase(datas.investPhase));
 		$("#investOutline").html(FrontCommonFunction.replaceNull(datas.investOutline));
-		$("#investProvince").html(FrontCommonFunction.replaceNull(datas.province));
+		//$("#investProvince").html(FrontCommonFunction.replaceNull(datas.province));
 		$("#investAmount").html("投资额："+FrontCommonFunction.setAmount(datas.investAmount));
 		if(datas.introduction){
 			$("#introduction").html(FrontCommonFunction.replaceNull(datas.introduction));

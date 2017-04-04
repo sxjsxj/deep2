@@ -50,8 +50,8 @@
 				<div class='txt' id="investAmount"></div>
 				<div class='title' style='margin-top:30px'>投资概述</div>
 				<div class='txt' id="investOutline"></div>
-				<div class='title' style='margin-top:30px'>投资区域</div>
-				<div class='txt' id=investProvince></div>
+				<%-- <div class='title' style='margin-top:30px'>投资区域</div>
+				<div class='txt' id=investProvince></div> --%>
 
 				<%-- <div id='mores'> --%>
 					<div class='title' style='margin-top:30px'>简介</div>

@@ -123,6 +123,8 @@ function getData() {
 	
 	var universityUserQueryModel={};
 	getDefaultQuery('researchUser', '5', universityUserQueryModel);
+	universityUserQueryModel['status']=$("#statusId").val();//审核状态
+	universityUserQueryModel['communicateStatus']=$("#communicateStatusId").val();//沟通状态
 	universityUserQueryModel['uniName']=$.trim($("#uniName").val());
 	universityUserQueryModel['uniProvince']=$.trim($("#province").val());
 	universityUserQueryModel['uniCity']=$.trim($("#city").val());
@@ -135,6 +137,8 @@ function getData() {
 	
 	var organizationUserQueryModel={};
 	getDefaultQuery('researchUser', '5', organizationUserQueryModel);
+	organizationUserQueryModel['status']=$("#statusId").val();//审核状态
+	organizationUserQueryModel['communicateStatus']=$("#communicateStatusId").val();//沟通状态
 	organizationUserQueryModel['orgName']=$.trim($("#otherName").val());
 	organizationUserQueryModel['orgProvince']=$.trim($("#province").val());
 	organizationUserQueryModel['orgCity']=$.trim($("#city").val());

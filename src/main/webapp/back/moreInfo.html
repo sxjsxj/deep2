@@ -12,7 +12,6 @@ body,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6,table,tr,th,td,p,input,dl,dt,dd,ul,ol,l
 <body>
 	<form>
 	     <div>
-	      <span>详细地址:</span> 
 		  <font color="blue" id="commonMoreInfo">
 		   
 		  </font>
@@ -21,10 +20,10 @@ body,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6,table,tr,th,td,p,input,dl,dt,dd,ul,ol,l
 	<script>
 	$(document).ready(function() {
 		var urlInfo=decodeURI(window.location.search);
+		alert(urlInfo);
 		var infoDetail=urlInfo.substring(urlInfo.indexOf("=")+1);
 		$("#commonMoreInfo").html(infoDetail);
 	});
-	
 　　</script>
 </body>
 </html>

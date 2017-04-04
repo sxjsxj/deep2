@@ -109,21 +109,9 @@
 
 				<!-- version3 点击发布需求弹框start -->
 			<div id="altstwo">
-				<div class='xuqiualert' style="width:740px;font-size:24px;margin-top:-10px;margin-left:-370px;text-align:center;color:#434343;min-height:280px;">
+				<div class='xuqiualert' style="width:309px;margin-top:15px;">
 					<div class='tits'>
-						注册成功
-						<div class='imgs'>
-							<img
-								src='${pageContext.request.contextPath}/resources/images/front/img/close.png'
-								class='img1' /> <img
-								src='${pageContext.request.contextPath}/resources/images/front/img/close2.png'
-								class='img2' />
-						</div>
-					</div>
-					<div>
-					     <div>
-								<font size="5" color="#349fc4">恭喜您注册成功,请登录</font>
-						  </div>
+						恭喜您，注册成功
 					</div>
 				</div>
 			</div>

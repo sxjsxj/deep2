@@ -940,7 +940,7 @@ var FrontCommonFunction = {
 			if(dataObj==="0"){
 				result = "待审核";
 			 }else if(dataObj==="1"){
-				 result = "征集中";
+				 result = "";  // 原来征集中
 			 }else if(dataObj==="2"){
 				 result = "洽谈中";
 			 }else if(dataObj==="3"){
@@ -980,7 +980,7 @@ var FrontCommonFunction = {
 			if(dataObj==="0"){
 				result = "待审核";
 			 }else if(dataObj==="1"){
-				 result = "征集中";
+				result = "";  // 原来征集中
 			 }else if(dataObj==="2"){
 				 result = "洽谈中";
 			 }else if(dataObj==="3"){
@@ -1095,11 +1095,12 @@ var FrontCommonFunction = {
 			}
 		}
 	 },
-	 limitTextLineNum: function($el, str, moreInfoId,id) {
+
+	 limitTextLineNum: function($el, str, moreInfoId,id, extraLabel) {
 		 // $el 必须声明 lineheight 属性
 		 var moreInfoUrl = $(moreInfoId).attr('url')+"?id="+id;
-		 var extraLabel = '<a href="#" style="color:blue;" onclick="doMoreInfo(\''+moreInfoUrl+'\')">' + '&gt;&gt;详细' + '</a>';
-
+		 extraLabel = extraLabel || '<a href="#" style="color:#349fc4;" onclick="doMoreInfo(\''+moreInfoUrl+'\')">' + '&gt;&gt;详细' + '</a>';
+		 str = this.translateBr(str);
 		 var maxLineNum = 4;
 		 var limitHeight = parseInt($el.css('line-height')) * maxLineNum;
 		 var strTemp = '';
@@ -1171,6 +1172,10 @@ var FrontCommonFunction = {
 				   +"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
 				return str;
 			},
+	 translateBr(str) {
+		 str = str.replace(/\n\r/g, '\n');
+		 return str.replace(/\n/g, '<br/>');
+	 },
 	 getDate:function(date) {
 			if(date===null){
 				return '';

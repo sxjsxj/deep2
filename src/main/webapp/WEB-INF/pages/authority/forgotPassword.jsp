@@ -50,7 +50,7 @@
 
 		<!-- version4 点击发布需求弹框start -->
 			<div id="altsthree">
-				<div class='xuqiualert' style="width:740px;margin-top:15px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
+				<div class='xuqiualert' style="width:740px;margin-left:-370px;margin-top:15px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
 					<div class='tits'>
 						发送失败!
 						<div class='imgs'>
@@ -72,7 +72,7 @@
 
 	<!-- version3 点击发布需求弹框start -->
 			<div id="altstwo">
-				<div class='xuqiualert' style="width:740px;margin-top:15px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
+				<div class='xuqiualert' style="width:740px;margin-left:-370px;margin-top:15px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
 					<div class='tits'>
 						发送成功!
 						<div class='imgs'>

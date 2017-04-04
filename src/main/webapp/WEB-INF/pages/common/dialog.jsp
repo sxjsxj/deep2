@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 	  <div id='alts'>
-		<div class='altsbg'>
+		<div class='altsbg' style='display: none;'>
 			<div class='alts_ti'>合作意向说明</div>
 			<div class='' >
 				<textarea style="width:520px;height:120px;margin-left:65px;" id="cooRemark"></textarea>
@@ -46,7 +46,7 @@
 
 		<!-- version4 点击发布需求弹框start -->
 			<div id="altsthree" class="dialog" style="display:none">
-				<div class='xuqiualert' style="width:740px;margin-top:15px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
+				<div class='xuqiualert' style="width:309px;margin-top:15px;">
 					<div class='tits'>
 						操作失败
 						<div class='imgs'>
@@ -57,18 +57,13 @@
 								class='img2' />
 						</div>
 					</div>
-					<div>
-					     <div>
-								<font id="errorInfo" size="5" color="#349fc4"></font>
-						  </div>
-					</div>
 				</div>
 			</div>
 			<!-- version4 点击发布需求弹框end -->
 
 			<!-- version3 点击发布需求弹框start -->
 			<div id="altstwo" class="dialog" style="display:none">
-				<div class='xuqiualert' style="width:740px;margin-top:15px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
+				<div class='xuqiualert' style="width:309px;margin-top:15px;">
 					<div class='tits'>
 						操作成功
 						<div class='imgs'>
@@ -79,19 +74,14 @@
 								class='img2' />
 						</div>
 					</div>
-					<div>
-					     <div>
-								<font size="5" color="#349fc4">操作成功</font>
-						  </div>
-					</div>
 				</div>
 			</div>
 			<!-- version3 点击发布需求弹框end -->
 			<!-- nologin 点击发布需求弹框start -->
 			<div id="nologin" class="dialog" style="display:none">
-				<div class='xuqiualert' style="width:740px;margin-top:15px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
+				<div class='xuqiualert' style="width:309px;margin-top:15px;">
 					<div class='tits'>
-						没有登录
+						请先登录
 						<div class='imgs'>
 							<img
 								src='${pageContext.request.contextPath}/resources/images/front/img/close.png'
@@ -99,11 +89,6 @@
 								src='${pageContext.request.contextPath}/resources/images/front/img/close2.png'
 								class='img2' />
 						</div>
-					</div>
-					<div>
-					     <div>
-								<font size="5" color="#349fc4">请先登录</font>
-						  </div>
 					</div>
 				</div>
 			</div>

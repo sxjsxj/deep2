@@ -180,7 +180,7 @@ function query(param) {
 			$("#techRequirementListQuery").append(li);
 
 			var $el = $("#techRequirementListQuery").find(".cs:last-child");
-			FrontCommonFunction.limitTextLineNum($el, queryReturnList[i].detail,"#techRequirementMoreInfo",queryReturnList[i].id);
+			FrontCommonFunction.limitTextLineNum($el, queryReturnList[i].detail,"#techRequirementMoreInfo",queryReturnList[i].id, '...');
 		}
 		if (queryReturnList.length !== 0) {
 			FrontCommonFunction.pagination(datas.pagination.sumPage, '#currentPage', '#pagination', that, 'query');

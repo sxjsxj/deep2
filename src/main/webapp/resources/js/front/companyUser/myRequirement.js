@@ -258,7 +258,7 @@ function query(param) {
 			$("#child0FlagFirst").val("1");
 			$("#child0").html("所有项目（"+queryReturnList.length+"）");
 			$("#child1").html("待审核（"+child1+"）");
-			$("#child2").html("征集中（"+child2+"）");
+			// $("#child2").html("征集中（"+child2+"）");
 			$("#child3").html("洽谈中（"+child3+"）");
 			$("#child4").html("合作中（"+child4+"）");
 			$("#child5").html("已完成（"+child5+"）");
@@ -378,7 +378,7 @@ function getFundLi(param, i) {
 		imgUrl="../resources/images/front/img/zijinxuqiu.png";
 		templi+='<img src="'+imgUrl+'" style="width:240px;height:182px"/>'
 	}
-	
+
 	var li='<div id="shaDowShow'+i+'"  class="mydiv1" onmouseout="delShaDowClass('+i+')" onmouseover="addShaDowClass('+i+')"><li>'
 	li+='<input type="hidden" id="operateId'+i+'" value="'+param.id+'"/>'
 	li+='<input type="hidden" id="status'+i+'" value="'+param.status+'"/>'

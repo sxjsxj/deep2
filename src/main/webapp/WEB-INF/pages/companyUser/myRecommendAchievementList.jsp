@@ -79,7 +79,7 @@
 
 			<!-- version2 点击发布需求弹框start -->
 			<div id="altsone" style="display:none">
-				<div class='xuqiualert' style="margin-top:-90px;margin-left:-400px;width:740px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
+				<div class='xuqiualert' style="margin-top:-90px;margin-left:-370px;width:740px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
 					<div class='tits'>
 						请您先维护企业信息
 						<div class='imgs'>

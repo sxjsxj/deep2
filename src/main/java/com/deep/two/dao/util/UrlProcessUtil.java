@@ -46,7 +46,7 @@ public class UrlProcessUtil {
 	
 	public static <T> void setLeaderUrl(T t, String path, String id, String name) throws ViewException {
 		try {
-            Method m = t.getClass().getMethod("setLeadUrl", String.class);
+            Method m = t.getClass().getMethod("setLeaderUrl", String.class);
             if (m != null) {
                 m.invoke(t, path+File.separator+id+File.separator+name);
             }

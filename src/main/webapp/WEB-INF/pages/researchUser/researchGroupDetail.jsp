@@ -106,13 +106,13 @@
 			<div class='fl right'>
 				<div class='fengmian'>
 					<div class='fl img'>
-						<img class="img-circle" style="width:160px;height:120px;"  id="projectLogo" src='${pageContext.request.contextPath}/resources/images/front/img/fengmian_img.png'/>
+						<img class="img-circle" style="width:160px;height:120px;"  id="companyImg" src='${pageContext.request.contextPath}/resources/images/front/img/fengmian_img.png'/>
 					</div>
 					<div class='fl'>
 						<div class='titlena'>封面</div>
 						<div class='remtxt'>提示:请上传GIF/JPG/JPEG/PNG格式文件，文件小于2MB</div>
 						<div style="float:left" class='uploadbtn' onclick="$(this).children()[0].click()">上传图片
-							<input type='file' name="logoFile" onchange="showPreview(this,'projectLogo');" id="companyImgLogo" style='display:none'/>
+							<input type='file' name="logoFile" onchange="showPreview(this,'companyImg');" id="companyImgLogo" style='display:none'/>
 						</div>
 						<div style="float:left;margin-top:25px;" id="imgTypeCheckResult"></div>
 						<input type="hidden" value="" id="imgCheckFlag"/>
@@ -182,13 +182,13 @@
 				<br/><br/>
 				<div class='fengmian' style="width:755px;" >
 					<div class='fl img'>
-						<img class="img-circle" style="width:160px;height:120px;" id="leaderLogo" src='${pageContext.request.contextPath}/resources/images/front/img/fengmian_img.png'/>
+						<img class="img-circle" style="width:160px;height:120px;" id="leaderImg" src='${pageContext.request.contextPath}/resources/images/front/img/fengmian_img.png'/>
 					</div>
 					<div class='fl'>
 						<div class='titlena'>负责人照片</div>
 						<div class='remtxt'>提示:请上传GIF/JPG/JPEG/PNG格式文件，文件小于2MB</div>
 						<div style="float:left" class='uploadbtn' onclick="$(this).children()[0].click()">上传图片
-							<input type='file'  name="leaderFile" onchange="showPreview(this,'leaderLogo');"  id="leaderImg" style='display:none'/>
+							<input type='file'  name="leaderFile" onchange="showPreview(this,'leaderImg');"  id="leaderImgLogo" style='display:none'/>
 						</div>
 						<div style="float:left;margin-top:25px;" id="leaderImgTypeCheckResult"></div>
 						<input type="hidden" value="" id="leaderImgCheckFlag"/>

@@ -209,7 +209,7 @@ function achievementQuery(param) {
 			noresult+="</div>"	
 			noresult+="</div>"	
 			noresult+="</div>"
-			$('#noResult').html(noresult);
+			//$('#noResult').html(noresult);
 			
 			//不考虑领域
 			param = getAchievementData();
@@ -282,7 +282,7 @@ function fundRequirementQuery(param) {
 			noresult+="</div>"	
 			noresult+="</div>"	
 			noresult+="</div>"
-			$('#noResult').html(noresult);
+			//$('#noResult').html(noresult);
 			
 
 			var url = $('#queryFundRequirement').attr('url');

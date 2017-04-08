@@ -112,7 +112,7 @@
 						<div class='titlena'>封面</div>
 						<div class='remtxt'>提示:请上传GIF/JPG/JPEG/PNG格式文件，文件小于2MB</div>
 						<div style="float:left" class='uploadbtn' onclick="$(this).children()[0].click()">上传图片
-							<input type='file' name="file" onchange="showPreview(this,'projectLogo');" id="companyImgLogo" style='display:none'/>
+							<input type='file' name="logoFile" onchange="showPreview(this,'projectLogo');" id="companyImgLogo" style='display:none'/>
 						</div>
 						<div style="float:left;margin-top:25px;" id="imgTypeCheckResult"></div>
 						<input type="hidden" value="" id="imgCheckFlag"/>
@@ -188,7 +188,7 @@
 						<div class='titlena'>负责人照片</div>
 						<div class='remtxt'>提示:请上传GIF/JPG/JPEG/PNG格式文件，文件小于2MB</div>
 						<div style="float:left" class='uploadbtn' onclick="$(this).children()[0].click()">上传图片
-							<input type='file'  name="file" onchange="showPreview(this,'leaderLogo');"  id="leaderImg" style='display:none'/>
+							<input type='file'  name="leaderFile" onchange="showPreview(this,'leaderLogo');"  id="leaderImg" style='display:none'/>
 						</div>
 						<div style="float:left;margin-top:25px;" id="leaderImgTypeCheckResult"></div>
 						<input type="hidden" value="" id="leaderImgCheckFlag"/>
@@ -289,7 +289,7 @@
 					<input type="hidden" id="filePath"/>
 					<div style="margin-left:-35px;" class='fl' onclick="$(this).children()[1].click()">
 						<div class='uploadFilebtn'>上传附件</div>
-						<input type='file' name="file" id="companyFile" style='display:none'/>
+						<input type='file' name="attachFile" id="companyFile" style='display:none'/>
 					</div>
 					<div class='fl txt'>大小限制：5M &nbsp;&nbsp;&nbsp;&nbsp;</div> <div style='margin-top:10px;' id="fileTypeCheckResult"></div>
 					<div class='clear'></div>

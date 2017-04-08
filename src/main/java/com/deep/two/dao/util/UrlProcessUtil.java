@@ -44,6 +44,20 @@ public class UrlProcessUtil {
 		
 	}
 	
+	public static <T> void setLeaderUrl(T t, String path, String id, String name) throws ViewException {
+		try {
+            Method m = t.getClass().getMethod("setLeadUrl", String.class);
+            if (m != null) {
+                m.invoke(t, path+File.separator+id+File.separator+name);
+            }
+        } catch (Exception e) {
+            ViewException tmp = new ViewException();
+            tmp.initCause(e);
+            throw tmp;
+        }
+		
+	}
+	
 	public static <T> void setAttachUrl(T t, String path, String id, String name) throws ViewException {
 		try {
             Method m = t.getClass().getMethod("setAttachUrl", String.class);

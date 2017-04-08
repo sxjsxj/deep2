@@ -76,7 +76,7 @@ a:hover { text-decoration:underline;}
 						<div class='titlena'>LOGO</div>
 						<div class='remtxt'>图像格式:GIF，JPG，JPEG，PNG。</div>
 						<div style="float:left" class='uploadbtn' onclick="$(this).children()[0].click()">上传头像
-							<input type='file' name="file" onchange="showPreview(this);" id="companyImgLogo" style='display:none'/>
+							<input type='file' name="logoFile" onchange="showPreview(this);" id="companyImgLogo" style='display:none'/>
 						</div>
 						<div style="float:left;margin-top:25px;" id="imgTypeCheckResult"></div>
 						<input type="hidden" value="" id="imgCheckFlag"/>
@@ -341,7 +341,7 @@ a:hover { text-decoration:underline;}
 					<input type="hidden" id="filePath"/>
 					<div style="margin-left:35px;" class='fl' onclick="$(this).children()[1].click()">
 						<div style="margin-left:-35px;"class='uploadFilebtn'>上传附件</div>
-						<input type='file' name="file" id="companyFile" style='display:none'/>
+						<input type='file' name="attachFile" id="companyFile" style='display:none'/>
 					</div>
 					<div class='fl txt'>大小限制：5M &nbsp;&nbsp;&nbsp;&nbsp;</div> <div style='margin-top:10px;' id="fileTypeCheckResult"></div>
 					<div class='clear'></div>

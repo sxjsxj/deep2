@@ -13,6 +13,7 @@ package com.deep.two.service;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,6 +33,7 @@ import com.deep.two.model.RecommendModel;
 import com.deep.two.model.query.QueryModel;
 import com.deep.two.model.result.QueryListReturnVo;
 import com.deep.two.model.result.ResultModel;
+import com.deep.two.util.AttachConstant;
 import com.deep.two.util.ViewException;
 
  /**
@@ -56,24 +58,32 @@ public abstract class AbstractService<T extends BaseDAO<E>, E> implements BaseSe
 	public abstract String getPath();
 	
     public abstract T getT();
-
+    
     @Override
     public void add(E e, MultipartFile[] files, CurrentUser user) throws ViewException {
-        if (files == null || files.length == 0) {
+    	IdProcessUtil.setId(e);
+    	this.getT().add(e, user);
+    }
+
+    @Override
+    public void add(E e, Map<String, MultipartFile> files, CurrentUser user) throws ViewException {
+        if (files == null || files.size() == 0) {
         	IdProcessUtil.setId(e);
         	this.getT().add(e, user);
         } else {
         	IdProcessUtil.setId(e);
         	String id = IdProcessUtil.getId(e);
-        	for(MultipartFile file : files) {
-        		String type = file.getContentType();
-        		String name = file.getOriginalFilename();
-        		if (type.indexOf("image")>=0) {
-        			UrlProcessUtil.setLogoUrl(e, getPath(), id, name);
-        		} else {
-        			UrlProcessUtil.setAttachUrl(e, getPath(), id, name);
-        		}
-        		
+        	MultipartFile logoFile = files.get(AttachConstant.LOGOFILE);
+    		if (logoFile != null) {
+    			UrlProcessUtil.setLogoUrl(e, getPath(), id, logoFile.getOriginalFilename());
+    		}
+    		MultipartFile leaderFile = files.get(AttachConstant.LEADERFILE);
+    		if (leaderFile != null) {
+    			UrlProcessUtil.setLeaderUrl(e, getPath(), id, leaderFile.getOriginalFilename());
+    		} 
+    		MultipartFile attachFile = files.get(AttachConstant.ATTACHFILE);
+    		if (logoFile != null) {
+    			UrlProcessUtil.setAttachUrl(e, getPath(), id, attachFile.getOriginalFilename());
         	}
         	this.getT().add(e, user);
         	fileHelper.saveFile(getPath(), id, files);
@@ -94,21 +104,29 @@ public abstract class AbstractService<T extends BaseDAO<E>, E> implements BaseSe
     public ResultModel getDDetail(String id, CurrentUser user) throws ViewException {
     	 return this.getT().getDDetail(id, user);
     }
-
+    
     @Override
     public void update(E e, Serializable id, MultipartFile[] files, CurrentUser user) throws ViewException {
-        if (files == null || files.length == 0) {
+    	this.getT().update(e, id, user);
+    }
+
+    @Override
+    public void update(E e, Serializable id, Map<String, MultipartFile> files, CurrentUser user) throws ViewException {
+    	if (files == null || files.size() == 0) {
             this.getT().update(e, id, user);
         } else {
-        	for(MultipartFile file : files) {
-        		String type = file.getContentType();
-        		String name = file.getOriginalFilename();
-        		if (type.indexOf("image")>=0) {
-        			UrlProcessUtil.setLogoUrl(e, getPath(), (String)id, name);
-        		} else {
-        			UrlProcessUtil.setAttachUrl(e, getPath(), (String)id, name);
-        		}
-        		
+        	String idStr = (String)id;
+        	MultipartFile logoFile = files.get(AttachConstant.LOGOFILE);
+    		if (logoFile != null) {
+    			UrlProcessUtil.setLogoUrl(e, getPath(), idStr, logoFile.getOriginalFilename());
+    		}
+    		MultipartFile leaderFile = files.get(AttachConstant.LEADERFILE);
+    		if (leaderFile != null) {
+    			UrlProcessUtil.setLeaderUrl(e, getPath(), idStr, leaderFile.getOriginalFilename());
+    		} 
+    		MultipartFile attachFile = files.get(AttachConstant.ATTACHFILE);
+    		if (logoFile != null) {
+    			UrlProcessUtil.setAttachUrl(e, getPath(), idStr, attachFile.getOriginalFilename());
         	}
             this.getT().update(e, id, user);
         	fileHelper.saveFile(getPath(), (String)id, files);

@@ -191,7 +191,7 @@ function query(param) {
 			noresult+="</div>"
 			noresult+="</div>"
 			noresult+="</div>"
-			$('#noResult').html(noresult);
+			//$('#noResult').html(noresult);
 
 			//不考虑领域
 			param['achievementQueryModel'].domain = '';

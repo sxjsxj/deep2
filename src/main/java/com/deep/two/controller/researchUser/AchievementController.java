@@ -71,15 +71,16 @@ public class AchievementController extends BaseController<Achievement> implement
         return mv;
     }
 
-	@Override
 	@RequestMapping("/add")
 	@ResponseBody
-	public DMLResultModel add(@RequestParam(value = "file", required = false) MultipartFile[] files, String str) {
+	public DMLResultModel add(@RequestParam(value="logoFile", required=false) MultipartFile logoFile, 
+    		@RequestParam(value="attachFile", required=false) MultipartFile attachFile,
+    		String str) {
 		Achievement ru = null;
 		DMLResultModel dm = new DMLResultModel();
 		try {
 			ru = JSONUtil.jsonToModel(str, Achievement.class, null);
-			achievementService.add(ru, files, getCurrentUser());
+			achievementService.add(ru, getFileMap(logoFile, null, attachFile), getCurrentUser());
 		} catch (ViewException e) {
 			LOGGER.error(e.getMessage());
 			dm = e.getResultModel();
@@ -103,15 +104,16 @@ public class AchievementController extends BaseController<Achievement> implement
 		return dmlResultModel;
 	}
 
-	@Override
 	@RequestMapping("update")
 	@ResponseBody
-	public DMLResultModel update(@RequestParam(value = "file", required = false) MultipartFile[] files, @RequestParam("str") String str) {
+	public DMLResultModel update(@RequestParam(value="logoFile", required=false) MultipartFile logoFile, 
+    		@RequestParam(value="attachFile", required=false) MultipartFile attachFile, 
+    		@RequestParam("str") String str) {
 		DMLResultModel dmlResultModel = new DMLResultModel();
 		Achievement ru = null;
 		try {
 			ru = JSONUtil.jsonToModel(str, Achievement.class, null);
-			achievementService.update(ru, ru.getId(), files, getCurrentUser());
+			achievementService.update(ru, ru.getId(), getFileMap(logoFile, null, attachFile), getCurrentUser());
 		} catch (ViewException e) {
 			LOGGER.error(e.getMessage());
 			dmlResultModel = e.getResultModel();

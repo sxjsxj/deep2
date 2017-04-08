@@ -2,7 +2,9 @@ package com.deep.two.service.authority.impl;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -11,6 +13,7 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.deep.two.authority.checker.PasswordChecker;
 import com.deep.two.authority.helper.Md5Singleton;
@@ -191,7 +194,7 @@ public class UserServiceImpl implements UserService {
         this.daoUtil.insert(orm);
         this.insertRole(orm);
         model.getCompanyUser().setUser(orm);
-        companyUserService.add(model.getCompanyUser(), null, userExtend);
+        companyUserService.add(model.getCompanyUser(), new HashMap<String, MultipartFile>(), userExtend);
         return new DMLResultModel(DMLResultModel.SUCCESS);
 	}
     
@@ -210,7 +213,7 @@ public class UserServiceImpl implements UserService {
         this.daoUtil.insert(orm);
         this.insertRole(orm);
         model.getResearchUser().setUser(orm);
-        researchUserService.add(model.getResearchUser(), null, userExtend);
+        researchUserService.add(model.getResearchUser(), new HashMap<String, MultipartFile>(), userExtend);
         return new DMLResultModel(DMLResultModel.SUCCESS);
 	}
 	
@@ -229,7 +232,7 @@ public class UserServiceImpl implements UserService {
         this.daoUtil.insert(orm);
         this.insertRole(orm);
         model.getInvestorUser().setUser(orm);
-        investorUserService.add(model.getInvestorUser(), null, currentUser);
+        investorUserService.add(model.getInvestorUser(), new HashMap<String, MultipartFile>(), currentUser);
         return new DMLResultModel(DMLResultModel.SUCCESS);
 	}
 	

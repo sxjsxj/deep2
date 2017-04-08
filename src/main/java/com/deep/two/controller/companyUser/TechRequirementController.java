@@ -2,7 +2,6 @@ package com.deep.two.controller.companyUser;
 
 import java.io.Serializable;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -12,28 +11,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.alibaba.fastjson.JSON;
-import com.deep.two.authority.model.CurrentUser;
 import com.deep.two.controller.BaseController;
 import com.deep.two.controller.TemplateController;
-import com.deep.two.controller.authority.SecurityController;
 import com.deep.two.dao.util.Pagination;
-import com.deep.two.model.ApproveModel;
 import com.deep.two.model.RecommendModel;
-import com.deep.two.model.query.QueryModel;
 import com.deep.two.model.query.companyUser.TechRequirementCombineQueryModel;
 import com.deep.two.model.result.DMLResultModel;
 import com.deep.two.model.result.QueryListReturnVo;
 import com.deep.two.model.result.ResultModel;
-import com.deep.two.model.result.companyUser.CompanyUserResultModel;
 import com.deep.two.orm.TechRequirement;
 import com.deep.two.service.BaseService;
-import com.deep.two.service.companyUser.CompanyUserService;
 import com.deep.two.service.companyUser.TechRequirementService;
-import com.deep.two.util.CollectionUtil;
 import com.deep.two.util.JSONUtil;
-import com.deep.two.util.StringUtil;
 import com.deep.two.util.ViewException;
 
 @Controller("techRequirementController")
@@ -82,15 +72,16 @@ public class TechRequirementController  extends BaseController<TechRequirement> 
         return mv;
     }
 
-    @Override
     @RequestMapping("/add")
     @ResponseBody
-    public DMLResultModel add(@RequestParam(value="file", required=false) MultipartFile[] files, @RequestParam("str")String str) {
+    public DMLResultModel add(@RequestParam(value="logoFile", required=false) MultipartFile logoFile, 
+    		@RequestParam(value="attachFile", required=false) MultipartFile attachFile, 
+    		@RequestParam("str")String str) {
         TechRequirement ru = null;
         DMLResultModel dm = new DMLResultModel();
         try {
             ru = JSONUtil.jsonToModel(str, TechRequirement.class, null);
-            techRequirementService.add(ru, files, getCurrentUser());
+            techRequirementService.add(ru, getFileMap(logoFile, null, attachFile), getCurrentUser());
         } catch (ViewException e) {
             LOGGER.error(e.getMessage());
             dm = e.getResultModel();
@@ -114,15 +105,16 @@ public class TechRequirementController  extends BaseController<TechRequirement> 
         return dmlResultModel;
     }
 
-    @Override
     @RequestMapping("update")
     @ResponseBody
-    public DMLResultModel update(@RequestParam(value="file", required=false) MultipartFile[] files, @RequestParam("str")String str) {
+    public DMLResultModel update(@RequestParam(value="logoFile", required=false) MultipartFile logoFile, 
+    		@RequestParam(value="attachFile", required=false) MultipartFile attachFile,
+    		@RequestParam("str")String str) {
         DMLResultModel dmlResultModel = new DMLResultModel();
         TechRequirement ru = null;
         try {
             ru = JSONUtil.jsonToModel(str, TechRequirement.class, null);
-            techRequirementService.update(ru, ru.getId(), files, getCurrentUser());
+            techRequirementService.update(ru, ru.getId(), getFileMap(logoFile, null, attachFile), getCurrentUser());
         } catch (ViewException e) {
             LOGGER.error(e.getMessage());
             dmlResultModel = e.getResultModel();

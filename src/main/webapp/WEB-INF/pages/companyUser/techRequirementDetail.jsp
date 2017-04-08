@@ -247,7 +247,7 @@
 					<input type="hidden" id="filePath"/>
 					<div style="margin-left:-35px;" class='fl' onclick="$(this).children()[1].click()">
 						<div class='uploadFilebtn'>上传附件</div>
-						<input type='file'   name="file" id="techRequireFile" style='display:none'/>
+						<input type='file'   name="attachFile" id="techRequireFile" style='display:none'/>
 					</div>
 					<div class='fl txt'>大小限制：5M &nbsp;&nbsp;&nbsp;&nbsp;</div><div style='margin-top:10px;'  id="fileTypeCheckResult"></div>
 					<div class='clear'></div>

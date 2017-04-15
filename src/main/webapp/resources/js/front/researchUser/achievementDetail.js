@@ -221,18 +221,16 @@ function getDetail(id) {
 			}
 			
 		}
-		var imgUrl=datas.logoUrl;//"../resources/images/front/img/fengmian_img.png";
+		var imgUrl=datas.logoUrl;
 	    var imgpath="";
 		if(imgUrl!=null && imgUrl!=""){
 			imgpath=$('#downFile').attr('url')+'?path='+imgUrl;
 	     }else{
-	    	 imgpath="../resources/images/front/img/fengmian_img.png";
+	    	imgpath="../resources/images/front/img/fengmian_img.png";
 	     }
+		$('#companyLogo').attr('src',imgpath);
 		
-		$('#companyLogo').attr('width',"160px");
-		$('#companyLogo').attr('height',"120px");
-		$('#companyLogo').attr('src',imgUrl);
-		$('#imgPath').val(imgUrl);
+		$('#filePath').val(datas.attachUrl);
 		if(datas.attachName) {
 			$('#fileTypeCheckResult').html('已上传文件:'+datas.attachName);
 		}
@@ -351,7 +349,7 @@ function setSelectValue(){
 	});
 };
 
-function uploadImg(fileId){
+/*function uploadImg(fileId){
 	var url = $('#upLoadImgUrl').attr('url');
 	var filepath = $("#companyImgLogo").val();
 	var extStart = filepath.lastIndexOf(".");
@@ -403,7 +401,7 @@ function uploadImg(fileId){
 		}
 	})
 	return path;
-};
+};*/
 
 function uploadFile(fileId){
 	var url = $('#upLoadFileUrl').attr('url');

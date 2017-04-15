@@ -359,7 +359,7 @@ function getDetail() {
 			}
 		}
 		if (datas.logoUrl) {
-			var imgUrl=datas.logoUrl;//"../resources/images/front/img/fengmian_img.png";
+			var imgUrl=datas.logoUrl;
 			var path='';
 			if(imgUrl==="" || imgUrl===undefined || imgUrl==="undefined"){
 				path="../resources/images/front/img/fengmian_img.png";
@@ -367,10 +367,8 @@ function getDetail() {
 				path=$('#downFile').attr('url')+'?path='+imgUrl;
 				
 			}
-			$('#companyLogo').attr('width',"160px");
-			$('#companyLogo').attr('height',"120px");
 			$('#companyLogo').attr('src',path);
-			$('#imgPath').val(imgUrl);
+			//$('#imgPath').val(imgUrl);
 		}
 		$('#filePath').val(datas.attachUrl);
 		if(datas.attachName) {

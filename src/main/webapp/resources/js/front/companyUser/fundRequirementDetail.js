@@ -138,7 +138,15 @@ function getDetail(id) {
 		$('#projectProspect').val(datas.projectProspect);
 		$('#amountNeeded').val(datas.amountNeeded);
 		$("#showAmountNeeded").val(FrontCommonFunction.setStrAmount(datas.amountNeeded));
-//		$('#imgPath').val(datas.logoUrl);
+
+		var imgUrl=datas.logoUrl;
+	    var imgpath="";
+		if(imgUrl!=null && imgUrl!=""){
+			imgpath=$('#downFile').attr('url')+'?path='+imgUrl;
+	     }else{
+	    	imgpath="../resources/images/front/img/fengmian_img.png";
+	     }
+		$('#companyLogo').attr('src',imgpath);
 		$('#filePath').val(datas.attachUrl);
 		if(datas.attachName) {
 			$('#fileTypeCheckResult').html('已上传文件:'+datas.attachName);

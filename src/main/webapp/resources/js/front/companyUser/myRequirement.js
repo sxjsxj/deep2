@@ -225,7 +225,7 @@ function query(param) {
 				var idIndex=$(this).attr("id").substring(6);
 				var statusId="#status"+idIndex
 				var status=	$(statusId).val();
-				if(status==="0" || status==="1" || status==="3"){
+				if(status==="0" || status==="5"){
 					var id="#operateId"+idIndex
 					var idValue=$(id).val();
 					var tagValue=$("#tagValue").val();
@@ -236,7 +236,7 @@ function query(param) {
 						var jsonStr=JSON.stringify(delParam);
 						var reqParam={};
 						reqParam['str']=jsonStr;
-
+						alert(url);
 						delMyRequire(reqParam,url)
 					}else{
 						var url=$('#fundRequirementDelete').attr('url');
@@ -245,7 +245,7 @@ function query(param) {
 						var jsonStr=JSON.stringify(delParam);
 						var reqParam={};
 						reqParam['str']=jsonStr;
-
+						alert(url);
 						delMyRequire(reqParam,url)
 					}
 				 }else{

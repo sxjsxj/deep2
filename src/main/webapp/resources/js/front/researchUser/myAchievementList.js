@@ -235,7 +235,7 @@ function query(param) {
 				var statusId="#status"+idIndex
 				var status=	$(statusId).val();
 
-				if(status==="0" || status==="1" || status==="3"){
+				if(status==="0" || status==="5"){
 					var id="#operateId"+idIndex
 					var idValue=$(id).val();
 					var url=$('#achievementDelete').attr('url');

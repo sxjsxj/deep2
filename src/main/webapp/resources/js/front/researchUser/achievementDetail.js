@@ -514,7 +514,7 @@ function getData() {
 	paramTemp['expectedEffect']=$('#expectedEffect').val();
 	paramTemp['caseNum']=$('#caseNum').val();
 	paramTemp['caseDetail']=$('#caseDetail').val();
-	paramTemp['logoUrl']=$('#imgPath').val();
-	paramTemp['attachUrl']=$('#filePath').val();
+//	paramTemp['logoUrl']=$('#imgPath').val();
+//	paramTemp['attachUrl']=$('#filePath').val();
 	return paramTemp;
 };

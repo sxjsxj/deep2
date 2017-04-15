@@ -45,7 +45,6 @@
 				<form id="companyUserForm" method="post" enctype="multipart/form-data">
 					<input id="str" name="str" type="hidden" value="" />
 					<div style="margin-left:-30px;" class='fl right'>
-						<input type="hidden" id="imgPath"/>
 						<div class='fengmian' style="width:755px;">
 							<div class='fl img'>
 								<img class="img-circle" style="width:160px;height:120px;" id="companyLogo" src='${pageContext.request.contextPath}/resources/images/front/img/fengmian_img.png'/>

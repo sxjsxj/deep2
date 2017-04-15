@@ -355,7 +355,7 @@ function getData() {
 	paramTemp['leaderAchieve']=$('#leaderAchieve').val();
 	paramTemp['teamOthers']=$('#teamOthers').val();
 	
-	paramTemp['logoUrl']=$('#imgPath').val();
-	paramTemp['attachUrl']=$('#filePath').val();
+//	paramTemp['logoUrl']=$('#imgPath').val();
+//	paramTemp['attachUrl']=$('#filePath').val();
 	return paramTemp;
 };

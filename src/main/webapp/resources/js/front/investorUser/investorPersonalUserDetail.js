@@ -517,7 +517,7 @@ function getData() {
 	paramTemp['investPhase']=investPhaseTemp;
 	paramTemp['introduction']=$('#introduction').val();
 	paramTemp['investOutline']=$('#investOutline').val();
-	paramTemp['logoUrl']=$('#imgPath').val();
-	paramTemp['attachUrl']=$('#filePath').val();
+//	paramTemp['logoUrl']=$('#imgPath').val();
+//	paramTemp['attachUrl']=$('#filePath').val();
 	return paramTemp;
 };

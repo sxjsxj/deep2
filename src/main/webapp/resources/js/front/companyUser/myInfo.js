@@ -454,7 +454,7 @@ function getData() {
 	paramTemp['contactTel']=$.trim($('#contactTel').val());
 	paramTemp['contactTitle']=$.trim($('#contactTitle').val());
 	paramTemp['introduction']=$('#introduction').val();
-	paramTemp['logoUrl']=$('#imgPath').val();
-	paramTemp['attachUrl']=$('#filePath').val();
+//	paramTemp['logoUrl']=$('#imgPath').val();
+//	paramTemp['attachUrl']=$('#filePath').val();
 	return paramTemp;
 };

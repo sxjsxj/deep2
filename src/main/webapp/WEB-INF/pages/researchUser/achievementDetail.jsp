@@ -67,7 +67,6 @@
 		<form id="achievementForm" method="post" enctype="multipart/form-data">
 		    <input id="str" name="str" type="hidden" value="" />
 			<div class='fl right'>
-			 <input type="hidden" id="imgPath"/>
 				<div class='fengmian'>
 					<div class='fl img'>
 						<img class="img-circle" style="width:160px;height:120px;" id="companyLogo"  src='${pageContext.request.contextPath}/resources/images/front/img/fengmian_img.png'/>

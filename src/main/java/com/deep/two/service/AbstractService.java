@@ -117,15 +117,15 @@ public abstract class AbstractService<T extends BaseDAO<E>, E> implements BaseSe
         } else {
         	String idStr = (String)id;
         	MultipartFile logoFile = files.get(AttachConstant.LOGOFILE);
-    		if (logoFile != null) {
+    		if (logoFile != null && logoFile.getSize() > 0) {
     			UrlProcessUtil.setLogoUrl(e, getPath(), idStr, logoFile.getOriginalFilename());
     		}
     		MultipartFile leaderFile = files.get(AttachConstant.LEADERFILE);
-    		if (leaderFile != null) {
+    		if (leaderFile != null && leaderFile.getSize() > 0) {
     			UrlProcessUtil.setLeaderUrl(e, getPath(), idStr, leaderFile.getOriginalFilename());
     		} 
     		MultipartFile attachFile = files.get(AttachConstant.ATTACHFILE);
-    		if (attachFile != null) {
+    		if (attachFile != null && attachFile.getSize() > 0) {
     			UrlProcessUtil.setAttachUrl(e, getPath(), idStr, attachFile.getOriginalFilename());
         	}
             this.getT().update(e, id, user);

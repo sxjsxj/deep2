@@ -165,7 +165,7 @@ function query(param) {
 			var moreInfoUrl = $("#achievementMoreInfo").attr('url')+"?id="+queryReturnList[i].id;
 			var templi='';
 			var imgUrl="";
-			var img=queryReturnList[i].researchGroupResultModel.logoUrl;
+			var img=queryReturnList[i].logoUrl;
 			if(img!==null && img!=="" && img!==undefined){
 				imgUrl=img;
 				templi+='<img src="'+$('#downFile').attr('url')+'?path='+imgUrl+'" style="width:240px;height:182px"/>'

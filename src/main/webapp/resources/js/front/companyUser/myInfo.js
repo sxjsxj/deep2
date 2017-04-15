@@ -362,6 +362,10 @@ function getDetail() {
 			var imgurl=$('#downFile').attr('url')+'?path='+logoUrl;
 			$('#companyLogo').attr("src",imgurl);
 		}
+		$('#filePath').val(datas.attachUrl);
+		if(datas.attachName) {
+			$('#fileTypeCheckResult').html('已上传文件:'+datas.attachName);
+		}
 	};
 	$.ajax(FrontCommonFunction.baseOptions);
 };

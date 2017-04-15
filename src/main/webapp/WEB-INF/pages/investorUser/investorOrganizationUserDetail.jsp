@@ -377,9 +377,9 @@ $(document).ready(function() {
 		   var fileSize = dom.files[0].size;
 		   var size=fileSize/(1024*1024); //单位M
 		   if(size>5){
-			  // $("#fileCheckFlag").val("0");
+			   $("#fileCheckFlag").val("0");
 			   $("#companyFile").val("");
-			   $("#fileTypeCheckResult").html('<font color="red">上传文件超过5M,请重新上传。</font>');
+			   $("#fileTypeCheckResult").html('<font style="color:red;">上传文件超过5M,请重新上传。</font>');
 			   $('#fileName').html("选择要上传附件");
 			   return false;
 		   }else{

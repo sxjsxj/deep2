@@ -125,7 +125,7 @@ public abstract class AbstractService<T extends BaseDAO<E>, E> implements BaseSe
     			UrlProcessUtil.setLeaderUrl(e, getPath(), idStr, leaderFile.getOriginalFilename());
     		} 
     		MultipartFile attachFile = files.get(AttachConstant.ATTACHFILE);
-    		if (logoFile != null) {
+    		if (attachFile != null) {
     			UrlProcessUtil.setAttachUrl(e, getPath(), idStr, attachFile.getOriginalFilename());
         	}
             this.getT().update(e, id, user);

@@ -151,7 +151,7 @@ function initInvestorPersonalUserManager() {
 			$("#imgTypeCheckResult").html('<font color="red">图像格式只能是:GIF,JPG,JPEG,PNG</font>');
 		}
         if(fileCheckFlag==="0"){
-        	$("#fileTypeCheckResult").html('<font color="red">上传文件超过5M,请重新上传。</font>');
+        	$("#fileTypeCheckResult").html('<font style="color:red;">上传文件超过5M,请重新上传。</font>');
 		}
 		var contactName=$("#contactName").val();
 		var contactTel=$("#contactTel").val();

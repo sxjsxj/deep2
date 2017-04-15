@@ -20,7 +20,7 @@ function getDeatil() {
 			$("#name").html(FrontCommonFunction.replaceNull(datas.name));
 		}
 		if(type == '1') {
-			$("#name").html(FrontCommonFunction.replaceNull(datas.name));
+			$("#name").html(FrontCommonFunction.replaceNull(datas.contactName));
 		}
 		$("#investDomain").html("投资领域："+FrontCommonFunction.setInvestorDomain(datas.investDomain));
 		$("#investPhase").html("投资阶段："+FrontCommonFunction.setStrInvestorPhase(datas.investPhase));

@@ -79,7 +79,7 @@
 					</div>
 					<div class='fl'>
 						<div class='titlena'>*项目封面</div>
-						<div class='remtxt'>提示:建议上传长宽比1:1的GIF/JPG/JPEG/PNG格式文件,文件小于2MB</div>
+						<div class='remtxt'>请上传GIF/JPG/JPEG/PNG格式文件，文件小于2MB</div>
 						<div style="float:left" class='uploadbtn' onclick="$(this).children()[0].click()">上传图片
 							<input type='file' name="file" onchange="showPreview(this);" id="companyImgLogo"  style='display:none'/>
 						</div>

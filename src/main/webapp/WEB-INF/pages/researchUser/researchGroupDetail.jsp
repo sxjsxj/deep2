@@ -110,7 +110,7 @@
 					</div>
 					<div class='fl'>
 						<div class='titlena'>封面</div>
-						<div class='remtxt'>提示:请上传GIF/JPG/JPEG/PNG格式文件，文件小于2MB</div>
+						<div class='remtxt'>请上传GIF/JPG/JPEG/PNG格式文件，文件小于2MB</div>
 						<div style="float:left" class='uploadbtn' onclick="$(this).children()[0].click()">上传图片
 							<input type='file' name="file" onchange="showPreview(this,'projectLogo');" id="companyImgLogo" style='display:none'/>
 						</div>
@@ -186,7 +186,7 @@
 					</div>
 					<div class='fl'>
 						<div class='titlena'>负责人照片</div>
-						<div class='remtxt'>提示:请上传GIF/JPG/JPEG/PNG格式文件，文件小于2MB</div>
+						<div class='remtxt'>请上传GIF/JPG/JPEG/PNG格式文件，文件小于2MB</div>
 						<div style="float:left" class='uploadbtn' onclick="$(this).children()[0].click()">上传图片
 							<input type='file'  name="file" onchange="showPreview(this,'leaderLogo');"  id="leaderImg" style='display:none'/>
 						</div>

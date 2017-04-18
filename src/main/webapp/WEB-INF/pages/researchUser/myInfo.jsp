@@ -5,9 +5,9 @@
 <body>
 	<%@ include file="/WEB-INF/pages/common/header.jsp" %>
 
-	<div class='cons info'>
+	<div class='cons info' style="margin-top:84px;">
 		<div class='width1200'>
-		<div style="margin-top:-79px;">
+		<div style="">
 		<%@ include file="/WEB-INF/pages/common/researchUserLeft.jsp" %>
 		</div>
 		<div class="registSuccess" id="alertClick"></div>
@@ -57,7 +57,7 @@
 
 
 			<div style="margin-left:-40px;" class='fl right'>
-				<ul class='nav' style="width: 600px">
+				<ul class='nav' style="width: 600px;border-bottom:none">
 				    <input type="hidden" id="tagCheckValue" value="0"/>
 					<li id="shcool" value="0" class='active' style="float: left;margin-left: 1px;">高校</li>
 					<li id="organization" class='active' value="1" style="display:none;float: left; margin-right: 1px; margin-left:1px">科研机构</li>
@@ -70,7 +70,7 @@
 				   <input type='hidden' id="uniProvince" name="uniProvince" value='' />
 					<div class='lis'>
 						<div class='name fl'>*所在地址</div>
-						<div class='fl input' style="overflow-y:scroll;height:120px;">
+						<div class='fl input' style="height:120px;">
 							<input type='text' style="width:200px;" value='请选择省份' id="showUniProvince" readonly/>
 							<img src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png'/>
 							<dl id="selectUniProvince" url="${pageContext.request.contextPath}/basicProvince/queryProvinceCity">
@@ -82,7 +82,7 @@
 					<input type='hidden' id="uniCity" name="uniCity" value="" />
 					<div class='lis'>
 						<div class='name fl'>&nbsp;&nbsp;</div>
-						<div class='fl input' style="overflow-y:scroll;height:120px;">
+						<div class='fl input' style="height:120px;">
 							<input type='text' value='请选择市' style="width:200px;" id="showUniCity" readonly/>
 							<img src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png'/>
 							<dl id="selectUniCity" url="${pageContext.request.contextPath}/basicProvince/queryCityCounty">
@@ -97,7 +97,7 @@
 				   <input type='hidden' id="uniName" name="uniName" value='' />
 					<div class='lis'>
 						<div class='name fl'>*高校名称</div>
-						<div class='fl input' style="overflow-y:scroll;height:120px;">
+						<div class='fl input' style="height:120px;">
 							<input type='text' style="width:300px;" value='请选择' id="showUniName" readonly/>
 							<img src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png'/>
 							<dl id="selectUniName" url="${pageContext.request.contextPath}/basicUniversity/queryUniversity">
@@ -192,7 +192,7 @@
 						<div class='lis'>
 							<div class='name fl'>所在地址</div>
 							<input type='hidden' id="personalProvince" name="personalProvince" value='' />
-							<div class='fl input' style="overflow-y:scroll;height:120px;">
+							<div class='fl input' style="height:120px;">
 								<input type='text' style="width:150px;" value='请选择省份' id="showPersonalProvince" readonly /> <img
 									src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png' />
 								<dl id="selectPersonalProvince" url="${pageContext.request.contextPath}/basicProvince/queryProvinceCity">
@@ -204,7 +204,7 @@
 						<div class='lis'>
 							<div class='name fl'>&nbsp;&nbsp;</div>
 							<input type='hidden' id="personalCity" name="personalCity" value='' />
-							<div class='fl input' style="overflow-y:scroll;height:120px;">
+							<div class='fl input' style="height:120px;">
 								<input type='text' style="width:150px;" value='请选择市' id="showPersonalCity" readonly /> <img
 									src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png' />
 								<dl id="selectPersonalCity" url="${pageContext.request.contextPath}/basicProvince/queryCityCounty">
@@ -216,7 +216,7 @@
 						<div class='lis'>
 							<div class='name fl'>&nbsp;&nbsp;</div>
 							<input type='hidden' id="personalCounty" name="personalCounty" value='' />
-							<div class='fl input' style="overflow-y:scroll;height:120px;">
+							<div class='fl input' style="height:120px;">
 								<input type='text' style="width:150px;" value='请选择县' id="showPersonalCounty" readonly /> <img
 									src='${pageContext.request.contextPath}/resources/images/front/img/downicon2.png' />
 								<dl id="selectPersonalCounty">

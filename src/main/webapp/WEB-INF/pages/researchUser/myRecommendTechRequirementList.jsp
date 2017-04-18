@@ -39,7 +39,7 @@
 	<input type="hidden" id="hasResearchGroup" value="">
 		<!-- version2 点击发布需求弹框start -->
 			<div id="altsone" style="display:none">
-				<div class='xuqiualert' style="margin-top:0px;margin-left:-400px;width:740px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
+				<div class='xuqiualert' style="width:740px;margin-left:-370px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
 					<div class='tits'>
 						请您先维护科研团队信息
 						<div class='imgs'>
@@ -173,7 +173,7 @@
 			<div id="addFollowerUrl" url="${pageContext.request.contextPath}/techRequirementFollower/add"></div>
         	<div id="cancelFollowerUrl" url="${pageContext.request.contextPath}/techRequirementFollower/delete"></div>
 			<div id="loginUrl" url="${pageContext.request.contextPath}/security/loginPage"></div>
-			
+
 			<!-- 查询科研团队 -->
 			<div id="getResearchGroup" url="${pageContext.request.contextPath}/researchGroup/query"></div>
 			<!-- 科研成果新增界面 -->

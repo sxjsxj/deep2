@@ -13,7 +13,10 @@ package com.deep.two.service;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
+
 import org.springframework.web.multipart.MultipartFile;
+
 import com.deep.two.authority.model.CurrentUser;
 import com.deep.two.dao.util.Pagination;
 import com.deep.two.model.ApproveModel;
@@ -37,7 +40,11 @@ import com.deep.two.util.ViewException;
  */
 public interface BaseService<E> {
     
+    public void add(E e, Map<String, MultipartFile> files, CurrentUser user) throws ViewException;
+    
     public void add(E e, MultipartFile[] files, CurrentUser user) throws ViewException;
+    
+    public void update(E e, Serializable id,MultipartFile[] files, CurrentUser user) throws ViewException;
     
     public void delete(List<Serializable> list, CurrentUser user) throws ViewException;
     
@@ -45,7 +52,7 @@ public interface BaseService<E> {
     
     public ResultModel getDDetail(String id, CurrentUser user) throws ViewException;
 
-    public void update(E e, Serializable id, MultipartFile[] files, CurrentUser user) throws ViewException;
+    public void update(E e, Serializable id, Map<String, MultipartFile> files, CurrentUser user) throws ViewException;
     
     public E queryUnique(QueryModel model, CurrentUser user) throws ViewException;
     

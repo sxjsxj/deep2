@@ -69,8 +69,8 @@ function initResearchGroupManager() {
 		if(imgCheckFlag==="0"){
 			$("#imgTypeCheckResult").html('<font color="red">图像格式只能是:GIF,JPG,JPEG,PNG</font>');
 		}
-        if(fileCheckFlag==="0"){
-        	$("#fileTypeCheckResult").html('<font color="red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;附件大小不能超过5M</font>');
+		if(fileCheckFlag==="0"){
+        	$("#fileTypeCheckResult").html('<font style="color:red;">上传文件超过5M,请重新上传。</font>');
 		}
 		
 		//图片验证通过值为空 否则为0
@@ -213,7 +213,7 @@ function imgVerify(){
 
 
 function leaderLogoImgVerify(){
-	var filepath = $("#leaderImg").val();
+	var filepath = $("#leaderImgLogo").val();
 	var extStart = filepath.lastIndexOf(".");
 	var ext = filepath.substring(extStart, filepath.length).toUpperCase();
 	if (ext != ".PNG" && ext != ".GIF" && ext != ".JPG" && ext != ".JPEG") {
@@ -225,7 +225,7 @@ function leaderLogoImgVerify(){
 		$("#leaderImgTypeCheckResult").html("");
 	}
    //文件大小
-   var dom = document.getElementById("leaderImg");
+   var dom = document.getElementById("leaderImgLogo");
    var fileSize = dom.files[0].size;
    var size=fileSize/(1024*1024); //单位M
    if(size>2){
@@ -248,6 +248,7 @@ function getDetail(id) {
 	FrontCommonFunction.baseOptions['url'] = url;
 	FrontCommonFunction.baseOptions['data'] = detailParam;
 	FrontCommonFunction.baseOptions['success'] = function(datas) {
+		console.log(JSON.stringify(datas));
 		$('#name').val(datas.name);
 		$('#domain').val(datas.domain);
 		$("#showDomain").val(FrontCommonFunction.setInvestorDomain(datas.domain));
@@ -265,17 +266,23 @@ function getDetail(id) {
 		$('#leaderIntro').val(datas.leaderIntro);
 		$('#leaderAchieve').val(datas.leaderAchieve);
 		$('#teamOthers').val(datas.teamOthers);
-		var imgUrl=datas.logoUrl;//"../resources/images/front/img/fengmian_img.png";
+		var imgUrl=datas.logoUrl;
 		var path='';
 		if(imgUrl==="" || imgUrl===undefined || imgUrl==="undefined"){
 			path="../resources/images/front/img/fengmian_img.png";
 		}else{
 			path=$('#downFile').attr('url')+'?path='+imgUrl;
 		}
-		$('#companyLogo').attr('width',"160px");
-		$('#companyLogo').attr('height',"120px");
-		$('#companyLogo').attr('src',path);
-		$('#imgPath').val(imgUrl);
+		$('#companyImg').attr('src',path);
+		//$('#imgPath').val(imgUrl);
+		var leaderUrl=datas.leaderUrl;
+		if(leaderUrl==="" || leaderUrl===undefined || leaderUrl==="undefined"){
+			leaderUrl="../resources/images/front/img/fengmian_img.png";
+		}else{
+			leaderUrl=$('#downFile').attr('url')+'?path='+leaderUrl;
+		}
+		$('#leaderImg').attr('src',leaderUrl);
+		
 		$('#filePath').val(datas.attachUrl);
 		if(datas.attachName) {
 			$('#fileTypeCheckResult').html('已上传文件:'+datas.attachName);
@@ -348,7 +355,7 @@ function getData() {
 	paramTemp['leaderAchieve']=$('#leaderAchieve').val();
 	paramTemp['teamOthers']=$('#teamOthers').val();
 	
-	paramTemp['logoUrl']=$('#imgPath').val();
-	paramTemp['attachUrl']=$('#filePath').val();
+//	paramTemp['logoUrl']=$('#imgPath').val();
+//	paramTemp['attachUrl']=$('#filePath').val();
 	return paramTemp;
 };

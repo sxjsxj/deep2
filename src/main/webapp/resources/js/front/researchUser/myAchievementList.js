@@ -165,7 +165,7 @@ function query(param) {
 			var moreInfoUrl = $("#achievementMoreInfo").attr('url')+"?id="+queryReturnList[i].id;
 			var templi='';
 			var imgUrl="";
-			var img=queryReturnList[i].researchGroupResultModel.logoUrl;
+			var img=queryReturnList[i].logoUrl;
 			if(img!==null && img!=="" && img!==undefined){
 				imgUrl=img;
 				templi+='<img src="'+$('#downFile').attr('url')+'?path='+imgUrl+'" style="width:240px;height:182px"/>'
@@ -235,7 +235,7 @@ function query(param) {
 				var statusId="#status"+idIndex
 				var status=	$(statusId).val();
 
-				if(status==="0" || status==="1" || status==="3"){
+				if(status==="0" || status==="5"){
 					var id="#operateId"+idIndex
 					var idValue=$(id).val();
 					var url=$('#achievementDelete').attr('url');
@@ -256,7 +256,7 @@ function query(param) {
 			$("#child0FlagFirst").val("1");
 			$("#child0").html("所有项目（"+queryReturnList.length+"）");
 			$("#child1").html("待审核（"+child1+"）");
-			$("#child2").html("征集中（"+child2+"）");
+			// $("#child2").html("征集中（"+child2+"）");
 			$("#child3").html("洽谈中（"+child3+"）");
 			$("#child4").html("合作中（"+child4+"）");
 			$("#child5").html("已完成（"+child5+"）");

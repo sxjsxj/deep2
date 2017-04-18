@@ -5,14 +5,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
-
+import java.util.Map;
+import java.util.Map.Entry;
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.multipart.MultipartFile;
-
 import com.deep.two.util.CollectionUtil;
 
 
@@ -28,7 +26,7 @@ public class FileHelper {
         }
     }
     
-    public void saveFile(String rootDir, String id, MultipartFile[] files) { 
+    public void saveFile(String rootDir, String id, Map<String, MultipartFile> files) { 
     	mkdir(rootDir);
         if (files == null) {
             return;
@@ -44,13 +42,13 @@ public class FileHelper {
         File file = null;
         FileOutputStream fos = null;
         try {
-            for (MultipartFile partFile : files) {
-                fileName = partFile.getOriginalFilename();
-                size = partFile.getSize();
+            for (Entry<String, MultipartFile> entry : files.entrySet()) {
+                fileName = entry.getValue().getOriginalFilename();
+                size = entry.getValue().getSize();
                 if ("".equals(fileName) || size <= 0) {
                     continue;
                 }
-                fis = partFile.getInputStream();
+                fis = entry.getValue().getInputStream();
                 file = new File(path + File.separator + fileName);  
                 fos = new FileOutputStream(file); 
                 byte[] buf = new byte[1024];  

@@ -159,6 +159,15 @@ function initAchievementListManager() {
 			fundRequirementQuery(queryParam);
 		}
     });
+	$('a[name=addInvestorInfoNow]').each(function() {
+		var type = $('#commonInvestorUserType').val();
+		if(type == '0') {
+			$(this).attr('href', $('#orgUrl').val());
+		}
+		if(type == '1') {
+			$(this).attr('href',$('#perUrl').val());
+		}
+	});
 };
 
 function achievementQuery(param) {
@@ -170,7 +179,7 @@ function achievementQuery(param) {
 			noresult+="<div class='my_tuijian_con_title'>"	
 			noresult+="<font style='color:#333333;'>您还未维护投资意向。</font>"
 				noresult+="<div style='margin-top:-5px;color:#333333;'>维护后我们将根据您的投资需求，为您推荐优质投资项目。</div>"
-			noresult+='<div style="color:#349fc4;margin-top:-5px;" ><a href="../investorUser/getPersonalUserDetailPageForAdd">现在维护投资意向>></a></div>'
+			noresult+='<div style="color:#349fc4;margin-top:-5px;" ><a name="addInvestorInfoNow">现在维护投资意向>></a></div>'
 			noresult+="</div>"
 				noresult+="<div class='my_tuijian_con_txt'>"
 				noresult+="</div>"	
@@ -209,7 +218,7 @@ function achievementQuery(param) {
 			noresult+="</div>"	
 			noresult+="</div>"	
 			noresult+="</div>"
-			$('#noResult').html(noresult);
+			//$('#noResult').html(noresult);
 			
 			//不考虑领域
 			param = getAchievementData();
@@ -233,7 +242,7 @@ function achievementQuery(param) {
 };
 
 function fundRequirementQuery(param) {
-	if(myDomain == ''){
+	if(myProvince == '' && myCity == ''){
 		var noresult="";
 		noresult+="<div align='center' style='margin-top:-5px;' class='fl right'>";
 		noresult+="<div class='title'></div>"
@@ -241,7 +250,7 @@ function fundRequirementQuery(param) {
 			noresult+="<div class='my_tuijian_con_title'>"	
 			noresult+="<font style='color:#333333;'>您还未维护投资意向。</font>"
 				noresult+="<div style='margin-top:-5px;color:#333333;'>维护后我们将根据您的投资需求，为您推荐优质投资项目。</div>"
-			noresult+='<div style="color:#349fc4;margin-top:-5px;" ><a href="../investorUser/getPersonalUserDetailPageForAdd">现在维护投资意向>></a></div>'
+			noresult+='<div style="color:#349fc4;margin-top:-5px;" ><a name="addInvestorInfoNow">现在维护投资意向>></a></div>'
 			noresult+="</div>"
 				noresult+="<div class='my_tuijian_con_txt'>"
 				noresult+="</div>"	
@@ -282,7 +291,7 @@ function fundRequirementQuery(param) {
 			noresult+="</div>"	
 			noresult+="</div>"	
 			noresult+="</div>"
-			$('#noResult').html(noresult);
+			//$('#noResult').html(noresult);
 			
 
 			var url = $('#queryFundRequirement').attr('url');

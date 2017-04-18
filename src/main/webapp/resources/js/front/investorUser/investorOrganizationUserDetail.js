@@ -155,8 +155,8 @@ function initOrganizationUserManager() {
 		if(imgCheckFlag==="0"){
 			$("#imgTypeCheckResult").html('<font color="red">&nbsp;&nbsp;图像格式只能是:GIF,JPG,JPEG,PNG</font>');
 		}
-        if(fileCheckFlag==="0"){
-        	$("#fileTypeCheckResult").html('<font color="red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;附件大小不能超过5M</font>');
+		if(fileCheckFlag==="0"){
+        	$("#fileTypeCheckResult").html('<font style="color:red;">上传文件超过5M,请重新上传。</font>');
 		}
 		
 		var name=$("#name").val();
@@ -439,10 +439,8 @@ function getDetail() {
 				path=$('#downFile').attr('url')+'?path='+imgUrl;
 				
 			}
-			$('#companyLogo').attr('width',"160px");
-			$('#companyLogo').attr('height',"120px");
 			$('#companyLogo').attr('src',path);
-			$('#imgPath').val(imgUrl);
+			//$('#imgPath').val(imgUrl);
 		}
 		$('#filePath').val(datas.attachUrl);
 		if(datas.attachName) {
@@ -552,7 +550,7 @@ function getData() {
 	paramTemp['investPhase']=investPhaseTemp;
 	paramTemp['investOutline']=$('#investOutline').val();
 	paramTemp['introduction']=$('#introduction').val();
-	paramTemp['logoUrl']=$('#imgPath').val();
-	paramTemp['attachUrl']=$('#filePath').val();
+//	paramTemp['logoUrl']=$('#imgPath').val();
+//	paramTemp['attachUrl']=$('#filePath').val();
 	return paramTemp;
 };

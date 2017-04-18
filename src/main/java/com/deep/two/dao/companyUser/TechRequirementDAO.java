@@ -75,11 +75,11 @@ public class TechRequirementDAO extends AbstractDAO<TechRequirement> {
 	@Override
     public void delete(Serializable id, CurrentUser user) throws ViewException {
 		TechRequirement fr = this.daoUtil.queryById(this.getCurrentClass(), id);
-		if ("0".equals(fr.getStatus()) || "1".equals(fr.getStatus()) || "2".equals(fr.getStatus())) {
+		if ("0".equals(fr.getStatus()) || "5".equals(fr.getStatus())) {
 			fr.setRemoveFlag("1");
 		}
-		if ("3".equals(fr.getStatus()) || "4".equals(fr.getStatus())) {
-			throw new ViewException("洽谈中，不能删除！");
+		if ("1".equals(fr.getStatus()) || "2".equals(fr.getStatus()) || "3".equals(fr.getStatus()) || "4".equals(fr.getStatus())) {
+			throw new ViewException("审核通过，不能删除！");
 		}
 		/*if (fr.getTechRequirementFollowers() != null && !fr.getTechRequirementFollowers().isEmpty()) {
 			throw new ViewException("存在关联数据，无法删除！");

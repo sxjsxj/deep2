@@ -89,8 +89,8 @@
 
 
 			<div class='fr bg_img'>
-				<img src='${pageContext.request.contextPath}/resources/images/front/img/fr_bg2.png' height="780" width="281" />
-				<%-- <img src='${pageContext.request.contextPath}/resources/images/front/img/fr_bg2.png' height="521" width="281" /> --%>
+				<img src='${pageContext.request.contextPath}/resources/images/front/img/fr_bg.png' height="780" width="281" />
+				<%-- <img src='${pageContext.request.contextPath}/resources/images/front/img/fr_bg.png' height="521" width="281" /> --%>
 			</div>
 			<div class='clear'></div>
 		</div>

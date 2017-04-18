@@ -26,13 +26,13 @@ public class InvestorUserQueryModel extends QueryModel {
     private String contactNameOperator = Operator.EQ;
 
     private String investDomain;
-    private String investDomainOperator = Operator.IN;
+    private String investDomainOperator = Operator.MULTILK;
 
     private String investAmount;
-    private String investAmountOperator = Operator.IN;
+    private String investAmountOperator = Operator.MULTILK;
 
     private String investPhase;
-    private String investPhaseOperator = Operator.IN;
+    private String investPhaseOperator = Operator.MULTILK;
 
     private String investArea;
     private String investAreaOperator = Operator.IN;

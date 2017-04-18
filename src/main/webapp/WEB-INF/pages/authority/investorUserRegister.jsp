@@ -53,24 +53,12 @@
 				</div>
 			</div>
 			<!-- version4 点击发布需求弹框end -->
-	
+
 		<!-- version3 点击发布需求弹框start -->
 			<div id="altstwo">
-				<div class='xuqiualert' style="width:740px;font-size:24px;margin-top:-10px;margin-left:-370px;text-align:center;color:#434343;min-height:280px;">
+				<div class='xuqiualert' style="width:309px;margin-top:15px;">
 					<div class='tits'>
-						注册成功
-						<div class='imgs'>
-							<img
-								src='${pageContext.request.contextPath}/resources/images/front/img/close.png'
-								class='img1' /> <img
-								src='${pageContext.request.contextPath}/resources/images/front/img/close2.png'
-								class='img2' />
-						</div>
-					</div>
-					<div>
-					     <div>
-								<font size="5" color="#349fc4">恭喜您注册成功,请登录</font>
-						  </div>
+						恭喜您，注册成功
 					</div>
 				</div>
 			</div>
@@ -89,7 +77,7 @@
 			   <div id="loginUrl" url="${pageContext.request.contextPath}/security/loginPage"></div>
 			   <div id="organizationUserDetailPageForAdd" url="${pageContext.request.contextPath}/investorUser/getOrganizationUserDetailPageForAdd"></div>
 			   <div id="personalUserDetailPageForAdd" url="${pageContext.request.contextPath}/investorUser/getPersonalUserDetailPageForAdd"></div>
-			
+
 				<div class='tit' style="font-size:25px;">我是投资方</div>
 				<div style="margin-left:25px;">
 				<ul class='hes' id="tagSelect">

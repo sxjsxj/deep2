@@ -17,7 +17,7 @@ a:hover { text-decoration:underline;}
 	<div class="registSuccess" id="alertClick"></div>
 		<!-- version4 点击发布需求弹框start -->
 			<div id="altsthree" style="display:none">
-				<div class='xuqiualert' style="margin-top:1050px;width:740px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
+				<div class='xuqiualert' style="margin-left:-370px;width:740px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
 					<div class='tits'>
 						保存失败
 						<div class='imgs'>
@@ -38,7 +38,7 @@ a:hover { text-decoration:underline;}
 			<!-- version4 点击发布需求弹框end -->
 			<!-- version3 点击发布需求弹框start -->
 			<div id="altstwo" style="display:none">
-				<div class='xuqiualert' style="margin-top:1050px;width:740px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
+				<div class='xuqiualert' style="width:309px;margin-top:15px;">
 					<div class='tits'>
 						保存成功
 						<div class='imgs'>
@@ -48,11 +48,6 @@ a:hover { text-decoration:underline;}
 								src='${pageContext.request.contextPath}/resources/images/front/img/close2.png'
 								class='img2' />
 						</div>
-					</div>
-					<div>
-					     <div>
-								<font size="5" color="#349fc4">恭喜您,保存成功</font>
-						  </div>
 					</div>
 				</div>
 			</div>
@@ -83,7 +78,7 @@ a:hover { text-decoration:underline;}
 						<div class='titlena'>LOGO</div>
 						<div class='remtxt'>图像格式:GIF，JPG，JPEG，PNG。</div>
 						<div  style="float:left"  class='uploadbtn' onclick="$(this).children()[0].click()">上传头像
-							<input type='file' name="file" onchange="showPreview(this);" id="companyImgLogo" style='display:none'/>
+							<input type='file' name="logoFile" onchange="showPreview(this);" id="companyImgLogo" style='display:none'/>
 						</div>
 						<div style="float:left;margin-top:25px;" id="imgTypeCheckResult"></div>
 						<input type="hidden" value="" id="imgCheckFlag"/>
@@ -317,7 +312,7 @@ a:hover { text-decoration:underline;}
 
 					<div style="margin-left:-35px;" class='fl' onclick="$(this).children()[1].click()">
 						<div class='uploadFilebtn'>上传附件</div>
-						<input type='file' name="file" id="companyFile" style='display:none'/>
+						<input type='file' name="attachFile" id="companyFile" style='display:none'/>
 					</div>
 					<div class='fl txt'>大小限制：5M &nbsp;&nbsp;&nbsp;&nbsp;</div><div style='margin-top:10px;' id="fileTypeCheckResult"></div>
 					<div class='clear'></div>
@@ -356,9 +351,9 @@ $(document).ready(function() {
 		   var fileSize = dom.files[0].size;
 		   var size=fileSize/(1024*1024); //单位M
 		   if(size>5){
-			  // $("#fileCheckFlag").val("0");
+			   $("#fileCheckFlag").val("0");
 			   $("#companyFile").val("");
-			   $("#fileTypeCheckResult").html('<font color="red">上传文件超过5M,请重新上传。</font>');
+			   $("#fileTypeCheckResult").html('<font style="color:red;">上传文件超过5M,请重新上传。</font>');
 			   $('#fileName').html("选择要上传附件");
 			   return false;
 		   }else{

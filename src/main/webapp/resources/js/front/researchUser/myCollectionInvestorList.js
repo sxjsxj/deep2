@@ -184,7 +184,7 @@ function query(param) {
 				li+="<div class=''><a class='fl rems'></a><span class='fl'>"+'<a href="'+moreInfoUrl+'" target="_blank">'+"投资概述&nbsp;:&nbsp;"+FrontCommonFunction.getResultMaitText(queryReturnList[i].investorUserResultModel.investOutline,10,"#investorUserMoreInfo",queryReturnList[i].investorUserResultModel.id)+"</a></span><div class='clear'></div></div>"
 				li+="</div>"
 				li+="<div class='mod marginleft'>"
-				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="cs_tis">'+'简介:'+"</div></a>"
+				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="cs_tis">'+'简介：'+"</div></a>"
 				li+="<div class=''><a class='fl rems'></a><span class='fl'>"+'<a href="'+moreInfoUrl+'" target="_blank">'+introduction+"</a></span><div class='clear'></div></div>"
 				li+="</div>"
 				li+="<div class='clear'></div>"

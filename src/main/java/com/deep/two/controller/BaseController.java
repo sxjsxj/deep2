@@ -7,6 +7,8 @@ import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,6 +23,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.alibaba.fastjson.JSON;
 import com.deep.two.authority.model.CurrentUser;
@@ -31,6 +34,7 @@ import com.deep.two.model.result.DMLResultModel;
 import com.deep.two.model.result.ResultModel;
 import com.deep.two.model.result.companyUser.CompanyUserResultModel;
 import com.deep.two.service.BaseService;
+import com.deep.two.util.AttachConstant;
 import com.deep.two.util.CollectionUtil;
 import com.deep.two.util.CopyUtil;
 import com.deep.two.util.DecodeUtil;
@@ -135,4 +139,28 @@ public abstract class BaseController<T> implements TemplateController<T>{
 	}
 
 	public abstract BaseService<T> getBaseService();
+	
+	@Override
+    public DMLResultModel add(@RequestParam(value="file", required=false) MultipartFile[] files, @RequestParam("str")String str){
+    	return null;
+    }
+	
+	@Override
+    public DMLResultModel update(@RequestParam(value="file", required=false) MultipartFile[] files, @RequestParam("str")String str){
+    	return null;
+    }
+	
+	protected Map<String, MultipartFile> getFileMap(MultipartFile logoFile, MultipartFile leaderFile, MultipartFile attachFile) {
+		Map<String, MultipartFile> map = new HashMap<String, MultipartFile>();
+		if(logoFile != null) {
+			map.put(AttachConstant.LOGOFILE, logoFile);
+		}
+		if(leaderFile != null) {
+			map.put(AttachConstant.LEADERFILE, leaderFile);
+		}
+		if(attachFile != null) {
+			map.put(AttachConstant.ATTACHFILE, attachFile);
+		}
+		return map;
+	}
 }

@@ -100,7 +100,7 @@ function query(param) {
 			li+="<div class='cs'>"
 			li+="<div class='mod borderright'>"
 			li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="cs_tis">'+"研究方向："+queryReturnList[i].field+"</div></a>"
-			//li+="<div class=''><a class='fl rems'></a><span class='fl'>"+'<a href="'+moreInfoUrl+'" target="_blank">'+"简介&nbsp;:&nbsp;"+FrontCommonFunction.getResultMaitText(queryReturnList[i].introduction,30,"#researchGroupMoreInfo",queryReturnList[i].id)+"</a></span><div class='clear'></div></div>"
+			//li+="<div class=''><a class='fl rems'></a><span class='fl'>"+'<a href="'+moreInfoUrl+'" target="_blank">'+"简介&nbsp;：&nbsp;"+FrontCommonFunction.getResultMaitText(queryReturnList[i].introduction,30,"#researchGroupMoreInfo",queryReturnList[i].id)+"</a></span><div class='clear'></div></div>"
 			li+="</div>"
 			li+="<div class='mod marginleft'>"
 			li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="cs_tis">'+'研究成果:'+"</div></a>"

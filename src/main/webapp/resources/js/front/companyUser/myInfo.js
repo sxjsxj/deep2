@@ -81,8 +81,8 @@ function initCompanyUserManager() {
 		if(imgCheckFlag==="0"){
 			$("#imgTypeCheckResult").html('<font color="red">&nbsp;&nbsp;图像格式只能是:GIF,JPG,JPEG,PNG</font>');
 		}
-        if(fileCheckFlag==="0"){
-        	$("#fileTypeCheckResult").html('<font color="red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;附件大小不能超过5M</font>');
+		if(fileCheckFlag==="0"){
+        	$("#fileTypeCheckResult").html('<font style="color:red;">上传文件超过5M,请重新上传。</font>');
 		}
 		
 		//所属行业 性质
@@ -362,6 +362,10 @@ function getDetail() {
 			var imgurl=$('#downFile').attr('url')+'?path='+logoUrl;
 			$('#companyLogo').attr("src",imgurl);
 		}
+		$('#filePath').val(datas.attachUrl);
+		if(datas.attachName) {
+			$('#fileTypeCheckResult').html('已上传文件:'+datas.attachName);
+		}
 	};
 	$.ajax(FrontCommonFunction.baseOptions);
 };
@@ -454,7 +458,7 @@ function getData() {
 	paramTemp['contactTel']=$.trim($('#contactTel').val());
 	paramTemp['contactTitle']=$.trim($('#contactTitle').val());
 	paramTemp['introduction']=$('#introduction').val();
-	paramTemp['logoUrl']=$('#imgPath').val();
-	paramTemp['attachUrl']=$('#filePath').val();
+//	paramTemp['logoUrl']=$('#imgPath').val();
+//	paramTemp['attachUrl']=$('#filePath').val();
 	return paramTemp;
 };

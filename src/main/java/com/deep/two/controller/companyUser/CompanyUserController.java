@@ -93,15 +93,16 @@ public class CompanyUserController  extends BaseController<CompanyUser> implemen
         return new ModelAndView("companyUser/myCollectionInvestorList");
     }
     
-    @Override
     @RequestMapping("/add")
     @ResponseBody
-    public DMLResultModel add(@RequestParam(value="file", required=false) MultipartFile[] files, @RequestParam("str")String str) {
+    public DMLResultModel add(@RequestParam(value="logoFile", required=false) MultipartFile logoFile, 
+    		@RequestParam(value="attachFile", required=false) MultipartFile attachFile, 
+    		@RequestParam("str")String str) {
         CompanyUser ru = null;
         DMLResultModel dm = new DMLResultModel();
         try {
             ru = JSONUtil.jsonToModel(str, CompanyUser.class, null);
-            companyUserService.add(ru, files, getCurrentUser());
+            companyUserService.add(ru, getFileMap(logoFile, null, attachFile), getCurrentUser());
         } catch (ViewException e) {
             LOGGER.error(e.getMessage());
             dm = e.getResultModel();
@@ -125,15 +126,16 @@ public class CompanyUserController  extends BaseController<CompanyUser> implemen
         return dmlResultModel;
     }
 
-    @Override
     @RequestMapping("update")
     @ResponseBody
-    public DMLResultModel update(@RequestParam(value="file", required=false) MultipartFile[] files, @RequestParam("str")String str) {
+    public DMLResultModel update(@RequestParam(value="logoFile", required=false) MultipartFile logoFile, 
+    		@RequestParam(value="attachFile", required=false) MultipartFile attachFile, 
+    		@RequestParam("str")String str) {
         DMLResultModel dmlResultModel = new DMLResultModel();
         CompanyUser ru = null;
         try {
             ru = JSONUtil.jsonToModel(str, CompanyUser.class, null);
-            companyUserService.update(ru, ru.getId(), files, getCurrentUser());
+            companyUserService.update(ru, ru.getId(), getFileMap(logoFile, null, attachFile), getCurrentUser());
         } catch (ViewException e) {
             LOGGER.error(e.getMessage());
             dmlResultModel = e.getResultModel();

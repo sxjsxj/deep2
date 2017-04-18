@@ -156,7 +156,8 @@ function query(param) {
 				li+="<div class='cs'>"
 				li+='<div class="mod borderright">'
 				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="cs_tis">'+"研究方向："+FrontCommonFunction.setInvestorDomain(queryReturnList[i].researchGroupResultModel.domain)+"</div></a>"
-				li+="<div class=''><a class='fl rems'></a>"+'<a href="'+moreInfoUrl+'" target="_blank"><span class="fl">'+"简介&nbsp;:&nbsp;"+FrontCommonFunction.getResultMaitText(queryReturnList[i].researchGroupResultModel.introduction,100,"#researchGroupMoreInfo",queryReturnList[i].researchGroupResultModel.id)+"</span></a><div class='clear'></div></div>"
+				// li+="<div class=''><a class='fl rems'></a>"+'<a href="'+moreInfoUrl+'" target="_blank"><span class="fl">'+"简介&nbsp;：&nbsp;"+FrontCommonFunction.getResultMaitText(queryReturnList[i].researchGroupResultModel.introduction,100,"#researchGroupMoreInfo",queryReturnList[i].researchGroupResultModel.id)+"</span></a><div class='clear'></div></div>"
+				li+="<div class=''><a class='fl rems'></a>"+"<div class='clear'></div></div>"
 				li+="</div>"
 				li+='<div class="mod marginleft">'
 				li+='<a href="'+moreInfoUrl+'" target="_blank"><div class="cs_tis">'+'研究成果:'+"</div></a>"

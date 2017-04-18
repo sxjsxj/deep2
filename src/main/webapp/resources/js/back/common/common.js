@@ -35,7 +35,7 @@ var CommonFunction = {
 		$("[class*='date-pick']").each(function(){
 			$(this).datepicker({ dateFormat: 'yy-mm-dd' });
 		});
-		
+
 	},
 	processResult:function(actionCode,datas,returnInfoModal,returnInfo) {
 		var status = datas.status;
@@ -93,14 +93,14 @@ var CommonFunction = {
 		this.baseOptions['success'] = function(datas) {
 			var queryReturnList = datas;
 			var option = '<option value="">请选择行业</option>';
-			for(var i = 0; i < queryReturnList.length; i++) {	
+			for(var i = 0; i < queryReturnList.length; i++) {
 				option += '<option value="'+i+'">' + queryReturnList[i].name + '</option>';
 			}
 			$(id).append(option);
 		};
 		$.ajax(this.baseOptions);
 	},
-	
+
 	/**
 	 * 初始化行业复选框领域
 	 */
@@ -112,7 +112,7 @@ var CommonFunction = {
 		this.baseOptions['success'] = function(datas) {
 			var queryReturnList = datas;
 			var option = ''
-				for(var i = 0; i < queryReturnList.length; i++) {	
+				for(var i = 0; i < queryReturnList.length; i++) {
 					if(i ==0){
 						option += '<div id="domainCheckBox"+'+i+' class="checkbox-inline"><label>'
 						option += '<input type="checkbox" name="domaincheckbox[]" value="+'+i+'+" data-bv-message="请至少选择一种投资领域" />'+queryReturnList[i].name
@@ -141,7 +141,7 @@ var CommonFunction = {
 			for(var i = 0; i < queryReturnList.length; i++){
 				var list=queryReturnList[i];
 				var areaDesc='';
-				for(var j = 0; j < list.length; j++) {	
+				for(var j = 0; j < list.length; j++) {
 					areaDesc=list[j].areaDec;
 					option += '<div class="checkbox-inline"><label>'
 					option += '<input type="checkbox" name="basicProvinceAreaCheckbox[]" value="+'+i+j+'+" />'+list[j].province
@@ -152,7 +152,7 @@ var CommonFunction = {
 			$(id).append(option);
 		};
 		$.ajax(this.baseOptions);
-	},	
+	},
 	/* 对于页面上面的form进行reset */
 	resetForm : function(formId) {
 		// clear all input for new add operation
@@ -200,7 +200,7 @@ var CommonFunction = {
 			}
 		});
 	},
-	
+
 	/* 保存form中的input的value值 */
 	formValue : function(formId) {
 		var result = [];
@@ -212,7 +212,7 @@ var CommonFunction = {
 		});
 		return result;
 	},
-	
+
 	hiddenDiv : function(clickId, hiddenId, showId) {
 		$('#' + clickId).live('click', function() {
 			$(this).hide();
@@ -300,7 +300,7 @@ var CommonFunction = {
 			  $(titleInputedWord).html(inputNum + "字节");
 			  $(titleInputingWord).html((maxlenth - inputNum)+ "字母," + (Math.round(((maxlenth -inputNum) / 2) - 0.5)) + "汉字");
 		}
-		 
+
 		 //取得被*替换掉的字符串
 	     var replaceText=$(id).val().replace(/[^\x00-\xff]/g, "**");
 	     var maxStr=replaceText.substring(0,maxlenth);
@@ -387,21 +387,14 @@ var CommonFunction = {
 		if(dataObj === null || dataObj === 'null'||dataObj === undefined){
 			result = '';
 		} else {
-			if(dataObj==="0"){
-				result = "信息技术";
-			 }else if(dataObj==="1"){
-				 result = "机械电子";
-			 }else if(dataObj=="2"){
-				 result = "生物工程";
-			 }else if(dataObj=="3"){
-				 result = "能源环保";
-			 }else if(dataObj=="4"){
-				 result = "化学化工";
-			 }else if(dataObj=="5"){
-				 result = "材料科学";
-			 }else{
-				 result = '其他';
-			 }
+			result = dataObj
+			.replace('0','信息技术')
+			.replace('1','机械电子')
+			.replace('2','生物工程')
+			.replace('3','能源环保')
+			.replace('4','化学化工')
+			.replace('5','材料科学')
+			.replace('6','其他');
 		}
 		return result;
 	},
@@ -430,22 +423,22 @@ var CommonFunction = {
 		var uniNationalPriority="";
 		if(uniProject211 === null || uniProject211 === 'null' || uniProject211 === undefined || uniProject211 ==="undefined"){
 			uniProject211 = '';
-		} 
+		}
 		if(uniProject985 === null || uniProject985 === 'null' || uniProject985 === undefined || uniProject985 ==="undefined"){
 			uniProject985 = '';
-		} 
+		}
 		if(uniNationalPriority === null || uniNationalPriority === 'null' || uniNationalPriority === undefined || uniNationalPriority ==="undefined"){
 			uniNationalPriority = '';
-		} 
+		}
 		if(uniProject211 === '1'){
 			uniProject211 = '211高校';
-		} 
+		}
 		if(uniProject985 === '1'){
 			uniProject985 = '985高校';
-		} 
+		}
 		if(uniNationalPriority === '0'){
 			uniNationalPriority = '全国重点大学';
-		} 
+		}
 		result=uniProject211+uniProject985+uniNationalPriority;
 		return result;
 	},
@@ -566,7 +559,7 @@ var CommonFunction = {
 			if(dataObj==="0"){
 				result = "待审核";
 			 }else if(dataObj==="1"){
-				 result = "征集中";
+				 result = "";  // 原来征集中
 			 }else if(dataObj==="2"){
 				 result = "洽谈中";
 			 }else if(dataObj==="3"){
@@ -681,7 +674,7 @@ var CommonFunction = {
 			 }else{
 				 result ="其他";
 			 }
-			
+
 		}
 		return result;
 	},
@@ -690,19 +683,28 @@ var CommonFunction = {
 		if(dataObj === null || dataObj === 'null' || dataObj === undefined || dataObj ==="undefined"){
 			result = '';
 		} else {
-			if(dataObj===0){
-				result =  "100万以下";
-			 }else if(dataObj===1){
-				 result =  "100-500万";
-			 }else if(dataObj===2){
-				 result =  "500万-1000万 ";
-			 }else if(dataObj===3){
-				 result =  "1000万以上";
-			 }else if(dataObj===4){
-				 result =  "面议";
-			 }else{
-				 result =  "其他";
-			 }
+			var tmps = dataObj.split(',');
+			var tmpsStr = [];
+			for(var i in tmps) {
+				var tmpStr = tmps[i];
+				if(tmps[i] == '0') {
+					tmpStr = '100万以下';
+				}
+				if(tmps[i] == '1') {
+					tmpStr = '100-500万';
+				}
+				if(tmps[i] == '2') {
+					tmpStr = '500万-1000万';
+				}
+				if(tmps[i] == '3') {
+					tmpStr = '1000万以上';
+				}
+				if(tmps[i] == '4') {
+					tmpStr = '面议';
+				}
+				tmpsStr.push(tmpStr);
+			}
+			result = tmpsStr.join(',');
 		}
 		return result;
 	},
@@ -711,19 +713,28 @@ var CommonFunction = {
 		if(dataObj === null || dataObj === 'null' || dataObj === undefined || dataObj ==="undefined"){
 			result = '';
 		} else {
-			if(dataObj==="0"){
-				result =  "100万以下";
-			 }else if(dataObj==="1"){
-				 result =  "100-500万";
-			 }else if(dataObj==="2"){
-				 result =  "500万-1000万 ";
-			 }else if(dataObj==="3"){
-				 result =  "1000万以上";
-			 }else if(dataObj==="4"){
-				 result =  "面议";
-			 }else{
-				 result =  "其他";
-			 }
+			var tmps = dataObj.split(',');
+			var tmpsStr = [];
+			for(var i in tmps) {
+				var tmpStr = tmps[i];
+				if(tmps[i] == '0') {
+					tmpStr = '100万以下';
+				}
+				if(tmps[i] == '1') {
+					tmpStr = '100-500万';
+				}
+				if(tmps[i] == '2') {
+					tmpStr = '500万-1000万';
+				}
+				if(tmps[i] == '3') {
+					tmpStr = '1000万以上';
+				}
+				if(tmps[i] == '4') {
+					tmpStr = '面议';
+				}
+				tmpsStr.push(tmpStr);
+			}
+			result = tmpsStr.join(',');
 		}
 		return result;
 	},
@@ -732,21 +743,14 @@ var CommonFunction = {
 		if(dataObj === null || dataObj === 'null' || dataObj === undefined || dataObj ==="undefined"){
 			result = '';
 		} else {
-			if(dataObj===0){
-				result =  "研发阶段";
-			 }else if(dataObj===1){
-				 result =  "实验室阶段";
-			 }else if(dataObj===2){
-				 result =  "概念阶段";
-			 }else if(dataObj===3){
-				 result =  "小批量生产";
-			 }else if(dataObj===4){
-				 result =  "规模化生产阶段";
-			 }else if(dataObj===5){
-				 result =  "市场推广阶段";
-			 }else{
-				 result =  "其他";
-			 }
+			result = dataObj
+			.replace('0','研发阶段')
+			.replace('1','实验室阶段')
+			.replace('2','概念阶段')
+			.replace('3','小批量生产')
+			.replace('4','规模化生产阶段')
+			.replace('5','市场推广阶段')
+			;
 		}
 		return result;
 	},
@@ -755,21 +759,14 @@ var CommonFunction = {
 		if(dataObj === null || dataObj === 'null' || dataObj === undefined || dataObj ==="undefined"){
 			result = '';
 		} else {
-			if(dataObj==="0"){
-				result =  "研发阶段";
-			 }else if(dataObj==="1"){
-				 result =  "实验室阶段";
-			 }else if(dataObj==="2"){
-				 result =  "概念阶段";
-			 }else if(dataObj==="3"){
-				 result =  "小批量生产";
-			 }else if(dataObj==="4"){
-				 result =  "规模化生产阶段";
-			 }else if(dataObj==="5"){
-				 result =  "市场推广阶段";
-			 }else{
-				 result =  "其他";
-			 }
+			result = dataObj
+			.replace('0','研发阶段')
+			.replace('1','实验室阶段')
+			.replace('2','概念阶段')
+			.replace('3','小批量生产')
+			.replace('4','规模化生产阶段')
+			.replace('5','市场推广阶段')
+			;
 		}
 		return result;
 	},
@@ -891,22 +888,16 @@ var CommonFunction = {
 	},
 	setStrCooperationType:function(dataObj){
 		var result = '';
-		if(dataObj === null || dataObj === 'null' || dataObj === undefined || dataObj ==="undefined"){
-			result = '';
+		if(dataObj === null || dataObj === 'null'||dataObj === undefined){
+			result = '不限';
 		} else {
-			if(dataObj==="0"){
-				result =  "技术入股";
-			 }else if(dataObj==="1"){
-				 result =  "技术转让";
-			 }else if(dataObj==="2"){
-				 result =  "技术许可";
-			 }else if(dataObj==="3"){
-				 result =  "委托开发";
-			 }else if(dataObj==="4"){
-				 result =  "技术服务";
-			 }else{
-				 result =  "其他";
-			 }
+			result = dataObj
+			.replace('0','技术入股')
+			.replace('1','技术转让')
+			.replace('2','技术许可')
+			.replace('3','委托开发')
+			.replace('4','技术服务')
+			.replace('5','其他');
 		}
 		return result;
 	},
@@ -915,19 +906,13 @@ var CommonFunction = {
 		if(dataObj === null || dataObj === 'null' || dataObj === undefined || dataObj ==="undefined"){
 			result = '';
 		} else {
-			
-			if(dataObj===0){
-				result =  "股权投资";
-			 }else if(dataObj===1){
-				 result =  "债券投资";
-			 }else if(dataObj===2){
-				 result =  "金融投资";
-			 }else if(dataObj===3){
-				 result =  "bt/bot项目投资";
-			 }else{
-				 result =  "其他投资";
-			 }
-			
+			result = dataObj
+			.replace('0','股权投资')
+			.replace('1','债券投资')
+			.replace('2','金融投资')
+			.replace('3','bt/bot项目投资')
+			.replace('4','其他投资')
+			;
 		}
 		return result;
 	},
@@ -936,21 +921,13 @@ var CommonFunction = {
 		if(dataObj === null || dataObj === 'null' || dataObj === undefined || dataObj ==="undefined"){
 			result = '';
 		} else {
-			
-			if(dataObj==="0"){
-				result =  "股权投资";
-			 }else if(dataObj==="1"){
-				 result =  "债券投资";
-			 }else if(dataObj==="2"){
-				 result =  "金融投资";
-			 }else if(dataObj==="3"){
-				 result =  "bt/bot项目投资";
-			 }else if(dataObj==="4"){
-				 result =  "其他投资";
-			 }else{
-				 result =  "其他";
-			 }
-			
+			result = dataObj
+			.replace('0','股权投资')
+			.replace('1','债券投资')
+			.replace('2','金融投资')
+			.replace('3','bt/bot项目投资')
+			.replace('4','其他投资')
+			;
 		}
 		return result;
 	},
@@ -959,21 +936,14 @@ var CommonFunction = {
 		if(dataObj === null || dataObj === 'null'||dataObj === undefined){
 			result = '';
 		} else {
-			if(dataObj==="0"){
-				result = "信息技术";
-			 }else if(dataObj==="1"){
-				 result = "机械电子";
-			 }else if(dataObj=="2"){
-				 result = "生物工程";
-			 }else if(dataObj=="3"){
-				 result = "能源环保";
-			 }else if(dataObj=="4"){
-				 result = "化学化工";
-			 }else if(dataObj=="5"){
-				 result = "材料科学";
-			 }else{
-				 result = '其他';
-			 }
+			result = dataObj
+			.replace('0','信息技术')
+			.replace('1','机械电子')
+			.replace('2','生物工程')
+			.replace('3','能源环保')
+			.replace('4','化学化工')
+			.replace('5','材料科学')
+			.replace('6','其他');
 		}
 		return result;
 	},
@@ -993,7 +963,7 @@ var CommonFunction = {
 			 }else{
 				 result =  "其他";
 			 }
-			
+
 		}
 		return result;
 	},
@@ -1010,7 +980,7 @@ var CommonFunction = {
 			 '<div class="pageControlLayout">' +
 			 	'<div class="pageControl">' +
 		        	'<div id="paginationInfo" class="left pagesButtonLayout">' +
-		        		initPaginationBar(sumPage, currentPage) + 
+		        		initPaginationBar(sumPage, currentPage) +
 		                '<div class="clear"></div>' +
 		            '</div>' +
 		            '<div class="left toPageLayout">' +
@@ -1048,7 +1018,7 @@ var CommonFunction = {
 			}
 			obj[methodName](null);
 		});
-	},	
+	},
 	maxRecordPerPage:function() {
 		//每页显示几条
 		var maxRecordPerPage = 10;
@@ -1073,14 +1043,14 @@ var CommonFunction = {
 				$(tBodySelector).find('tr').addClass('trbgBlue');
 				$(tBodySelector).find('input:checkbox').each(function() {
 					this.checked=true;
-				});    
+				});
 			} else {
 				$(tBodySelector).find('tr').removeClass('trbgBlue');
 				$(tBodySelector).find('tr').addClass('trbgWhite');
 				$(tBodySelector).find('input:checkbox').removeAttr('checked');
 			}
 		});
-		
+
 		$(document).delegate(tBodySelector +' tr input:checkbox', 'change', function(event){
 			var flag = $(this).is(':checked');
 			if (!flag) {
@@ -1092,7 +1062,7 @@ var CommonFunction = {
 				$(this).parents('tr').addClass('trbgBlue');
 				this.checked=true;
 			}
-			event.stopPropagation();  
+			event.stopPropagation();
 		});
 	}
 };
@@ -1128,7 +1098,8 @@ function getWord(actionCode, status, listOne, listTwo,returnInfoModal,returnInfo
 
 
 function getResultMaitText(str, size) {
-	var link = '<a href="#" style="color:blue;" onclick="doMoreInfo(\''+str+'\')">' + '更多信息' + '</a>';
+	var strs = encodeURI(str);
+	var link = '<a href="#" style="color:blue;" onclick="doMoreInfo(\''+strs+'\')">' + '更多信息' + '</a>';
 	var subStr = str;
 	var inputNum = str.replace(/[^\x00-\xff]/g, "**").length; // 得到输入的字节数;
 	if (inputNum > size) {
@@ -1143,9 +1114,15 @@ function getResultMaitText(str, size) {
 	return subStr;
 };
 
-function doMoreInfo(str){
-	window.open('moreInfo.html?params='+str,'');
-}
+function doMoreInfo(strs){
+	//删除submit
+	$('#detailInfo').html(decodeURI(strs));
+	$("#moreInfoDialog").dialog({
+		modal: true,
+ 		width:500,
+ 		height:300
+ 	});
+};
 
 //根据当前页码数，初始化分页信息
 function initPaginationBar(sumPage, currentPage) {
@@ -1168,8 +1145,8 @@ function initPaginationBar(sumPage, currentPage) {
 			} else {
 				paginationBar = paginationBar + '<a>'+ i +'</a>';
 			}
-		} 
-	} 
+		}
+	}
 	// 如果总页数大于5页，并且当前页小于等于5，显示 '12345...下一页'
 	if (sumPage > 5 && currentPage <= 5) {
 		for(var j = 1; j <= currentPage; j++) {
@@ -1178,14 +1155,14 @@ function initPaginationBar(sumPage, currentPage) {
 			} else {
 				paginationBar = paginationBar + '<a>'+ j +'</a>';
 			}
-		} 
-		
+		}
+
 		if (currentPage === sumPage-1) {
-			paginationBar = paginationBar + '<a>'+ (currentPage+1) +'</a>'; 
+			paginationBar = paginationBar + '<a>'+ (currentPage+1) +'</a>';
 		}
 		if (currentPage === sumPage-2) {
-			paginationBar = paginationBar + '<a>'+ (currentPage+1) +'</a>' + 
-							 '<a>'+ (currentPage+2) +' </a>'; 
+			paginationBar = paginationBar + '<a>'+ (currentPage+1) +'</a>' +
+							 '<a>'+ (currentPage+2) +' </a>';
 		}
 		if (currentPage < sumPage-2) {
 			paginationBar = paginationBar + '<a>'+ (currentPage+1) +'</a>' +
@@ -1193,7 +1170,7 @@ function initPaginationBar(sumPage, currentPage) {
 							 '<b class="pageBreak">...</b>';
 		}
 	}
-	
+
 	// 如果总页数大于5页，并且当前页大于5，显示 '123..下一页'
 	if (sumPage > 5 && currentPage > 5) {
 		paginationBar = paginationBar + '<a>1</a>' +
@@ -1201,13 +1178,13 @@ function initPaginationBar(sumPage, currentPage) {
 						'<b class="pageBreak">...</b>' +
 						'<a>'+ (currentPage-2) +'</a>' +
 						'<a>'+ (currentPage-1) +'</a>' +
-						'<b class="pageCur">'+ currentPage +'</b>'; 
+						'<b class="pageCur">'+ currentPage +'</b>';
 		if (currentPage === sumPage-1) {
-			paginationBar = paginationBar + '<a>'+ (currentPage+1) +'</a>'; 
+			paginationBar = paginationBar + '<a>'+ (currentPage+1) +'</a>';
 		}
 		if (currentPage === sumPage-2) {
-			paginationBar = paginationBar + '<a>'+ (currentPage+1) +'</a>' + 
-							 '<a>'+ (currentPage+2) +' </a>'; 
+			paginationBar = paginationBar + '<a>'+ (currentPage+1) +'</a>' +
+							 '<a>'+ (currentPage+2) +' </a>';
 		}
 		if (currentPage < sumPage-2) {
 			paginationBar = paginationBar + '<a>'+ (currentPage+1) +'</a>' +
@@ -1227,6 +1204,3 @@ function initPaginationBar(sumPage, currentPage) {
 $(document).ready(function() {
 	CommonFunction.toUpperCase();
 });
-
-
-

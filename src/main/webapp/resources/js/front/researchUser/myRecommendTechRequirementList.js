@@ -49,7 +49,7 @@ var myDomains = [];
 function initAmountDemandListManager() {
 	//查询条件初始化大区
 	FrontCommonFunction.initCheckBoxRegion("#region");
-	getReserachGroup();
+	getMyDomains();
 	//设置大区
 	setRegionClick();
 	//只查看本省市
@@ -157,7 +157,7 @@ function query(param) {
 			noresult+="</div>"
 			noresult+="</div>"
 			noresult+="</div>"
-			$('#noResult').html(noresult);
+			//$('#noResult').html(noresult);
 			//不考虑领域
 			param['techRequirementQueryModel'].domain = '';
 			var url = $('#queryTechRequirement').attr('url');
@@ -262,33 +262,6 @@ function getData() {
 	return paramTemp;
 };
 
-function getReserachGroup() {
-	var url = $('#getResearchGroup').attr('url');
-	//从header获取科研用户id
-	var paramTemp = {};
-	var researchGroupQueryModel = {};
-	getDefaultQuery('researchGroup', '2', researchGroupQueryModel);
-	paramTemp['researchGroupQueryModel'] = researchGroupQueryModel;
-	var universityUserQueryModel = {};
-	universityUserQueryModel['id']=$('#commonResearchUserId').val();
-	var organizationUserQueryModel = {};
-	organizationUserQueryModel['id']=$('#commonResearchUserId').val();
-	paramTemp['universityUserQueryModel'] = universityUserQueryModel;
-	paramTemp['organizationUserQueryModel'] = organizationUserQueryModel;
-	paramTemp['userQueryModel'] =getMyInfo();
-	var jsonStr=JSON.stringify(paramTemp);
-	var data = {};
-	data['str']=jsonStr;
-	FrontCommonFunction.baseOptions['url'] = url;
-	FrontCommonFunction.baseOptions['data'] = data;
-	FrontCommonFunction.baseOptions['success'] = function(datas) {
-		for(var i = 0; i < datas.queryReturnList.length;i++) {
-			myDomains.push((datas.queryReturnList)[i].domain);
-		}
-	};
-	$.ajax(FrontCommonFunction.baseOptions);
-};
-
 function display(that, datas, queryReturnList) {
 	if (queryReturnList === null || queryReturnList.length === 0) {
 		var noresult='';
@@ -345,6 +318,33 @@ function display(that, datas, queryReturnList) {
 		//控制登录用户
 		cooperateCollectActionControl('techRequirement');
 	}
+};
+
+function getMyDomains() {
+	var url = $('#getResearchGroup').attr('url');
+	//从header获取科研用户id
+	var paramTemp = {};
+	var researchGroupQueryModel = {};
+	getDefaultQuery('researchGroup', '2', researchGroupQueryModel);
+	paramTemp['researchGroupQueryModel'] = researchGroupQueryModel;
+	var universityUserQueryModel = {};
+	universityUserQueryModel['id']=$('#commonResearchUserId').val();
+	var organizationUserQueryModel = {};
+	organizationUserQueryModel['id']=$('#commonResearchUserId').val();
+	paramTemp['universityUserQueryModel'] = universityUserQueryModel;
+	paramTemp['organizationUserQueryModel'] = organizationUserQueryModel;
+	paramTemp['userQueryModel'] =getMyInfo();
+	var jsonStr=JSON.stringify(paramTemp);
+	var data = {};
+	data['str']=jsonStr;
+	FrontCommonFunction.baseOptions['url'] = url;
+	FrontCommonFunction.baseOptions['data'] = data;
+	FrontCommonFunction.baseOptions['success'] = function(datas) {
+		for(var i = 0; i < datas.queryReturnList.length;i++) {
+			myDomains.push(datas.queryReturnList[i].domain);
+		}
+	};
+	$.ajax(FrontCommonFunction.baseOptions);
 };
 
 function getReserachGroup() {

@@ -97,8 +97,8 @@ function initAchievementManager() {
 		if(imgCheckFlag==="0"){
 			$("#imgTypeCheckResult").html('<font color="red">&nbsp;&nbsp;图像格式只能是:GIF,JPG,JPEG,PNG</font>');
 		}
-        if(fileCheckFlag==="0"){
-        	$("#fileTypeCheckResult").html('<font color="red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;附件大小不能超过5M</font>');
+		if(fileCheckFlag==="0"){
+        	$("#fileTypeCheckResult").html('<font style="color:red;">上传文件超过5M,请重新上传。</font>');
 		}
 		
 		
@@ -221,18 +221,16 @@ function getDetail(id) {
 			}
 			
 		}
-		var imgUrl=datas.logoUrl;//"../resources/images/front/img/fengmian_img.png";
+		var imgUrl=datas.logoUrl;
 	    var imgpath="";
 		if(imgUrl!=null && imgUrl!=""){
 			imgpath=$('#downFile').attr('url')+'?path='+imgUrl;
 	     }else{
-	    	 imgpath="../resources/images/front/img/fengmian_img.png";
+	    	imgpath="../resources/images/front/img/fengmian_img.png";
 	     }
+		$('#companyLogo').attr('src',imgpath);
 		
-		$('#companyLogo').attr('width',"160px");
-		$('#companyLogo').attr('height',"120px");
-		$('#companyLogo').attr('src',imgUrl);
-		$('#imgPath').val(imgUrl);
+		$('#filePath').val(datas.attachUrl);
 		if(datas.attachName) {
 			$('#fileTypeCheckResult').html('已上传文件:'+datas.attachName);
 		}
@@ -351,7 +349,7 @@ function setSelectValue(){
 	});
 };
 
-function uploadImg(fileId){
+/*function uploadImg(fileId){
 	var url = $('#upLoadImgUrl').attr('url');
 	var filepath = $("#companyImgLogo").val();
 	var extStart = filepath.lastIndexOf(".");
@@ -403,7 +401,7 @@ function uploadImg(fileId){
 		}
 	})
 	return path;
-};
+};*/
 
 function uploadFile(fileId){
 	var url = $('#upLoadFileUrl').attr('url');
@@ -516,7 +514,7 @@ function getData() {
 	paramTemp['expectedEffect']=$('#expectedEffect').val();
 	paramTemp['caseNum']=$('#caseNum').val();
 	paramTemp['caseDetail']=$('#caseDetail').val();
-	paramTemp['logoUrl']=$('#imgPath').val();
-	paramTemp['attachUrl']=$('#filePath').val();
+//	paramTemp['logoUrl']=$('#imgPath').val();
+//	paramTemp['attachUrl']=$('#filePath').val();
 	return paramTemp;
 };

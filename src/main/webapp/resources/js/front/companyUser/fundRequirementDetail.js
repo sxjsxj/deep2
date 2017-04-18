@@ -48,8 +48,8 @@ function initCompanyAmountManager() {
 		if(imgCheckFlag==="0"){
 			$("#imgTypeCheckResult").html('<font color="red">图像格式只能是:GIF,JPG,JPEG,PNG</font>');
 		}
-        if(fileCheckFlag==="0"){
-        	$("#fileTypeCheckResult").html('<font color="red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;附件大小不能超过5M</font>');
+		if(fileCheckFlag==="0"){
+        	$("#fileTypeCheckResult").html('<font style="color:red;">上传文件超过5M,请重新上传。</font>');
 		}
 		var domain=$("#domain").val();
 		if(domain===""){
@@ -138,7 +138,15 @@ function getDetail(id) {
 		$('#projectProspect').val(datas.projectProspect);
 		$('#amountNeeded').val(datas.amountNeeded);
 		$("#showAmountNeeded").val(FrontCommonFunction.setStrAmount(datas.amountNeeded));
-//		$('#imgPath').val(datas.logoUrl);
+
+		var imgUrl=datas.logoUrl;
+	    var imgpath="";
+		if(imgUrl!=null && imgUrl!=""){
+			imgpath=$('#downFile').attr('url')+'?path='+imgUrl;
+	     }else{
+	    	imgpath="../resources/images/front/img/fengmian_img.png";
+	     }
+		$('#companyLogo').attr('src',imgpath);
 		$('#filePath').val(datas.attachUrl);
 		if(datas.attachName) {
 			$('#fileTypeCheckResult').html('已上传文件:'+datas.attachName);

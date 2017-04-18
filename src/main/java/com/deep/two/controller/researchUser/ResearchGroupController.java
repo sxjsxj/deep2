@@ -15,9 +15,7 @@ import com.alibaba.fastjson.JSON;
 import com.deep.two.controller.BaseController;
 import com.deep.two.controller.TemplateController;
 import com.deep.two.dao.util.Pagination;
-import com.deep.two.model.ApproveModel;
 import com.deep.two.model.RecommendModel;
-import com.deep.two.model.query.QueryModel;
 import com.deep.two.model.query.researchUser.ResearchGroupCombineQueryModel;
 import com.deep.two.model.result.DMLResultModel;
 import com.deep.two.model.result.QueryListReturnVo;
@@ -69,15 +67,19 @@ public class ResearchGroupController  extends BaseController<ResearchGroup> impl
         return mv;
     }
 
-    @Override
+    //@Override
     @RequestMapping("/add")
     @ResponseBody
-    public DMLResultModel add(@RequestParam(value="file", required=false) MultipartFile[] files, @RequestParam("str")String str) {
+    public DMLResultModel add(@RequestParam(value="logoFile", required=false) MultipartFile logoFile, 
+    		@RequestParam(value="leaderFile", required=false) MultipartFile leaderFile,
+    		@RequestParam(value="attachFile", required=false) MultipartFile attachFile,
+    		@RequestParam("str")String str) {
         ResearchGroup ru = null;
         DMLResultModel dm = new DMLResultModel();
         try {
+        	
             ru = JSONUtil.jsonToModel(str, ResearchGroup.class, null);
-            researchGroupService.add(ru, files, getCurrentUser());
+            researchGroupService.add(ru, getFileMap(logoFile, leaderFile, attachFile), getCurrentUser());
         } catch (ViewException e) {
             LOGGER.error(e.getMessage());
             dm = e.getResultModel();
@@ -101,15 +103,17 @@ public class ResearchGroupController  extends BaseController<ResearchGroup> impl
         return dmlResultModel;
     }
 
-    @Override
     @RequestMapping("update")
     @ResponseBody
-    public DMLResultModel update(@RequestParam(value="file", required=false) MultipartFile[] files, @RequestParam("str")String str) {
+    public DMLResultModel update(@RequestParam(value="logoFile", required=false) MultipartFile logoFile, 
+    		@RequestParam(value="leaderFile", required=false) MultipartFile leaderFile,
+    		@RequestParam(value="attachFile", required=false) MultipartFile attachFile,
+    		@RequestParam("str")String str) {
         DMLResultModel dmlResultModel = new DMLResultModel();
         ResearchGroup ru = null;
         try {
             ru = JSONUtil.jsonToModel(str, ResearchGroup.class, null);
-            researchGroupService.update(ru, ru.getId(), files, getCurrentUser());
+            researchGroupService.update(ru, ru.getId(), getFileMap(logoFile, leaderFile, attachFile), getCurrentUser());
         } catch (ViewException e) {
             LOGGER.error(e.getMessage());
             dmlResultModel = e.getResultModel();

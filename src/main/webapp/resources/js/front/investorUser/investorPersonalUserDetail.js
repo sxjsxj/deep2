@@ -151,7 +151,7 @@ function initInvestorPersonalUserManager() {
 			$("#imgTypeCheckResult").html('<font color="red">图像格式只能是:GIF,JPG,JPEG,PNG</font>');
 		}
         if(fileCheckFlag==="0"){
-        	$("#fileTypeCheckResult").html('<font color="red">上传文件超过5M,请重新上传。</font>');
+        	$("#fileTypeCheckResult").html('<font style="color:red;">上传文件超过5M,请重新上传。</font>');
 		}
 		var contactName=$("#contactName").val();
 		var contactTel=$("#contactTel").val();
@@ -359,7 +359,7 @@ function getDetail() {
 			}
 		}
 		if (datas.logoUrl) {
-			var imgUrl=datas.logoUrl;//"../resources/images/front/img/fengmian_img.png";
+			var imgUrl=datas.logoUrl;
 			var path='';
 			if(imgUrl==="" || imgUrl===undefined || imgUrl==="undefined"){
 				path="../resources/images/front/img/fengmian_img.png";
@@ -367,10 +367,8 @@ function getDetail() {
 				path=$('#downFile').attr('url')+'?path='+imgUrl;
 				
 			}
-			$('#companyLogo').attr('width',"160px");
-			$('#companyLogo').attr('height',"120px");
 			$('#companyLogo').attr('src',path);
-			$('#imgPath').val(imgUrl);
+			//$('#imgPath').val(imgUrl);
 		}
 		$('#filePath').val(datas.attachUrl);
 		if(datas.attachName) {
@@ -519,7 +517,7 @@ function getData() {
 	paramTemp['investPhase']=investPhaseTemp;
 	paramTemp['introduction']=$('#introduction').val();
 	paramTemp['investOutline']=$('#investOutline').val();
-	paramTemp['logoUrl']=$('#imgPath').val();
-	paramTemp['attachUrl']=$('#filePath').val();
+//	paramTemp['logoUrl']=$('#imgPath').val();
+//	paramTemp['attachUrl']=$('#filePath').val();
 	return paramTemp;
 };

@@ -21,7 +21,7 @@
     <div class="registSuccess" id="alertClick"></div>
 		<!-- version4 点击发布需求弹框start -->
 			<div id="altsthree" style="display:none">
-				<div class='xuqiualert' style="width:740px;margin-top:15px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
+				<div class='xuqiualert' style="width:740px;margin-left:-370px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
 					<div class='tits'>
 						操作失败
 						<div class='imgs'>
@@ -43,7 +43,7 @@
 
 			<!-- version3 点击发布需求弹框start -->
 			<div id="altstwo" style="display:none">
-				<div class='xuqiualert' style="width:740px;margin-top:15px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
+				<div class='xuqiualert' style="width:740px;margin-left:-370px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
 					<div class='tits'>
 						删除成功
 						<div class='imgs'>
@@ -65,7 +65,7 @@
 <!-- end -->
 
          <div id="altsnotdel" style="display:none">
-				<div class='xuqiualert' style="width:740px;margin-top:15px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
+				<div class='xuqiualert' style="width:740px;margin-left:-370px;font-size: 24px;text-align:center;color:#434343;min-height:280px;">
 					<div class='tits'>
 						删除操作
 						<div class='imgs'>
